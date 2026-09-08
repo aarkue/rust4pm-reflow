@@ -1,0 +1,216 @@
+{
+  "log": "ocel2-p2p-updated.xml",
+  "path": "logs/ocel2-p2p-updated.xml",
+  "events": 14671,
+  "objects": 9054,
+  "participations": 35927,
+  "activities": [
+    "Approve Purchase Order",
+    "Approve Purchase Requisition",
+    "Create Goods Receipt",
+    "Create Invoice Receipt",
+    "Create Purchase Order",
+    "Create Purchase Requisition",
+    "Create Request for Quotation",
+    "Delegate Purchase Requisition Approval",
+    "Execute Payment",
+    "Perform Two-Way Match"
+  ],
+  "cells": 22,
+  "types": {
+    "goods receipt": {
+      "objects": 1941,
+      "object_share": 0.21438,
+      "participations": 10361,
+      "activities": 4,
+      "df_pairs": 8,
+      "scores": null
+    },
+    "invoice receipt": {
+      "objects": 927,
+      "object_share": 0.102386,
+      "participations": 5048,
+      "activities": 3,
+      "df_pairs": 3,
+      "scores": null
+    },
+    "material": {
+      "objects": 1807,
+      "object_share": 0.19958,
+      "participations": 3614,
+      "activities": 3,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "payment": {
+      "objects": 927,
+      "object_share": 0.102386,
+      "participations": 1166,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "purchase_order": {
+      "objects": 1598,
+      "object_share": 0.176497,
+      "participations": 9230,
+      "activities": 4,
+      "df_pairs": 4,
+      "scores": null
+    },
+    "purchase_requisition": {
+      "objects": 927,
+      "object_share": 0.102386,
+      "participations": 2385,
+      "activities": 4,
+      "df_pairs": 4,
+      "scores": null
+    },
+    "quotation": {
+      "objects": 927,
+      "object_share": 0.102386,
+      "participations": 4123,
+      "activities": 3,
+      "df_pairs": 3,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "Approve Purchase Order\tpurchase_order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1598
+    },
+    "Approve Purchase Order\tquotation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1598
+    },
+    "Approve Purchase Requisition\tmaterial": {
+      "max": 4,
+      "mean": 2.4695,
+      "events": 607
+    },
+    "Approve Purchase Requisition\tpurchase_requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 607
+    },
+    "Create Goods Receipt\tgoods receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 4042
+    },
+    "Create Goods Receipt\tpurchase_order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 4042
+    },
+    "Create Invoice Receipt\tgoods receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1941
+    },
+    "Create Invoice Receipt\tinvoice receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1941
+    },
+    "Create Purchase Order\tpurchase_order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1598
+    },
+    "Create Purchase Order\tquotation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1598
+    },
+    "Create Purchase Requisition\tmaterial": {
+      "max": 4,
+      "mean": 2.4787,
+      "events": 729
+    },
+    "Create Purchase Requisition\tpurchase_requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 729
+    },
+    "Create Request for Quotation\tpurchase_requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 927
+    },
+    "Create Request for Quotation\tquotation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 927
+    },
+    "Delegate Purchase Requisition Approval\tmaterial": {
+      "max": 4,
+      "mean": 2.5246,
+      "events": 122
+    },
+    "Delegate Purchase Requisition Approval\tpurchase_requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 122
+    },
+    "Execute Payment\tgoods receipt": {
+      "max": 4,
+      "mean": 2.0901,
+      "events": 1166
+    },
+    "Execute Payment\tinvoice receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1166
+    },
+    "Execute Payment\tpayment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1166
+    },
+    "Execute Payment\tpurchase_order": {
+      "max": 4,
+      "mean": 1.7084,
+      "events": 1166
+    },
+    "Perform Two-Way Match\tgoods receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1941
+    },
+    "Perform Two-Way Match\tinvoice receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1941
+    }
+  },
+  "divergence": {
+    "Approve Purchase Order": [
+      "quotation"
+    ],
+    "Create Goods Receipt": [
+      "goods receipt",
+      "purchase_order"
+    ],
+    "Create Invoice Receipt": [
+      "invoice receipt"
+    ],
+    "Create Purchase Order": [
+      "quotation"
+    ],
+    "Perform Two-Way Match": [
+      "invoice receipt"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 17,
+    "df2": 15,
+    "df2_dropped": [
+      "Approve Purchase Order -> Create Purchase Order",
+      "Perform Two-Way Match -> Create Invoice Receipt"
+    ]
+  }
+}

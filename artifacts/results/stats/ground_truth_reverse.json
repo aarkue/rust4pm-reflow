@@ -1,0 +1,246 @@
+{
+  "logs": [
+    {
+      "enforced": 13,
+      "enforced_under_closure": 32,
+      "expansion": {
+        "added": [],
+        "confirmed": [],
+        "confirmed_under_closure": [],
+        "contradicted": [],
+        "contradicted_under_closure": [],
+        "realized_by_expansion_search": 0,
+        "unadjudicated": 0
+      },
+      "footprint": "order-management.footprint.json",
+      "footprint_activities_not_in_log": [],
+      "log": "order-management",
+      "reduction_reverse": {
+        "contradicting_generator_recorded": [],
+        "contradicting_generator_recorded_closure": [],
+        "contradicting_generator_reduced": [],
+        "contradicting_generator_reduced_closure": [],
+        "directly_follows_arcs_recorded": 225,
+        "directly_follows_arcs_reduced": 24,
+        "orderings_added_by_reduction": [],
+        "orderings_shown_recorded": 45,
+        "orderings_shown_reduced": 45,
+        "spliced_arcs": []
+      }
+    },
+    {
+      "enforced": 17,
+      "enforced_under_closure": 73,
+      "expansion": {
+        "added": [
+          [
+            "Book Vehicles",
+            "Bring to Loading Bay"
+          ],
+          [
+            "Book Vehicles",
+            "Collect Goods"
+          ],
+          [
+            "Book Vehicles",
+            "Drive to Terminal"
+          ],
+          [
+            "Book Vehicles",
+            "Load Truck"
+          ],
+          [
+            "Book Vehicles",
+            "Load to Vehicle"
+          ],
+          [
+            "Book Vehicles",
+            "Pick Up Empty Container"
+          ],
+          [
+            "Book Vehicles",
+            "Place in Stock"
+          ],
+          [
+            "Book Vehicles",
+            "Weigh"
+          ],
+          [
+            "Collect Goods",
+            "Bring to Loading Bay"
+          ],
+          [
+            "Collect Goods",
+            "Depart"
+          ],
+          [
+            "Collect Goods",
+            "Drive to Terminal"
+          ],
+          [
+            "Collect Goods",
+            "Load to Vehicle"
+          ],
+          [
+            "Collect Goods",
+            "Place in Stock"
+          ],
+          [
+            "Collect Goods",
+            "Reschedule Container"
+          ],
+          [
+            "Collect Goods",
+            "Weigh"
+          ],
+          [
+            "Create Transport Document",
+            "Bring to Loading Bay"
+          ],
+          [
+            "Create Transport Document",
+            "Collect Goods"
+          ],
+          [
+            "Create Transport Document",
+            "Drive to Terminal"
+          ],
+          [
+            "Create Transport Document",
+            "Load Truck"
+          ],
+          [
+            "Create Transport Document",
+            "Load to Vehicle"
+          ],
+          [
+            "Create Transport Document",
+            "Pick Up Empty Container"
+          ],
+          [
+            "Create Transport Document",
+            "Place in Stock"
+          ],
+          [
+            "Create Transport Document",
+            "Weigh"
+          ],
+          [
+            "Order Empty Containers",
+            "Collect Goods"
+          ],
+          [
+            "Pick Up Empty Container",
+            "Collect Goods"
+          ],
+          [
+            "Reschedule Container",
+            "Bring to Loading Bay"
+          ]
+        ],
+        "confirmed": [],
+        "confirmed_under_closure": [
+          [
+            "Book Vehicles",
+            "Bring to Loading Bay"
+          ],
+          [
+            "Book Vehicles",
+            "Drive to Terminal"
+          ],
+          [
+            "Book Vehicles",
+            "Load Truck"
+          ],
+          [
+            "Book Vehicles",
+            "Load to Vehicle"
+          ],
+          [
+            "Book Vehicles",
+            "Pick Up Empty Container"
+          ],
+          [
+            "Book Vehicles",
+            "Place in Stock"
+          ],
+          [
+            "Book Vehicles",
+            "Weigh"
+          ],
+          [
+            "Collect Goods",
+            "Bring to Loading Bay"
+          ],
+          [
+            "Collect Goods",
+            "Depart"
+          ],
+          [
+            "Collect Goods",
+            "Drive to Terminal"
+          ],
+          [
+            "Collect Goods",
+            "Load to Vehicle"
+          ],
+          [
+            "Collect Goods",
+            "Place in Stock"
+          ],
+          [
+            "Collect Goods",
+            "Weigh"
+          ],
+          [
+            "Create Transport Document",
+            "Bring to Loading Bay"
+          ],
+          [
+            "Create Transport Document",
+            "Drive to Terminal"
+          ],
+          [
+            "Create Transport Document",
+            "Load Truck"
+          ],
+          [
+            "Create Transport Document",
+            "Load to Vehicle"
+          ],
+          [
+            "Create Transport Document",
+            "Pick Up Empty Container"
+          ],
+          [
+            "Create Transport Document",
+            "Place in Stock"
+          ],
+          [
+            "Create Transport Document",
+            "Weigh"
+          ]
+        ],
+        "contradicted": [],
+        "contradicted_under_closure": [],
+        "realized_by_expansion_search": 26,
+        "unadjudicated": 26
+      },
+      "footprint": "container-logistics.footprint.json",
+      "footprint_activities_not_in_log": [],
+      "log": "ContainerLogistics",
+      "reduction_reverse": {
+        "contradicting_generator_recorded": [],
+        "contradicting_generator_recorded_closure": [],
+        "contradicting_generator_reduced": [],
+        "contradicting_generator_reduced_closure": [],
+        "directly_follows_arcs_recorded": 45,
+        "directly_follows_arcs_reduced": 16,
+        "orderings_added_by_reduction": [],
+        "orderings_shown_recorded": 94,
+        "orderings_shown_reduced": 91,
+        "spliced_arcs": []
+      }
+    }
+  ]
+}

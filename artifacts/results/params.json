@@ -1,0 +1,46 @@
+{
+  "declare_abstraction": {
+    "arc_types": [
+      "AS",
+      "EF",
+      "EP"
+    ],
+    "counts_for_filter": {
+      "max": 20,
+      "min": 1
+    },
+    "counts_for_generation": {
+      "max": null,
+      "min": 1
+    },
+    "noise_threshold": 0.2,
+    "o2o_mode": "None",
+    "reduction": "None",
+    "refinement": false
+  },
+  "expansion": {
+    "default_theta": 0.95,
+    "o2o_reduction_budget": 50000000,
+    "qualifier": "derived",
+    "work_budget": 200000000
+  },
+  "log_abstraction": {
+    "noise_threshold": 0.0
+  },
+  "model_abstraction": {
+    "imf_noise_threshold": 0.2
+  },
+  "schema": {
+    "max_compose_depth": 4,
+    "max_witnesses_per_pair": 8,
+    "min_target_objects": 2
+  },
+  "search": {
+    "closure_budget_word_ops": 3000000000000
+  },
+  "tag": {
+    "determination_theta": 0.95,
+    "nonflow_prefix": "!",
+    "written_prefix": "+"
+  }
+}

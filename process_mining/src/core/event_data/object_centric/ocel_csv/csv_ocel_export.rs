@@ -1,5 +1,6 @@
 //! CSV Export for OCEL 2.0
 
+use super::escaping::escape_reference_part;
 use crate::core::event_data::object_centric::{
     ocel_struct::OCELAttributeValue,
     readable::{OCELLookup, ReadableOCEL},
@@ -273,10 +274,10 @@ fn format_timestamp(dt: &DateTime<FixedOffset>, options: &OCELCSVExportOptions) 
 fn format_object_refs(refs: &[ObjectRef<'_>]) -> String {
     refs.iter()
         .map(|r| {
-            let mut s = r.object_id.to_string();
+            let mut s = escape_reference_part(r.object_id).into_owned();
             if !r.qualifier.is_empty() {
                 s.push('#');
-                s.push_str(r.qualifier);
+                s.push_str(&escape_reference_part(r.qualifier));
             }
             if let Some(attrs) = &r.attributes {
                 if !attrs.is_empty() {

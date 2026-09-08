@@ -1,0 +1,1400 @@
+{
+  "places": [
+    {
+      "name": "Application p0",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p1",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p2",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p3",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p4",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p5",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p6",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p7",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p8",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p9",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p10",
+      "object_type": "Application"
+    },
+    {
+      "name": "Case_R p0",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p1",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p2",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p3",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p4",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p5",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p6",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p7",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p8",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p9",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p10",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p11",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p12",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p13",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p14",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p15",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p16",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p17",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p18",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p19",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p20",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p21",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p22",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p23",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p24",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p25",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p26",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p27",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p28",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p29",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p30",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p31",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p32",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Case_R p33",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Offer p0",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p1",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p2",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p3",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p4",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p5",
+      "object_type": "Offer"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "A_Create Application",
+      "label": "A_Create Application"
+    },
+    {
+      "name": "Application tau0",
+      "label": null
+    },
+    {
+      "name": "A_Submitted",
+      "label": "A_Submitted"
+    },
+    {
+      "name": "A_Concept",
+      "label": "A_Concept"
+    },
+    {
+      "name": "A_Accepted",
+      "label": "A_Accepted"
+    },
+    {
+      "name": "A_Complete",
+      "label": "A_Complete"
+    },
+    {
+      "name": "Application tau1",
+      "label": null
+    },
+    {
+      "name": "Application tau2",
+      "label": null
+    },
+    {
+      "name": "Application tau3",
+      "label": null
+    },
+    {
+      "name": "A_Validating",
+      "label": "A_Validating"
+    },
+    {
+      "name": "Application tau4",
+      "label": null
+    },
+    {
+      "name": "A_Incomplete",
+      "label": "A_Incomplete"
+    },
+    {
+      "name": "Application tau5",
+      "label": null
+    },
+    {
+      "name": "A_Cancelled",
+      "label": "A_Cancelled"
+    },
+    {
+      "name": "A_Denied",
+      "label": "A_Denied"
+    },
+    {
+      "name": "A_Pending",
+      "label": "A_Pending"
+    },
+    {
+      "name": "Case_R tau0",
+      "label": null
+    },
+    {
+      "name": "Case_R tau1",
+      "label": null
+    },
+    {
+      "name": "Case_R tau2",
+      "label": null
+    },
+    {
+      "name": "Case_R tau3",
+      "label": null
+    },
+    {
+      "name": "Case_R tau4",
+      "label": null
+    },
+    {
+      "name": "Case_R tau5",
+      "label": null
+    },
+    {
+      "name": "Case_R tau6",
+      "label": null
+    },
+    {
+      "name": "O_Sent (online only)",
+      "label": "O_Sent (online only)"
+    },
+    {
+      "name": "Case_R tau7",
+      "label": null
+    },
+    {
+      "name": "O_Refused",
+      "label": "O_Refused"
+    },
+    {
+      "name": "Case_R tau8",
+      "label": null
+    },
+    {
+      "name": "Case_R tau9",
+      "label": null
+    },
+    {
+      "name": "Case_R tau10",
+      "label": null
+    },
+    {
+      "name": "Case_R tau11",
+      "label": null
+    },
+    {
+      "name": "Case_R tau12",
+      "label": null
+    },
+    {
+      "name": "Case_R tau13",
+      "label": null
+    },
+    {
+      "name": "Case_R tau14",
+      "label": null
+    },
+    {
+      "name": "Case_R tau15",
+      "label": null
+    },
+    {
+      "name": "Case_R tau16",
+      "label": null
+    },
+    {
+      "name": "Case_R tau17",
+      "label": null
+    },
+    {
+      "name": "Case_R tau18",
+      "label": null
+    },
+    {
+      "name": "O_Accepted",
+      "label": "O_Accepted"
+    },
+    {
+      "name": "Case_R tau19",
+      "label": null
+    },
+    {
+      "name": "O_Cancelled",
+      "label": "O_Cancelled"
+    },
+    {
+      "name": "Case_R tau20",
+      "label": null
+    },
+    {
+      "name": "Case_R tau21",
+      "label": null
+    },
+    {
+      "name": "Case_R tau22",
+      "label": null
+    },
+    {
+      "name": "O_Create Offer",
+      "label": "O_Create Offer"
+    },
+    {
+      "name": "O_Created",
+      "label": "O_Created"
+    },
+    {
+      "name": "O_Sent (mail and online)",
+      "label": "O_Sent (mail and online)"
+    },
+    {
+      "name": "Case_R tau23",
+      "label": null
+    },
+    {
+      "name": "Case_R tau24",
+      "label": null
+    },
+    {
+      "name": "Case_R tau25",
+      "label": null
+    },
+    {
+      "name": "Case_R tau26",
+      "label": null
+    },
+    {
+      "name": "Case_R tau27",
+      "label": null
+    },
+    {
+      "name": "Case_R tau28",
+      "label": null
+    },
+    {
+      "name": "Case_R tau29",
+      "label": null
+    },
+    {
+      "name": "Case_R tau30",
+      "label": null
+    },
+    {
+      "name": "O_Returned",
+      "label": "O_Returned"
+    },
+    {
+      "name": "Case_R tau31",
+      "label": null
+    },
+    {
+      "name": "Offer tau0",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "Application p0",
+      "target": "A_Create Application",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Create Application",
+      "target": "Application p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p1",
+      "target": "Application tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau0",
+      "target": "Application p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p1",
+      "target": "A_Submitted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Submitted",
+      "target": "Application p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p2",
+      "target": "A_Concept",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Concept",
+      "target": "Application p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p3",
+      "target": "A_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Accepted",
+      "target": "Application p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p4",
+      "target": "A_Complete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Complete",
+      "target": "Application p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p5",
+      "target": "Application tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau1",
+      "target": "Application p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p5",
+      "target": "Application tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau3",
+      "target": "Application p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau2",
+      "target": "Application p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p8",
+      "target": "Application tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p7",
+      "target": "A_Validating",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Validating",
+      "target": "Application p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p9",
+      "target": "Application tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau4",
+      "target": "Application p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p9",
+      "target": "A_Incomplete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Incomplete",
+      "target": "Application p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p8",
+      "target": "Application tau5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau5",
+      "target": "Application p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p6",
+      "target": "A_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Cancelled",
+      "target": "Application p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p6",
+      "target": "A_Denied",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Denied",
+      "target": "Application p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p6",
+      "target": "A_Pending",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Pending",
+      "target": "Application p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "Case_R tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau0",
+      "target": "Case_R p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "Case_R tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau2",
+      "target": "Case_R p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau1",
+      "target": "Case_R p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p3",
+      "target": "Case_R tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p2",
+      "target": "A_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Accepted",
+      "target": "Case_R p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p3",
+      "target": "Case_R tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau3",
+      "target": "Case_R p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p4",
+      "target": "Case_R tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau4",
+      "target": "Case_R p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p4",
+      "target": "Case_R tau5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau5",
+      "target": "Case_R p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p4",
+      "target": "A_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Cancelled",
+      "target": "Case_R p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p4",
+      "target": "Case_R tau6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau6",
+      "target": "Case_R p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p4",
+      "target": "O_Sent (online only)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (online only)",
+      "target": "Case_R p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau7",
+      "target": "Case_R p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p8",
+      "target": "Case_R tau7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p7",
+      "target": "A_Denied",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Denied",
+      "target": "Case_R p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p9",
+      "target": "O_Refused",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Refused",
+      "target": "Case_R p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p8",
+      "target": "Case_R tau8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau8",
+      "target": "Case_R p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p6",
+      "target": "Case_R tau9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau10",
+      "target": "Case_R p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p10",
+      "target": "Case_R tau11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau11",
+      "target": "Case_R p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p10",
+      "target": "Case_R tau12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau13",
+      "target": "Case_R p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau12",
+      "target": "Case_R p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p13",
+      "target": "Case_R tau13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p12",
+      "target": "A_Pending",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Pending",
+      "target": "Case_R p13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p13",
+      "target": "Case_R tau14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau14",
+      "target": "Case_R p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau9",
+      "target": "Case_R p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p11",
+      "target": "Case_R tau10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p14",
+      "target": "A_Incomplete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Incomplete",
+      "target": "Case_R p15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p15",
+      "target": "Case_R tau15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau15",
+      "target": "Case_R p14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau9",
+      "target": "Case_R p14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p15",
+      "target": "Case_R tau10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p16",
+      "target": "Case_R tau16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau16",
+      "target": "Case_R p17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p16",
+      "target": "Case_R tau17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau18",
+      "target": "Case_R p17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau17",
+      "target": "Case_R p18",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p19",
+      "target": "Case_R tau18",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p18",
+      "target": "O_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Accepted",
+      "target": "Case_R p19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p19",
+      "target": "Case_R tau19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau19",
+      "target": "Case_R p18",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau9",
+      "target": "Case_R p16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p17",
+      "target": "Case_R tau10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p20",
+      "target": "O_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Cancelled",
+      "target": "Case_R p21",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p21",
+      "target": "Case_R tau20",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau20",
+      "target": "Case_R p20",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau9",
+      "target": "Case_R p20",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p21",
+      "target": "Case_R tau10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p5",
+      "target": "Case_R tau21",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau22",
+      "target": "Case_R p22",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau21",
+      "target": "Case_R p23",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p24",
+      "target": "Case_R tau22",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p23",
+      "target": "O_Create Offer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Create Offer",
+      "target": "Case_R p25",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p25",
+      "target": "O_Created",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Created",
+      "target": "Case_R p26",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p23",
+      "target": "O_Sent (mail and online)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (mail and online)",
+      "target": "Case_R p26",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p26",
+      "target": "Case_R tau23",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau23",
+      "target": "Case_R p24",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p26",
+      "target": "A_Complete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Complete",
+      "target": "Case_R p24",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p23",
+      "target": "Case_R tau24",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau24",
+      "target": "Case_R p27",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p27",
+      "target": "A_Create Application",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Create Application",
+      "target": "Case_R p28",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p28",
+      "target": "Case_R tau25",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau25",
+      "target": "Case_R p29",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p28",
+      "target": "A_Submitted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Submitted",
+      "target": "Case_R p29",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p29",
+      "target": "Case_R tau26",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau26",
+      "target": "Case_R p27",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p29",
+      "target": "A_Concept",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Concept",
+      "target": "Case_R p24",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p24",
+      "target": "Case_R tau27",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau27",
+      "target": "Case_R p23",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p5",
+      "target": "Case_R tau28",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau29",
+      "target": "Case_R p22",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p30",
+      "target": "A_Validating",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Validating",
+      "target": "Case_R p31",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p31",
+      "target": "Case_R tau30",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau30",
+      "target": "Case_R p30",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau28",
+      "target": "Case_R p30",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p31",
+      "target": "Case_R tau29",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p32",
+      "target": "O_Returned",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Returned",
+      "target": "Case_R p33",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p33",
+      "target": "Case_R tau31",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau31",
+      "target": "Case_R p32",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R tau28",
+      "target": "Case_R p32",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p33",
+      "target": "Case_R tau29",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p0",
+      "target": "O_Create Offer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Create Offer",
+      "target": "Offer p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p1",
+      "target": "O_Created",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Created",
+      "target": "Offer p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p2",
+      "target": "O_Sent (mail and online)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (mail and online)",
+      "target": "Offer p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p2",
+      "target": "O_Sent (online only)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (online only)",
+      "target": "Offer p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p3",
+      "target": "Offer tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer tau0",
+      "target": "Offer p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p3",
+      "target": "O_Returned",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Returned",
+      "target": "Offer p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p4",
+      "target": "O_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Accepted",
+      "target": "Offer p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p4",
+      "target": "O_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Cancelled",
+      "target": "Offer p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p4",
+      "target": "O_Refused",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Refused",
+      "target": "Offer p5",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "Application p0": 1,
+    "Case_R p0": 1,
+    "Case_R p4": 1,
+    "Offer p0": 1
+  },
+  "final_marking": {
+    "Application p10": 1,
+    "Case_R p1": 1,
+    "Case_R p22": 1,
+    "Offer p5": 1
+  }
+}

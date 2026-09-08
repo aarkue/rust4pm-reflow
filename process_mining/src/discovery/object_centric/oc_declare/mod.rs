@@ -64,6 +64,8 @@ pub struct OCDeclareDiscoveryOptions {
     pub o2o_mode: O2OMode,
     /// Activities to use for the discovery. If this is `None`, all activities of the OCEL are used
     pub acts_to_use: Option<Vec<String>>,
+    /// Object types whose involvements are considered. If this is `None`, all types are used
+    pub types_to_use: Option<HashSet<String>>,
     /// What min/max counts to use for the candidate generation steps
     pub counts_for_generation: (Option<usize>, Option<usize>),
     /// What min/max counts to use for the candidate filtering step (when the arrow type is determined)
@@ -83,6 +85,7 @@ impl Default for OCDeclareDiscoveryOptions {
             noise_threshold: 0.2,
             o2o_mode: O2OMode::None,
             acts_to_use: None,
+            types_to_use: None,
             counts_for_generation: (Some(1), None),
             counts_for_filter: (Some(1), Some(20)),
             reduction: OCDeclareReductionMode::None,
@@ -93,16 +96,32 @@ impl Default for OCDeclareDiscoveryOptions {
 }
 
 /// Discover behavioral OC-DECLARE constraints from the given OCEL
+///
+/// Discovery reads the flow projection, so a tagged log contributes only its flow-tagged
+/// participations. An untagged log is its own flow projection and is read unchanged.
 #[register_binding(name = "discover_oc_declare")]
 pub fn discover_behavior_constraints(
     locel: &SlimLinkedOCEL,
     #[bind(default = Default::default())] options: OCDeclareDiscoveryOptions,
 ) -> Vec<OCDeclareArc> {
-    let act_ob_inv: HashMap<String, HashMap<String, ObjectInvolvementCounts>> =
+    let projected = crate::analysis::object_centric::schema_reduction::flow_projection(locel);
+    let locel = &*projected;
+    let mut act_ob_inv: HashMap<String, HashMap<String, ObjectInvolvementCounts>> =
         get_activity_object_involvements(locel);
-    let ob_ob_inv: HashMap<String, HashMap<String, ObjectInvolvementCounts>> =
+    let mut ob_ob_inv: HashMap<String, HashMap<String, ObjectInvolvementCounts>> =
         get_object_to_object_involvements(locel);
-    let ob_ob_rev_inv = get_rev_object_to_object_involvements(locel);
+    let mut ob_ob_rev_inv = get_rev_object_to_object_involvements(locel);
+    if let Some(types) = &options.types_to_use {
+        for m in act_ob_inv.values_mut() {
+            m.retain(|t, _| types.contains(t));
+        }
+        for m in [&mut ob_ob_inv, &mut ob_ob_rev_inv] {
+            m.retain(|t, _| types.contains(t));
+            for inner in m.values_mut() {
+                inner.retain(|t, _| types.contains(t));
+            }
+        }
+    }
     // Built once, shared by every check below
     let index = E2ORevByTypeIndex::build(locel);
     let direction = OCDeclareArcType::AS;
@@ -810,6 +829,7 @@ fn compose_arc_labels(l1: &OCDeclareArcLabel, l2: &OCDeclareArcLabel) -> OCDecla
 ///
 /// BFSs from every target activity through non-target intermediaries, composing
 /// arc types and labels along the way.
+#[register_binding(name = "project_oc_declare_arcs")]
 pub fn project_oc_arcs(
     arcs: Vec<OCDeclareArc>,
     activities: &HashSet<String>,

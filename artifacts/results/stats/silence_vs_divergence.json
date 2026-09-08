@@ -1,0 +1,273 @@
+{
+  "per_log": [
+    {
+      "both": 9,
+      "cells": 39,
+      "divergent_only": 0,
+      "divergent_only_cells": [],
+      "log": "01_o2c.xml",
+      "neither": 26,
+      "silent_only": 4,
+      "silent_only_cells": [
+        [
+          "Handle Payment Discrepancy",
+          "Dispute"
+        ],
+        [
+          "Issue Credit Note",
+          "CreditNote"
+        ],
+        [
+          "Pick Items",
+          "Product"
+        ],
+        [
+          "Update Inventory",
+          "Product"
+        ]
+      ]
+    },
+    {
+      "both": 5,
+      "cells": 23,
+      "divergent_only": 10,
+      "divergent_only_cells": [
+        [
+          "Create PO",
+          "Purchase Order"
+        ],
+        [
+          "Create PO (Batch)",
+          "Purchase Order"
+        ],
+        [
+          "Make Payment",
+          "Invoice"
+        ],
+        [
+          "Make Payment",
+          "Supplier"
+        ],
+        [
+          "Receive Goods",
+          "Goods Receipt"
+        ],
+        [
+          "Receive Goods",
+          "Purchase Order"
+        ],
+        [
+          "Receive Invoice",
+          "Purchase Order"
+        ],
+        [
+          "Send PO to Supplier",
+          "Purchase Order"
+        ],
+        [
+          "Send PO to Supplier",
+          "Supplier"
+        ],
+        [
+          "Three-way Match - Successful",
+          "Purchase Order"
+        ]
+      ],
+      "log": "02_p2p.xml",
+      "neither": 8,
+      "silent_only": 0,
+      "silent_only_cells": []
+    },
+    {
+      "both": 5,
+      "cells": 38,
+      "divergent_only": 9,
+      "divergent_only_cells": [
+        [
+          "Conduct Initial Interview",
+          "Recruiter"
+        ],
+        [
+          "Create Job Requisition",
+          "HiringManager"
+        ],
+        [
+          "Evaluate Interview",
+          "HiringManager"
+        ],
+        [
+          "Post Job Opening",
+          "Recruiter"
+        ],
+        [
+          "Prepare Offer Letter",
+          "HiringManager"
+        ],
+        [
+          "Review Assessment",
+          "HiringManager"
+        ],
+        [
+          "Schedule Initial Interview",
+          "Recruiter"
+        ],
+        [
+          "Screen Resume",
+          "Recruiter"
+        ],
+        [
+          "Submit Application",
+          "JobRequisition"
+        ]
+      ],
+      "log": "03_hiring.xml",
+      "neither": 24,
+      "silent_only": 0,
+      "silent_only_cells": []
+    },
+    {
+      "both": 9,
+      "cells": 18,
+      "divergent_only": 0,
+      "divergent_only_cells": [],
+      "log": "04_hospital.xml",
+      "neither": 9,
+      "silent_only": 0,
+      "silent_only_cells": []
+    },
+    {
+      "both": 1,
+      "cells": 22,
+      "divergent_only": 5,
+      "divergent_only_cells": [
+        [
+          "Approve Purchase Order",
+          "quotation"
+        ],
+        [
+          "Create Goods Receipt",
+          "purchase_order"
+        ],
+        [
+          "Create Invoice Receipt",
+          "invoice receipt"
+        ],
+        [
+          "Create Purchase Order",
+          "quotation"
+        ],
+        [
+          "Perform Two-Way Match",
+          "invoice receipt"
+        ]
+      ],
+      "log": "ocel2-p2p-updated.xml",
+      "neither": 15,
+      "silent_only": 1,
+      "silent_only_cells": [
+        [
+          "Execute Payment",
+          "payment"
+        ]
+      ]
+    },
+    {
+      "both": 6,
+      "cells": 29,
+      "divergent_only": 6,
+      "divergent_only_cells": [
+        [
+          "Book Vehicles",
+          "Vehicle"
+        ],
+        [
+          "Depart",
+          "Transport Document"
+        ],
+        [
+          "Load Truck",
+          "Container"
+        ],
+        [
+          "Load to Vehicle",
+          "Vehicle"
+        ],
+        [
+          "Reschedule Container",
+          "Transport Document"
+        ],
+        [
+          "Reschedule Container",
+          "Vehicle"
+        ]
+      ],
+      "log": "ContainerLogistics.xml",
+      "neither": 17,
+      "silent_only": 0,
+      "silent_only_cells": []
+    },
+    {
+      "both": 21,
+      "cells": 40,
+      "divergent_only": 0,
+      "divergent_only_cells": [],
+      "log": "socel2_hinge.xml",
+      "neither": 15,
+      "silent_only": 4,
+      "silent_only_cells": [
+        [
+          "AssembleHinge",
+          "SteelPin"
+        ],
+        [
+          "MoveParts",
+          "Facility"
+        ],
+        [
+          "MoveParts",
+          "Worker"
+        ],
+        [
+          "PackHinges",
+          "HingePack"
+        ]
+      ]
+    },
+    {
+      "both": 21,
+      "cells": 40,
+      "divergent_only": 0,
+      "divergent_only_cells": [],
+      "log": "order-management.xml",
+      "neither": 19,
+      "silent_only": 0,
+      "silent_only_cells": []
+    },
+    {
+      "both": 18,
+      "cells": 36,
+      "divergent_only": 2,
+      "divergent_only_cells": [
+        [
+          "A_Incomplete",
+          "Application"
+        ],
+        [
+          "A_Validating",
+          "Application"
+        ]
+      ],
+      "log": "bpic2017-no-W.xml",
+      "neither": 16,
+      "silent_only": 0,
+      "silent_only_cells": []
+    }
+  ],
+  "total": {
+    "both": 95,
+    "cells": 285,
+    "divergent_only": 32,
+    "neither": 149,
+    "silent_only": 9
+  }
+}

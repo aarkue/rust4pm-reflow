@@ -1,0 +1,447 @@
+{
+  "log": "bpic2017-no-W.xml",
+  "path": "logs/bpic2017-no-W.xml",
+  "events": 433444,
+  "objects": 106162,
+  "participations": 866888,
+  "activities": [
+    "A_Accepted",
+    "A_Cancelled",
+    "A_Complete",
+    "A_Concept",
+    "A_Create Application",
+    "A_Denied",
+    "A_Incomplete",
+    "A_Pending",
+    "A_Submitted",
+    "A_Validating",
+    "O_Accepted",
+    "O_Cancelled",
+    "O_Create Offer",
+    "O_Created",
+    "O_Refused",
+    "O_Returned",
+    "O_Sent (mail and online)",
+    "O_Sent (online only)"
+  ],
+  "cells": 36,
+  "types": {
+    "Application": {
+      "objects": 31509,
+      "object_share": 0.422101,
+      "participations": 239595,
+      "activities": 10,
+      "df_pairs": 18,
+      "scores": null
+    },
+    "Case_R": {
+      "objects": 144,
+      "object_share": 0.001929,
+      "participations": 433444,
+      "activities": 18,
+      "df_pairs": 170,
+      "scores": null
+    },
+    "Offer": {
+      "objects": 42995,
+      "object_share": 0.57597,
+      "participations": 193849,
+      "activities": 8,
+      "df_pairs": 14,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "A_Accepted\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31509
+    },
+    "A_Accepted\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31509
+    },
+    "A_Cancelled\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 10431
+    },
+    "A_Cancelled\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 10431
+    },
+    "A_Complete\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31362
+    },
+    "A_Complete\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31362
+    },
+    "A_Concept\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31509
+    },
+    "A_Concept\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31509
+    },
+    "A_Create Application\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31509
+    },
+    "A_Create Application\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 31509
+    },
+    "A_Denied\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 3753
+    },
+    "A_Denied\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 3753
+    },
+    "A_Incomplete\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 23055
+    },
+    "A_Incomplete\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 23055
+    },
+    "A_Pending\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 17228
+    },
+    "A_Pending\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 17228
+    },
+    "A_Submitted\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 20423
+    },
+    "A_Submitted\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 20423
+    },
+    "A_Validating\tApplication": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 38816
+    },
+    "A_Validating\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 38816
+    },
+    "O_Accepted\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 17228
+    },
+    "O_Accepted\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 17228
+    },
+    "O_Cancelled\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 20898
+    },
+    "O_Cancelled\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 20898
+    },
+    "O_Create Offer\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 42995
+    },
+    "O_Create Offer\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 42995
+    },
+    "O_Created\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 42995
+    },
+    "O_Created\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 42995
+    },
+    "O_Refused\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 4695
+    },
+    "O_Refused\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 4695
+    },
+    "O_Returned\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 23305
+    },
+    "O_Returned\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 23305
+    },
+    "O_Sent (mail and online)\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 39707
+    },
+    "O_Sent (mail and online)\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 39707
+    },
+    "O_Sent (online only)\tCase_R": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2026
+    },
+    "O_Sent (online only)\tOffer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2026
+    }
+  },
+  "divergence": {
+    "A_Accepted": [
+      "Case_R"
+    ],
+    "A_Cancelled": [
+      "Case_R"
+    ],
+    "A_Complete": [
+      "Case_R"
+    ],
+    "A_Concept": [
+      "Case_R"
+    ],
+    "A_Create Application": [
+      "Case_R"
+    ],
+    "A_Denied": [
+      "Case_R"
+    ],
+    "A_Incomplete": [
+      "Application",
+      "Case_R"
+    ],
+    "A_Pending": [
+      "Case_R"
+    ],
+    "A_Submitted": [
+      "Case_R"
+    ],
+    "A_Validating": [
+      "Application",
+      "Case_R"
+    ],
+    "O_Accepted": [
+      "Case_R"
+    ],
+    "O_Cancelled": [
+      "Case_R"
+    ],
+    "O_Create Offer": [
+      "Case_R"
+    ],
+    "O_Created": [
+      "Case_R"
+    ],
+    "O_Refused": [
+      "Case_R"
+    ],
+    "O_Returned": [
+      "Case_R"
+    ],
+    "O_Sent (mail and online)": [
+      "Case_R"
+    ],
+    "O_Sent (online only)": [
+      "Case_R"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 177,
+    "df2": 30,
+    "df2_dropped": [
+      "A_Accepted -> A_Concept",
+      "A_Accepted -> A_Create Application",
+      "A_Accepted -> A_Incomplete",
+      "A_Accepted -> A_Validating",
+      "A_Accepted -> O_Accepted",
+      "A_Accepted -> O_Cancelled",
+      "A_Accepted -> O_Create Offer",
+      "A_Accepted -> O_Returned",
+      "A_Accepted -> O_Sent (mail and online)",
+      "A_Cancelled -> A_Accepted",
+      "A_Cancelled -> A_Concept",
+      "A_Cancelled -> A_Create Application",
+      "A_Cancelled -> A_Denied",
+      "A_Cancelled -> A_Incomplete",
+      "A_Cancelled -> A_Validating",
+      "A_Cancelled -> O_Cancelled",
+      "A_Cancelled -> O_Create Offer",
+      "A_Cancelled -> O_Sent (mail and online)",
+      "A_Complete -> A_Accepted",
+      "A_Complete -> A_Concept",
+      "A_Complete -> A_Create Application",
+      "A_Complete -> A_Incomplete",
+      "A_Complete -> O_Accepted",
+      "A_Complete -> O_Cancelled",
+      "A_Complete -> O_Create Offer",
+      "A_Complete -> O_Sent (mail and online)",
+      "A_Complete -> O_Sent (online only)",
+      "A_Concept -> A_Cancelled",
+      "A_Concept -> A_Create Application",
+      "A_Concept -> A_Denied",
+      "A_Concept -> A_Incomplete",
+      "A_Concept -> A_Submitted",
+      "A_Concept -> A_Validating",
+      "A_Concept -> O_Accepted",
+      "A_Concept -> O_Cancelled",
+      "A_Concept -> O_Create Offer",
+      "A_Concept -> O_Sent (mail and online)",
+      "A_Concept -> O_Sent (online only)",
+      "A_Create Application -> A_Cancelled",
+      "A_Denied -> A_Accepted",
+      "A_Denied -> A_Concept",
+      "A_Denied -> A_Create Application",
+      "A_Denied -> A_Incomplete",
+      "A_Denied -> A_Validating",
+      "A_Denied -> O_Cancelled",
+      "A_Denied -> O_Create Offer",
+      "A_Denied -> O_Refused",
+      "A_Incomplete -> A_Accepted",
+      "A_Incomplete -> A_Concept",
+      "A_Incomplete -> A_Create Application",
+      "A_Incomplete -> A_Validating",
+      "A_Incomplete -> O_Accepted",
+      "A_Incomplete -> O_Cancelled",
+      "A_Incomplete -> O_Create Offer",
+      "A_Incomplete -> O_Returned",
+      "A_Incomplete -> O_Sent (mail and online)",
+      "A_Incomplete -> O_Sent (online only)",
+      "A_Pending -> A_Accepted",
+      "A_Pending -> A_Cancelled",
+      "A_Pending -> A_Concept",
+      "A_Pending -> A_Create Application",
+      "A_Pending -> A_Denied",
+      "A_Pending -> A_Incomplete",
+      "A_Pending -> A_Validating",
+      "A_Pending -> O_Accepted",
+      "A_Pending -> O_Cancelled",
+      "A_Pending -> O_Create Offer",
+      "A_Pending -> O_Returned",
+      "A_Pending -> O_Sent (mail and online)",
+      "A_Submitted -> A_Cancelled",
+      "A_Submitted -> A_Create Application",
+      "A_Validating -> A_Accepted",
+      "A_Validating -> A_Concept",
+      "A_Validating -> A_Create Application",
+      "A_Validating -> A_Incomplete",
+      "A_Validating -> O_Accepted",
+      "A_Validating -> O_Cancelled",
+      "A_Validating -> O_Create Offer",
+      "A_Validating -> O_Returned",
+      "A_Validating -> O_Sent (mail and online)",
+      "A_Validating -> O_Sent (online only)",
+      "O_Accepted -> A_Pending",
+      "O_Cancelled -> A_Accepted",
+      "O_Cancelled -> A_Cancelled",
+      "O_Cancelled -> A_Concept",
+      "O_Cancelled -> A_Create Application",
+      "O_Cancelled -> A_Denied",
+      "O_Cancelled -> A_Incomplete",
+      "O_Cancelled -> A_Submitted",
+      "O_Cancelled -> A_Validating",
+      "O_Cancelled -> O_Accepted",
+      "O_Cancelled -> O_Create Offer",
+      "O_Cancelled -> O_Returned",
+      "O_Cancelled -> O_Sent (mail and online)",
+      "O_Cancelled -> O_Sent (online only)",
+      "O_Created -> A_Accepted",
+      "O_Created -> A_Cancelled",
+      "O_Created -> A_Complete",
+      "O_Created -> A_Concept",
+      "O_Created -> A_Create Application",
+      "O_Created -> A_Denied",
+      "O_Created -> A_Incomplete",
+      "O_Created -> A_Validating",
+      "O_Created -> O_Accepted",
+      "O_Created -> O_Create Offer",
+      "O_Created -> O_Returned",
+      "O_Refused -> A_Accepted",
+      "O_Refused -> A_Cancelled",
+      "O_Refused -> A_Concept",
+      "O_Refused -> A_Create Application",
+      "O_Refused -> A_Denied",
+      "O_Refused -> A_Incomplete",
+      "O_Refused -> A_Validating",
+      "O_Refused -> O_Accepted",
+      "O_Refused -> O_Cancelled",
+      "O_Refused -> O_Create Offer",
+      "O_Refused -> O_Returned",
+      "O_Refused -> O_Sent (mail and online)",
+      "O_Returned -> A_Accepted",
+      "O_Returned -> A_Cancelled",
+      "O_Returned -> A_Concept",
+      "O_Returned -> A_Create Application",
+      "O_Returned -> A_Denied",
+      "O_Returned -> A_Incomplete",
+      "O_Returned -> A_Validating",
+      "O_Returned -> O_Create Offer",
+      "O_Sent (mail and online) -> A_Accepted",
+      "O_Sent (mail and online) -> A_Cancelled",
+      "O_Sent (mail and online) -> A_Complete",
+      "O_Sent (mail and online) -> A_Concept",
+      "O_Sent (mail and online) -> A_Create Application",
+      "O_Sent (mail and online) -> A_Denied",
+      "O_Sent (mail and online) -> A_Incomplete",
+      "O_Sent (mail and online) -> A_Validating",
+      "O_Sent (mail and online) -> O_Accepted",
+      "O_Sent (mail and online) -> O_Create Offer",
+      "O_Sent (mail and online) -> O_Sent (online only)",
+      "O_Sent (online only) -> A_Accepted",
+      "O_Sent (online only) -> A_Cancelled",
+      "O_Sent (online only) -> A_Complete",
+      "O_Sent (online only) -> A_Concept",
+      "O_Sent (online only) -> A_Create Application",
+      "O_Sent (online only) -> A_Denied",
+      "O_Sent (online only) -> A_Incomplete",
+      "O_Sent (online only) -> A_Validating",
+      "O_Sent (online only) -> O_Create Offer",
+      "O_Sent (online only) -> O_Sent (mail and online)"
+    ]
+  }
+}

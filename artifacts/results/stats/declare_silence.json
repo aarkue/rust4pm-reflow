@@ -1,0 +1,3681 @@
+{
+  "logs": [
+    {
+      "cells": [
+        {
+          "activity": "Issue Credit Note",
+          "templates": [],
+          "type": "CreditNote",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Approve Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Handle Payment Discrepancy",
+          "templates": [
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Issue Payment Reminder",
+          "templates": [
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Perform Credit Check",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Process Return Request",
+          "templates": [
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Receive Customer Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Reject Order",
+          "templates": [
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Send Invoice to Customer",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Customer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Handle Payment Discrepancy",
+          "templates": [],
+          "type": "Dispute",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Apply Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Generate Invoice",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Handle Payment Discrepancy",
+          "templates": [
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Issue Payment Reminder",
+          "templates": [
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Receive Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Send Invoice to Customer",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Apply Discount",
+          "templates": [
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Approve Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Generate Invoice",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Generate Pick List",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Generate Shipping Label",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Pack Items",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Perform Credit Check",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Process Return Request",
+          "templates": [
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Receive Customer Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Reject Order",
+          "templates": [
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Schedule Order Fulfillment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Ship Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Validate Customer Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Apply Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Payment",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Receive Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Payment",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Generate Pick List",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Product",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Pick Items",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Product",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Update Inventory",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Product",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Approve Return",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Return",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Issue Credit Note",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Return",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Process Return Request",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Return",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Generate Shipping Label",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Shipment",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Ship Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Shipment",
+          "verdict": "asserting"
+        }
+      ],
+      "declare_seconds": 0.128675936,
+      "declare_seconds_by_type": [
+        [
+          "CreditNote",
+          0.010040824
+        ],
+        [
+          "Customer",
+          0.013651277
+        ],
+        [
+          "Dispute",
+          0.00866404
+        ],
+        [
+          "Invoice",
+          0.01046993
+        ],
+        [
+          "Order",
+          0.037107525
+        ],
+        [
+          "Payment",
+          0.009526512
+        ],
+        [
+          "Product",
+          0.018080273
+        ],
+        [
+          "Return",
+          0.009552912
+        ],
+        [
+          "Shipment",
+          0.011405875
+        ]
+      ],
+      "disagreements": [
+        {
+          "activity": "Approve Order",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Approve Order",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Approve Order",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Approve Order",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Approve Order",
+                "Send Invoice to Customer"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Approve Order"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Approve Order"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Handle Payment Discrepancy",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Approve Order",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Invoice to Customer",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Issue Payment Reminder",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Approve Order",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Invoice to Customer",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Perform Credit Check",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Approve Order"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Reject Order"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Send Invoice to Customer"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Perform Credit Check"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Process Return Request",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Approve Order",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Invoice to Customer",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Receive Customer Order",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Approve Order"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Perform Credit Check"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Reject Order"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Send Invoice to Customer"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Reject Order",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Reject Order"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Reject Order"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Send Invoice to Customer",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Approve Order",
+                "Send Invoice to Customer"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Perform Credit Check",
+                "Send Invoice to Customer"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Customer Order",
+                "Send Invoice to Customer"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Invoice to Customer",
+                "Handle Payment Discrepancy"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Invoice to Customer",
+                "Issue Payment Reminder"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Invoice to Customer",
+                "Process Return Request"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Customer"
+        },
+        {
+          "activity": "Generate Pick List",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Generate Pick List",
+                "Pick Items"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Generate Pick List",
+                "Update Inventory"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Product"
+        },
+        {
+          "activity": "Pick Items",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Generate Pick List",
+                "Pick Items"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Pick Items",
+                "Update Inventory"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Product"
+        },
+        {
+          "activity": "Update Inventory",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Generate Pick List",
+                "Update Inventory"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Pick Items",
+                "Update Inventory"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Product"
+        }
+      ],
+      "log": "01_o2c"
+    },
+    {
+      "cells": [
+        {
+          "activity": "Receive Goods",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Goods Receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Three-way Match - Mismatch Found",
+          "templates": [
+            "EP"
+          ],
+          "type": "Goods Receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Three-way Match - Successful",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Goods Receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Make Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Receive Invoice",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Three-way Match - Mismatch Found",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Three-way Match - Successful",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Invoice",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Make Payment",
+          "templates": [],
+          "type": "Payment",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Approve PO",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create PO",
+          "templates": [
+            "EF"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create PO (Batch)",
+          "templates": [
+            "EF"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Receive Goods",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Receive Invoice",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Send PO to Supplier",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Three-way Match - Mismatch Found",
+          "templates": [
+            "EP"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Three-way Match - Successful",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Approve PR",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create PO",
+          "templates": [
+            "EP"
+          ],
+          "type": "Purchase Requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create PO (Batch)",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create PR",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Purchase Requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Reject PR",
+          "templates": [
+            "EP"
+          ],
+          "type": "Purchase Requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Make Payment",
+          "templates": [],
+          "type": "Supplier",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Send PO to Supplier",
+          "templates": [],
+          "type": "Supplier",
+          "verdict": "neutral"
+        }
+      ],
+      "declare_seconds": 0.028592736,
+      "declare_seconds_by_type": [
+        [
+          "Goods Receipt",
+          0.004954762
+        ],
+        [
+          "Invoice",
+          0.004322696
+        ],
+        [
+          "Payment",
+          0.005254171
+        ],
+        [
+          "Purchase Order",
+          0.006267431
+        ],
+        [
+          "Purchase Requisition",
+          0.003944575
+        ],
+        [
+          "Supplier",
+          0.003771648
+        ]
+      ],
+      "disagreements": [
+        {
+          "activity": "Three-way Match - Successful",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Receive Goods",
+                "Three-way Match - Successful"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Goods Receipt"
+        },
+        {
+          "activity": "Receive Invoice",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Receive Invoice",
+                "Make Payment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Invoice",
+                "Three-way Match - Mismatch Found"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Receive Invoice",
+                "Three-way Match - Successful"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Invoice"
+        },
+        {
+          "activity": "Three-way Match - Successful",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Receive Invoice",
+                "Three-way Match - Successful"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Three-way Match - Successful",
+                "Make Payment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Invoice"
+        },
+        {
+          "activity": "Create PO (Batch)",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Approve PR",
+                "Create PO (Batch)"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Create PR",
+                "Create PO (Batch)"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Purchase Requisition"
+        },
+        {
+          "activity": "Make Payment",
+          "direction": "log orders, OC-DECLARE does not",
+          "pairs": [
+            {
+              "pair": [
+                "Send PO to Supplier",
+                "Make Payment"
+              ],
+              "templates": []
+            }
+          ],
+          "type": "Supplier"
+        },
+        {
+          "activity": "Send PO to Supplier",
+          "direction": "log orders, OC-DECLARE does not",
+          "pairs": [
+            {
+              "pair": [
+                "Send PO to Supplier",
+                "Make Payment"
+              ],
+              "templates": []
+            }
+          ],
+          "type": "Supplier"
+        }
+      ],
+      "log": "02_p2p"
+    },
+    {
+      "cells": [
+        {
+          "activity": "Complete Assessment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Assessment",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Review Assessment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Assessment",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Send Assessment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Assessment",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Attend Orientation Training",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Candidate Accept Offer",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Candidate Reject Offer",
+          "templates": [
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Complete Assessment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Complete Background Check",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Complete HR Paperwork",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Complete Onboarding",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Conduct Initial Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Conduct Panel Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Evaluate Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Initiate Background Check",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Prepare Offer Letter",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Review Assessment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Schedule Initial Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Schedule Panel Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Screen Resume",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Send Assessment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Send Offer Letter",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Send Rejection Letter",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Start Onboarding",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Submit Application",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Candidate",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Job Requisition",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "HiringManager",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Evaluate Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "HiringManager",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Prepare Offer Letter",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "HiringManager",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Review Assessment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "HiringManager",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Conduct Panel Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Interviewer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Schedule Panel Interview",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Interviewer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Approve Job Requisition",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "JobRequisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Job Requisition",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "JobRequisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Post Job Opening",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "JobRequisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Submit Application",
+          "templates": [
+            "EP"
+          ],
+          "type": "JobRequisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Conduct Initial Interview",
+          "templates": [
+            "EP"
+          ],
+          "type": "Recruiter",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Post Job Opening",
+          "templates": [
+            "EP"
+          ],
+          "type": "Recruiter",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Schedule Initial Interview",
+          "templates": [
+            "EP"
+          ],
+          "type": "Recruiter",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Screen Resume",
+          "templates": [
+            "EP"
+          ],
+          "type": "Recruiter",
+          "verdict": "asserting"
+        }
+      ],
+      "declare_seconds": 0.062918126,
+      "declare_seconds_by_type": [
+        [
+          "Assessment",
+          0.007154697
+        ],
+        [
+          "Candidate",
+          0.024014141
+        ],
+        [
+          "HiringManager",
+          0.006924499
+        ],
+        [
+          "Interviewer",
+          0.005364591
+        ],
+        [
+          "JobRequisition",
+          0.010583282
+        ],
+        [
+          "Recruiter",
+          0.008670605
+        ]
+      ],
+      "disagreements": [
+        {
+          "activity": "Complete Assessment",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Complete Assessment",
+                "Review Assessment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Assessment",
+                "Complete Assessment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Assessment"
+        },
+        {
+          "activity": "Review Assessment",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Complete Assessment",
+                "Review Assessment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Assessment",
+                "Review Assessment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Assessment"
+        },
+        {
+          "activity": "Send Assessment",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Send Assessment",
+                "Complete Assessment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Send Assessment",
+                "Review Assessment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Assessment"
+        },
+        {
+          "activity": "Conduct Panel Interview",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Schedule Panel Interview",
+                "Conduct Panel Interview"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Interviewer"
+        },
+        {
+          "activity": "Schedule Panel Interview",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Schedule Panel Interview",
+                "Conduct Panel Interview"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Interviewer"
+        }
+      ],
+      "log": "03_hiring"
+    },
+    {
+      "cells": [
+        {
+          "activity": "Assign Bed",
+          "templates": [],
+          "type": "Bed",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Perform Diagnostic Test",
+          "templates": [],
+          "type": "DiagnosticEquipment",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Insurance Verification",
+          "templates": [],
+          "type": "InsuranceCompany",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Perform Diagnostic Test",
+          "templates": [],
+          "type": "LabTechnician",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Initial Evaluation",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Nurse",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Registration",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Nurse",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Appointment Scheduling",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Assign Bed",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Diagnostic Test Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Initial Evaluation",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Insurance Verification",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Patient Arrival",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Perform Diagnostic Test",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Pre-Admission Consultation",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Registration",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Patient",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Diagnostic Test Order",
+          "templates": [],
+          "type": "Physician",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Pre-Admission Consultation",
+          "templates": [],
+          "type": "Physician",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Assign Bed",
+          "templates": [],
+          "type": "Room",
+          "verdict": "neutral"
+        }
+      ],
+      "declare_seconds": 0.050637767,
+      "declare_seconds_by_type": [
+        [
+          "Bed",
+          0.004361738
+        ],
+        [
+          "DiagnosticEquipment",
+          0.003723247
+        ],
+        [
+          "InsuranceCompany",
+          0.003813761
+        ],
+        [
+          "LabTechnician",
+          0.004213464
+        ],
+        [
+          "Nurse",
+          0.005424584
+        ],
+        [
+          "Patient",
+          0.018227917
+        ],
+        [
+          "Physician",
+          0.00431648
+        ],
+        [
+          "Room",
+          0.006437215
+        ]
+      ],
+      "disagreements": [
+        {
+          "activity": "Initial Evaluation",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Initial Evaluation",
+                "Registration"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Registration",
+                "Initial Evaluation"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Nurse"
+        },
+        {
+          "activity": "Registration",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Initial Evaluation",
+                "Registration"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Registration",
+                "Initial Evaluation"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "Nurse"
+        },
+        {
+          "activity": "Diagnostic Test Order",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Physician"
+        },
+        {
+          "activity": "Pre-Admission Consultation",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Physician"
+        }
+      ],
+      "log": "04_hospital"
+    },
+    {
+      "cells": [
+        {
+          "activity": "Create Goods Receipt",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "goods receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Invoice Receipt",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "goods receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Execute Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "goods receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Perform Two-Way Match",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "goods receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Invoice Receipt",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "invoice receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Execute Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "invoice receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Perform Two-Way Match",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "invoice receipt",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Approve Purchase Requisition",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "material",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Purchase Requisition",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "material",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Delegate Purchase Requisition Approval",
+          "templates": [
+            "EP"
+          ],
+          "type": "material",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Execute Payment",
+          "templates": [],
+          "type": "payment",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Approve Purchase Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "purchase_order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Goods Receipt",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "purchase_order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Purchase Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "purchase_order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Execute Payment",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "purchase_order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Approve Purchase Requisition",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "purchase_requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Purchase Requisition",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "purchase_requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Request for Quotation",
+          "templates": [
+            "EF"
+          ],
+          "type": "purchase_requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Delegate Purchase Requisition Approval",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "purchase_requisition",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Approve Purchase Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "quotation",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Purchase Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "quotation",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Request for Quotation",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "quotation",
+          "verdict": "asserting"
+        }
+      ],
+      "declare_seconds": 0.087066713,
+      "declare_seconds_by_type": [
+        [
+          "goods receipt",
+          0.016481183
+        ],
+        [
+          "invoice receipt",
+          0.013170559
+        ],
+        [
+          "material",
+          0.01148298
+        ],
+        [
+          "payment",
+          0.01102021
+        ],
+        [
+          "purchase_order",
+          0.013593938
+        ],
+        [
+          "purchase_requisition",
+          0.009563598
+        ],
+        [
+          "quotation",
+          0.01166813
+        ]
+      ],
+      "disagreements": [
+        {
+          "activity": "Create Goods Receipt",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "Create Goods Receipt",
+                "Create Invoice Receipt"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Create Goods Receipt",
+                "Execute Payment"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "Create Goods Receipt",
+                "Perform Two-Way Match"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "goods receipt"
+        }
+      ],
+      "log": "ocel2-p2p-updated"
+    },
+    {
+      "cells": [
+        {
+          "activity": "Bring to Loading Bay",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Depart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Drive to Terminal",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Load Truck",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Load to Vehicle",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Order Empty Containers",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Pick Up Empty Container",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Place in Stock",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Reschedule Container",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Weigh",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Container",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Transport Document",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Customer Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Register Customer Order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Customer Order",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Bring to Loading Bay",
+          "templates": [],
+          "type": "Forklift",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Load to Vehicle",
+          "templates": [],
+          "type": "Forklift",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Place in Stock",
+          "templates": [],
+          "type": "Forklift",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Weigh",
+          "templates": [],
+          "type": "Forklift",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Collect Goods",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Handling Unit",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Load Truck",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Handling Unit",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Book Vehicles",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Transport Document",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Create Transport Document",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Transport Document",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Depart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Transport Document",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Order Empty Containers",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Transport Document",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Reschedule Container",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Transport Document",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Drive to Terminal",
+          "templates": [],
+          "type": "Truck",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Load Truck",
+          "templates": [],
+          "type": "Truck",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "Book Vehicles",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Vehicle",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Depart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Vehicle",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Load to Vehicle",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Vehicle",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "Reschedule Container",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Vehicle",
+          "verdict": "asserting"
+        }
+      ],
+      "declare_seconds": 0.147247194,
+      "declare_seconds_by_type": [
+        [
+          "Container",
+          0.045004846
+        ],
+        [
+          "Customer Order",
+          0.016150693
+        ],
+        [
+          "Forklift",
+          0.01688305
+        ],
+        [
+          "Handling Unit",
+          0.018509728
+        ],
+        [
+          "Transport Document",
+          0.015026526
+        ],
+        [
+          "Truck",
+          0.018293359
+        ],
+        [
+          "Vehicle",
+          0.017217172
+        ]
+      ],
+      "disagreements": [],
+      "log": "ContainerLogistics"
+    },
+    {
+      "cells": [
+        {
+          "activity": "MoveParts",
+          "templates": [],
+          "type": "Facility",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "AssembleHinge",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "FemalePart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CheckFemalePart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "FemalePart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CuttFemalePart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "FemalePart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CoatPart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "FormedPart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CuttFemalePart",
+          "templates": [
+            "EP"
+          ],
+          "type": "FormedPart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CuttMalePart",
+          "templates": [
+            "EP"
+          ],
+          "type": "FormedPart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "FormSteelSheet",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "FormedPart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "AssembleHinge",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Hinge",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "PackHinges",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Hinge",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "PackHinges",
+          "templates": [],
+          "type": "HingePack",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "AssembleHinge",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CoatPart",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CuttFemalePart",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CuttMalePart",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "FormSteelSheet",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "HeatSteelSheet",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "PackHinges",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "SplitSteelSheet",
+          "templates": [],
+          "type": "Machine",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "AssembleHinge",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "MalePart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CheckMalePart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "MalePart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CuttMalePart",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "MalePart",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "SplitSteelSheet",
+          "templates": [],
+          "type": "SteelCoil",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "AssembleHinge",
+          "templates": [],
+          "type": "SteelPin",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "FormSteelSheet",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "SteelSheet",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "HeatSteelSheet",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "SteelSheet",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "SplitSteelSheet",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "SteelSheet",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "CheckFemalePart",
+          "templates": [],
+          "type": "Worker",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CheckMalePart",
+          "templates": [],
+          "type": "Worker",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "MoveParts",
+          "templates": [],
+          "type": "Worker",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "AssembleHinge",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CheckFemalePart",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CheckMalePart",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CoatPart",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CuttFemalePart",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "CuttMalePart",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "FormSteelSheet",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "HeatSteelSheet",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "PackHinges",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "SplitSteelSheet",
+          "templates": [],
+          "type": "Workstation",
+          "verdict": "neutral"
+        }
+      ],
+      "declare_seconds": 0.458364684,
+      "declare_seconds_by_type": [
+        [
+          "Facility",
+          0.030835345
+        ],
+        [
+          "FemalePart",
+          0.035619762
+        ],
+        [
+          "FormedPart",
+          0.03961595
+        ],
+        [
+          "Hinge",
+          0.043224448
+        ],
+        [
+          "HingePack",
+          0.035245133
+        ],
+        [
+          "Machine",
+          0.054503631
+        ],
+        [
+          "MalePart",
+          0.044757677
+        ],
+        [
+          "SteelCoil",
+          0.031671486
+        ],
+        [
+          "SteelPin",
+          0.032106738
+        ],
+        [
+          "SteelSheet",
+          0.042719354
+        ],
+        [
+          "Worker",
+          0.029490547
+        ],
+        [
+          "Workstation",
+          0.038436258
+        ]
+      ],
+      "disagreements": [],
+      "log": "socel2_hinge"
+    },
+    {
+      "cells": [
+        {
+          "activity": "confirm order",
+          "templates": [],
+          "type": "customers",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "place order",
+          "templates": [],
+          "type": "customers",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "confirm order",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "create package",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "failed delivery",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "item out of stock",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "package delivered",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "pick item",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "reorder item",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "send package",
+          "templates": [],
+          "type": "employees",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "confirm order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "create package",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "failed delivery",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "item out of stock",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "package delivered",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "pay order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "payment reminder",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "pick item",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "place order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "reorder item",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "send package",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "items",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "confirm order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "orders",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "pay order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "orders",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "payment reminder",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "orders",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "place order",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "orders",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "create package",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "packages",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "failed delivery",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "packages",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "package delivered",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "packages",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "send package",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "packages",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "confirm order",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "create package",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "products",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "failed delivery",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "item out of stock",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "package delivered",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "products",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "pay order",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "payment reminder",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "pick item",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "place order",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "reorder item",
+          "templates": [],
+          "type": "products",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "send package",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "products",
+          "verdict": "asserting"
+        }
+      ],
+      "declare_seconds": 0.386276237,
+      "declare_seconds_by_type": [
+        [
+          "customers",
+          0.016145665
+        ],
+        [
+          "employees",
+          0.02141576
+        ],
+        [
+          "items",
+          0.062461992
+        ],
+        [
+          "orders",
+          0.019391126
+        ],
+        [
+          "packages",
+          0.016669056
+        ],
+        [
+          "products",
+          0.250070485
+        ]
+      ],
+      "disagreements": [
+        {
+          "activity": "create package",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "create package",
+                "package delivered"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "create package",
+                "send package"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "products"
+        },
+        {
+          "activity": "package delivered",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "create package",
+                "package delivered"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "send package",
+                "package delivered"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "products"
+        },
+        {
+          "activity": "send package",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "create package",
+                "send package"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "send package",
+                "package delivered"
+              ],
+              "templates": [
+                "EF",
+                "EP"
+              ]
+            }
+          ],
+          "type": "products"
+        }
+      ],
+      "log": "order-management"
+    },
+    {
+      "cells": [
+        {
+          "activity": "A_Accepted",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Cancelled",
+          "templates": [
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Complete",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Concept",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Create Application",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Denied",
+          "templates": [
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Incomplete",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Pending",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Submitted",
+          "templates": [
+            "EF"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Validating",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Application",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Accepted",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Cancelled",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Complete",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Concept",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "A_Create Application",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "A_Denied",
+          "templates": [
+            "EP"
+          ],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "A_Incomplete",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "A_Pending",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "A_Submitted",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "A_Validating",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "O_Accepted",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "O_Cancelled",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "O_Create Offer",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Created",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Refused",
+          "templates": [
+            "EP"
+          ],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Returned",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "neutral"
+        },
+        {
+          "activity": "O_Sent (mail and online)",
+          "templates": [],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Sent (online only)",
+          "templates": [
+            "EP"
+          ],
+          "type": "Case_R",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Accepted",
+          "templates": [
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Cancelled",
+          "templates": [
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Create Offer",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Created",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Refused",
+          "templates": [
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Returned",
+          "templates": [
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Sent (mail and online)",
+          "templates": [
+            "EF",
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        },
+        {
+          "activity": "O_Sent (online only)",
+          "templates": [
+            "EP"
+          ],
+          "type": "Offer",
+          "verdict": "asserting"
+        }
+      ],
+      "declare_seconds": 1.446648702,
+      "declare_seconds_by_type": [
+        [
+          "Application",
+          0.437426919
+        ],
+        [
+          "Case_R",
+          0.670583135
+        ],
+        [
+          "Offer",
+          0.33850581
+        ]
+      ],
+      "disagreements": [
+        {
+          "activity": "A_Accepted",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Case_R"
+        },
+        {
+          "activity": "A_Cancelled",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Case_R"
+        },
+        {
+          "activity": "A_Complete",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Case_R"
+        },
+        {
+          "activity": "A_Denied",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "O_Sent (online only)",
+                "A_Denied"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Case_R"
+        },
+        {
+          "activity": "O_Create Offer",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Case_R"
+        },
+        {
+          "activity": "O_Created",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Case_R"
+        },
+        {
+          "activity": "O_Refused",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "O_Sent (online only)",
+                "O_Refused"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Case_R"
+        },
+        {
+          "activity": "O_Sent (mail and online)",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [],
+          "type": "Case_R"
+        },
+        {
+          "activity": "O_Sent (online only)",
+          "direction": "OC-DECLARE orders, log does not",
+          "pairs": [
+            {
+              "pair": [
+                "O_Sent (online only)",
+                "A_Denied"
+              ],
+              "templates": [
+                "EP"
+              ]
+            },
+            {
+              "pair": [
+                "O_Sent (online only)",
+                "O_Refused"
+              ],
+              "templates": [
+                "EP"
+              ]
+            }
+          ],
+          "type": "Case_R"
+        }
+      ],
+      "log": "bpic2017-no-W"
+    }
+  ]
+}

@@ -19,11 +19,14 @@ use uuid::Uuid;
 use crate::{
     core::{
         event_data::object_centric::{
-            appendable::AppendableOCEL,
+            appendable::{is_streaming_format, AppendableOCEL, StreamImportOCEL},
             io::OCELIOError,
-            linked_ocel::LinkedOCELAccess,
-            ocel_json::import_ocel_json_into,
-            ocel_xml::xml_ocel_import::{import_ocel_xml_into, OCELImportOptions},
+            linked_ocel::{LinkedOCELAccess, QueryableOCEL},
+            ocel_xml::xml_ocel_import::OCELImportOptions,
+            query::{
+                eval::{evaluate_par, Handle, QueryResult, Value},
+                Query,
+            },
             readable::{OCELLookup, ReadableOCEL},
             OCELAttributeType, OCELAttributeValue, OCELEvent, OCELEventAttribute, OCELObject,
             OCELObjectAttribute, OCELRelationship, OCELType, OCELTypeAttribute,
@@ -33,6 +36,8 @@ use crate::{
     },
     Exportable, Importable,
 };
+
+use super::slim_query_exec;
 
 /// Interned qualifier identifier. Indexes into [`SlimLinkedOCEL::qualifiers`].
 #[derive(Copy, Clone, Debug, Default, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize)]
@@ -224,6 +229,26 @@ impl EventIndex {
             .into_iter()
             .flat_map(|e| e.relationships.iter().map(|(_q, o)| o))
     }
+    /// Get E2O relationships of this event, each with its qualifier.
+    ///
+    /// [`Self::get_e2o`] discards the qualifier, which is fine while a qualifier is only a
+    /// label. It stops being fine once a convention writes meaning into it: a consumer that
+    /// cannot see the qualifier cannot tell a participation the operator marked from one the
+    /// extraction recorded, and would read the two the same way.
+    ///
+    /// A `(event, object)` pair may appear several times under different qualifiers, so this
+    /// yields one item per relationship and not one per object.
+    pub fn get_e2o_q<'a>(
+        &self,
+        locel: &'a SlimLinkedOCEL,
+    ) -> impl Iterator<Item = (&'a str, &'a ObjectIndex)> + use<'a> {
+        locel
+            .events
+            .get(self.ix())
+            .into_iter()
+            .flat_map(|e| e.relationships.iter())
+            .map(|(q, o)| (locel.qualifier_str(*q), o))
+    }
     /// Get an attribute value of this event, specified by the attribute name
     ///
     /// Returns [`None`] if there is no such attribute.
@@ -243,7 +268,13 @@ impl EventIndex {
     }
     /// Get a mutable reference to the attribute value of this event, specified by the attribute name
     ///
-    /// Returns [`None`] if there is no such attribute.
+    /// Returns [`None`] if the event's type does not declare `attr_name`.
+    ///
+    /// An event's attribute vector is sized when the event is added, so a type that grows a new
+    /// attribute afterwards leaves earlier events of that type short of it. This grows the vector
+    /// to `index + 1`, padding with [`OCELAttributeValue::Null`], rather than reporting a declared
+    /// attribute as absent. Attributes past this one stay absent until they are themselves asked
+    /// for, and [`Self::get_attribute_value`] still answers [`None`] for them.
     pub fn get_attribute_value_mut<'a>(
         &self,
         attr_name: &str,
@@ -255,8 +286,10 @@ impl EventIndex {
             .iter()
             .enumerate()
             .find(|(_i, a)| a.name == attr_name)?;
-        let attr_val = ev.attributes.get_mut(index)?;
-        Some(attr_val)
+        if ev.attributes.len() <= index {
+            ev.attributes.resize(index + 1, OCELAttributeValue::Null);
+        }
+        ev.attributes.get_mut(index)
     }
     /// Get 'fat' version of Event (i.e., with all fields expanded, with a structure similar to the OCEL 2.0 specification)
     pub fn fat_ev(&self, locel: &SlimLinkedOCEL) -> OCELEvent {
@@ -351,6 +384,21 @@ impl ObjectIndex {
             .into_iter()
             .flat_map(|o| &o.relationships)
             .map(|(_q, o)| o)
+    }
+    /// Get O2O relationships of this object, each with its qualifier.
+    ///
+    /// See [`EventIndex::get_e2o_q`]. A `(from, to)` pair may appear under several
+    /// qualifiers, so this yields one item per relationship.
+    pub fn get_o2o_q<'a>(
+        &self,
+        locel: &'a SlimLinkedOCEL,
+    ) -> impl Iterator<Item = (&'a str, &'a ObjectIndex)> + use<'a> {
+        locel
+            .objects
+            .get(self.ix())
+            .into_iter()
+            .flat_map(|o| o.relationships.iter())
+            .map(|(q, t)| (locel.qualifier_str(*q), t))
     }
     /// Get reverse O2O relationships
     pub fn get_o2o_rev<'a>(
@@ -503,8 +551,12 @@ impl ObjectIndex {
             .iter()
             .enumerate()
             .find(|(_i, a)| a.name == attr_name)?;
-        let attr_val = ob.attributes.get_mut(index)?;
-        Some(attr_val)
+        // See `EventIndex::get_attribute_value_mut`: a type that grew an attribute after this
+        // object was added leaves the object's vector short of it.
+        if ob.attributes.len() <= index {
+            ob.attributes.resize_with(index + 1, Vec::new);
+        }
+        ob.attributes.get_mut(index)
     }
 
     fn fat_ob(&self, locel: &SlimLinkedOCEL) -> OCELObject {
@@ -606,6 +658,19 @@ impl SlimLinkedOCEL {
     pub fn new() -> Self {
         Self::default()
     }
+
+    /// Build a `SlimLinkedOCEL` from a `DuckDB` schema database (as written by
+    /// [`stream_ocel_file_to_duckdb`](crate::core::event_data::object_centric::ocel_sql::stream_ocel_file_to_duckdb)).
+    /// Eager, so the whole log is loaded into memory. For out-of-core access use
+    /// `DuckDbLinkedOCEL`.
+    #[cfg(feature = "ocel-duckdb")]
+    pub fn from_duckdb(con: &duckdb::Connection) -> Result<Self, OCELIOError> {
+        use crate::core::event_data::object_centric::ocel_sql::duckdb::schema::reader::DuckDbReadInto;
+        let mut slim = SlimLinkedOCEL::new();
+        slim.read_from_duckdb(con)?;
+        Ok(slim)
+    }
+
     /// Convert an unlinked [`OCEL`] to a [`SlimLinkedOCEL`].
     ///
     /// Events are sorted by time before insertion so that `events_per_type` lists are
@@ -669,6 +734,48 @@ impl SlimLinkedOCEL {
         &self.qualifiers
     }
 
+    /// Native index of a qualifier string, if it occurs in this OCEL's own relationships.
+    /// Lets a query resolve its qualifier once instead of comparing strings per binding.
+    pub(crate) fn qualifier_idx_of(&self, s: &str) -> Option<QualifierIdx> {
+        let h = self.hasher.hash_one(s);
+        self.qualifier_index
+            .find(h, |&j| self.qualifiers[j as usize] == s)
+            .map(|&i| QualifierIdx(i))
+    }
+
+    /// Native index of an event type name, if declared. See [`Self::qualifier_idx_of`].
+    pub(crate) fn ev_type_index(&self, name: &str) -> Option<usize> {
+        self.evtype_to_index.get(name).copied()
+    }
+    /// Native index of an object type name, if declared. See [`Self::qualifier_idx_of`].
+    pub(crate) fn ob_type_index(&self, name: &str) -> Option<usize> {
+        self.obtype_to_index.get(name).copied()
+    }
+    /// Number of declared event types, which is also the width of a native type-filter bitset.
+    pub(crate) fn num_ev_types(&self) -> usize {
+        self.event_types.len()
+    }
+    /// Number of declared object types. See [`Self::num_ev_types`].
+    pub(crate) fn num_ob_types(&self) -> usize {
+        self.object_types.len()
+    }
+    /// Event type name for a native type index (panics if out of range).
+    pub(crate) fn ev_type_name(&self, idx: usize) -> &str {
+        &self.event_types[idx].name
+    }
+    /// Object type name for a native type index (panics if out of range).
+    pub(crate) fn ob_type_name(&self, idx: usize) -> &str {
+        &self.object_types[idx].name
+    }
+    /// All event indices in insertion order, with no `TypeConstraint` filtering.
+    pub(crate) fn all_evs_native(&self) -> impl Iterator<Item = EventIndex> + '_ {
+        (0..self.events.len() as u32).map(EventIndex::from)
+    }
+    /// All object indices in insertion order, with no `TypeConstraint` filtering.
+    pub(crate) fn all_obs_native(&self) -> impl Iterator<Item = ObjectIndex> + '_ {
+        (0..self.objects.len() as u32).map(ObjectIndex::from)
+    }
+
     /// Get all events of the specified event type
     pub fn get_evs_of_type<'a>(&'a self, event_type: &str) -> impl Iterator<Item = &'a EventIndex> {
         self.evtype_to_index
@@ -677,7 +784,10 @@ impl SlimLinkedOCEL {
             .flat_map(|et| &self.events_per_type[*et])
     }
     /// Get all objects of the specified object type
-    fn get_obs_of_type<'a>(&'a self, object_type: &str) -> impl Iterator<Item = &'a ObjectIndex> {
+    pub(crate) fn get_obs_of_type<'a>(
+        &'a self,
+        object_type: &str,
+    ) -> impl Iterator<Item = &'a ObjectIndex> {
         self.obtype_to_index
             .get(object_type)
             .into_iter()
@@ -924,6 +1034,58 @@ impl SlimLinkedOCEL {
         }
         true
     }
+    /// Index of a qualifier string, adding it to the qualifier table if it is new.
+    ///
+    /// The counterpart of [`Self::qualifier_str`]. Needed by anything that rewrites
+    /// qualifiers in bulk, since the replacement has to be interned once rather than once
+    /// per relationship.
+    pub fn intern_qualifier(&mut self, qualifier: &str) -> QualifierIdx {
+        intern_qualifier(
+            &mut self.qualifiers,
+            &mut self.qualifier_index,
+            &self.hasher,
+            qualifier.to_string(),
+        )
+    }
+
+    /// Rewrite E2O qualifiers in place, deciding per (event type, object type, qualifier).
+    ///
+    /// Neither [`Self::add_e2o`] nor [`Self::delete_e2o`] can express a retag: `add_e2o`
+    /// leaves the old qualifier beside the new one, and `delete_e2o` removes *every*
+    /// qualifier between the pair, so delete-then-add destroys a genuine multi-qualifier
+    /// participation. Order Management has real ones -- a package is related to employees
+    /// under `packed by`, `forwarded by` and `shipped by` at once.
+    ///
+    /// The decision is keyed on the two type indices rather than on the event and object
+    /// indices because that is what a per-cell convention needs, and it keeps the callback
+    /// out of the borrow of the relationship being rewritten. `pick` returns the replacement
+    /// index, or [`None`] to leave the relationship alone.
+    ///
+    /// Rewriting cannot create a duplicate as long as `pick` is injective in the qualifier
+    /// for a fixed type pair, which a prefix convention is. Multiplicity, relationship order
+    /// and the reverse index are all preserved, so this never touches `e2o_rev`.
+    ///
+    /// Returns the number of relationships rewritten.
+    pub fn retag_e2o_by(
+        &mut self,
+        mut pick: impl FnMut(usize, usize, QualifierIdx) -> Option<QualifierIdx>,
+    ) -> usize {
+        let obj_type: Vec<usize> = self.objects.iter().map(|o| o.object_type).collect();
+        let mut changed = 0usize;
+        for ev in &mut self.events {
+            let et = ev.event_type;
+            for (q, o) in &mut ev.relationships {
+                if let Some(new) = pick(et, obj_type[o.ix()], *q) {
+                    if new != *q {
+                        *q = new;
+                        changed += 1;
+                    }
+                }
+            }
+        }
+        changed
+    }
+
     /// Remove all E2O relationships between the passed event and object (across every qualifier).
     ///
     /// Returns `true` on success, `false` if either index is out of bounds (with a stderr warning).
@@ -945,6 +1107,82 @@ impl SlimLinkedOCEL {
         }
         true
     }
+    /// Remove many E2O relationships at once, one pass per touched event and object.
+    ///
+    /// [`Self::delete_e2o`] rebuilds the object's whole reverse index on every call, so
+    /// deleting a type's participations one pair at a time is quadratic in that type's event
+    /// count: on BPIC2017 one type's 1.2M tuples are spread over 149 objects, which is a
+    /// `retain` over roughly 8,000 entries per tuple. Grouping first makes it linear.
+    ///
+    /// Out-of-range pairs are skipped. Returns the number of relationships removed.
+    pub fn delete_e2o_bulk(&mut self, doomed: &[(EventIndex, ObjectIndex)]) -> usize {
+        let mut per_event: HashMap<EventIndex, std::collections::HashSet<ObjectIndex>> =
+            HashMap::new();
+        let mut per_object: HashMap<ObjectIndex, std::collections::HashSet<EventIndex>> =
+            HashMap::new();
+        for (e, o) in doomed {
+            if (e.0 as usize) >= self.events.len() || (o.0 as usize) >= self.objects.len() {
+                continue;
+            }
+            per_event.entry(*e).or_default().insert(*o);
+            per_object.entry(*o).or_default().insert(*e);
+        }
+        let mut removed = 0usize;
+        for (e, objs) in &per_event {
+            let rels = &mut self.events[e.ix()].relationships;
+            let before = rels.len();
+            rels.retain(|(_q, o)| !objs.contains(o));
+            removed += before - rels.len();
+        }
+        for (o, evs) in &per_object {
+            self.objects[o.ix()].e2o_rev.retain(|e| !evs.contains(e));
+        }
+        removed
+    }
+
+    /// Drop O2O relationships a predicate rejects, deciding per (source type, target type,
+    /// qualifier).
+    ///
+    /// [`Self::delete_o2o`] removes every qualifier between a pair, so it cannot express
+    /// "drop the edges written under this one name and leave the recorded ones alone", which
+    /// is what undoing a downward step and what reducing the object-to-object relation both
+    /// need. The reverse index is repaired for exactly the pairs that lost their last
+    /// relationship.
+    ///
+    /// Returns the number of relationships removed.
+    pub fn retain_o2o_by(
+        &mut self,
+        mut keep: impl FnMut(usize, usize, QualifierIdx) -> bool,
+    ) -> usize {
+        let obj_type: Vec<usize> = self.objects.iter().map(|o| o.object_type).collect();
+        let mut orphaned: Vec<(ObjectIndex, ObjectIndex)> = Vec::new();
+        let mut removed = 0usize;
+        for i in 0..self.objects.len() {
+            let st = obj_type[i];
+            let rels = std::mem::take(&mut self.objects[i].relationships);
+            let mut survivors: Vec<(QualifierIdx, ObjectIndex)> = Vec::with_capacity(rels.len());
+            let mut dropped: Vec<ObjectIndex> = Vec::new();
+            for (q, t) in rels {
+                if keep(st, obj_type[t.ix()], q) {
+                    survivors.push((q, t));
+                } else {
+                    dropped.push(t);
+                    removed += 1;
+                }
+            }
+            for t in dropped {
+                if !survivors.iter().any(|(_q, u)| *u == t) {
+                    orphaned.push((ObjectIndex(i as InnerIndex), t));
+                }
+            }
+            self.objects[i].relationships = survivors;
+        }
+        for (from, to) in orphaned {
+            self.objects[to.ix()].o2o_rev.retain(|s| *s != from);
+        }
+        removed
+    }
+
     /// Remove all O2O relationships from `from_obj` to `to_obj` (across every qualifier).
     ///
     /// Returns `true` on success, `false` if either index is out of bounds (with a stderr warning).
@@ -971,6 +1209,171 @@ impl SlimLinkedOCEL {
 impl From<OCEL> for SlimLinkedOCEL {
     fn from(value: OCEL) -> Self {
         Self::from_ocel(value)
+    }
+}
+
+// Hand-written rather than `impl_queryable_from_linked!` because `run_query`/`run_query_fold`
+// need the native `slim_query_exec` executor in front of the generic fallback, which is only
+// expressible inside the impl block. The other methods delegate to `LinkedOCELAccess` as the
+// macro would.
+impl QueryableOCEL for SlimLinkedOCEL {
+    type EventRepr = EventIndex;
+    type ObjectRepr = ObjectIndex;
+    type EvTypeId = usize;
+    type ObTypeId = usize;
+
+    #[inline]
+    fn get_ev_type_id(&self, ev: &Self::EventRepr) -> Self::EvTypeId {
+        ev.get_ev(self).event_type
+    }
+
+    #[inline]
+    fn get_ob_type_id(&self, ob: &Self::ObjectRepr) -> Self::ObTypeId {
+        ob.get_ob(self).object_type
+    }
+
+    fn resolve_ev_type(&self, id: Self::EvTypeId) -> Cow<'_, str> {
+        Cow::Borrowed(self.event_types[id].name.as_str())
+    }
+
+    fn resolve_ob_type(&self, id: Self::ObTypeId) -> Cow<'_, str> {
+        Cow::Borrowed(self.object_types[id].name.as_str())
+    }
+
+    fn get_all_evs(&self) -> impl Iterator<Item = Self::EventRepr> + '_ {
+        LinkedOCELAccess::get_all_evs(self)
+    }
+
+    fn get_all_obs(&self) -> impl Iterator<Item = Self::ObjectRepr> + '_ {
+        LinkedOCELAccess::get_all_obs(self)
+    }
+
+    fn get_ev_id(&self, ev: &Self::EventRepr) -> Cow<'_, str> {
+        Cow::Borrowed(LinkedOCELAccess::get_ev_id(self, ev))
+    }
+
+    fn get_ob_id(&self, ob: &Self::ObjectRepr) -> Cow<'_, str> {
+        Cow::Borrowed(LinkedOCELAccess::get_ob_id(self, ob))
+    }
+
+    #[inline]
+    fn get_ev_type_of(&self, ev: &Self::EventRepr) -> Cow<'_, str> {
+        Cow::Borrowed(LinkedOCELAccess::get_ev_type_of(self, ev))
+    }
+
+    #[inline]
+    fn get_ob_type_of(&self, ob: &Self::ObjectRepr) -> Cow<'_, str> {
+        Cow::Borrowed(LinkedOCELAccess::get_ob_type_of(self, ob))
+    }
+
+    fn get_ev_time(&self, ev: &Self::EventRepr) -> DateTime<FixedOffset> {
+        *LinkedOCELAccess::get_ev_time(self, ev)
+    }
+
+    #[inline]
+    fn get_e2o(
+        &self,
+        ev: &Self::EventRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::ObjectRepr)> + '_ {
+        LinkedOCELAccess::get_e2o(self, *ev).map(|(qual, ob)| (Cow::Borrowed(qual), *ob))
+    }
+
+    fn get_ob_attr_vals(
+        &self,
+        ob: &Self::ObjectRepr,
+        name: &str,
+    ) -> impl Iterator<Item = (DateTime<FixedOffset>, OCELAttributeValue)> + '_ {
+        LinkedOCELAccess::get_ob_attr_vals(self, *ob, name.to_string())
+            .map(|(t, v)| (*t, v.clone()))
+    }
+
+    #[inline]
+    fn get_e2o_rev(
+        &self,
+        ob: &Self::ObjectRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::EventRepr)> + '_ {
+        LinkedOCELAccess::get_e2o_rev(self, *ob).map(|(qual, ev)| (Cow::Borrowed(qual), *ev))
+    }
+
+    #[inline]
+    fn get_o2o(
+        &self,
+        ob: &Self::ObjectRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::ObjectRepr)> + '_ {
+        LinkedOCELAccess::get_o2o(self, *ob).map(|(qual, ob)| (Cow::Borrowed(qual), *ob))
+    }
+
+    #[inline]
+    fn get_o2o_rev(
+        &self,
+        ob: &Self::ObjectRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::ObjectRepr)> + '_ {
+        LinkedOCELAccess::get_o2o_rev(self, *ob).map(|(qual, ob)| (Cow::Borrowed(qual), *ob))
+    }
+
+    fn get_obs_of_type(&self, ty: &str) -> impl Iterator<Item = Self::ObjectRepr> + '_ {
+        LinkedOCELAccess::get_obs_of_type(self, ty)
+            .copied()
+            .collect::<Vec<_>>()
+            .into_iter()
+    }
+
+    fn get_evs_of_type(&self, ty: &str) -> impl Iterator<Item = Self::EventRepr> + '_ {
+        LinkedOCELAccess::get_evs_of_type(self, ty)
+            .copied()
+            .collect::<Vec<_>>()
+            .into_iter()
+    }
+
+    fn get_ev_types(&self) -> impl Iterator<Item = Cow<'_, str>> + '_ {
+        LinkedOCELAccess::get_ev_types(self).map(Cow::Borrowed)
+    }
+
+    fn get_ob_types(&self) -> impl Iterator<Item = Cow<'_, str>> + '_ {
+        LinkedOCELAccess::get_ob_types(self).map(Cow::Borrowed)
+    }
+
+    fn get_ev_attr_val(&self, ev: &Self::EventRepr, name: &str) -> Option<OCELAttributeValue> {
+        LinkedOCELAccess::get_ev_attr_val(self, *ev, name).cloned()
+    }
+
+    // Slim-native fast paths interpreted directly over Slim's integer-index fields, see the
+    // `slim_query_exec` module docs. An uncovered shape returns `None`/`false` and falls back to
+    // the generic evaluator, which stays correct for every shape.
+    fn run_query(&self, query: &Query) -> Result<QueryResult, String> {
+        if let Some(r) = slim_query_exec::native_run_query(self, query) {
+            return Ok(r);
+        }
+        evaluate_par(query, self)
+    }
+
+    fn run_query_fold(&self, query: &Query, mut f: impl FnMut(&[Value])) -> Result<(), String> {
+        if slim_query_exec::native_run_query_fold(self, query, &mut f) {
+            return Ok(());
+        }
+        let r = self.run_query(query)?;
+        for row in &r.rows {
+            f(row);
+        }
+        Ok(())
+    }
+
+    fn run_query_fold_seeds<A, Init, FoldSeed, Reduce>(
+        &self,
+        query: &Query,
+        init: Init,
+        fold_seed: FoldSeed,
+        reduce: Reduce,
+    ) -> Result<Option<A>, String>
+    where
+        A: Send,
+        Init: Fn() -> A + Sync,
+        FoldSeed: Fn(&mut A, &[&[Handle<EventIndex, ObjectIndex, usize, usize>]]) + Sync,
+        Reduce: Fn(A, A) -> A + Sync,
+    {
+        Ok(slim_query_exec::native_fold_seeds(
+            self, query, init, fold_seed, reduce,
+        ))
     }
 }
 
@@ -1743,27 +2146,15 @@ impl Importable for SlimLinkedOCEL {
         format: &str,
         _: Self::ImportOptions,
     ) -> Result<Self, Self::Error> {
-        if let Some(inner) = format.strip_suffix(".gz") {
-            // Buffer the compressed bytes; `GzDecoder` reads from its inner in chunks.
-            let gz: Box<dyn Read> = Box::new(flate2::read::GzDecoder::new(
-                std::io::BufReader::new(reader),
-            ));
-            return Self::import_from_reader_with_options(gz, inner, ());
-        }
-        if format.ends_with("xml") || format.ends_with("xmlocel") {
-            let mut xml_reader = quick_xml::Reader::from_reader(std::io::BufReader::new(reader));
+        if is_streaming_format(format) {
             let mut slim = SlimLinkedOCEL::new();
-            import_ocel_xml_into(&mut xml_reader, &mut slim, OCELImportOptions::default())?;
-            slim.finalize()?;
-            Ok(slim)
-        } else if format.ends_with("json") || format.ends_with("jsonocel") {
-            let mut slim = SlimLinkedOCEL::new();
-            import_ocel_json_into(std::io::BufReader::new(reader), &mut slim)?;
+            slim.stream_ocel_from_reader(reader, format, OCELImportOptions::default())?;
             slim.finalize()?;
             Ok(slim)
         } else {
-            let ocel = OCEL::import_from_reader(reader, format)?;
-            Ok(SlimLinkedOCEL::from_ocel(ocel))
+            Ok(SlimLinkedOCEL::from_ocel(OCEL::import_from_reader(
+                reader, format,
+            )?))
         }
     }
 
@@ -1787,7 +2178,7 @@ impl Exportable for SlimLinkedOCEL {
     fn export_to_path_with_options<P: AsRef<Path>>(
         &self,
         path: P,
-        _: Self::ExportOptions,
+        options: Self::ExportOptions,
     ) -> Result<(), Self::Error> {
         let path = path.as_ref();
         let format = <Self as Exportable>::infer_format(path).ok_or_else(|| {
@@ -1796,6 +2187,18 @@ impl Exportable for SlimLinkedOCEL {
                 "Could not infer format from path",
             )
         })?;
+        <Self as Exportable>::export_to_path_as(self, path, &format, options)
+    }
+
+    /// See [`Exportable::export_to_path_as`]. Formats that write a file or a directory rather
+    /// than a byte stream are handled here, everything else streams.
+    fn export_to_path_as<P: AsRef<Path>>(
+        &self,
+        path: P,
+        format: &str,
+        _: Self::ExportOptions,
+    ) -> Result<(), Self::Error> {
+        let path = path.as_ref();
         if format.ends_with("sqlite") || (format.ends_with("db") && !format.ends_with("duckdb")) {
             #[cfg(feature = "ocel-sqlite")]
             return crate::core::event_data::object_centric::ocel_sql::export_ocel_sqlite_to_path(
@@ -1818,9 +2221,37 @@ impl Exportable for SlimLinkedOCEL {
                 "DuckDB support not enabled".to_string(),
             ));
         }
+        #[cfg(feature = "ocel-bundle")]
+        if format.ends_with("zip") {
+            use crate::core::event_data::object_centric::ocel_bundle::{
+                export_ocel_bundle, BundleExportOptions, ContainerLayout, StorageFormat,
+            };
+            // An existing directory, or a name with no extension, is the uncompressed form.
+            let layout = if path.is_dir() || path.extension().is_none() {
+                ContainerLayout::Directory
+            } else {
+                ContainerLayout::Archive
+            };
+            if layout == ContainerLayout::Directory {
+                std::fs::create_dir_all(path)?;
+            }
+            return export_ocel_bundle(
+                self,
+                path,
+                BundleExportOptions {
+                    layout,
+                    storage: if format.starts_with("ocel-parquet") {
+                        StorageFormat::Parquet
+                    } else {
+                        StorageFormat::Csv
+                    },
+                },
+            )
+            .map_err(|e| OCELIOError::Other(e.to_string()));
+        }
         let file = std::fs::File::create(path)?;
         let writer = std::io::BufWriter::new(file);
-        Self::export_to_writer(self, writer, &format)
+        Self::export_to_writer(self, writer, format)
     }
 
     fn export_to_writer_with_options<W: Write>(
@@ -2320,5 +2751,138 @@ mod tests {
         let ev = &s.events[0];
         assert_eq!(ev.attributes[0], OCELAttributeValue::String("hi".into()));
         assert_eq!(ev.attributes[1], OCELAttributeValue::Integer(42));
+    }
+
+    #[test]
+    fn queryable_matches_linked_for_slim() {
+        use crate::core::event_data::object_centric::linked_ocel::QueryableOCEL;
+        let ocel = crate::core::event_data::object_centric::ocel_json::import_ocel_json_path(
+            crate::test_utils::get_test_data_path()
+                .join("ocel")
+                .join("order-management.json"),
+        )
+        .unwrap();
+        let slim = SlimLinkedOCEL::from_ocel(ocel);
+
+        let ev = QueryableOCEL::get_all_evs(&slim).next().unwrap();
+        let q_type = QueryableOCEL::get_ev_type_of(&slim, &ev).into_owned();
+        let l_type = <SlimLinkedOCEL as crate::core::event_data::object_centric::linked_ocel::LinkedOCELAccess>::get_ev_type_of(&slim, &ev).to_string();
+        assert_eq!(q_type, l_type);
+    }
+
+    #[cfg(test)]
+    mod native_exec_parity {
+        use super::*;
+        use crate::core::event_data::object_centric::linked_ocel::QueryableOCEL;
+        use crate::core::event_data::object_centric::query::eval::{evaluate, Value};
+        use crate::core::event_data::object_centric::query::model::{
+            Agg, AggSpec, Box as QBox, Dir, Expr, Filter, Output, Query, RowsSpec,
+            TypeConstraint, VarDecl, VarKind,
+        };
+
+        fn slim() -> SlimLinkedOCEL {
+            let ocel = crate::core::event_data::object_centric::ocel_json::import_ocel_json_path(
+                crate::test_utils::get_test_data_path()
+                    .join("ocel")
+                    .join("order-management.json"),
+            )
+            .unwrap();
+            SlimLinkedOCEL::from_ocel(ocel)
+        }
+
+        fn type_counts_query() -> Query {
+            Query {
+                root: QBox {
+                    new_vars: vec![
+                        VarDecl {
+                            kind: VarKind::Event,
+                            types: TypeConstraint::Any,
+                        },
+                        VarDecl {
+                            kind: VarKind::Object,
+                            types: TypeConstraint::Any,
+                        },
+                    ],
+                    filters: vec![Filter::E2O {
+                        event: 0,
+                        object: 1,
+                        qualifier: None,
+                    }],
+                    children: vec![],
+                },
+                output: Output::Aggregate(AggSpec {
+                    group_by: vec![Expr::Type(0), Expr::Type(1)],
+                    aggregates: vec![Agg::Count],
+                    having: vec![],
+                    order_by: vec![],
+                    limit: None,
+                }),
+                emits: Vec::new(),
+            }
+        }
+
+        // The trace shape dfg/variants use: objects with their events, by (obj id, ev time).
+        fn trace_query(ob_type: &str) -> Query {
+            Query {
+                root: QBox {
+                    new_vars: vec![
+                        VarDecl {
+                            kind: VarKind::Object,
+                            types: TypeConstraint::OneOf(vec![ob_type.to_string()]),
+                        },
+                        VarDecl {
+                            kind: VarKind::Event,
+                            types: TypeConstraint::Any,
+                        },
+                    ],
+                    filters: vec![Filter::E2O {
+                        event: 1,
+                        object: 0,
+                        qualifier: None,
+                    }],
+                    children: vec![],
+                },
+                output: Output::Rows(RowsSpec {
+                    project: vec![Expr::Id(0), Expr::Type(1)],
+                    order_by: vec![(Expr::Id(0), Dir::Asc), (Expr::Time(1), Dir::Asc)],
+                    limit: None,
+                }),
+                emits: Vec::new(),
+            }
+        }
+
+        // The generic `evaluate` is the oracle the native fast path must agree with.
+        #[test]
+        fn native_run_query_matches_generic_type_counts() {
+            let s = slim();
+            let q = type_counts_query();
+            let native = s.run_query(&q).unwrap();
+            let generic = evaluate(&q, &s).unwrap();
+            assert!(!native.rows.is_empty());
+            assert_eq!(native, generic);
+        }
+
+        #[test]
+        fn native_run_query_matches_generic_trace() {
+            let s = slim();
+            let q = trace_query("orders");
+            let native = s.run_query(&q).unwrap();
+            let generic = evaluate(&q, &s).unwrap();
+            assert!(!native.rows.is_empty());
+            assert_eq!(native, generic);
+        }
+
+        // The streaming path yields the same rows, ordered across seeds only by the shared id sort.
+        #[test]
+        fn native_run_query_fold_matches_generic_trace() {
+            let s = slim();
+            let q = trace_query("orders");
+            let mut folded: Vec<Vec<Value>> = Vec::new();
+            s.run_query_fold(&q, |row| folded.push(row.to_vec()))
+                .unwrap();
+            let generic = evaluate(&q, &s).unwrap();
+            assert!(!folded.is_empty());
+            assert_eq!(folded, generic.rows);
+        }
     }
 }

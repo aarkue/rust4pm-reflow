@@ -24,10 +24,17 @@ pub fn flatten_ocel_on<'a>(
         .get_obs_of_type(object_type.as_ref())
         .map(|ob| {
             let ob_val = ocel.get_full_ob(ob);
+            // An event related to the same object under several qualifiers is still one
+            // occurrence for that object, so it must appear once in the trace.
+            let mut seen_events: std::collections::HashSet<String> =
+                std::collections::HashSet::new();
             let mut events: Vec<_> = ocel
                 .get_e2o_rev(ob)
-                .map(|(_q, ev)| {
+                .filter_map(|(_q, ev)| {
                     let ev_val = ocel.get_full_ev(ev);
+                    if !seen_events.insert(ev_val.id.clone()) {
+                        return None;
+                    }
                     let mut xes_ev = Event {
                         attributes: vec![
                             Attribute::new(
@@ -50,7 +57,7 @@ pub fn flatten_ocel_on<'a>(
                         }
                     }));
 
-                    xes_ev
+                    Some(xes_ev)
                 })
                 .collect();
             events.sort_by_cached_key(|ev| {

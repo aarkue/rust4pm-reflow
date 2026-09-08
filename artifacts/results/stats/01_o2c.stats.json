@@ -1,0 +1,348 @@
+{
+  "log": "01_o2c.xml",
+  "path": "logs/01_o2c.xml",
+  "events": 28278,
+  "objects": 8819,
+  "participations": 55360,
+  "activities": [
+    "Apply Discount",
+    "Apply Payment",
+    "Approve Order",
+    "Approve Return",
+    "Generate Invoice",
+    "Generate Pick List",
+    "Generate Shipping Label",
+    "Handle Payment Discrepancy",
+    "Issue Credit Note",
+    "Issue Payment Reminder",
+    "Pack Items",
+    "Perform Credit Check",
+    "Pick Items",
+    "Process Return Request",
+    "Receive Customer Order",
+    "Receive Payment",
+    "Reject Order",
+    "Schedule Order Fulfillment",
+    "Send Invoice to Customer",
+    "Ship Order",
+    "Update Inventory",
+    "Validate Customer Order"
+  ],
+  "cells": 39,
+  "types": {
+    "CreditNote": {
+      "objects": 103,
+      "object_share": 0.011679,
+      "participations": 103,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "Customer": {
+      "objects": 856,
+      "object_share": 0.097063,
+      "participations": 8256,
+      "activities": 8,
+      "df_pairs": 15,
+      "scores": null
+    },
+    "Dispute": {
+      "objects": 174,
+      "object_share": 0.01973,
+      "participations": 174,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "Invoice": {
+      "objects": 1809,
+      "object_share": 0.205125,
+      "participations": 6892,
+      "activities": 6,
+      "df_pairs": 5,
+      "scores": null
+    },
+    "Order": {
+      "objects": 2000,
+      "object_share": 0.226783,
+      "participations": 19371,
+      "activities": 13,
+      "df_pairs": 15,
+      "scores": null
+    },
+    "Payment": {
+      "objects": 1465,
+      "object_share": 0.166119,
+      "participations": 2930,
+      "activities": 2,
+      "df_pairs": 1,
+      "scores": null
+    },
+    "Product": {
+      "objects": 500,
+      "object_share": 0.056696,
+      "participations": 13707,
+      "activities": 3,
+      "df_pairs": 3,
+      "scores": null
+    },
+    "Return": {
+      "objects": 103,
+      "object_share": 0.011679,
+      "participations": 309,
+      "activities": 3,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "Shipment": {
+      "objects": 1809,
+      "object_share": 0.205125,
+      "participations": 3618,
+      "activities": 2,
+      "df_pairs": 1,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "Apply Discount\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 414
+    },
+    "Apply Payment\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1465
+    },
+    "Apply Payment\tPayment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1465
+    },
+    "Approve Order\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Approve Order\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Approve Return\tReturn": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 103
+    },
+    "Generate Invoice\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Generate Invoice\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Generate Pick List\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Generate Pick List\tProduct": {
+      "max": 4,
+      "mean": 2.5257,
+      "events": 1809
+    },
+    "Generate Shipping Label\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Generate Shipping Label\tShipment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Handle Payment Discrepancy\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 174
+    },
+    "Handle Payment Discrepancy\tDispute": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 174
+    },
+    "Handle Payment Discrepancy\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 174
+    },
+    "Issue Credit Note\tCreditNote": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 103
+    },
+    "Issue Credit Note\tReturn": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 103
+    },
+    "Issue Payment Reminder\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 170
+    },
+    "Issue Payment Reminder\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 170
+    },
+    "Pack Items\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Perform Credit Check\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Perform Credit Check\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Pick Items\tProduct": {
+      "max": 4,
+      "mean": 2.5257,
+      "events": 1809
+    },
+    "Process Return Request\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 103
+    },
+    "Process Return Request\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 103
+    },
+    "Process Return Request\tReturn": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 103
+    },
+    "Receive Customer Order\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Receive Customer Order\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Receive Payment\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1465
+    },
+    "Receive Payment\tPayment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1465
+    },
+    "Reject Order\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 191
+    },
+    "Reject Order\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 191
+    },
+    "Schedule Order Fulfillment\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Send Invoice to Customer\tCustomer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Send Invoice to Customer\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Ship Order\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Ship Order\tShipment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1809
+    },
+    "Update Inventory\tProduct": {
+      "max": 4,
+      "mean": 2.5257,
+      "events": 1809
+    },
+    "Validate Customer Order\tOrder": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    }
+  },
+  "divergence": {
+    "Approve Order": [
+      "Customer"
+    ],
+    "Generate Pick List": [
+      "Product"
+    ],
+    "Handle Payment Discrepancy": [
+      "Customer"
+    ],
+    "Issue Payment Reminder": [
+      "Customer"
+    ],
+    "Perform Credit Check": [
+      "Customer"
+    ],
+    "Process Return Request": [
+      "Customer"
+    ],
+    "Receive Customer Order": [
+      "Customer"
+    ],
+    "Reject Order": [
+      "Customer"
+    ],
+    "Send Invoice to Customer": [
+      "Customer"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 35,
+    "df2": 25,
+    "df2_dropped": [
+      "Approve Order -> Send Invoice to Customer",
+      "Handle Payment Discrepancy -> Process Return Request",
+      "Handle Payment Discrepancy -> Receive Customer Order",
+      "Issue Payment Reminder -> Process Return Request",
+      "Issue Payment Reminder -> Receive Customer Order",
+      "Process Return Request -> Receive Customer Order",
+      "Receive Customer Order -> Perform Credit Check",
+      "Reject Order -> Receive Customer Order",
+      "Send Invoice to Customer -> Process Return Request",
+      "Send Invoice to Customer -> Receive Customer Order"
+    ]
+  }
+}

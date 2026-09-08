@@ -1,0 +1,445 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.3404067596971842,
+      "recorded": 0.7933528242835889
+    },
+    "min_fitness_rebuilt": 1.0,
+    "types_whose_fitness_falls": []
+  },
+  "assignment": {
+    "absent": [
+      [
+        "Complete Assessment",
+        "Assessment"
+      ],
+      [
+        "Conduct Initial Interview",
+        "Recruiter"
+      ],
+      [
+        "Create Job Requisition",
+        "HiringManager"
+      ],
+      [
+        "Evaluate Interview",
+        "HiringManager"
+      ],
+      [
+        "Post Job Opening",
+        "Recruiter"
+      ],
+      [
+        "Prepare Offer Letter",
+        "HiringManager"
+      ],
+      [
+        "Review Assessment",
+        "Assessment"
+      ],
+      [
+        "Review Assessment",
+        "HiringManager"
+      ],
+      [
+        "Schedule Initial Interview",
+        "Recruiter"
+      ],
+      [
+        "Screen Resume",
+        "Recruiter"
+      ],
+      [
+        "Send Assessment",
+        "Assessment"
+      ]
+    ],
+    "flow": [
+      [
+        "Approve Job Requisition",
+        "JobRequisition"
+      ],
+      [
+        "Attend Orientation Training",
+        "Candidate"
+      ],
+      [
+        "Candidate Accept Offer",
+        "Candidate"
+      ],
+      [
+        "Candidate Reject Offer",
+        "Candidate"
+      ],
+      [
+        "Complete Assessment",
+        "Candidate"
+      ],
+      [
+        "Complete Background Check",
+        "Candidate"
+      ],
+      [
+        "Complete HR Paperwork",
+        "Candidate"
+      ],
+      [
+        "Complete Onboarding",
+        "Candidate"
+      ],
+      [
+        "Conduct Initial Interview",
+        "Candidate"
+      ],
+      [
+        "Conduct Panel Interview",
+        "Candidate"
+      ],
+      [
+        "Create Job Requisition",
+        "JobRequisition"
+      ],
+      [
+        "Evaluate Interview",
+        "Candidate"
+      ],
+      [
+        "Initiate Background Check",
+        "Candidate"
+      ],
+      [
+        "Post Job Opening",
+        "JobRequisition"
+      ],
+      [
+        "Prepare Offer Letter",
+        "Candidate"
+      ],
+      [
+        "Review Assessment",
+        "Candidate"
+      ],
+      [
+        "Schedule Initial Interview",
+        "Candidate"
+      ],
+      [
+        "Schedule Panel Interview",
+        "Candidate"
+      ],
+      [
+        "Screen Resume",
+        "Candidate"
+      ],
+      [
+        "Send Assessment",
+        "Candidate"
+      ],
+      [
+        "Send Offer Letter",
+        "Candidate"
+      ],
+      [
+        "Send Rejection Letter",
+        "Candidate"
+      ],
+      [
+        "Start Onboarding",
+        "Candidate"
+      ],
+      [
+        "Submit Application",
+        "Candidate"
+      ],
+      [
+        "Submit Application",
+        "JobRequisition"
+      ]
+    ],
+    "inv": [
+      [
+        "Conduct Panel Interview",
+        "Interviewer"
+      ],
+      [
+        "Schedule Panel Interview",
+        "Interviewer"
+      ]
+    ],
+    "kept": [
+      [
+        "Approve Job Requisition",
+        "JobRequisition"
+      ],
+      [
+        "Attend Orientation Training",
+        "Candidate"
+      ],
+      [
+        "Candidate Accept Offer",
+        "Candidate"
+      ],
+      [
+        "Candidate Reject Offer",
+        "Candidate"
+      ],
+      [
+        "Complete Assessment",
+        "Candidate"
+      ],
+      [
+        "Complete Background Check",
+        "Candidate"
+      ],
+      [
+        "Complete HR Paperwork",
+        "Candidate"
+      ],
+      [
+        "Complete Onboarding",
+        "Candidate"
+      ],
+      [
+        "Conduct Initial Interview",
+        "Candidate"
+      ],
+      [
+        "Conduct Panel Interview",
+        "Candidate"
+      ],
+      [
+        "Conduct Panel Interview",
+        "Interviewer"
+      ],
+      [
+        "Create Job Requisition",
+        "JobRequisition"
+      ],
+      [
+        "Evaluate Interview",
+        "Candidate"
+      ],
+      [
+        "Initiate Background Check",
+        "Candidate"
+      ],
+      [
+        "Post Job Opening",
+        "JobRequisition"
+      ],
+      [
+        "Prepare Offer Letter",
+        "Candidate"
+      ],
+      [
+        "Review Assessment",
+        "Candidate"
+      ],
+      [
+        "Schedule Initial Interview",
+        "Candidate"
+      ],
+      [
+        "Schedule Panel Interview",
+        "Candidate"
+      ],
+      [
+        "Schedule Panel Interview",
+        "Interviewer"
+      ],
+      [
+        "Screen Resume",
+        "Candidate"
+      ],
+      [
+        "Send Assessment",
+        "Candidate"
+      ],
+      [
+        "Send Offer Letter",
+        "Candidate"
+      ],
+      [
+        "Send Rejection Letter",
+        "Candidate"
+      ],
+      [
+        "Start Onboarding",
+        "Candidate"
+      ],
+      [
+        "Submit Application",
+        "Candidate"
+      ],
+      [
+        "Submit Application",
+        "JobRequisition"
+      ]
+    ]
+  },
+  "log": "03_hiring",
+  "types": {
+    "Assessment": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.9995483968086708
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 8,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 3,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 588,
+      "precision": {
+        "floor": 0.33323296195924923,
+        "rebuilt": 0.33323296195924923,
+        "recorded": 0.9996988858777477
+      }
+    },
+    "Candidate": {
+      "adjusted_precision": {
+        "rebuilt": 0.7855914931563247,
+        "recorded": 0.7855914931563247
+      },
+      "arcs": {
+        "rebuilt": 50,
+        "recorded": 50,
+        "reduced": 50
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 21,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 3000,
+      "precision": {
+        "floor": 0.05571833421393919,
+        "rebuilt": 0.7975379779989523,
+        "recorded": 0.7975379779989523
+      }
+    },
+    "HiringManager": {
+      "adjusted_precision": {
+        "rebuilt": 0.043998065296781366,
+        "recorded": 0.39268780132616704
+      },
+      "arcs": {
+        "rebuilt": 18,
+        "recorded": 18,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 4,
+        "carried": 4,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 20,
+      "precision": {
+        "floor": 0.26438737623762376,
+        "rebuilt": 0.29675290849105745,
+        "recorded": 0.5532534800906442
+      }
+    },
+    "Interviewer": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.9992828970957331
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 6,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 2
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 50,
+      "precision": {
+        "floor": 0.4998206599713056,
+        "rebuilt": 0.4998206599713056,
+        "recorded": 0.9996413199426112
+      }
+    },
+    "JobRequisition": {
+      "adjusted_precision": {
+        "rebuilt": 0.9996078815802373,
+        "recorded": 0.9996078815802373
+      },
+      "arcs": {
+        "rebuilt": 10,
+        "recorded": 10,
+        "reduced": 10
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 4,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 100,
+      "precision": {
+        "floor": 0.2499264705882353,
+        "rebuilt": 0.9997058823529412,
+        "recorded": 0.9997058823529412
+      }
+    },
+    "Recruiter": {
+      "adjusted_precision": {
+        "rebuilt": 0.21324311814976166,
+        "recorded": 0.5833984757344001
+      },
+      "arcs": {
+        "rebuilt": 14,
+        "recorded": 16,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 4,
+        "carried": 4,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 10,
+      "precision": {
+        "floor": 0.2512254901960784,
+        "rebuilt": 0.41089650145772594,
+        "recorded": 0.6880593978844589
+      }
+    }
+  }
+}

@@ -1,2 +1,6 @@
 /target
 dhat*.json
+artifacts/logs/*.xml
+artifacts/logs/*.xml.gz
+artifacts/results/exports/
+process_mining/tools/*/target/

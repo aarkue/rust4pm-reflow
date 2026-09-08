@@ -1,0 +1,619 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.6363636363636364,
+      "recorded": 0.8542769110550231
+    },
+    "min_fitness_rebuilt": 0.9976825683924938,
+    "types_whose_fitness_falls": []
+  },
+  "assignment": {
+    "absent": [
+      [
+        "AssembleHinge",
+        "Machine"
+      ],
+      [
+        "AssembleHinge",
+        "SteelPin"
+      ],
+      [
+        "AssembleHinge",
+        "Workstation"
+      ],
+      [
+        "CoatPart",
+        "Workstation"
+      ],
+      [
+        "FormSteelSheet",
+        "Workstation"
+      ],
+      [
+        "HeatSteelSheet",
+        "Workstation"
+      ],
+      [
+        "PackHinges",
+        "HingePack"
+      ],
+      [
+        "PackHinges",
+        "Machine"
+      ],
+      [
+        "PackHinges",
+        "Workstation"
+      ],
+      [
+        "SplitSteelSheet",
+        "Machine"
+      ],
+      [
+        "SplitSteelSheet",
+        "SteelCoil"
+      ],
+      [
+        "SplitSteelSheet",
+        "Workstation"
+      ]
+    ],
+    "flow": [
+      [
+        "AssembleHinge",
+        "FemalePart"
+      ],
+      [
+        "AssembleHinge",
+        "Hinge"
+      ],
+      [
+        "AssembleHinge",
+        "MalePart"
+      ],
+      [
+        "CheckFemalePart",
+        "FemalePart"
+      ],
+      [
+        "CheckMalePart",
+        "MalePart"
+      ],
+      [
+        "CoatPart",
+        "FormedPart"
+      ],
+      [
+        "CuttFemalePart",
+        "FemalePart"
+      ],
+      [
+        "CuttFemalePart",
+        "FormedPart"
+      ],
+      [
+        "CuttMalePart",
+        "FormedPart"
+      ],
+      [
+        "CuttMalePart",
+        "MalePart"
+      ],
+      [
+        "FormSteelSheet",
+        "FormedPart"
+      ],
+      [
+        "FormSteelSheet",
+        "SteelSheet"
+      ],
+      [
+        "HeatSteelSheet",
+        "SteelSheet"
+      ],
+      [
+        "PackHinges",
+        "Hinge"
+      ],
+      [
+        "SplitSteelSheet",
+        "SteelSheet"
+      ]
+    ],
+    "inv": [
+      [
+        "CheckFemalePart",
+        "Worker"
+      ],
+      [
+        "CheckFemalePart",
+        "Workstation"
+      ],
+      [
+        "CheckMalePart",
+        "Worker"
+      ],
+      [
+        "CheckMalePart",
+        "Workstation"
+      ],
+      [
+        "CoatPart",
+        "Machine"
+      ],
+      [
+        "CuttFemalePart",
+        "Machine"
+      ],
+      [
+        "CuttFemalePart",
+        "Workstation"
+      ],
+      [
+        "CuttMalePart",
+        "Machine"
+      ],
+      [
+        "CuttMalePart",
+        "Workstation"
+      ],
+      [
+        "FormSteelSheet",
+        "Machine"
+      ],
+      [
+        "HeatSteelSheet",
+        "Machine"
+      ],
+      [
+        "MoveParts",
+        "Facility"
+      ],
+      [
+        "MoveParts",
+        "Worker"
+      ]
+    ],
+    "kept": [
+      [
+        "AssembleHinge",
+        "FemalePart"
+      ],
+      [
+        "AssembleHinge",
+        "Hinge"
+      ],
+      [
+        "AssembleHinge",
+        "MalePart"
+      ],
+      [
+        "CheckFemalePart",
+        "FemalePart"
+      ],
+      [
+        "CheckFemalePart",
+        "Worker"
+      ],
+      [
+        "CheckFemalePart",
+        "Workstation"
+      ],
+      [
+        "CheckMalePart",
+        "MalePart"
+      ],
+      [
+        "CheckMalePart",
+        "Worker"
+      ],
+      [
+        "CheckMalePart",
+        "Workstation"
+      ],
+      [
+        "CoatPart",
+        "FormedPart"
+      ],
+      [
+        "CoatPart",
+        "Machine"
+      ],
+      [
+        "CuttFemalePart",
+        "FemalePart"
+      ],
+      [
+        "CuttFemalePart",
+        "FormedPart"
+      ],
+      [
+        "CuttFemalePart",
+        "Machine"
+      ],
+      [
+        "CuttFemalePart",
+        "Workstation"
+      ],
+      [
+        "CuttMalePart",
+        "FormedPart"
+      ],
+      [
+        "CuttMalePart",
+        "Machine"
+      ],
+      [
+        "CuttMalePart",
+        "MalePart"
+      ],
+      [
+        "CuttMalePart",
+        "Workstation"
+      ],
+      [
+        "FormSteelSheet",
+        "FormedPart"
+      ],
+      [
+        "FormSteelSheet",
+        "Machine"
+      ],
+      [
+        "FormSteelSheet",
+        "SteelSheet"
+      ],
+      [
+        "HeatSteelSheet",
+        "Machine"
+      ],
+      [
+        "HeatSteelSheet",
+        "SteelSheet"
+      ],
+      [
+        "MoveParts",
+        "Facility"
+      ],
+      [
+        "MoveParts",
+        "Worker"
+      ],
+      [
+        "PackHinges",
+        "Hinge"
+      ],
+      [
+        "SplitSteelSheet",
+        "SteelSheet"
+      ]
+    ]
+  },
+  "log": "socel2_hinge",
+  "types": {
+    "Facility": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.0
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 1
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 1,
+      "precision": {
+        "floor": 0.9666666666666667,
+        "rebuilt": 0.9666666666666667,
+        "recorded": 0.9666666666666667
+      }
+    },
+    "FemalePart": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 6,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 3,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9995423864546391,
+        "recorded": 0.9995423864546391
+      },
+      "objects": 2915,
+      "precision": {
+        "floor": 0.2501716443529008,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "FormedPart": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 8,
+        "recorded": 8,
+        "reduced": 8
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 4,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9976825683924938,
+        "recorded": 0.9976825683924938
+      },
+      "objects": 5911,
+      "precision": {
+        "floor": 0.25087004498769205,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Hinge": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 4,
+        "reduced": 4
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 2,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9993976421994665,
+        "recorded": 0.9993976421994665
+      },
+      "objects": 2907,
+      "precision": {
+        "floor": 0.33360110167546475,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "HingePack": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 2,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 290,
+      "precision": {
+        "floor": 0.5,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Machine": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.999755456331492
+      },
+      "arcs": {
+        "rebuilt": 16,
+        "recorded": 56,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 3,
+        "carried": 0,
+        "flow": 0,
+        "inv": 5
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 7,
+      "precision": {
+        "floor": 0.1251338862196652,
+        "rebuilt": 0.1251338862196652,
+        "recorded": 0.9997860570310828
+      }
+    },
+    "MalePart": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 6,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 3,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9995994735938663,
+        "recorded": 0.9995994735938663
+      },
+      "objects": 2914,
+      "precision": {
+        "floor": 0.25015022748733795,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "SteelCoil": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 4,
+      "precision": {
+        "floor": 0.9994928148774302,
+        "rebuilt": 0.9994928148774302,
+        "recorded": 0.9994928148774302
+      }
+    },
+    "SteelPin": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 2,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 2907,
+      "precision": {
+        "floor": 0.5,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "SteelSheet": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 6,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 3,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 5911,
+      "precision": {
+        "floor": 0.25,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Worker": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.9995048293157047
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 6,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 3
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.5170648464163823
+      },
+      "objects": 1,
+      "precision": {
+        "floor": 0.3332764408033225,
+        "rebuilt": 0.3332764408033225,
+        "recorded": 0.9996698580389568
+      }
+    },
+    "Workstation": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.39778573595805805
+      },
+      "arcs": {
+        "rebuilt": 20,
+        "recorded": 62,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 6,
+        "carried": 0,
+        "flow": 0,
+        "inv": 4
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.7602202482987896
+      },
+      "objects": 3,
+      "precision": {
+        "floor": 0.10000779180302322,
+        "rebuilt": 0.10000779180302322,
+        "recorded": 0.4580118546971754
+      }
+    }
+  }
+}

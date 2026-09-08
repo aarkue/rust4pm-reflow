@@ -1,0 +1,210 @@
+{
+  "absent": [
+    [
+      "Book Vehicles",
+      "Vehicle"
+    ],
+    [
+      "Depart",
+      "Transport Document"
+    ],
+    [
+      "Depart",
+      "Vehicle"
+    ],
+    [
+      "Drive to Terminal",
+      "Truck"
+    ],
+    [
+      "Load Truck",
+      "Truck"
+    ],
+    [
+      "Load to Vehicle",
+      "Vehicle"
+    ],
+    [
+      "Reschedule Container",
+      "Transport Document"
+    ],
+    [
+      "Reschedule Container",
+      "Vehicle"
+    ]
+  ],
+  "flow": [
+    [
+      "Book Vehicles",
+      "Transport Document"
+    ],
+    [
+      "Bring to Loading Bay",
+      "Container"
+    ],
+    [
+      "Collect Goods",
+      "Handling Unit"
+    ],
+    [
+      "Create Transport Document",
+      "Customer Order"
+    ],
+    [
+      "Create Transport Document",
+      "Transport Document"
+    ],
+    [
+      "Depart",
+      "Container"
+    ],
+    [
+      "Drive to Terminal",
+      "Container"
+    ],
+    [
+      "Load Truck",
+      "Container"
+    ],
+    [
+      "Load Truck",
+      "Handling Unit"
+    ],
+    [
+      "Load to Vehicle",
+      "Container"
+    ],
+    [
+      "Order Empty Containers",
+      "Container"
+    ],
+    [
+      "Order Empty Containers",
+      "Transport Document"
+    ],
+    [
+      "Pick Up Empty Container",
+      "Container"
+    ],
+    [
+      "Place in Stock",
+      "Container"
+    ],
+    [
+      "Register Customer Order",
+      "Customer Order"
+    ],
+    [
+      "Reschedule Container",
+      "Container"
+    ],
+    [
+      "Weigh",
+      "Container"
+    ]
+  ],
+  "inv": [
+    [
+      "Bring to Loading Bay",
+      "Forklift"
+    ],
+    [
+      "Load to Vehicle",
+      "Forklift"
+    ],
+    [
+      "Place in Stock",
+      "Forklift"
+    ],
+    [
+      "Weigh",
+      "Forklift"
+    ]
+  ],
+  "measured": [
+    [
+      "Book Vehicles",
+      "Transport Document"
+    ],
+    [
+      "Bring to Loading Bay",
+      "Container"
+    ],
+    [
+      "Bring to Loading Bay",
+      "Forklift"
+    ],
+    [
+      "Collect Goods",
+      "Handling Unit"
+    ],
+    [
+      "Create Transport Document",
+      "Customer Order"
+    ],
+    [
+      "Create Transport Document",
+      "Transport Document"
+    ],
+    [
+      "Depart",
+      "Container"
+    ],
+    [
+      "Drive to Terminal",
+      "Container"
+    ],
+    [
+      "Load Truck",
+      "Container"
+    ],
+    [
+      "Load Truck",
+      "Handling Unit"
+    ],
+    [
+      "Load to Vehicle",
+      "Container"
+    ],
+    [
+      "Load to Vehicle",
+      "Forklift"
+    ],
+    [
+      "Order Empty Containers",
+      "Container"
+    ],
+    [
+      "Order Empty Containers",
+      "Transport Document"
+    ],
+    [
+      "Pick Up Empty Container",
+      "Container"
+    ],
+    [
+      "Place in Stock",
+      "Container"
+    ],
+    [
+      "Place in Stock",
+      "Forklift"
+    ],
+    [
+      "Register Customer Order",
+      "Customer Order"
+    ],
+    [
+      "Reschedule Container",
+      "Container"
+    ],
+    [
+      "Weigh",
+      "Container"
+    ],
+    [
+      "Weigh",
+      "Forklift"
+    ]
+  ]
+}

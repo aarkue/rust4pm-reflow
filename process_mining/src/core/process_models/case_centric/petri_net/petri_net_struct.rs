@@ -5,7 +5,26 @@ use nalgebra::{DMatrix, Dyn, OMatrix};
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
+use std::sync::atomic::{AtomicU64, Ordering};
 use uuid::Uuid;
+
+/// Fresh node ids are a process-wide counter in v4 clothing rather than random bytes.
+///
+/// Ids only have to be unique, but several consumers order nodes by id (the alignment
+/// sync product, escaping-edges precision), and a random id hands them a different
+/// permutation on every run. With several equally optimal alignments, which one comes
+/// back then varies per run, and alignment-derived precision varies with it. A counter
+/// makes id order creation order, which is deterministic for a deterministic miner.
+static NEXT_NODE_ID: AtomicU64 = AtomicU64::new(1);
+
+pub(crate) fn fresh_node_id() -> Uuid {
+    let n = NEXT_NODE_ID.fetch_add(1, Ordering::Relaxed);
+    let mut b = [0u8; 16];
+    b[9..16].copy_from_slice(&n.to_be_bytes()[1..]);
+    b[6] = 0x40; // version 4
+    b[8] = 0x80; // RFC variant
+    Uuid::from_bytes(b)
+}
 
 use crate::core::process_models::case_centric::petri_net::pnml::{
     export_pnml,
@@ -165,7 +184,7 @@ impl PetriNet {
     ///
     /// If no ID is passed, a new UUID will be generated
     pub fn add_place(&mut self, place_id: Option<Uuid>) -> PlaceID {
-        let place_id = place_id.unwrap_or(Uuid::new_v4());
+        let place_id = place_id.unwrap_or_else(fresh_node_id);
         let place = Place { id: place_id };
         self.places.insert(place_id, place);
         PlaceID(place_id)
@@ -179,7 +198,7 @@ impl PetriNet {
         label: Option<String>,
         transition_id: Option<Uuid>,
     ) -> TransitionID {
-        let transition_id = transition_id.unwrap_or(Uuid::new_v4());
+        let transition_id = transition_id.unwrap_or_else(fresh_node_id);
         let transition = Transition {
             id: transition_id,
             label,
@@ -676,5 +695,500 @@ mod tests {
             DMatrix::from_row_slice(3, 4, &[-1, -1, 0, 0, 1, 1, -1, 0, 0, 0, 1, 0]);
 
         assert_eq!(incidence_matrix, expected_incidence_matrix);
+    }
+}
+
+impl PetriNet {
+    /// Remove silent structure that constrains nothing, preserving the net's language.
+    ///
+    /// Constructed nets (and occasionally mined ones) carry silent transitions that do no
+    /// work: a `p -> tau -> q` chain where `p` has no other successor and `q` no other
+    /// predecessor, a tau that reads and writes the same places, two taus with identical
+    /// surroundings, or a fragment left with no labeled transition at all. Each rule below
+    /// removes only structure whose firing options are unchanged with it gone, so fitness
+    /// and precision of the simplified net are those of the original; what changes is the
+    /// size a reader (and a size column) sees.
+    pub fn simplify_silent(&mut self) {
+        self.simplify_silent_tracked();
+    }
+
+    /// [`simplify_silent`](Self::simplify_silent), returning the place merges it performed as
+    /// `(removed, kept)` pairs in the order they happened.
+    ///
+    /// A caller carrying its own per-place annotations (which cell a place answers for, why
+    /// it exists) has no way to recover them after simplification otherwise: series-tau
+    /// fusion is the one rule here that removes a place by folding it into another rather
+    /// than dropping it outright, and which one survives is a coin only this function calls.
+    /// Replaying the pairs in order (move `removed`'s annotation onto `kept`, if any) is
+    /// enough even across a chain of fusions, since each pair names the id current at the
+    /// moment it fired.
+    pub fn simplify_silent_tracked(&mut self) -> Vec<(Uuid, Uuid)> {
+        let mut merges: Vec<(Uuid, Uuid)> = Vec::new();
+        loop {
+            let mut changed = false;
+
+            // Pre/post sets as (place, weight) lists per transition, rebuilt per round.
+            let mut pre: HashMap<Uuid, Vec<(Uuid, u32)>> = HashMap::new();
+            let mut post: HashMap<Uuid, Vec<(Uuid, u32)>> = HashMap::new();
+            let mut place_out: HashMap<Uuid, Vec<Uuid>> = HashMap::new();
+            let mut place_in: HashMap<Uuid, Vec<Uuid>> = HashMap::new();
+            for arc in &self.arcs {
+                match arc.from_to {
+                    ArcType::PlaceTransition(p, t) => {
+                        pre.entry(t).or_default().push((p, arc.weight));
+                        place_out.entry(p).or_default().push(t);
+                    }
+                    ArcType::TransitionPlace(t, p) => {
+                        post.entry(t).or_default().push((p, arc.weight));
+                        place_in.entry(p).or_default().push(t);
+                    }
+                }
+            }
+
+            let tau_ids: Vec<Uuid> = self
+                .transitions
+                .iter()
+                .filter(|(_, tr)| tr.label.is_none())
+                .map(|(id, _)| *id)
+                .collect();
+
+            // Self-loop tau: reads exactly what it writes. Firing it changes nothing.
+            for t in tau_ids.iter() {
+                let mut a = pre.get(t).cloned().unwrap_or_default();
+                let mut b = post.get(t).cloned().unwrap_or_default();
+                a.sort_unstable();
+                b.sort_unstable();
+                if !a.is_empty() && a == b {
+                    self.transitions.remove(t);
+                    self.arcs.retain(|arc| !arc.from_to.contains(t));
+                    changed = true;
+                }
+            }
+            if changed {
+                continue;
+            }
+
+            // Unconditional fork: a silent transition whose one input place is a pure source
+            // -- nothing produces it, the transition is its only consumer -- is enabled the
+            // instant the net is and has nothing else to wait on. Firing it "at time zero" and
+            // crediting its outputs directly in the initial marking is the same behaviour with
+            // the step gone: a token duplicated by a forced fork and a marking that starts
+            // with one token in each branch already are the same fact stated two ways, and the
+            // second needs no transition to say it.
+            'fork: for t in tau_ids.iter() {
+                if !self.transitions.contains_key(t) {
+                    continue;
+                }
+                let Some(ins) = pre.get(t) else { continue };
+                if ins.len() != 1 {
+                    continue;
+                }
+                let (p, w) = ins[0];
+                if w != 1 {
+                    continue;
+                }
+                if place_in.get(&p).is_some_and(|v| !v.is_empty()) {
+                    continue;
+                }
+                if place_out.get(&p).map(Vec::len) != Some(1) {
+                    continue;
+                }
+                let Some(init) = &self.initial_marking else { continue };
+                if init.get(&PlaceID(p)).copied().unwrap_or(0) != 1 {
+                    continue;
+                }
+                if self
+                    .final_markings
+                    .iter()
+                    .flatten()
+                    .any(|m| m.get(&PlaceID(p)).copied().unwrap_or(0) > 0)
+                {
+                    continue;
+                }
+                let Some(outs) = post.get(t).cloned() else { continue };
+                if outs.is_empty() {
+                    continue;
+                }
+                self.transitions.remove(t);
+                self.places.remove(&p);
+                self.arcs.retain(|arc| !arc.from_to.contains(t));
+                if let Some(m) = &mut self.initial_marking {
+                    m.remove(&PlaceID(p));
+                    for (q, wq) in &outs {
+                        *m.entry(PlaceID(*q)).or_default() += u64::from(*wq);
+                    }
+                }
+                changed = true;
+                break 'fork;
+            }
+            if changed {
+                continue;
+            }
+
+            // Unconditional join, the mirror of the fork above: a silent transition whose one
+            // output place is a pure sink -- nothing consumes it, the transition is its only
+            // producer, and it sits in every final marking with exactly one token -- fires as
+            // soon as all its inputs are ready and gates nothing afterward. Crediting its
+            // inputs directly to the final marking in its place says the same thing: the token
+            // in the sink only ever meant "every branch got here", which the branches' own
+            // places already say once the sink and its transition are gone.
+            'join: for t in tau_ids.iter() {
+                if !self.transitions.contains_key(t) {
+                    continue;
+                }
+                let Some(outs) = post.get(t) else { continue };
+                if outs.len() != 1 {
+                    continue;
+                }
+                let (q, w) = outs[0];
+                if w != 1 {
+                    continue;
+                }
+                if place_out.get(&q).is_some_and(|v| !v.is_empty()) {
+                    continue;
+                }
+                if place_in.get(&q).map(Vec::len) != Some(1) {
+                    continue;
+                }
+                if self
+                    .initial_marking
+                    .as_ref()
+                    .is_some_and(|m| m.contains_key(&PlaceID(q)))
+                {
+                    continue;
+                }
+                let Some(fms) = &self.final_markings else { continue };
+                if fms.is_empty() || fms.iter().any(|m| m.get(&PlaceID(q)).copied().unwrap_or(0) != 1) {
+                    continue;
+                }
+                let Some(ins) = pre.get(t).cloned() else { continue };
+                if ins.is_empty() {
+                    continue;
+                }
+                self.transitions.remove(t);
+                self.places.remove(&q);
+                self.arcs.retain(|arc| !arc.from_to.contains(t));
+                if let Some(fms) = &mut self.final_markings {
+                    for m in fms {
+                        if m.remove(&PlaceID(q)).is_some() {
+                            for (p, wp) in &ins {
+                                *m.entry(PlaceID(*p)).or_default() += u64::from(*wp);
+                            }
+                        }
+                    }
+                }
+                changed = true;
+                break 'join;
+            }
+            if changed {
+                continue;
+            }
+
+            // Series tau: p -> tau -> q, both arcs weight 1, p != q, where the tau is
+            // either the only consumer of p or the only producer of q. In the first case
+            // every token in p can only ever move, silently, to q, so p fuses into q; in
+            // the second every token in q came, silently, from p being consumed, so q
+            // fuses into p. Either way the firing options and the projected language are
+            // unchanged; only the free move disappears.
+            'series: for t in tau_ids.iter() {
+                let (Some(a), Some(b)) = (pre.get(t), post.get(t)) else { continue };
+                if a.len() != 1 || b.len() != 1 {
+                    continue;
+                }
+                let (p, wp) = a[0];
+                let (q, wq) = b[0];
+                if p == q || wp != 1 || wq != 1 {
+                    continue;
+                }
+                let in_final = |x: Uuid| {
+                    self.final_markings
+                        .iter()
+                        .flatten()
+                        .any(|m| m.get(&PlaceID(x)).copied().unwrap_or(0) > 0)
+                };
+                let in_initial = |x: Uuid| {
+                    self.initial_marking
+                        .as_ref()
+                        .map(|m| m.get(&PlaceID(x)).copied().unwrap_or(0) > 0)
+                        .unwrap_or(false)
+                };
+                // Forward fusion (p into q) pre-fires the tau, which is free only if no
+                // accepting marking asks for the token still in p. Backward fusion (q into
+                // p) un-fires it, which is free only if no initial token starts in q.
+                let p_exclusive = place_out.get(&p).map(Vec::len) == Some(1) && !in_final(p);
+                let q_exclusive = place_in.get(&q).map(Vec::len) == Some(1) && !in_initial(q);
+                let (gone, kept) = if p_exclusive {
+                    (p, q)
+                } else if q_exclusive {
+                    (q, p)
+                } else {
+                    continue;
+                };
+                self.transitions.remove(t);
+                self.places.remove(&gone);
+                self.arcs.retain(|arc| !arc.from_to.contains(t));
+                for arc in &mut self.arcs {
+                    match &mut arc.from_to {
+                        ArcType::PlaceTransition(from, _) if *from == gone => *from = kept,
+                        ArcType::TransitionPlace(_, to) if *to == gone => *to = kept,
+                        _ => {}
+                    }
+                }
+                merges.push((gone, kept));
+                let move_tokens = |m: &mut Marking| {
+                    if let Some(n) = m.remove(&PlaceID(gone)) {
+                        *m.entry(PlaceID(kept)).or_default() += n;
+                    }
+                };
+                if let Some(m) = &mut self.initial_marking {
+                    move_tokens(m);
+                }
+                if let Some(fs) = &mut self.final_markings {
+                    for m in fs {
+                        move_tokens(m);
+                    }
+                }
+                changed = true;
+                break 'series;
+            }
+            if changed {
+                continue;
+            }
+
+            // Dual series: tau1 -> p -> tau2 with p exclusive between two silent
+            // transitions and unmarked. Firing tau1 makes tau2 the only consumer of p, so
+            // the pair acts as one silent step; merging them removes the seat place. The
+            // merged tau consumes tau1's inputs plus tau2's other inputs and produces
+            // tau2's outputs plus tau1's other outputs.
+            'dual: for t1 in &tau_ids {
+                if !self.transitions.contains_key(t1) {
+                    continue;
+                }
+                let Some(outs) = post.get(t1) else { continue };
+                for (p_mid, w) in outs {
+                    if *w != 1 {
+                        continue;
+                    }
+                    let only_in = place_in.get(p_mid).map(Vec::len) == Some(1);
+                    let only_out = place_out.get(p_mid).map(Vec::len) == Some(1);
+                    if !only_in || !only_out {
+                        continue;
+                    }
+                    let t2 = place_out[p_mid][0];
+                    if t2 == *t1 || self.transitions.get(&t2).and_then(|tr| tr.label.clone()).is_some() {
+                        continue;
+                    }
+                    // Merging is only a pure sequencing of silents when one side owns the
+                    // seat exclusively: t2 consumes nothing but p (it could always fire
+                    // eagerly after t1), or t1 produces nothing but p (it could always fire
+                    // lazily right before t2). With extra inputs AND extra outputs, merging
+                    // moves a synchronization point and changes the language.
+                    let t2_only_p = pre.get(&t2).map(|a| a.as_slice()) == Some(&[(*p_mid, 1)][..]);
+                    let t1_only_p = post.get(t1).map(|a| a.as_slice()) == Some(&[(*p_mid, 1)][..]);
+                    if !t2_only_p && !t1_only_p {
+                        continue;
+                    }
+                    if pre.get(&t2).map(|a| a.iter().filter(|(x, _)| x == p_mid).count()) != Some(1) {
+                        continue;
+                    }
+                    let marked = self
+                        .initial_marking
+                        .iter()
+                        .chain(self.final_markings.iter().flatten())
+                        .any(|m| m.get(&PlaceID(*p_mid)).copied().unwrap_or(0) > 0);
+                    if marked {
+                        continue;
+                    }
+                    // Build the merged tau.
+                    let merged = self.add_transition(None, None);
+                    let mut add: HashMap<(bool, Uuid), u32> = HashMap::new();
+                    for (pl, w) in pre.get(t1).into_iter().flatten() {
+                        *add.entry((true, *pl)).or_default() += w;
+                    }
+                    for (pl, w) in pre.get(&t2).into_iter().flatten() {
+                        if pl != p_mid {
+                            *add.entry((true, *pl)).or_default() += w;
+                        }
+                    }
+                    for (pl, w) in post.get(t1).into_iter().flatten() {
+                        if pl != p_mid {
+                            *add.entry((false, *pl)).or_default() += w;
+                        }
+                    }
+                    for (pl, w) in post.get(&t2).into_iter().flatten() {
+                        *add.entry((false, *pl)).or_default() += w;
+                    }
+                    for ((is_in, pl), w) in add {
+                        let a = if is_in {
+                            ArcType::PlaceTransition(pl, merged.0)
+                        } else {
+                            ArcType::TransitionPlace(merged.0, pl)
+                        };
+                        self.add_arc(a, Some(w));
+                    }
+                    let p_mid = *p_mid;
+                    let t1 = *t1;
+                    self.transitions.remove(&t1);
+                    self.transitions.remove(&t2);
+                    self.places.remove(&p_mid);
+                    self.arcs.retain(|arc| {
+                        !arc.from_to.contains(&t1)
+                            && !arc.from_to.contains(&t2)
+                            && !arc.from_to.contains(&p_mid)
+                    });
+                    changed = true;
+                    break 'dual;
+                }
+            }
+            if changed {
+                continue;
+            }
+
+            // Duplicate tau: identical pre and post sets as another tau. A tau matching a
+            // labeled transition is NOT a duplicate: it is a silent alternative, and
+            // removing it forces the label into every trace that used the silent route.
+            let mut seen: HashMap<(Vec<(Uuid, u32)>, Vec<(Uuid, u32)>), Uuid> = HashMap::new();
+            let mut sorted_taus = tau_ids.clone();
+            sorted_taus.sort_unstable();
+            for id in sorted_taus.iter() {
+                if !self.transitions.contains_key(id) {
+                    continue;
+                }
+                let mut a = pre.get(id).cloned().unwrap_or_default();
+                let mut b = post.get(id).cloned().unwrap_or_default();
+                a.sort_unstable();
+                b.sort_unstable();
+                let key = (a, b);
+                if seen.contains_key(&key) {
+                    self.transitions.remove(id);
+                    self.arcs.retain(|arc| !arc.from_to.contains(id));
+                    changed = true;
+                    break;
+                } else {
+                    seen.insert(key, *id);
+                }
+            }
+            if changed {
+                continue;
+            }
+
+            // Disconnected, unmarked places.
+            let connected: std::collections::HashSet<Uuid> = self
+                .arcs
+                .iter()
+                .flat_map(|arc| match arc.from_to {
+                    ArcType::PlaceTransition(p, t) => [p, t],
+                    ArcType::TransitionPlace(t, p) => [t, p],
+                })
+                .collect();
+            let marked: std::collections::HashSet<Uuid> = self
+                .initial_marking
+                .iter()
+                .flat_map(|m| m.keys())
+                .chain(self.final_markings.iter().flatten().flat_map(|m| m.keys()))
+                .map(|p| p.0)
+                .collect();
+            {
+                let before = self.places.len();
+                self.places
+                    .retain(|id, _| connected.contains(id) || marked.contains(id));
+                if self.places.len() != before {
+                    changed = true;
+                }
+            }
+
+            if !changed {
+                break;
+            }
+        }
+        merges
+    }
+}
+
+#[cfg(test)]
+mod simplify_silent_tests {
+    use super::*;
+
+    #[test]
+    fn series_tau_fuses_and_tracks_the_merge() {
+        // producer -> p0 --tau--> p1 -> consumer. p0 exclusive to the tau and never
+        // final-marked, so it fuses into p1; a caller carrying per-place annotations (a
+        // `PlaceRole`, in this crate) needs the (removed, kept) pair to move them across.
+        // Both places get an extra labeled neighbour so neither the unconditional-fork
+        // nor unconditional-join shortcut fires first and preempts the series rule this
+        // test means to exercise.
+        let mut net = PetriNet::default();
+        let p0 = net.add_place(None);
+        let p1 = net.add_place(None);
+        let producer = net.add_transition(Some("P".into()), None);
+        let t = net.add_transition(None, None);
+        let consumer = net.add_transition(Some("C".into()), None);
+        net.add_arc(ArcType::transition_to_place(producer, p0), Some(1));
+        net.add_arc(ArcType::place_to_transition(p0, t), Some(1));
+        net.add_arc(ArcType::transition_to_place(t, p1), Some(1));
+        net.add_arc(ArcType::place_to_transition(p1, consumer), Some(1));
+
+        let merges = net.simplify_silent_tracked();
+
+        assert_eq!(merges, vec![(p0.get_uuid(), p1.get_uuid())]);
+        assert_eq!(net.places.len(), 1, "p0 fuses away, only p1 remains");
+        assert!(net.places.contains_key(&p1.get_uuid()));
+        assert!(!net.transitions.contains_key(&t.get_uuid()), "the tau itself is gone");
+        assert!(net.transitions.contains_key(&producer.get_uuid()));
+        assert!(net.transitions.contains_key(&consumer.get_uuid()));
+        assert!(
+            net.arcs.iter().any(|a| a.from_to == ArcType::transition_to_place(producer, p1)),
+            "producer's arc is rewired onto the surviving place"
+        );
+    }
+
+    #[test]
+    fn a_self_loop_tau_is_removed_without_touching_its_place() {
+        // A tau that reads and writes the same place changes nothing when it fires, so it
+        // is dropped outright, the place itself (marked, so it survives the disconnected-
+        // place sweep) is untouched.
+        let mut net = PetriNet::default();
+        let p = net.add_place(None);
+        let t = net.add_transition(None, None);
+        net.add_arc(ArcType::place_to_transition(p, t), Some(1));
+        net.add_arc(ArcType::transition_to_place(t, p), Some(1));
+        net.initial_marking = Some(Marking::from([(p, 1)]));
+
+        let merges = net.simplify_silent_tracked();
+
+        assert!(merges.is_empty(), "a self-loop drop is not a place merge");
+        assert!(net.transitions.is_empty());
+        assert!(net.arcs.is_empty());
+        assert!(net.places.contains_key(&p.get_uuid()), "the marked place survives");
+    }
+
+    #[test]
+    fn a_duplicate_tau_is_removed_but_a_labeled_twin_is_not() {
+        // Two silent transitions with the same pre/post are one fact stated twice; a
+        // labeled transition with the same pre/post is a silent alternative to a real
+        // step, and removing it would force every trace onto the labeled route. p0/p1
+        // each get a third neighbour so neither is exclusive to a tau, which keeps the
+        // series-fusion rule from firing first and merging the taus' endpoints away
+        // before duplicate detection gets a look at them.
+        let mut net = PetriNet::default();
+        let p0 = net.add_place(None);
+        let p1 = net.add_place(None);
+        let t1 = net.add_transition(None, None);
+        let t2 = net.add_transition(None, None);
+        let labeled = net.add_transition(Some("X".into()), None);
+        for t in [t1, t2, labeled] {
+            net.add_arc(ArcType::place_to_transition(p0, t), Some(1));
+            net.add_arc(ArcType::transition_to_place(t, p1), Some(1));
+        }
+
+        net.simplify_silent();
+
+        assert_eq!(net.transitions.len(), 2, "one duplicate tau drops, the labeled one never does");
+        assert!(net.transitions.contains_key(&labeled.get_uuid()));
+        let taus_left = [t1.get_uuid(), t2.get_uuid()]
+            .into_iter()
+            .filter(|id| net.transitions.contains_key(id))
+            .count();
+        assert_eq!(taus_left, 1);
     }
 }

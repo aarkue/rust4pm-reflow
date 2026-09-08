@@ -1,0 +1,413 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.4133508347654999,
+      "recorded": 0.595945494991338
+    },
+    "min_fitness_rebuilt": 0.9862974996468428,
+    "types_whose_fitness_falls": []
+  },
+  "assignment": {
+    "absent": [
+      [
+        "confirm order",
+        "customers"
+      ],
+      [
+        "confirm order",
+        "employees"
+      ],
+      [
+        "confirm order",
+        "items"
+      ],
+      [
+        "confirm order",
+        "products"
+      ],
+      [
+        "create package",
+        "employees"
+      ],
+      [
+        "create package",
+        "products"
+      ],
+      [
+        "failed delivery",
+        "employees"
+      ],
+      [
+        "failed delivery",
+        "items"
+      ],
+      [
+        "failed delivery",
+        "products"
+      ],
+      [
+        "item out of stock",
+        "products"
+      ],
+      [
+        "package delivered",
+        "employees"
+      ],
+      [
+        "package delivered",
+        "items"
+      ],
+      [
+        "package delivered",
+        "products"
+      ],
+      [
+        "pay order",
+        "items"
+      ],
+      [
+        "pay order",
+        "products"
+      ],
+      [
+        "payment reminder",
+        "products"
+      ],
+      [
+        "pick item",
+        "products"
+      ],
+      [
+        "place order",
+        "customers"
+      ],
+      [
+        "place order",
+        "products"
+      ],
+      [
+        "reorder item",
+        "products"
+      ],
+      [
+        "send package",
+        "employees"
+      ],
+      [
+        "send package",
+        "items"
+      ],
+      [
+        "send package",
+        "products"
+      ]
+    ],
+    "flow": [
+      [
+        "confirm order",
+        "orders"
+      ],
+      [
+        "create package",
+        "items"
+      ],
+      [
+        "create package",
+        "packages"
+      ],
+      [
+        "failed delivery",
+        "packages"
+      ],
+      [
+        "item out of stock",
+        "items"
+      ],
+      [
+        "package delivered",
+        "packages"
+      ],
+      [
+        "pay order",
+        "orders"
+      ],
+      [
+        "payment reminder",
+        "items"
+      ],
+      [
+        "payment reminder",
+        "orders"
+      ],
+      [
+        "pick item",
+        "items"
+      ],
+      [
+        "place order",
+        "items"
+      ],
+      [
+        "place order",
+        "orders"
+      ],
+      [
+        "reorder item",
+        "items"
+      ],
+      [
+        "send package",
+        "packages"
+      ]
+    ],
+    "inv": [
+      [
+        "item out of stock",
+        "employees"
+      ],
+      [
+        "pick item",
+        "employees"
+      ],
+      [
+        "reorder item",
+        "employees"
+      ]
+    ],
+    "kept": [
+      [
+        "confirm order",
+        "orders"
+      ],
+      [
+        "create package",
+        "items"
+      ],
+      [
+        "create package",
+        "packages"
+      ],
+      [
+        "failed delivery",
+        "packages"
+      ],
+      [
+        "item out of stock",
+        "employees"
+      ],
+      [
+        "item out of stock",
+        "items"
+      ],
+      [
+        "package delivered",
+        "packages"
+      ],
+      [
+        "pay order",
+        "orders"
+      ],
+      [
+        "payment reminder",
+        "items"
+      ],
+      [
+        "payment reminder",
+        "orders"
+      ],
+      [
+        "pick item",
+        "employees"
+      ],
+      [
+        "pick item",
+        "items"
+      ],
+      [
+        "place order",
+        "items"
+      ],
+      [
+        "place order",
+        "orders"
+      ],
+      [
+        "reorder item",
+        "employees"
+      ],
+      [
+        "reorder item",
+        "items"
+      ],
+      [
+        "send package",
+        "packages"
+      ]
+    ]
+  },
+  "log": "order-management",
+  "types": {
+    "customers": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.9986452659171764
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 6,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 2,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.749379652605459
+      },
+      "objects": 15,
+      "precision": {
+        "floor": 0.5087173100871731,
+        "rebuilt": 0.5087173100871731,
+        "recorded": 0.9993344425956738
+      }
+    },
+    "employees": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.150406138487476
+      },
+      "arcs": {
+        "rebuilt": 16,
+        "recorded": 52,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 5,
+        "carried": 0,
+        "flow": 0,
+        "inv": 3
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.9680182752712736
+      },
+      "objects": 18,
+      "precision": {
+        "floor": 0.12545688178183895,
+        "rebuilt": 0.12545688178183895,
+        "recorded": 0.2569935351338288
+      }
+    },
+    "items": {
+      "adjusted_precision": {
+        "rebuilt": 0.480105008592999,
+        "recorded": 0.4076251573392475
+      },
+      "arcs": {
+        "rebuilt": 34,
+        "recorded": 37,
+        "reduced": 20
+      },
+      "cells": {
+        "absent": 5,
+        "carried": 5,
+        "flow": 6,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9899168907357614,
+        "recorded": 0.9837709955651779
+      },
+      "objects": 7659,
+      "precision": {
+        "floor": 0.1947281368367761,
+        "rebuilt": 0.581343191620456,
+        "recorded": 0.5229772067595542
+      }
+    },
+    "orders": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 10,
+        "recorded": 10,
+        "reduced": 10
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 4,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9902116823173643,
+        "recorded": 0.9902116823173643
+      },
+      "objects": 2000,
+      "precision": {
+        "floor": 0.2664312397851973,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "packages": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 10,
+        "recorded": 10,
+        "reduced": 10
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 4,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9862974996468428,
+        "recorded": 0.9862974996468428
+      },
+      "objects": 1128,
+      "precision": {
+        "floor": 0.26596516690856314,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "products": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.01899640820412841
+      },
+      "arcs": {
+        "rebuilt": 22,
+        "recorded": 48,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 11,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.8644528329412623
+      },
+      "objects": 20,
+      "precision": {
+        "floor": 0.09107357361099343,
+        "rebuilt": 0.09107357361099343,
+        "recorded": 0.10833991103419867
+      }
+    }
+  }
+}

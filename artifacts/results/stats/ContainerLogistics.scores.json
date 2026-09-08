@@ -1,0 +1,414 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.5358466623300787,
+      "recorded": 0.6349700223620577
+    },
+    "min_fitness_rebuilt": 0.42923362175525337,
+    "types_whose_fitness_falls": [
+      "Vehicle"
+    ]
+  },
+  "assignment": {
+    "absent": [
+      [
+        "Book Vehicles",
+        "Vehicle"
+      ],
+      [
+        "Depart",
+        "Transport Document"
+      ],
+      [
+        "Depart",
+        "Vehicle"
+      ],
+      [
+        "Drive to Terminal",
+        "Truck"
+      ],
+      [
+        "Load Truck",
+        "Truck"
+      ],
+      [
+        "Load to Vehicle",
+        "Vehicle"
+      ],
+      [
+        "Reschedule Container",
+        "Transport Document"
+      ],
+      [
+        "Reschedule Container",
+        "Vehicle"
+      ]
+    ],
+    "flow": [
+      [
+        "Book Vehicles",
+        "Transport Document"
+      ],
+      [
+        "Bring to Loading Bay",
+        "Container"
+      ],
+      [
+        "Collect Goods",
+        "Handling Unit"
+      ],
+      [
+        "Create Transport Document",
+        "Customer Order"
+      ],
+      [
+        "Create Transport Document",
+        "Transport Document"
+      ],
+      [
+        "Depart",
+        "Container"
+      ],
+      [
+        "Drive to Terminal",
+        "Container"
+      ],
+      [
+        "Load Truck",
+        "Container"
+      ],
+      [
+        "Load Truck",
+        "Handling Unit"
+      ],
+      [
+        "Load to Vehicle",
+        "Container"
+      ],
+      [
+        "Order Empty Containers",
+        "Container"
+      ],
+      [
+        "Order Empty Containers",
+        "Transport Document"
+      ],
+      [
+        "Pick Up Empty Container",
+        "Container"
+      ],
+      [
+        "Place in Stock",
+        "Container"
+      ],
+      [
+        "Register Customer Order",
+        "Customer Order"
+      ],
+      [
+        "Reschedule Container",
+        "Container"
+      ],
+      [
+        "Weigh",
+        "Container"
+      ]
+    ],
+    "inv": [
+      [
+        "Bring to Loading Bay",
+        "Forklift"
+      ],
+      [
+        "Load to Vehicle",
+        "Forklift"
+      ],
+      [
+        "Place in Stock",
+        "Forklift"
+      ],
+      [
+        "Weigh",
+        "Forklift"
+      ]
+    ],
+    "kept": [
+      [
+        "Book Vehicles",
+        "Transport Document"
+      ],
+      [
+        "Bring to Loading Bay",
+        "Container"
+      ],
+      [
+        "Bring to Loading Bay",
+        "Forklift"
+      ],
+      [
+        "Collect Goods",
+        "Handling Unit"
+      ],
+      [
+        "Create Transport Document",
+        "Customer Order"
+      ],
+      [
+        "Create Transport Document",
+        "Transport Document"
+      ],
+      [
+        "Depart",
+        "Container"
+      ],
+      [
+        "Drive to Terminal",
+        "Container"
+      ],
+      [
+        "Load Truck",
+        "Container"
+      ],
+      [
+        "Load Truck",
+        "Handling Unit"
+      ],
+      [
+        "Load to Vehicle",
+        "Container"
+      ],
+      [
+        "Load to Vehicle",
+        "Forklift"
+      ],
+      [
+        "Order Empty Containers",
+        "Container"
+      ],
+      [
+        "Order Empty Containers",
+        "Transport Document"
+      ],
+      [
+        "Pick Up Empty Container",
+        "Container"
+      ],
+      [
+        "Place in Stock",
+        "Container"
+      ],
+      [
+        "Place in Stock",
+        "Forklift"
+      ],
+      [
+        "Register Customer Order",
+        "Customer Order"
+      ],
+      [
+        "Reschedule Container",
+        "Container"
+      ],
+      [
+        "Weigh",
+        "Container"
+      ],
+      [
+        "Weigh",
+        "Forklift"
+      ]
+    ]
+  },
+  "log": "ContainerLogistics",
+  "types": {
+    "Container": {
+      "adjusted_precision": {
+        "rebuilt": 0.8999534803190399,
+        "recorded": 0.8999534803190399
+      },
+      "arcs": {
+        "rebuilt": 24,
+        "recorded": 24,
+        "reduced": 24
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 10,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.992769505388978,
+        "recorded": 0.992769505388978
+      },
+      "objects": 1999,
+      "precision": {
+        "floor": 0.13264461347956838,
+        "rebuilt": 0.9132241122520969,
+        "recorded": 0.9132241122520969
+      }
+    },
+    "Customer Order": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 4,
+        "reduced": 4
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 2,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9974937343358397,
+        "recorded": 0.9974937343358397
+      },
+      "objects": 600,
+      "precision": {
+        "floor": 0.33444816053511706,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Forklift": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.2163427666601518
+      },
+      "arcs": {
+        "rebuilt": 8,
+        "recorded": 22,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 4
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.9508387096774193
+      },
+      "objects": 3,
+      "precision": {
+        "floor": 0.25006459113809587,
+        "rebuilt": 0.25006459113809587,
+        "recorded": 0.4123076923076923
+      }
+    },
+    "Handling Unit": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 4,
+        "reduced": 4
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 2,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9987696384629945,
+        "recorded": 0.9987696384629945
+      },
+      "objects": 10579,
+      "precision": {
+        "floor": 0.33347009626005997,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Transport Document": {
+      "adjusted_precision": {
+        "rebuilt": 0.35929704305010424,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 14,
+        "recorded": 15,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 2,
+        "carried": 2,
+        "flow": 3,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9935418768920282,
+        "recorded": 0.9568113017154389
+      },
+      "objects": 596,
+      "precision": {
+        "floor": 0.27388695926744555,
+        "rebuilt": 0.5347772277227723,
+        "recorded": 1.0
+      }
+    },
+    "Truck": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.08655281926480624
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 8,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 2,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 6,
+      "precision": {
+        "floor": 0.5005578578259483,
+        "rebuilt": 0.5005578578259483,
+        "recorded": 0.5437859832907667
+      }
+    },
+    "Vehicle": {
+      "adjusted_precision": {
+        "rebuilt": 0.49167611294140745,
+        "recorded": 0.24194109029040586
+      },
+      "arcs": {
+        "rebuilt": 14,
+        "recorded": 17,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 4,
+        "carried": 4,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.42923362175525337,
+        "recorded": 0.9944375772558715
+      },
+      "objects": 127,
+      "precision": {
+        "floor": 0.3765928906773977,
+        "rebuilt": 0.6831072749691739,
+        "recorded": 0.5274206864016984
+      }
+    }
+  }
+}

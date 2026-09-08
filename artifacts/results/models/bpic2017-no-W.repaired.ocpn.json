@@ -1,0 +1,706 @@
+{
+  "places": [
+    {
+      "name": "Application p0",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p1",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p2",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p3",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p4",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p5",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p6",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p7",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p8",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p9",
+      "object_type": "Application"
+    },
+    {
+      "name": "Application p10",
+      "object_type": "Application"
+    },
+    {
+      "name": "Case_R p0",
+      "object_type": "Case_R"
+    },
+    {
+      "name": "Offer p0",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p1",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p2",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p3",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p4",
+      "object_type": "Offer"
+    },
+    {
+      "name": "Offer p5",
+      "object_type": "Offer"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "A_Create Application",
+      "label": "A_Create Application"
+    },
+    {
+      "name": "Application tau0",
+      "label": null
+    },
+    {
+      "name": "A_Submitted",
+      "label": "A_Submitted"
+    },
+    {
+      "name": "A_Concept",
+      "label": "A_Concept"
+    },
+    {
+      "name": "A_Accepted",
+      "label": "A_Accepted"
+    },
+    {
+      "name": "A_Complete",
+      "label": "A_Complete"
+    },
+    {
+      "name": "Application tau1",
+      "label": null
+    },
+    {
+      "name": "Application tau2",
+      "label": null
+    },
+    {
+      "name": "Application tau3",
+      "label": null
+    },
+    {
+      "name": "A_Validating",
+      "label": "A_Validating"
+    },
+    {
+      "name": "Application tau4",
+      "label": null
+    },
+    {
+      "name": "A_Incomplete",
+      "label": "A_Incomplete"
+    },
+    {
+      "name": "Application tau5",
+      "label": null
+    },
+    {
+      "name": "A_Cancelled",
+      "label": "A_Cancelled"
+    },
+    {
+      "name": "A_Denied",
+      "label": "A_Denied"
+    },
+    {
+      "name": "A_Pending",
+      "label": "A_Pending"
+    },
+    {
+      "name": "O_Accepted",
+      "label": "O_Accepted"
+    },
+    {
+      "name": "O_Cancelled",
+      "label": "O_Cancelled"
+    },
+    {
+      "name": "O_Create Offer",
+      "label": "O_Create Offer"
+    },
+    {
+      "name": "O_Created",
+      "label": "O_Created"
+    },
+    {
+      "name": "O_Refused",
+      "label": "O_Refused"
+    },
+    {
+      "name": "O_Returned",
+      "label": "O_Returned"
+    },
+    {
+      "name": "O_Sent (mail and online)",
+      "label": "O_Sent (mail and online)"
+    },
+    {
+      "name": "O_Sent (online only)",
+      "label": "O_Sent (online only)"
+    },
+    {
+      "name": "Offer tau0",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "Application p0",
+      "target": "A_Create Application",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Create Application",
+      "target": "Application p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p1",
+      "target": "Application tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau0",
+      "target": "Application p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p1",
+      "target": "A_Submitted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Submitted",
+      "target": "Application p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p2",
+      "target": "A_Concept",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Concept",
+      "target": "Application p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p3",
+      "target": "A_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Accepted",
+      "target": "Application p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p4",
+      "target": "A_Complete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Complete",
+      "target": "Application p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p5",
+      "target": "Application tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau1",
+      "target": "Application p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p5",
+      "target": "Application tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau3",
+      "target": "Application p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau2",
+      "target": "Application p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p8",
+      "target": "Application tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p7",
+      "target": "A_Validating",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Validating",
+      "target": "Application p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p9",
+      "target": "Application tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau4",
+      "target": "Application p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p9",
+      "target": "A_Incomplete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Incomplete",
+      "target": "Application p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p8",
+      "target": "Application tau5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application tau5",
+      "target": "Application p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p6",
+      "target": "A_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Cancelled",
+      "target": "Application p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p6",
+      "target": "A_Denied",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Denied",
+      "target": "Application p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Application p6",
+      "target": "A_Pending",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Pending",
+      "target": "Application p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Accepted",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Cancelled",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Complete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Complete",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Concept",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Concept",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Create Application",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Create Application",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Denied",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Denied",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Incomplete",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Incomplete",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Pending",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Pending",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Submitted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Submitted",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "A_Validating",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "A_Validating",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Accepted",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Cancelled",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Create Offer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Create Offer",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Created",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Created",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Refused",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Refused",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Returned",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Returned",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Sent (mail and online)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (mail and online)",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Case_R p0",
+      "target": "O_Sent (online only)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (online only)",
+      "target": "Case_R p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p0",
+      "target": "O_Create Offer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Create Offer",
+      "target": "Offer p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p1",
+      "target": "O_Created",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Created",
+      "target": "Offer p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p2",
+      "target": "O_Sent (mail and online)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (mail and online)",
+      "target": "Offer p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p2",
+      "target": "O_Sent (online only)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Sent (online only)",
+      "target": "Offer p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p3",
+      "target": "Offer tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer tau0",
+      "target": "Offer p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p3",
+      "target": "O_Returned",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Returned",
+      "target": "Offer p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p4",
+      "target": "O_Accepted",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Accepted",
+      "target": "Offer p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p4",
+      "target": "O_Cancelled",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Cancelled",
+      "target": "Offer p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Offer p4",
+      "target": "O_Refused",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "O_Refused",
+      "target": "Offer p5",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "Application p0": 1,
+    "Case_R p0": 1,
+    "Offer p0": 1
+  },
+  "final_marking": {
+    "Application p10": 1,
+    "Case_R p0": 1,
+    "Offer p5": 1
+  }
+}

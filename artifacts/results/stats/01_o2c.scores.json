@@ -1,0 +1,522 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.7777777777777778,
+      "recorded": 0.9909436567434334
+    },
+    "min_fitness_rebuilt": 1.0,
+    "types_whose_fitness_falls": []
+  },
+  "assignment": {
+    "absent": [
+      [
+        "Apply Payment",
+        "Payment"
+      ],
+      [
+        "Approve Order",
+        "Customer"
+      ],
+      [
+        "Generate Shipping Label",
+        "Shipment"
+      ],
+      [
+        "Handle Payment Discrepancy",
+        "Customer"
+      ],
+      [
+        "Handle Payment Discrepancy",
+        "Dispute"
+      ],
+      [
+        "Issue Credit Note",
+        "CreditNote"
+      ],
+      [
+        "Issue Payment Reminder",
+        "Customer"
+      ],
+      [
+        "Perform Credit Check",
+        "Customer"
+      ],
+      [
+        "Process Return Request",
+        "Customer"
+      ],
+      [
+        "Receive Customer Order",
+        "Customer"
+      ],
+      [
+        "Receive Payment",
+        "Payment"
+      ],
+      [
+        "Reject Order",
+        "Customer"
+      ],
+      [
+        "Send Invoice to Customer",
+        "Customer"
+      ],
+      [
+        "Ship Order",
+        "Shipment"
+      ]
+    ],
+    "flow": [
+      [
+        "Apply Discount",
+        "Order"
+      ],
+      [
+        "Apply Payment",
+        "Invoice"
+      ],
+      [
+        "Approve Order",
+        "Order"
+      ],
+      [
+        "Approve Return",
+        "Return"
+      ],
+      [
+        "Generate Invoice",
+        "Invoice"
+      ],
+      [
+        "Generate Invoice",
+        "Order"
+      ],
+      [
+        "Generate Pick List",
+        "Order"
+      ],
+      [
+        "Generate Shipping Label",
+        "Order"
+      ],
+      [
+        "Handle Payment Discrepancy",
+        "Invoice"
+      ],
+      [
+        "Issue Credit Note",
+        "Return"
+      ],
+      [
+        "Issue Payment Reminder",
+        "Invoice"
+      ],
+      [
+        "Pack Items",
+        "Order"
+      ],
+      [
+        "Perform Credit Check",
+        "Order"
+      ],
+      [
+        "Process Return Request",
+        "Order"
+      ],
+      [
+        "Process Return Request",
+        "Return"
+      ],
+      [
+        "Receive Customer Order",
+        "Order"
+      ],
+      [
+        "Receive Payment",
+        "Invoice"
+      ],
+      [
+        "Reject Order",
+        "Order"
+      ],
+      [
+        "Schedule Order Fulfillment",
+        "Order"
+      ],
+      [
+        "Send Invoice to Customer",
+        "Invoice"
+      ],
+      [
+        "Ship Order",
+        "Order"
+      ],
+      [
+        "Validate Customer Order",
+        "Order"
+      ]
+    ],
+    "inv": [
+      [
+        "Generate Pick List",
+        "Product"
+      ],
+      [
+        "Pick Items",
+        "Product"
+      ],
+      [
+        "Update Inventory",
+        "Product"
+      ]
+    ],
+    "kept": [
+      [
+        "Apply Discount",
+        "Order"
+      ],
+      [
+        "Apply Payment",
+        "Invoice"
+      ],
+      [
+        "Approve Order",
+        "Order"
+      ],
+      [
+        "Approve Return",
+        "Return"
+      ],
+      [
+        "Generate Invoice",
+        "Invoice"
+      ],
+      [
+        "Generate Invoice",
+        "Order"
+      ],
+      [
+        "Generate Pick List",
+        "Order"
+      ],
+      [
+        "Generate Pick List",
+        "Product"
+      ],
+      [
+        "Generate Shipping Label",
+        "Order"
+      ],
+      [
+        "Handle Payment Discrepancy",
+        "Invoice"
+      ],
+      [
+        "Issue Credit Note",
+        "Return"
+      ],
+      [
+        "Issue Payment Reminder",
+        "Invoice"
+      ],
+      [
+        "Pack Items",
+        "Order"
+      ],
+      [
+        "Perform Credit Check",
+        "Order"
+      ],
+      [
+        "Pick Items",
+        "Product"
+      ],
+      [
+        "Process Return Request",
+        "Order"
+      ],
+      [
+        "Process Return Request",
+        "Return"
+      ],
+      [
+        "Receive Customer Order",
+        "Order"
+      ],
+      [
+        "Receive Payment",
+        "Invoice"
+      ],
+      [
+        "Reject Order",
+        "Order"
+      ],
+      [
+        "Schedule Order Fulfillment",
+        "Order"
+      ],
+      [
+        "Send Invoice to Customer",
+        "Invoice"
+      ],
+      [
+        "Ship Order",
+        "Order"
+      ],
+      [
+        "Update Inventory",
+        "Product"
+      ],
+      [
+        "Validate Customer Order",
+        "Order"
+      ]
+    ]
+  },
+  "log": "01_o2c",
+  "types": {
+    "CreditNote": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 2,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 103,
+      "precision": {
+        "floor": 0.5,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Customer": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.9185984887306674
+      },
+      "arcs": {
+        "rebuilt": 16,
+        "recorded": 22,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 8,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 856,
+      "precision": {
+        "floor": 0.21933988147497804,
+        "rebuilt": 0.21933988147497804,
+        "recorded": 0.9364530865643669
+      }
+    },
+    "Dispute": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 2,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 174,
+      "precision": {
+        "floor": 0.5,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Invoice": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 12,
+        "recorded": 12,
+        "reduced": 12
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 6,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 1809,
+      "precision": {
+        "floor": 0.20131785618511283,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Order": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 30,
+        "recorded": 30,
+        "reduced": 30
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 13,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 2000,
+      "precision": {
+        "floor": 0.08983057558229521,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Payment": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 2,
+        "carried": 2,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 1465,
+      "precision": {
+        "floor": 0.3333333333333333,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Product": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.9998944219602321
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 8,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 3
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 500,
+      "precision": {
+        "floor": 0.3333098707210061,
+        "rebuilt": 0.3333098707210061,
+        "recorded": 0.9999296121630182
+      }
+    },
+    "Return": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 6,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 3,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 103,
+      "precision": {
+        "floor": 0.25,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Shipment": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 6,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 2,
+        "carried": 2,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 1809,
+      "precision": {
+        "floor": 0.3333333333333333,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    }
+  }
+}

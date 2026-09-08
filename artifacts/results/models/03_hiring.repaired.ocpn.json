@@ -1,0 +1,944 @@
+{
+  "places": [
+    {
+      "name": "Assessment p0",
+      "object_type": "Assessment"
+    },
+    {
+      "name": "Candidate p0",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p1",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p2",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p3",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p4",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p5",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p6",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p7",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p8",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p9",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p10",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p11",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p12",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p13",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p14",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p15",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p16",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p17",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p18",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "Candidate p19",
+      "object_type": "Candidate"
+    },
+    {
+      "name": "HiringManager p0",
+      "object_type": "HiringManager"
+    },
+    {
+      "name": "HiringManager p1",
+      "object_type": "HiringManager"
+    },
+    {
+      "name": "HiringManager p2",
+      "object_type": "HiringManager"
+    },
+    {
+      "name": "HiringManager p3",
+      "object_type": "HiringManager"
+    },
+    {
+      "name": "HiringManager p4",
+      "object_type": "HiringManager"
+    },
+    {
+      "name": "HiringManager p5",
+      "object_type": "HiringManager"
+    },
+    {
+      "name": "Interviewer p0",
+      "object_type": "Interviewer"
+    },
+    {
+      "name": "JobRequisition p0",
+      "object_type": "JobRequisition"
+    },
+    {
+      "name": "JobRequisition p1",
+      "object_type": "JobRequisition"
+    },
+    {
+      "name": "JobRequisition p2",
+      "object_type": "JobRequisition"
+    },
+    {
+      "name": "JobRequisition p3",
+      "object_type": "JobRequisition"
+    },
+    {
+      "name": "JobRequisition p4",
+      "object_type": "JobRequisition"
+    },
+    {
+      "name": "Recruiter p0",
+      "object_type": "Recruiter"
+    },
+    {
+      "name": "Recruiter p1",
+      "object_type": "Recruiter"
+    },
+    {
+      "name": "Recruiter p2",
+      "object_type": "Recruiter"
+    },
+    {
+      "name": "Recruiter p3",
+      "object_type": "Recruiter"
+    },
+    {
+      "name": "Recruiter p4",
+      "object_type": "Recruiter"
+    },
+    {
+      "name": "Recruiter p5",
+      "object_type": "Recruiter"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "Complete Assessment",
+      "label": "Complete Assessment"
+    },
+    {
+      "name": "Review Assessment",
+      "label": "Review Assessment"
+    },
+    {
+      "name": "Send Assessment",
+      "label": "Send Assessment"
+    },
+    {
+      "name": "Submit Application",
+      "label": "Submit Application"
+    },
+    {
+      "name": "Screen Resume",
+      "label": "Screen Resume"
+    },
+    {
+      "name": "Candidate tau0",
+      "label": null
+    },
+    {
+      "name": "Schedule Initial Interview",
+      "label": "Schedule Initial Interview"
+    },
+    {
+      "name": "Conduct Initial Interview",
+      "label": "Conduct Initial Interview"
+    },
+    {
+      "name": "Candidate tau1",
+      "label": null
+    },
+    {
+      "name": "Candidate tau2",
+      "label": null
+    },
+    {
+      "name": "Schedule Panel Interview",
+      "label": "Schedule Panel Interview"
+    },
+    {
+      "name": "Conduct Panel Interview",
+      "label": "Conduct Panel Interview"
+    },
+    {
+      "name": "Evaluate Interview",
+      "label": "Evaluate Interview"
+    },
+    {
+      "name": "Candidate tau3",
+      "label": null
+    },
+    {
+      "name": "Initiate Background Check",
+      "label": "Initiate Background Check"
+    },
+    {
+      "name": "Complete Background Check",
+      "label": "Complete Background Check"
+    },
+    {
+      "name": "Prepare Offer Letter",
+      "label": "Prepare Offer Letter"
+    },
+    {
+      "name": "Send Offer Letter",
+      "label": "Send Offer Letter"
+    },
+    {
+      "name": "Candidate Accept Offer",
+      "label": "Candidate Accept Offer"
+    },
+    {
+      "name": "Start Onboarding",
+      "label": "Start Onboarding"
+    },
+    {
+      "name": "Complete HR Paperwork",
+      "label": "Complete HR Paperwork"
+    },
+    {
+      "name": "Attend Orientation Training",
+      "label": "Attend Orientation Training"
+    },
+    {
+      "name": "Complete Onboarding",
+      "label": "Complete Onboarding"
+    },
+    {
+      "name": "Candidate Reject Offer",
+      "label": "Candidate Reject Offer"
+    },
+    {
+      "name": "Send Rejection Letter",
+      "label": "Send Rejection Letter"
+    },
+    {
+      "name": "HiringManager tau0",
+      "label": null
+    },
+    {
+      "name": "HiringManager tau1",
+      "label": null
+    },
+    {
+      "name": "HiringManager tau2",
+      "label": null
+    },
+    {
+      "name": "HiringManager tau3",
+      "label": null
+    },
+    {
+      "name": "Create Job Requisition",
+      "label": "Create Job Requisition"
+    },
+    {
+      "name": "HiringManager tau4",
+      "label": null
+    },
+    {
+      "name": "Approve Job Requisition",
+      "label": "Approve Job Requisition"
+    },
+    {
+      "name": "Post Job Opening",
+      "label": "Post Job Opening"
+    },
+    {
+      "name": "JobRequisition tau0",
+      "label": null
+    },
+    {
+      "name": "Recruiter tau0",
+      "label": null
+    },
+    {
+      "name": "Recruiter tau1",
+      "label": null
+    },
+    {
+      "name": "Recruiter tau2",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "Assessment p0",
+      "target": "Complete Assessment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Complete Assessment",
+      "target": "Assessment p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Assessment p0",
+      "target": "Review Assessment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Review Assessment",
+      "target": "Assessment p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Assessment p0",
+      "target": "Send Assessment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send Assessment",
+      "target": "Assessment p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p0",
+      "target": "Submit Application",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Submit Application",
+      "target": "Candidate p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p1",
+      "target": "Screen Resume",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Screen Resume",
+      "target": "Candidate p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p2",
+      "target": "Candidate tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate tau0",
+      "target": "Candidate p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p2",
+      "target": "Schedule Initial Interview",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Schedule Initial Interview",
+      "target": "Candidate p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p4",
+      "target": "Conduct Initial Interview",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Conduct Initial Interview",
+      "target": "Candidate p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p5",
+      "target": "Candidate tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate tau1",
+      "target": "Candidate p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p5",
+      "target": "Send Assessment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send Assessment",
+      "target": "Candidate p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p6",
+      "target": "Complete Assessment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Complete Assessment",
+      "target": "Candidate p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p7",
+      "target": "Review Assessment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Review Assessment",
+      "target": "Candidate p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p8",
+      "target": "Candidate tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate tau2",
+      "target": "Candidate p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p8",
+      "target": "Schedule Panel Interview",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Schedule Panel Interview",
+      "target": "Candidate p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p9",
+      "target": "Conduct Panel Interview",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Conduct Panel Interview",
+      "target": "Candidate p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p10",
+      "target": "Evaluate Interview",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Evaluate Interview",
+      "target": "Candidate p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p11",
+      "target": "Candidate tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate tau3",
+      "target": "Candidate p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p11",
+      "target": "Initiate Background Check",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Initiate Background Check",
+      "target": "Candidate p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p12",
+      "target": "Complete Background Check",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Complete Background Check",
+      "target": "Candidate p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p3",
+      "target": "Prepare Offer Letter",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Prepare Offer Letter",
+      "target": "Candidate p13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p13",
+      "target": "Send Offer Letter",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send Offer Letter",
+      "target": "Candidate p14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p14",
+      "target": "Candidate Accept Offer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate Accept Offer",
+      "target": "Candidate p15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p15",
+      "target": "Start Onboarding",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Start Onboarding",
+      "target": "Candidate p16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p16",
+      "target": "Complete HR Paperwork",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Complete HR Paperwork",
+      "target": "Candidate p17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p17",
+      "target": "Attend Orientation Training",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Attend Orientation Training",
+      "target": "Candidate p18",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p18",
+      "target": "Complete Onboarding",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Complete Onboarding",
+      "target": "Candidate p19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p14",
+      "target": "Candidate Reject Offer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate Reject Offer",
+      "target": "Candidate p19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Candidate p3",
+      "target": "Send Rejection Letter",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send Rejection Letter",
+      "target": "Candidate p19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p0",
+      "target": "HiringManager tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager tau0",
+      "target": "HiringManager p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p0",
+      "target": "Review Assessment",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Review Assessment",
+      "target": "HiringManager p2",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p2",
+      "target": "HiringManager tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager tau1",
+      "target": "HiringManager p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p2",
+      "target": "Evaluate Interview",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Evaluate Interview",
+      "target": "HiringManager p1",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p1",
+      "target": "Prepare Offer Letter",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Prepare Offer Letter",
+      "target": "HiringManager p3",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p1",
+      "target": "HiringManager tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager tau2",
+      "target": "HiringManager p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p3",
+      "target": "HiringManager tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager tau3",
+      "target": "HiringManager p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p4",
+      "target": "Create Job Requisition",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Create Job Requisition",
+      "target": "HiringManager p5",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager p5",
+      "target": "HiringManager tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HiringManager tau4",
+      "target": "HiringManager p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Interviewer p0",
+      "target": "Conduct Panel Interview",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Conduct Panel Interview",
+      "target": "Interviewer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Interviewer p0",
+      "target": "Schedule Panel Interview",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Schedule Panel Interview",
+      "target": "Interviewer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "JobRequisition p0",
+      "target": "Create Job Requisition",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Job Requisition",
+      "target": "JobRequisition p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "JobRequisition p1",
+      "target": "Approve Job Requisition",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve Job Requisition",
+      "target": "JobRequisition p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "JobRequisition p2",
+      "target": "Post Job Opening",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Post Job Opening",
+      "target": "JobRequisition p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "JobRequisition p3",
+      "target": "Submit Application",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Submit Application",
+      "target": "JobRequisition p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "JobRequisition p4",
+      "target": "JobRequisition tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "JobRequisition tau0",
+      "target": "JobRequisition p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter p0",
+      "target": "Screen Resume",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Screen Resume",
+      "target": "Recruiter p1",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter p1",
+      "target": "Recruiter tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter tau0",
+      "target": "Recruiter p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter p1",
+      "target": "Schedule Initial Interview",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Schedule Initial Interview",
+      "target": "Recruiter p3",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter p3",
+      "target": "Conduct Initial Interview",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Conduct Initial Interview",
+      "target": "Recruiter p2",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter p2",
+      "target": "Recruiter tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter tau1",
+      "target": "Recruiter p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter p4",
+      "target": "Post Job Opening",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Post Job Opening",
+      "target": "Recruiter p5",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter p5",
+      "target": "Recruiter tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Recruiter tau2",
+      "target": "Recruiter p4",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "Assessment p0": 1,
+    "Candidate p0": 1,
+    "HiringManager p0": 1,
+    "HiringManager p4": 1,
+    "Interviewer p0": 1,
+    "JobRequisition p0": 1,
+    "Recruiter p0": 1,
+    "Recruiter p4": 1
+  },
+  "final_marking": {
+    "Assessment p0": 1,
+    "Candidate p19": 1,
+    "HiringManager p3": 1,
+    "HiringManager p5": 1,
+    "Interviewer p0": 1,
+    "JobRequisition p4": 1,
+    "Recruiter p2": 1,
+    "Recruiter p5": 1
+  }
+}

@@ -1,0 +1,798 @@
+{
+  "places": [
+    {
+      "name": "customers p0",
+      "object_type": "customers"
+    },
+    {
+      "name": "employees p0",
+      "object_type": "employees"
+    },
+    {
+      "name": "items p0",
+      "object_type": "items"
+    },
+    {
+      "name": "items p1",
+      "object_type": "items"
+    },
+    {
+      "name": "items p2",
+      "object_type": "items"
+    },
+    {
+      "name": "items p3",
+      "object_type": "items"
+    },
+    {
+      "name": "items p4",
+      "object_type": "items"
+    },
+    {
+      "name": "items p5",
+      "object_type": "items"
+    },
+    {
+      "name": "items p6",
+      "object_type": "items"
+    },
+    {
+      "name": "items p7",
+      "object_type": "items"
+    },
+    {
+      "name": "items p8",
+      "object_type": "items"
+    },
+    {
+      "name": "items p9",
+      "object_type": "items"
+    },
+    {
+      "name": "items p10",
+      "object_type": "items"
+    },
+    {
+      "name": "items p11",
+      "object_type": "items"
+    },
+    {
+      "name": "items p12",
+      "object_type": "items"
+    },
+    {
+      "name": "items p13",
+      "object_type": "items"
+    },
+    {
+      "name": "items p14",
+      "object_type": "items"
+    },
+    {
+      "name": "items p15",
+      "object_type": "items"
+    },
+    {
+      "name": "items p16",
+      "object_type": "items"
+    },
+    {
+      "name": "orders p0",
+      "object_type": "orders"
+    },
+    {
+      "name": "orders p1",
+      "object_type": "orders"
+    },
+    {
+      "name": "orders p2",
+      "object_type": "orders"
+    },
+    {
+      "name": "orders p3",
+      "object_type": "orders"
+    },
+    {
+      "name": "orders p4",
+      "object_type": "orders"
+    },
+    {
+      "name": "packages p0",
+      "object_type": "packages"
+    },
+    {
+      "name": "packages p1",
+      "object_type": "packages"
+    },
+    {
+      "name": "packages p2",
+      "object_type": "packages"
+    },
+    {
+      "name": "packages p3",
+      "object_type": "packages"
+    },
+    {
+      "name": "packages p4",
+      "object_type": "packages"
+    },
+    {
+      "name": "products p0",
+      "object_type": "products"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "confirm order",
+      "label": "confirm order"
+    },
+    {
+      "name": "place order",
+      "label": "place order"
+    },
+    {
+      "name": "create package",
+      "label": "create package"
+    },
+    {
+      "name": "failed delivery",
+      "label": "failed delivery"
+    },
+    {
+      "name": "item out of stock",
+      "label": "item out of stock"
+    },
+    {
+      "name": "package delivered",
+      "label": "package delivered"
+    },
+    {
+      "name": "pick item",
+      "label": "pick item"
+    },
+    {
+      "name": "reorder item",
+      "label": "reorder item"
+    },
+    {
+      "name": "send package",
+      "label": "send package"
+    },
+    {
+      "name": "items tau0",
+      "label": null
+    },
+    {
+      "name": "items tau1",
+      "label": null
+    },
+    {
+      "name": "items tau2",
+      "label": null
+    },
+    {
+      "name": "payment reminder",
+      "label": "payment reminder"
+    },
+    {
+      "name": "pay order",
+      "label": "pay order"
+    },
+    {
+      "name": "items tau3",
+      "label": null
+    },
+    {
+      "name": "items tau4",
+      "label": null
+    },
+    {
+      "name": "orders tau0",
+      "label": null
+    },
+    {
+      "name": "packages tau0",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "customers p0",
+      "target": "confirm order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "confirm order",
+      "target": "customers p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "customers p0",
+      "target": "place order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "place order",
+      "target": "customers p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "confirm order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "confirm order",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "create package",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "create package",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "failed delivery",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "failed delivery",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "item out of stock",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "item out of stock",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "package delivered",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "package delivered",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "pick item",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "pick item",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "reorder item",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "reorder item",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "employees p0",
+      "target": "send package",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "send package",
+      "target": "employees p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p0",
+      "target": "place order",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "place order",
+      "target": "items p1",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items p1",
+      "target": "items tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items tau0",
+      "target": "items p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p1",
+      "target": "item out of stock",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "item out of stock",
+      "target": "items p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p3",
+      "target": "reorder item",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "reorder item",
+      "target": "items p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p2",
+      "target": "items tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p4",
+      "target": "create package",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "create package",
+      "target": "items p5",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items tau1",
+      "target": "items p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p6",
+      "target": "items tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items tau2",
+      "target": "items p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p6",
+      "target": "payment reminder",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "payment reminder",
+      "target": "items p7",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items tau1",
+      "target": "items p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p8",
+      "target": "pick item",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "pick item",
+      "target": "items p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items tau1",
+      "target": "items p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p10",
+      "target": "confirm order",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "confirm order",
+      "target": "items p11",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items p11",
+      "target": "pay order",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "pay order",
+      "target": "items p12",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items p13",
+      "target": "send package",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "send package",
+      "target": "items p14",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items p14",
+      "target": "items tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items tau3",
+      "target": "items p15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items p14",
+      "target": "failed delivery",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "failed delivery",
+      "target": "items p15",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items p15",
+      "target": "package delivered",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "package delivered",
+      "target": "items p16",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "items p16",
+      "target": "items tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "items tau4",
+      "target": "items p13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "orders p0",
+      "target": "place order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "place order",
+      "target": "orders p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "orders p1",
+      "target": "confirm order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "confirm order",
+      "target": "orders p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "orders p2",
+      "target": "orders tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "orders tau0",
+      "target": "orders p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "orders p2",
+      "target": "payment reminder",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "payment reminder",
+      "target": "orders p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "orders p3",
+      "target": "pay order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "pay order",
+      "target": "orders p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "packages p0",
+      "target": "create package",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "create package",
+      "target": "packages p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "packages p1",
+      "target": "send package",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "send package",
+      "target": "packages p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "packages p2",
+      "target": "packages tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "packages tau0",
+      "target": "packages p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "packages p2",
+      "target": "failed delivery",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "failed delivery",
+      "target": "packages p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "packages p3",
+      "target": "package delivered",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "package delivered",
+      "target": "packages p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "confirm order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "confirm order",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "create package",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "create package",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "failed delivery",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "failed delivery",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "item out of stock",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "item out of stock",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "package delivered",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "package delivered",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "pay order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "pay order",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "payment reminder",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "payment reminder",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "pick item",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "pick item",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "place order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "place order",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "reorder item",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "reorder item",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "products p0",
+      "target": "send package",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "send package",
+      "target": "products p0",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "customers p0": 1,
+    "employees p0": 1,
+    "items p0": 1,
+    "items p10": 1,
+    "items p13": 1,
+    "orders p0": 1,
+    "packages p0": 1,
+    "products p0": 1
+  },
+  "final_marking": {
+    "customers p0": 1,
+    "employees p0": 1,
+    "items p12": 1,
+    "items p16": 1,
+    "items p5": 1,
+    "items p7": 1,
+    "items p9": 1,
+    "orders p4": 1,
+    "packages p4": 1,
+    "products p0": 1
+  }
+}

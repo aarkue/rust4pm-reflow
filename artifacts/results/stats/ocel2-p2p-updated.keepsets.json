@@ -1,0 +1,154 @@
+{
+  "absent": [
+    [
+      "Approve Purchase Order",
+      "quotation"
+    ],
+    [
+      "Approve Purchase Requisition",
+      "material"
+    ],
+    [
+      "Create Invoice Receipt",
+      "invoice receipt"
+    ],
+    [
+      "Create Purchase Requisition",
+      "material"
+    ],
+    [
+      "Delegate Purchase Requisition Approval",
+      "material"
+    ],
+    [
+      "Execute Payment",
+      "invoice receipt"
+    ],
+    [
+      "Execute Payment",
+      "payment"
+    ],
+    [
+      "Perform Two-Way Match",
+      "invoice receipt"
+    ]
+  ],
+  "flow": [
+    [
+      "Approve Purchase Order",
+      "purchase_order"
+    ],
+    [
+      "Approve Purchase Requisition",
+      "purchase_requisition"
+    ],
+    [
+      "Create Goods Receipt",
+      "purchase_order"
+    ],
+    [
+      "Create Invoice Receipt",
+      "goods receipt"
+    ],
+    [
+      "Create Purchase Order",
+      "purchase_order"
+    ],
+    [
+      "Create Purchase Order",
+      "quotation"
+    ],
+    [
+      "Create Purchase Requisition",
+      "purchase_requisition"
+    ],
+    [
+      "Create Request for Quotation",
+      "purchase_requisition"
+    ],
+    [
+      "Create Request for Quotation",
+      "quotation"
+    ],
+    [
+      "Delegate Purchase Requisition Approval",
+      "purchase_requisition"
+    ],
+    [
+      "Execute Payment",
+      "goods receipt"
+    ],
+    [
+      "Execute Payment",
+      "purchase_order"
+    ],
+    [
+      "Perform Two-Way Match",
+      "goods receipt"
+    ]
+  ],
+  "inv": [
+    [
+      "Create Goods Receipt",
+      "goods receipt"
+    ]
+  ],
+  "measured": [
+    [
+      "Approve Purchase Order",
+      "purchase_order"
+    ],
+    [
+      "Approve Purchase Requisition",
+      "purchase_requisition"
+    ],
+    [
+      "Create Goods Receipt",
+      "goods receipt"
+    ],
+    [
+      "Create Goods Receipt",
+      "purchase_order"
+    ],
+    [
+      "Create Invoice Receipt",
+      "goods receipt"
+    ],
+    [
+      "Create Purchase Order",
+      "purchase_order"
+    ],
+    [
+      "Create Purchase Order",
+      "quotation"
+    ],
+    [
+      "Create Purchase Requisition",
+      "purchase_requisition"
+    ],
+    [
+      "Create Request for Quotation",
+      "purchase_requisition"
+    ],
+    [
+      "Create Request for Quotation",
+      "quotation"
+    ],
+    [
+      "Delegate Purchase Requisition Approval",
+      "purchase_requisition"
+    ],
+    [
+      "Execute Payment",
+      "goods receipt"
+    ],
+    [
+      "Execute Payment",
+      "purchase_order"
+    ],
+    [
+      "Perform Two-Way Match",
+      "goods receipt"
+    ]
+  ]
+}

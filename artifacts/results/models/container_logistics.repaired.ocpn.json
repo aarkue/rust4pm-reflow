@@ -1,0 +1,814 @@
+{
+  "places": [
+    {
+      "name": "Container p0",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p1",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p2",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p3",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p4",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p5",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p6",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p7",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p8",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p9",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p10",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p11",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p12",
+      "object_type": "Container"
+    },
+    {
+      "name": "Container p13",
+      "object_type": "Container"
+    },
+    {
+      "name": "Customer Order p0",
+      "object_type": "Customer Order"
+    },
+    {
+      "name": "Customer Order p1",
+      "object_type": "Customer Order"
+    },
+    {
+      "name": "Customer Order p2",
+      "object_type": "Customer Order"
+    },
+    {
+      "name": "Forklift p0",
+      "object_type": "Forklift"
+    },
+    {
+      "name": "Handling Unit p0",
+      "object_type": "Handling Unit"
+    },
+    {
+      "name": "Handling Unit p1",
+      "object_type": "Handling Unit"
+    },
+    {
+      "name": "Handling Unit p2",
+      "object_type": "Handling Unit"
+    },
+    {
+      "name": "Transport Document p0",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p1",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p2",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p3",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p4",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p5",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p6",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p7",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p8",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p9",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Transport Document p10",
+      "object_type": "Transport Document"
+    },
+    {
+      "name": "Truck p0",
+      "object_type": "Truck"
+    },
+    {
+      "name": "Vehicle p0",
+      "object_type": "Vehicle"
+    },
+    {
+      "name": "Vehicle p1",
+      "object_type": "Vehicle"
+    },
+    {
+      "name": "Vehicle p2",
+      "object_type": "Vehicle"
+    },
+    {
+      "name": "Vehicle p3",
+      "object_type": "Vehicle"
+    },
+    {
+      "name": "Vehicle p4",
+      "object_type": "Vehicle"
+    },
+    {
+      "name": "Vehicle p5",
+      "object_type": "Vehicle"
+    },
+    {
+      "name": "Vehicle p6",
+      "object_type": "Vehicle"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "Order Empty Containers",
+      "label": "Order Empty Containers"
+    },
+    {
+      "name": "Pick Up Empty Container",
+      "label": "Pick Up Empty Container"
+    },
+    {
+      "name": "Load Truck",
+      "label": "Load Truck"
+    },
+    {
+      "name": "Container tau0",
+      "label": null
+    },
+    {
+      "name": "Drive to Terminal",
+      "label": "Drive to Terminal"
+    },
+    {
+      "name": "Weigh",
+      "label": "Weigh"
+    },
+    {
+      "name": "Place in Stock",
+      "label": "Place in Stock"
+    },
+    {
+      "name": "Bring to Loading Bay",
+      "label": "Bring to Loading Bay"
+    },
+    {
+      "name": "Container tau1",
+      "label": null
+    },
+    {
+      "name": "Reschedule Container",
+      "label": "Reschedule Container"
+    },
+    {
+      "name": "Load to Vehicle",
+      "label": "Load to Vehicle"
+    },
+    {
+      "name": "Container tau2",
+      "label": null
+    },
+    {
+      "name": "Depart",
+      "label": "Depart"
+    },
+    {
+      "name": "Register Customer Order",
+      "label": "Register Customer Order"
+    },
+    {
+      "name": "Create Transport Document",
+      "label": "Create Transport Document"
+    },
+    {
+      "name": "Collect Goods",
+      "label": "Collect Goods"
+    },
+    {
+      "name": "Book Vehicles",
+      "label": "Book Vehicles"
+    },
+    {
+      "name": "Transport Document tau0",
+      "label": null
+    },
+    {
+      "name": "Transport Document tau1",
+      "label": null
+    },
+    {
+      "name": "Transport Document tau2",
+      "label": null
+    },
+    {
+      "name": "Transport Document tau3",
+      "label": null
+    },
+    {
+      "name": "Transport Document tau4",
+      "label": null
+    },
+    {
+      "name": "Vehicle tau0",
+      "label": null
+    },
+    {
+      "name": "Vehicle tau1",
+      "label": null
+    },
+    {
+      "name": "Vehicle tau2",
+      "label": null
+    },
+    {
+      "name": "Vehicle tau3",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "Container p0",
+      "target": "Order Empty Containers",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Order Empty Containers",
+      "target": "Container p1",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Container p1",
+      "target": "Pick Up Empty Container",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Pick Up Empty Container",
+      "target": "Container p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p2",
+      "target": "Load Truck",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Load Truck",
+      "target": "Container p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p3",
+      "target": "Container tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container tau0",
+      "target": "Container p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p3",
+      "target": "Drive to Terminal",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Drive to Terminal",
+      "target": "Container p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p4",
+      "target": "Weigh",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Weigh",
+      "target": "Container p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p5",
+      "target": "Place in Stock",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Place in Stock",
+      "target": "Container p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p6",
+      "target": "Bring to Loading Bay",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Bring to Loading Bay",
+      "target": "Container p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p7",
+      "target": "Container tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container tau1",
+      "target": "Container p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p7",
+      "target": "Reschedule Container",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Reschedule Container",
+      "target": "Container p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p8",
+      "target": "Load to Vehicle",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Load to Vehicle",
+      "target": "Container p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container tau2",
+      "target": "Container p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p11",
+      "target": "Container tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p12",
+      "target": "Container tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Container p10",
+      "target": "Depart",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Depart",
+      "target": "Container p13",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Customer Order p0",
+      "target": "Register Customer Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Register Customer Order",
+      "target": "Customer Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer Order p1",
+      "target": "Create Transport Document",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Transport Document",
+      "target": "Customer Order p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Forklift p0",
+      "target": "Bring to Loading Bay",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Bring to Loading Bay",
+      "target": "Forklift p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Forklift p0",
+      "target": "Load to Vehicle",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Load to Vehicle",
+      "target": "Forklift p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Forklift p0",
+      "target": "Place in Stock",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Place in Stock",
+      "target": "Forklift p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Forklift p0",
+      "target": "Weigh",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Weigh",
+      "target": "Forklift p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Handling Unit p0",
+      "target": "Collect Goods",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Collect Goods",
+      "target": "Handling Unit p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Handling Unit p1",
+      "target": "Load Truck",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Load Truck",
+      "target": "Handling Unit p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p0",
+      "target": "Create Transport Document",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Transport Document",
+      "target": "Transport Document p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p1",
+      "target": "Book Vehicles",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Book Vehicles",
+      "target": "Transport Document p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p2",
+      "target": "Order Empty Containers",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order Empty Containers",
+      "target": "Transport Document p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p4",
+      "target": "Transport Document tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document tau0",
+      "target": "Transport Document p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p4",
+      "target": "Reschedule Container",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Reschedule Container",
+      "target": "Transport Document p5",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p5",
+      "target": "Transport Document tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document tau1",
+      "target": "Transport Document p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p6",
+      "target": "Transport Document tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document tau3",
+      "target": "Transport Document p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document tau2",
+      "target": "Transport Document p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p8",
+      "target": "Transport Document tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document tau2",
+      "target": "Transport Document p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p9",
+      "target": "Transport Document tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p7",
+      "target": "Depart",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Depart",
+      "target": "Transport Document p10",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document p10",
+      "target": "Transport Document tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Transport Document tau4",
+      "target": "Transport Document p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Truck p0",
+      "target": "Drive to Terminal",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Drive to Terminal",
+      "target": "Truck p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Truck p0",
+      "target": "Load Truck",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Load Truck",
+      "target": "Truck p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle tau0",
+      "target": "Vehicle p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p1",
+      "target": "Load to Vehicle",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Load to Vehicle",
+      "target": "Vehicle p2",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p2",
+      "target": "Vehicle tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle tau1",
+      "target": "Vehicle p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p2",
+      "target": "Vehicle tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p3",
+      "target": "Book Vehicles",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Book Vehicles",
+      "target": "Vehicle p4",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p4",
+      "target": "Vehicle tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle tau2",
+      "target": "Vehicle p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p4",
+      "target": "Reschedule Container",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Reschedule Container",
+      "target": "Vehicle p5",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p5",
+      "target": "Vehicle tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle tau3",
+      "target": "Vehicle p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p5",
+      "target": "Vehicle tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Vehicle p0",
+      "target": "Depart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Depart",
+      "target": "Vehicle p6",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "Container p0": 1,
+    "Container p11": 1,
+    "Container p12": 1,
+    "Customer Order p0": 1,
+    "Forklift p0": 1,
+    "Handling Unit p0": 1,
+    "Transport Document p0": 1,
+    "Transport Document p4": 1,
+    "Transport Document p6": 1,
+    "Truck p0": 1,
+    "Vehicle p1": 1,
+    "Vehicle p3": 1
+  },
+  "final_marking": {
+    "Container p13": 1,
+    "Container p9": 1,
+    "Customer Order p2": 1,
+    "Forklift p0": 1,
+    "Handling Unit p2": 1,
+    "Transport Document p10": 1,
+    "Transport Document p3": 1,
+    "Transport Document p5": 1,
+    "Truck p0": 1,
+    "Vehicle p6": 1
+  }
+}

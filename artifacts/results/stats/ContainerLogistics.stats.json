@@ -1,0 +1,277 @@
+{
+  "log": "ContainerLogistics.xml",
+  "path": "logs/ContainerLogistics.xml",
+  "events": 35413,
+  "objects": 13910,
+  "participations": 74272,
+  "activities": [
+    "Book Vehicles",
+    "Bring to Loading Bay",
+    "Collect Goods",
+    "Create Transport Document",
+    "Depart",
+    "Drive to Terminal",
+    "Load Truck",
+    "Load to Vehicle",
+    "Order Empty Containers",
+    "Pick Up Empty Container",
+    "Place in Stock",
+    "Register Customer Order",
+    "Reschedule Container",
+    "Weigh"
+  ],
+  "cells": 29,
+  "types": {
+    "Container": {
+      "objects": 1999,
+      "object_share": 0.143999,
+      "participations": 26266,
+      "activities": 10,
+      "df_pairs": 11,
+      "scores": null
+    },
+    "Customer Order": {
+      "objects": 600,
+      "object_share": 0.043221,
+      "participations": 1194,
+      "activities": 2,
+      "df_pairs": 1,
+      "scores": null
+    },
+    "Forklift": {
+      "objects": 3,
+      "object_share": 0.000216,
+      "participations": 7738,
+      "activities": 4,
+      "df_pairs": 9,
+      "scores": null
+    },
+    "Handling Unit": {
+      "objects": 10553,
+      "object_share": 0.760193,
+      "participations": 21106,
+      "activities": 2,
+      "df_pairs": 1,
+      "scores": null
+    },
+    "Transport Document": {
+      "objects": 594,
+      "object_share": 0.042789,
+      "participations": 2571,
+      "activities": 5,
+      "df_pairs": 6,
+      "scores": null
+    },
+    "Truck": {
+      "objects": 6,
+      "object_share": 0.000432,
+      "participations": 12542,
+      "activities": 2,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "Vehicle": {
+      "objects": 127,
+      "object_share": 0.009149,
+      "participations": 2855,
+      "activities": 4,
+      "df_pairs": 6,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "Book Vehicles\tTransport Document": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 594
+    },
+    "Book Vehicles\tVehicle": {
+      "max": 2,
+      "mean": 1.284,
+      "events": 574
+    },
+    "Bring to Loading Bay\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1969
+    },
+    "Bring to Loading Bay\tForklift": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1969
+    },
+    "Collect Goods\tHandling Unit": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 10553
+    },
+    "Create Transport Document\tCustomer Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 594
+    },
+    "Create Transport Document\tTransport Document": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 594
+    },
+    "Depart\tContainer": {
+      "max": 39,
+      "mean": 15.4016,
+      "events": 127
+    },
+    "Depart\tTransport Document": {
+      "max": 13,
+      "mean": 5.937,
+      "events": 127
+    },
+    "Depart\tVehicle": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 127
+    },
+    "Drive to Terminal\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1989
+    },
+    "Drive to Terminal\tTruck": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1989
+    },
+    "Load Truck\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 10553
+    },
+    "Load Truck\tHandling Unit": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 10553
+    },
+    "Load Truck\tTruck": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 10553
+    },
+    "Load to Vehicle\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1966
+    },
+    "Load to Vehicle\tForklift": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1966
+    },
+    "Load to Vehicle\tVehicle": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1956
+    },
+    "Order Empty Containers\tContainer": {
+      "max": 5,
+      "mean": 3.3824,
+      "events": 591
+    },
+    "Order Empty Containers\tTransport Document": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 593
+    },
+    "Pick Up Empty Container\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1995
+    },
+    "Place in Stock\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1814
+    },
+    "Place in Stock\tForklift": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1814
+    },
+    "Register Customer Order\tCustomer Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 600
+    },
+    "Reschedule Container\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 36
+    },
+    "Reschedule Container\tTransport Document": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 36
+    },
+    "Reschedule Container\tVehicle": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 35
+    },
+    "Weigh\tContainer": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1989
+    },
+    "Weigh\tForklift": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1989
+    }
+  },
+  "divergence": {
+    "Book Vehicles": [
+      "Vehicle"
+    ],
+    "Bring to Loading Bay": [
+      "Forklift"
+    ],
+    "Drive to Terminal": [
+      "Truck"
+    ],
+    "Load Truck": [
+      "Container",
+      "Truck"
+    ],
+    "Load to Vehicle": [
+      "Forklift",
+      "Vehicle"
+    ],
+    "Order Empty Containers": [
+      "Container"
+    ],
+    "Place in Stock": [
+      "Forklift"
+    ],
+    "Reschedule Container": [
+      "Transport Document",
+      "Vehicle"
+    ],
+    "Weigh": [
+      "Forklift"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 29,
+    "df2": 19,
+    "df2_dropped": [
+      "Book Vehicles -> Load to Vehicle",
+      "Book Vehicles -> Reschedule Container",
+      "Bring to Loading Bay -> Weigh",
+      "Drive to Terminal -> Load Truck",
+      "Load to Vehicle -> Book Vehicles",
+      "Load to Vehicle -> Bring to Loading Bay",
+      "Load to Vehicle -> Weigh",
+      "Place in Stock -> Load to Vehicle",
+      "Place in Stock -> Weigh",
+      "Reschedule Container -> Book Vehicles"
+    ]
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.7791667707434976,
+      "recorded": 0.8638735556463034
+    },
+    "min_fitness_rebuilt": 0.8015072167582067,
+    "types_whose_fitness_falls": [
+      "invoice receipt"
+    ]
+  },
+  "assignment": {
+    "absent": [
+      [
+        "Approve Purchase Order",
+        "quotation"
+      ],
+      [
+        "Approve Purchase Requisition",
+        "material"
+      ],
+      [
+        "Create Invoice Receipt",
+        "invoice receipt"
+      ],
+      [
+        "Create Purchase Requisition",
+        "material"
+      ],
+      [
+        "Delegate Purchase Requisition Approval",
+        "material"
+      ],
+      [
+        "Execute Payment",
+        "invoice receipt"
+      ],
+      [
+        "Execute Payment",
+        "payment"
+      ],
+      [
+        "Perform Two-Way Match",
+        "invoice receipt"
+      ]
+    ],
+    "flow": [
+      [
+        "Approve Purchase Order",
+        "purchase_order"
+      ],
+      [
+        "Approve Purchase Requisition",
+        "purchase_requisition"
+      ],
+      [
+        "Create Goods Receipt",
+        "purchase_order"
+      ],
+      [
+        "Create Invoice Receipt",
+        "goods receipt"
+      ],
+      [
+        "Create Purchase Order",
+        "purchase_order"
+      ],
+      [
+        "Create Purchase Order",
+        "quotation"
+      ],
+      [
+        "Create Purchase Requisition",
+        "purchase_requisition"
+      ],
+      [
+        "Create Request for Quotation",
+        "purchase_requisition"
+      ],
+      [
+        "Create Request for Quotation",
+        "quotation"
+      ],
+      [
+        "Delegate Purchase Requisition Approval",
+        "purchase_requisition"
+      ],
+      [
+        "Execute Payment",
+        "goods receipt"
+      ],
+      [
+        "Execute Payment",
+        "purchase_order"
+      ],
+      [
+        "Perform Two-Way Match",
+        "goods receipt"
+      ]
+    ],
+    "inv": [
+      [
+        "Create Goods Receipt",
+        "goods receipt"
+      ]
+    ],
+    "kept": [
+      [
+        "Approve Purchase Order",
+        "purchase_order"
+      ],
+      [
+        "Approve Purchase Requisition",
+        "purchase_requisition"
+      ],
+      [
+        "Create Goods Receipt",
+        "goods receipt"
+      ],
+      [
+        "Create Goods Receipt",
+        "purchase_order"
+      ],
+      [
+        "Create Invoice Receipt",
+        "goods receipt"
+      ],
+      [
+        "Create Purchase Order",
+        "purchase_order"
+      ],
+      [
+        "Create Purchase Order",
+        "quotation"
+      ],
+      [
+        "Create Purchase Requisition",
+        "purchase_requisition"
+      ],
+      [
+        "Create Request for Quotation",
+        "purchase_requisition"
+      ],
+      [
+        "Create Request for Quotation",
+        "quotation"
+      ],
+      [
+        "Delegate Purchase Requisition Approval",
+        "purchase_requisition"
+      ],
+      [
+        "Execute Payment",
+        "goods receipt"
+      ],
+      [
+        "Execute Payment",
+        "purchase_order"
+      ],
+      [
+        "Perform Two-Way Match",
+        "goods receipt"
+      ]
+    ]
+  },
+  "log": "ocel2-p2p-updated",
+  "types": {
+    "goods receipt": {
+      "adjusted_precision": {
+        "rebuilt": 0.7953631505624521,
+        "recorded": 0.22947961793413013
+      },
+      "arcs": {
+        "rebuilt": 8,
+        "recorded": 12,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 3,
+        "inv": 1
+      },
+      "fitness": {
+        "rebuilt": 0.9693524468610973,
+        "recorded": 0.8567172413793104
+      },
+      "objects": 1941,
+      "precision": {
+        "floor": 0.44378962770281255,
+        "rebuilt": 0.8861788617886179,
+        "recorded": 0.5714285714285714
+      }
+    },
+    "invoice receipt": {
+      "adjusted_precision": {
+        "rebuilt": 0.48127676814446113,
+        "recorded": 0.9886443349277393
+      },
+      "arcs": {
+        "rebuilt": 8,
+        "recorded": 8,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 3,
+        "carried": 3,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.8015072167582067,
+        "recorded": 0.8925788734193384
+      },
+      "objects": 927,
+      "precision": {
+        "floor": 0.518047419804742,
+        "rebuilt": 0.75,
+        "recorded": 0.9945271079185908
+      }
+    },
+    "material": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 8,
+        "recorded": 6,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 3,
+        "carried": 3,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 1807,
+      "precision": {
+        "floor": 0.3333333333333333,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "payment": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 2,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.8858098423315814
+      },
+      "objects": 927,
+      "precision": {
+        "floor": 0.9995222169135213,
+        "rebuilt": 0.9995222169135213,
+        "recorded": 1.0
+      }
+    },
+    "purchase_order": {
+      "adjusted_precision": {
+        "rebuilt": 0.9651173810159509,
+        "recorded": 0.9651173810159509
+      },
+      "arcs": {
+        "rebuilt": 10,
+        "recorded": 10,
+        "reduced": 10
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 4,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9603123799769556,
+        "recorded": 0.9603123799769556
+      },
+      "objects": 1598,
+      "precision": {
+        "floor": 0.370428518655338,
+        "rebuilt": 0.9780388978930308,
+        "recorded": 0.9780388978930308
+      }
+    },
+    "purchase_requisition": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 10,
+        "recorded": 10,
+        "reduced": 10
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 4,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 927,
+      "precision": {
+        "floor": 0.30502717391304346,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "quotation": {
+      "adjusted_precision": {
+        "rebuilt": 0.433243324738121,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 8,
+        "recorded": 6,
+        "reduced": 4
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 1,
+        "flow": 2,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9028099652375434,
+        "recorded": 0.8056199304750868
+      },
+      "objects": 927,
+      "precision": {
+        "floor": 0.4596039603960396,
+        "rebuilt": 0.6937269372693727,
+        "recorded": 1.0
+      }
+    }
+  }
+}

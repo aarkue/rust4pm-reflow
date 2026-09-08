@@ -1,0 +1,333 @@
+{
+  "log": "03_hiring.xml",
+  "path": "logs/03_hiring.xml",
+  "events": 18119,
+  "objects": 3768,
+  "participations": 34908,
+  "activities": [
+    "Approve Job Requisition",
+    "Attend Orientation Training",
+    "Candidate Accept Offer",
+    "Candidate Reject Offer",
+    "Complete Assessment",
+    "Complete Background Check",
+    "Complete HR Paperwork",
+    "Complete Onboarding",
+    "Conduct Initial Interview",
+    "Conduct Panel Interview",
+    "Create Job Requisition",
+    "Evaluate Interview",
+    "Initiate Background Check",
+    "Post Job Opening",
+    "Prepare Offer Letter",
+    "Review Assessment",
+    "Schedule Initial Interview",
+    "Schedule Panel Interview",
+    "Screen Resume",
+    "Send Assessment",
+    "Send Offer Letter",
+    "Send Rejection Letter",
+    "Start Onboarding",
+    "Submit Application"
+  ],
+  "cells": 38,
+  "types": {
+    "Assessment": {
+      "objects": 588,
+      "object_share": 0.156051,
+      "participations": 2733,
+      "activities": 3,
+      "df_pairs": 3,
+      "scores": null
+    },
+    "Candidate": {
+      "objects": 3000,
+      "object_share": 0.796178,
+      "participations": 17819,
+      "activities": 21,
+      "df_pairs": 24,
+      "scores": null
+    },
+    "HiringManager": {
+      "objects": 20,
+      "object_share": 0.005308,
+      "participations": 1596,
+      "activities": 4,
+      "df_pairs": 5,
+      "scores": null
+    },
+    "Interviewer": {
+      "objects": 50,
+      "object_share": 0.01327,
+      "participations": 2738,
+      "activities": 2,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "JobRequisition": {
+      "objects": 100,
+      "object_share": 0.026539,
+      "participations": 3300,
+      "activities": 4,
+      "df_pairs": 3,
+      "scores": null
+    },
+    "Recruiter": {
+      "objects": 10,
+      "object_share": 0.002654,
+      "participations": 6722,
+      "activities": 4,
+      "df_pairs": 4,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "Approve Job Requisition\tJobRequisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 100
+    },
+    "Attend Orientation Training\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 91
+    },
+    "Candidate Accept Offer\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 91
+    },
+    "Candidate Reject Offer\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 32
+    },
+    "Complete Assessment\tAssessment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 911
+    },
+    "Complete Assessment\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 911
+    },
+    "Complete Background Check\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 234
+    },
+    "Complete HR Paperwork\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 91
+    },
+    "Complete Onboarding\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 91
+    },
+    "Conduct Initial Interview\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1811
+    },
+    "Conduct Initial Interview\tRecruiter": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1811
+    },
+    "Conduct Panel Interview\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 462
+    },
+    "Conduct Panel Interview\tInterviewer": {
+      "max": 4,
+      "mean": 2.9632,
+      "events": 462
+    },
+    "Create Job Requisition\tHiringManager": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 100
+    },
+    "Create Job Requisition\tJobRequisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 100
+    },
+    "Evaluate Interview\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 462
+    },
+    "Evaluate Interview\tHiringManager": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 462
+    },
+    "Initiate Background Check\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 234
+    },
+    "Post Job Opening\tJobRequisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 100
+    },
+    "Post Job Opening\tRecruiter": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 100
+    },
+    "Prepare Offer Letter\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 123
+    },
+    "Prepare Offer Letter\tHiringManager": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 123
+    },
+    "Review Assessment\tAssessment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 911
+    },
+    "Review Assessment\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 911
+    },
+    "Review Assessment\tHiringManager": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 911
+    },
+    "Schedule Initial Interview\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1811
+    },
+    "Schedule Initial Interview\tRecruiter": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1811
+    },
+    "Schedule Panel Interview\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 462
+    },
+    "Schedule Panel Interview\tInterviewer": {
+      "max": 4,
+      "mean": 2.9632,
+      "events": 462
+    },
+    "Screen Resume\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 3000
+    },
+    "Screen Resume\tRecruiter": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 3000
+    },
+    "Send Assessment\tAssessment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 911
+    },
+    "Send Assessment\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 911
+    },
+    "Send Offer Letter\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 123
+    },
+    "Send Rejection Letter\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2877
+    },
+    "Start Onboarding\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 91
+    },
+    "Submit Application\tCandidate": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 3000
+    },
+    "Submit Application\tJobRequisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 3000
+    }
+  },
+  "divergence": {
+    "Complete Assessment": [
+      "Assessment"
+    ],
+    "Conduct Initial Interview": [
+      "Recruiter"
+    ],
+    "Conduct Panel Interview": [
+      "Interviewer"
+    ],
+    "Create Job Requisition": [
+      "HiringManager"
+    ],
+    "Evaluate Interview": [
+      "HiringManager"
+    ],
+    "Post Job Opening": [
+      "Recruiter"
+    ],
+    "Prepare Offer Letter": [
+      "HiringManager"
+    ],
+    "Review Assessment": [
+      "Assessment",
+      "HiringManager"
+    ],
+    "Schedule Initial Interview": [
+      "Recruiter"
+    ],
+    "Schedule Panel Interview": [
+      "Interviewer"
+    ],
+    "Screen Resume": [
+      "Recruiter"
+    ],
+    "Send Assessment": [
+      "Assessment"
+    ],
+    "Submit Application": [
+      "JobRequisition"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 36,
+    "df2": 27,
+    "df2_dropped": [
+      "Conduct Initial Interview -> Screen Resume",
+      "Conduct Panel Interview -> Schedule Panel Interview",
+      "Create Job Requisition -> Review Assessment",
+      "Evaluate Interview -> Prepare Offer Letter",
+      "Evaluate Interview -> Review Assessment",
+      "Post Job Opening -> Screen Resume",
+      "Prepare Offer Letter -> Review Assessment",
+      "Review Assessment -> Evaluate Interview",
+      "Review Assessment -> Send Assessment"
+    ]
+  }
+}

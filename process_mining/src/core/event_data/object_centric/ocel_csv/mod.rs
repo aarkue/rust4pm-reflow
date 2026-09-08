@@ -83,8 +83,11 @@
 
 mod csv_ocel_export;
 mod csv_ocel_import;
+mod escaping;
 
 #[doc(inline)]
 pub use csv_ocel_export::*;
 #[doc(inline)]
 pub use csv_ocel_import::*;
+#[doc(inline)]
+pub use escaping::{escape_reference_part, unescape_reference_part};

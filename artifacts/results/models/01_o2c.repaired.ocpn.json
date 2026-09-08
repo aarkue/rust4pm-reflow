@@ -1,0 +1,776 @@
+{
+  "places": [
+    {
+      "name": "CreditNote p0",
+      "object_type": "CreditNote"
+    },
+    {
+      "name": "CreditNote p1",
+      "object_type": "CreditNote"
+    },
+    {
+      "name": "Customer p0",
+      "object_type": "Customer"
+    },
+    {
+      "name": "Dispute p0",
+      "object_type": "Dispute"
+    },
+    {
+      "name": "Dispute p1",
+      "object_type": "Dispute"
+    },
+    {
+      "name": "Invoice p0",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p1",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p2",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p3",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p4",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p5",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Order p0",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p1",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p2",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p3",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p4",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p5",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p6",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p7",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p8",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p9",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p10",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p11",
+      "object_type": "Order"
+    },
+    {
+      "name": "Order p12",
+      "object_type": "Order"
+    },
+    {
+      "name": "Payment p0",
+      "object_type": "Payment"
+    },
+    {
+      "name": "Payment p1",
+      "object_type": "Payment"
+    },
+    {
+      "name": "Payment p2",
+      "object_type": "Payment"
+    },
+    {
+      "name": "Product p0",
+      "object_type": "Product"
+    },
+    {
+      "name": "Return p0",
+      "object_type": "Return"
+    },
+    {
+      "name": "Return p1",
+      "object_type": "Return"
+    },
+    {
+      "name": "Return p2",
+      "object_type": "Return"
+    },
+    {
+      "name": "Return p3",
+      "object_type": "Return"
+    },
+    {
+      "name": "Shipment p0",
+      "object_type": "Shipment"
+    },
+    {
+      "name": "Shipment p1",
+      "object_type": "Shipment"
+    },
+    {
+      "name": "Shipment p2",
+      "object_type": "Shipment"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "Issue Credit Note",
+      "label": "Issue Credit Note"
+    },
+    {
+      "name": "Approve Order",
+      "label": "Approve Order"
+    },
+    {
+      "name": "Handle Payment Discrepancy",
+      "label": "Handle Payment Discrepancy"
+    },
+    {
+      "name": "Issue Payment Reminder",
+      "label": "Issue Payment Reminder"
+    },
+    {
+      "name": "Perform Credit Check",
+      "label": "Perform Credit Check"
+    },
+    {
+      "name": "Process Return Request",
+      "label": "Process Return Request"
+    },
+    {
+      "name": "Receive Customer Order",
+      "label": "Receive Customer Order"
+    },
+    {
+      "name": "Reject Order",
+      "label": "Reject Order"
+    },
+    {
+      "name": "Send Invoice to Customer",
+      "label": "Send Invoice to Customer"
+    },
+    {
+      "name": "Generate Invoice",
+      "label": "Generate Invoice"
+    },
+    {
+      "name": "Receive Payment",
+      "label": "Receive Payment"
+    },
+    {
+      "name": "Apply Payment",
+      "label": "Apply Payment"
+    },
+    {
+      "name": "Validate Customer Order",
+      "label": "Validate Customer Order"
+    },
+    {
+      "name": "Schedule Order Fulfillment",
+      "label": "Schedule Order Fulfillment"
+    },
+    {
+      "name": "Generate Pick List",
+      "label": "Generate Pick List"
+    },
+    {
+      "name": "Pack Items",
+      "label": "Pack Items"
+    },
+    {
+      "name": "Generate Shipping Label",
+      "label": "Generate Shipping Label"
+    },
+    {
+      "name": "Ship Order",
+      "label": "Ship Order"
+    },
+    {
+      "name": "Order tau0",
+      "label": null
+    },
+    {
+      "name": "Order tau1",
+      "label": null
+    },
+    {
+      "name": "Apply Discount",
+      "label": "Apply Discount"
+    },
+    {
+      "name": "Pick Items",
+      "label": "Pick Items"
+    },
+    {
+      "name": "Update Inventory",
+      "label": "Update Inventory"
+    },
+    {
+      "name": "Approve Return",
+      "label": "Approve Return"
+    },
+    {
+      "name": "Shipment tau0",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "CreditNote p0",
+      "target": "Issue Credit Note",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Issue Credit Note",
+      "target": "CreditNote p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Approve Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve Order",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Handle Payment Discrepancy",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Handle Payment Discrepancy",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Issue Payment Reminder",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Issue Payment Reminder",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Perform Credit Check",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Perform Credit Check",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Process Return Request",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Process Return Request",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Receive Customer Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Customer Order",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Reject Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Reject Order",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Customer p0",
+      "target": "Send Invoice to Customer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send Invoice to Customer",
+      "target": "Customer p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Dispute p0",
+      "target": "Handle Payment Discrepancy",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Handle Payment Discrepancy",
+      "target": "Dispute p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p0",
+      "target": "Generate Invoice",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Generate Invoice",
+      "target": "Invoice p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p1",
+      "target": "Send Invoice to Customer",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send Invoice to Customer",
+      "target": "Invoice p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p2",
+      "target": "Handle Payment Discrepancy",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Handle Payment Discrepancy",
+      "target": "Invoice p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p2",
+      "target": "Issue Payment Reminder",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Issue Payment Reminder",
+      "target": "Invoice p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p2",
+      "target": "Receive Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Payment",
+      "target": "Invoice p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p4",
+      "target": "Apply Payment",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Apply Payment",
+      "target": "Invoice p5",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Order p0",
+      "target": "Receive Customer Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Customer Order",
+      "target": "Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p1",
+      "target": "Validate Customer Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Validate Customer Order",
+      "target": "Order p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p2",
+      "target": "Perform Credit Check",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Perform Credit Check",
+      "target": "Order p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p3",
+      "target": "Approve Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve Order",
+      "target": "Order p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p4",
+      "target": "Schedule Order Fulfillment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Schedule Order Fulfillment",
+      "target": "Order p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p5",
+      "target": "Generate Pick List",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Generate Pick List",
+      "target": "Order p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p6",
+      "target": "Pack Items",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Pack Items",
+      "target": "Order p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p7",
+      "target": "Generate Shipping Label",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Generate Shipping Label",
+      "target": "Order p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p8",
+      "target": "Ship Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Ship Order",
+      "target": "Order p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p9",
+      "target": "Generate Invoice",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Generate Invoice",
+      "target": "Order p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p3",
+      "target": "Reject Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Reject Order",
+      "target": "Order p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p10",
+      "target": "Order tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order tau0",
+      "target": "Order p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p10",
+      "target": "Process Return Request",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Process Return Request",
+      "target": "Order p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p11",
+      "target": "Order tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order tau1",
+      "target": "Order p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Order p11",
+      "target": "Apply Discount",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Apply Discount",
+      "target": "Order p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Payment p0",
+      "target": "Receive Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Payment",
+      "target": "Payment p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Payment p1",
+      "target": "Apply Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Apply Payment",
+      "target": "Payment p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Product p0",
+      "target": "Generate Pick List",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Generate Pick List",
+      "target": "Product p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Product p0",
+      "target": "Pick Items",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Pick Items",
+      "target": "Product p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Product p0",
+      "target": "Update Inventory",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Update Inventory",
+      "target": "Product p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Return p0",
+      "target": "Process Return Request",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Process Return Request",
+      "target": "Return p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Return p1",
+      "target": "Approve Return",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve Return",
+      "target": "Return p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Return p2",
+      "target": "Issue Credit Note",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Issue Credit Note",
+      "target": "Return p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Shipment p0",
+      "target": "Generate Shipping Label",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Generate Shipping Label",
+      "target": "Shipment p1",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Shipment p1",
+      "target": "Ship Order",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Ship Order",
+      "target": "Shipment p2",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Shipment p0",
+      "target": "Shipment tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Shipment tau0",
+      "target": "Shipment p2",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "CreditNote p0": 1,
+    "Customer p0": 1,
+    "Dispute p0": 1,
+    "Invoice p0": 1,
+    "Invoice p4": 1,
+    "Order p0": 1,
+    "Payment p0": 1,
+    "Product p0": 1,
+    "Return p0": 1,
+    "Shipment p0": 1
+  },
+  "final_marking": {
+    "CreditNote p1": 1,
+    "Customer p0": 1,
+    "Dispute p1": 1,
+    "Invoice p3": 1,
+    "Invoice p5": 1,
+    "Order p12": 1,
+    "Payment p2": 1,
+    "Product p0": 1,
+    "Return p3": 1,
+    "Shipment p2": 1
+  }
+}

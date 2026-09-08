@@ -1,0 +1,418 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.5928507153578777,
+      "recorded": 0.6143375134827412
+    },
+    "min_fitness_rebuilt": 0.9960746687660081,
+    "types_whose_fitness_falls": []
+  },
+  "assignment": {
+    "absent": [],
+    "flow": [
+      [
+        "A_Accepted",
+        "Application"
+      ],
+      [
+        "A_Cancelled",
+        "Application"
+      ],
+      [
+        "A_Complete",
+        "Application"
+      ],
+      [
+        "A_Concept",
+        "Application"
+      ],
+      [
+        "A_Create Application",
+        "Application"
+      ],
+      [
+        "A_Denied",
+        "Application"
+      ],
+      [
+        "A_Incomplete",
+        "Application"
+      ],
+      [
+        "A_Pending",
+        "Application"
+      ],
+      [
+        "A_Submitted",
+        "Application"
+      ],
+      [
+        "A_Validating",
+        "Application"
+      ],
+      [
+        "O_Accepted",
+        "Offer"
+      ],
+      [
+        "O_Cancelled",
+        "Offer"
+      ],
+      [
+        "O_Create Offer",
+        "Offer"
+      ],
+      [
+        "O_Created",
+        "Offer"
+      ],
+      [
+        "O_Refused",
+        "Offer"
+      ],
+      [
+        "O_Returned",
+        "Offer"
+      ],
+      [
+        "O_Sent (mail and online)",
+        "Offer"
+      ],
+      [
+        "O_Sent (online only)",
+        "Offer"
+      ]
+    ],
+    "inv": [
+      [
+        "A_Accepted",
+        "Case_R"
+      ],
+      [
+        "A_Cancelled",
+        "Case_R"
+      ],
+      [
+        "A_Complete",
+        "Case_R"
+      ],
+      [
+        "A_Concept",
+        "Case_R"
+      ],
+      [
+        "A_Create Application",
+        "Case_R"
+      ],
+      [
+        "A_Denied",
+        "Case_R"
+      ],
+      [
+        "A_Incomplete",
+        "Case_R"
+      ],
+      [
+        "A_Pending",
+        "Case_R"
+      ],
+      [
+        "A_Submitted",
+        "Case_R"
+      ],
+      [
+        "A_Validating",
+        "Case_R"
+      ],
+      [
+        "O_Accepted",
+        "Case_R"
+      ],
+      [
+        "O_Cancelled",
+        "Case_R"
+      ],
+      [
+        "O_Create Offer",
+        "Case_R"
+      ],
+      [
+        "O_Created",
+        "Case_R"
+      ],
+      [
+        "O_Refused",
+        "Case_R"
+      ],
+      [
+        "O_Returned",
+        "Case_R"
+      ],
+      [
+        "O_Sent (mail and online)",
+        "Case_R"
+      ],
+      [
+        "O_Sent (online only)",
+        "Case_R"
+      ]
+    ],
+    "kept": [
+      [
+        "A_Accepted",
+        "Application"
+      ],
+      [
+        "A_Accepted",
+        "Case_R"
+      ],
+      [
+        "A_Cancelled",
+        "Application"
+      ],
+      [
+        "A_Cancelled",
+        "Case_R"
+      ],
+      [
+        "A_Complete",
+        "Application"
+      ],
+      [
+        "A_Complete",
+        "Case_R"
+      ],
+      [
+        "A_Concept",
+        "Application"
+      ],
+      [
+        "A_Concept",
+        "Case_R"
+      ],
+      [
+        "A_Create Application",
+        "Application"
+      ],
+      [
+        "A_Create Application",
+        "Case_R"
+      ],
+      [
+        "A_Denied",
+        "Application"
+      ],
+      [
+        "A_Denied",
+        "Case_R"
+      ],
+      [
+        "A_Incomplete",
+        "Application"
+      ],
+      [
+        "A_Incomplete",
+        "Case_R"
+      ],
+      [
+        "A_Pending",
+        "Application"
+      ],
+      [
+        "A_Pending",
+        "Case_R"
+      ],
+      [
+        "A_Submitted",
+        "Application"
+      ],
+      [
+        "A_Submitted",
+        "Case_R"
+      ],
+      [
+        "A_Validating",
+        "Application"
+      ],
+      [
+        "A_Validating",
+        "Case_R"
+      ],
+      [
+        "O_Accepted",
+        "Case_R"
+      ],
+      [
+        "O_Accepted",
+        "Offer"
+      ],
+      [
+        "O_Cancelled",
+        "Case_R"
+      ],
+      [
+        "O_Cancelled",
+        "Offer"
+      ],
+      [
+        "O_Create Offer",
+        "Case_R"
+      ],
+      [
+        "O_Create Offer",
+        "Offer"
+      ],
+      [
+        "O_Created",
+        "Case_R"
+      ],
+      [
+        "O_Created",
+        "Offer"
+      ],
+      [
+        "O_Refused",
+        "Case_R"
+      ],
+      [
+        "O_Refused",
+        "Offer"
+      ],
+      [
+        "O_Returned",
+        "Case_R"
+      ],
+      [
+        "O_Returned",
+        "Offer"
+      ],
+      [
+        "O_Sent (mail and online)",
+        "Case_R"
+      ],
+      [
+        "O_Sent (mail and online)",
+        "Offer"
+      ],
+      [
+        "O_Sent (online only)",
+        "Case_R"
+      ],
+      [
+        "O_Sent (online only)",
+        "Offer"
+      ]
+    ]
+  },
+  "log": "bpic2017-no-W",
+  "types": {
+    "Application": {
+      "adjusted_precision": {
+        "rebuilt": 0.9127134129825977,
+        "recorded": 0.9127134129825977
+      },
+      "arcs": {
+        "rebuilt": 32,
+        "recorded": 32,
+        "reduced": 32
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 10,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9993730170720653,
+        "recorded": 0.9993730170720653
+      },
+      "objects": 31509,
+      "precision": {
+        "floor": 0.2324945408404155,
+        "rebuilt": 0.9330070679527356,
+        "recorded": 0.9330070679527356
+      }
+    },
+    "Case_R": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.06446039437459049
+      },
+      "arcs": {
+        "rebuilt": 36,
+        "recorded": 48,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 18
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.9848083340828842
+      },
+      "objects": 149,
+      "precision": {
+        "floor": 0.05592892156674321,
+        "rebuilt": 0.05592892156674321,
+        "recorded": 0.11678411560019589
+      }
+    },
+    "Offer": {
+      "adjusted_precision": {
+        "rebuilt": 0.8658387330910355,
+        "recorded": 0.8658387330910355
+      },
+      "arcs": {
+        "rebuilt": 18,
+        "recorded": 18,
+        "reduced": 18
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 8,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9960746687660081,
+        "recorded": 0.9960746687660081
+      },
+      "objects": 42995,
+      "precision": {
+        "floor": 0.23912575366063737,
+        "rebuilt": 0.8979201471527076,
+        "recorded": 0.8979201471527076
+      }
+    },
+    "Workflow": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 0,
+        "recorded": 0,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": "emptied",
+        "recorded": "emptied"
+      },
+      "objects": 31509,
+      "precision": {
+        "floor": "emptied",
+        "rebuilt": "emptied",
+        "recorded": "emptied"
+      }
+    }
+  }
+}

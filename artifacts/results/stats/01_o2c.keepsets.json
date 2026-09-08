@@ -1,0 +1,266 @@
+{
+  "absent": [
+    [
+      "Apply Payment",
+      "Payment"
+    ],
+    [
+      "Approve Order",
+      "Customer"
+    ],
+    [
+      "Generate Shipping Label",
+      "Shipment"
+    ],
+    [
+      "Handle Payment Discrepancy",
+      "Customer"
+    ],
+    [
+      "Handle Payment Discrepancy",
+      "Dispute"
+    ],
+    [
+      "Issue Credit Note",
+      "CreditNote"
+    ],
+    [
+      "Issue Payment Reminder",
+      "Customer"
+    ],
+    [
+      "Perform Credit Check",
+      "Customer"
+    ],
+    [
+      "Process Return Request",
+      "Customer"
+    ],
+    [
+      "Receive Customer Order",
+      "Customer"
+    ],
+    [
+      "Receive Payment",
+      "Payment"
+    ],
+    [
+      "Reject Order",
+      "Customer"
+    ],
+    [
+      "Send Invoice to Customer",
+      "Customer"
+    ],
+    [
+      "Ship Order",
+      "Shipment"
+    ]
+  ],
+  "flow": [
+    [
+      "Apply Discount",
+      "Order"
+    ],
+    [
+      "Apply Payment",
+      "Invoice"
+    ],
+    [
+      "Approve Order",
+      "Order"
+    ],
+    [
+      "Approve Return",
+      "Return"
+    ],
+    [
+      "Generate Invoice",
+      "Invoice"
+    ],
+    [
+      "Generate Invoice",
+      "Order"
+    ],
+    [
+      "Generate Pick List",
+      "Order"
+    ],
+    [
+      "Generate Shipping Label",
+      "Order"
+    ],
+    [
+      "Handle Payment Discrepancy",
+      "Invoice"
+    ],
+    [
+      "Issue Credit Note",
+      "Return"
+    ],
+    [
+      "Issue Payment Reminder",
+      "Invoice"
+    ],
+    [
+      "Pack Items",
+      "Order"
+    ],
+    [
+      "Perform Credit Check",
+      "Order"
+    ],
+    [
+      "Process Return Request",
+      "Order"
+    ],
+    [
+      "Process Return Request",
+      "Return"
+    ],
+    [
+      "Receive Customer Order",
+      "Order"
+    ],
+    [
+      "Receive Payment",
+      "Invoice"
+    ],
+    [
+      "Reject Order",
+      "Order"
+    ],
+    [
+      "Schedule Order Fulfillment",
+      "Order"
+    ],
+    [
+      "Send Invoice to Customer",
+      "Invoice"
+    ],
+    [
+      "Ship Order",
+      "Order"
+    ],
+    [
+      "Validate Customer Order",
+      "Order"
+    ]
+  ],
+  "inv": [
+    [
+      "Generate Pick List",
+      "Product"
+    ],
+    [
+      "Pick Items",
+      "Product"
+    ],
+    [
+      "Update Inventory",
+      "Product"
+    ]
+  ],
+  "measured": [
+    [
+      "Apply Discount",
+      "Order"
+    ],
+    [
+      "Apply Payment",
+      "Invoice"
+    ],
+    [
+      "Approve Order",
+      "Order"
+    ],
+    [
+      "Approve Return",
+      "Return"
+    ],
+    [
+      "Generate Invoice",
+      "Invoice"
+    ],
+    [
+      "Generate Invoice",
+      "Order"
+    ],
+    [
+      "Generate Pick List",
+      "Order"
+    ],
+    [
+      "Generate Pick List",
+      "Product"
+    ],
+    [
+      "Generate Shipping Label",
+      "Order"
+    ],
+    [
+      "Handle Payment Discrepancy",
+      "Invoice"
+    ],
+    [
+      "Issue Credit Note",
+      "Return"
+    ],
+    [
+      "Issue Payment Reminder",
+      "Invoice"
+    ],
+    [
+      "Pack Items",
+      "Order"
+    ],
+    [
+      "Perform Credit Check",
+      "Order"
+    ],
+    [
+      "Pick Items",
+      "Product"
+    ],
+    [
+      "Process Return Request",
+      "Order"
+    ],
+    [
+      "Process Return Request",
+      "Return"
+    ],
+    [
+      "Receive Customer Order",
+      "Order"
+    ],
+    [
+      "Receive Payment",
+      "Invoice"
+    ],
+    [
+      "Reject Order",
+      "Order"
+    ],
+    [
+      "Schedule Order Fulfillment",
+      "Order"
+    ],
+    [
+      "Send Invoice to Customer",
+      "Invoice"
+    ],
+    [
+      "Ship Order",
+      "Order"
+    ],
+    [
+      "Update Inventory",
+      "Product"
+    ],
+    [
+      "Validate Customer Order",
+      "Order"
+    ]
+  ]
+}

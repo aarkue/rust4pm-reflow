@@ -1,0 +1,390 @@
+{
+  "log": "socel2_hinge.xml",
+  "path": "logs/socel2_hinge.xml",
+  "events": 38528,
+  "objects": 23771,
+  "participations": 144827,
+  "activities": [
+    "AssembleHinge",
+    "CheckFemalePart",
+    "CheckMalePart",
+    "CoatPart",
+    "CuttFemalePart",
+    "CuttMalePart",
+    "FormSteelSheet",
+    "HeatSteelSheet",
+    "MoveParts",
+    "PackHinges",
+    "SplitSteelSheet"
+  ],
+  "cells": 40,
+  "types": {
+    "Facility": {
+      "objects": 1,
+      "object_share": 4.2e-05,
+      "participations": 29,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "FemalePart": {
+      "objects": 2915,
+      "object_share": 0.122628,
+      "participations": 8737,
+      "activities": 3,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "FormedPart": {
+      "objects": 5911,
+      "object_share": 0.248664,
+      "participations": 17651,
+      "activities": 4,
+      "df_pairs": 3,
+      "scores": null
+    },
+    "Hinge": {
+      "objects": 2907,
+      "object_share": 0.122292,
+      "participations": 5807,
+      "activities": 2,
+      "df_pairs": 1,
+      "scores": null
+    },
+    "HingePack": {
+      "objects": 290,
+      "object_share": 0.0122,
+      "participations": 290,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "Machine": {
+      "objects": 7,
+      "object_share": 0.000294,
+      "participations": 32670,
+      "activities": 8,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "MalePart": {
+      "objects": 2914,
+      "object_share": 0.122586,
+      "participations": 8735,
+      "activities": 3,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "SteelCoil": {
+      "objects": 4,
+      "object_share": 0.000168,
+      "participations": 5911,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "SteelPin": {
+      "objects": 2907,
+      "object_share": 0.122292,
+      "participations": 2907,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "SteelSheet": {
+      "objects": 5911,
+      "object_share": 0.248664,
+      "participations": 17733,
+      "activities": 3,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "Worker": {
+      "objects": 1,
+      "object_share": 4.2e-05,
+      "participations": 5858,
+      "activities": 3,
+      "df_pairs": 6,
+      "scores": null
+    },
+    "Workstation": {
+      "objects": 3,
+      "object_share": 0.000126,
+      "participations": 38499,
+      "activities": 10,
+      "df_pairs": 26,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "AssembleHinge\tFemalePart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2907
+    },
+    "AssembleHinge\tHinge": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2907
+    },
+    "AssembleHinge\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2907
+    },
+    "AssembleHinge\tMalePart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2907
+    },
+    "AssembleHinge\tSteelPin": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2907
+    },
+    "AssembleHinge\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2907
+    },
+    "CheckFemalePart\tFemalePart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2915
+    },
+    "CheckFemalePart\tWorker": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2915
+    },
+    "CheckFemalePart\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2915
+    },
+    "CheckMalePart\tMalePart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2914
+    },
+    "CheckMalePart\tWorker": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2914
+    },
+    "CheckMalePart\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2914
+    },
+    "CoatPart\tFormedPart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "CoatPart\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "CoatPart\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "CuttFemalePart\tFemalePart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2915
+    },
+    "CuttFemalePart\tFormedPart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2915
+    },
+    "CuttFemalePart\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2915
+    },
+    "CuttFemalePart\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2915
+    },
+    "CuttMalePart\tFormedPart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2914
+    },
+    "CuttMalePart\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2914
+    },
+    "CuttMalePart\tMalePart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2914
+    },
+    "CuttMalePart\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2914
+    },
+    "FormSteelSheet\tFormedPart": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "FormSteelSheet\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "FormSteelSheet\tSteelSheet": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "FormSteelSheet\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "HeatSteelSheet\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "HeatSteelSheet\tSteelSheet": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "HeatSteelSheet\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "MoveParts\tFacility": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 29
+    },
+    "MoveParts\tWorker": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 29
+    },
+    "PackHinges\tHinge": {
+      "max": 10,
+      "mean": 10.0,
+      "events": 290
+    },
+    "PackHinges\tHingePack": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 290
+    },
+    "PackHinges\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 290
+    },
+    "PackHinges\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 290
+    },
+    "SplitSteelSheet\tMachine": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "SplitSteelSheet\tSteelCoil": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "SplitSteelSheet\tSteelSheet": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    },
+    "SplitSteelSheet\tWorkstation": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 5911
+    }
+  },
+  "divergence": {
+    "AssembleHinge": [
+      "Machine",
+      "Workstation"
+    ],
+    "CheckFemalePart": [
+      "Worker",
+      "Workstation"
+    ],
+    "CheckMalePart": [
+      "Worker",
+      "Workstation"
+    ],
+    "CoatPart": [
+      "Machine",
+      "Workstation"
+    ],
+    "CuttFemalePart": [
+      "Machine",
+      "Workstation"
+    ],
+    "CuttMalePart": [
+      "Machine",
+      "Workstation"
+    ],
+    "FormSteelSheet": [
+      "Machine",
+      "Workstation"
+    ],
+    "HeatSteelSheet": [
+      "Machine",
+      "Workstation"
+    ],
+    "PackHinges": [
+      "Machine",
+      "Workstation"
+    ],
+    "SplitSteelSheet": [
+      "Machine",
+      "SteelCoil",
+      "Workstation"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 34,
+    "df2": 14,
+    "df2_dropped": [
+      "CheckFemalePart -> CheckMalePart",
+      "CheckFemalePart -> CuttFemalePart",
+      "CheckFemalePart -> CuttMalePart",
+      "CheckMalePart -> CheckFemalePart",
+      "CheckMalePart -> CuttFemalePart",
+      "CheckMalePart -> CuttMalePart",
+      "CoatPart -> FormSteelSheet",
+      "CoatPart -> HeatSteelSheet",
+      "CoatPart -> SplitSteelSheet",
+      "CuttFemalePart -> CheckMalePart",
+      "CuttFemalePart -> CuttMalePart",
+      "CuttMalePart -> CheckFemalePart",
+      "CuttMalePart -> CuttFemalePart",
+      "FormSteelSheet -> HeatSteelSheet",
+      "FormSteelSheet -> SplitSteelSheet",
+      "HeatSteelSheet -> CoatPart",
+      "HeatSteelSheet -> SplitSteelSheet",
+      "PackHinges -> AssembleHinge",
+      "SplitSteelSheet -> CoatPart",
+      "SplitSteelSheet -> FormSteelSheet"
+    ]
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "absent": [
+    [
+      "Complete Assessment",
+      "Assessment"
+    ],
+    [
+      "Conduct Initial Interview",
+      "Recruiter"
+    ],
+    [
+      "Create Job Requisition",
+      "HiringManager"
+    ],
+    [
+      "Evaluate Interview",
+      "HiringManager"
+    ],
+    [
+      "Post Job Opening",
+      "Recruiter"
+    ],
+    [
+      "Prepare Offer Letter",
+      "HiringManager"
+    ],
+    [
+      "Review Assessment",
+      "Assessment"
+    ],
+    [
+      "Review Assessment",
+      "HiringManager"
+    ],
+    [
+      "Schedule Initial Interview",
+      "Recruiter"
+    ],
+    [
+      "Screen Resume",
+      "Recruiter"
+    ],
+    [
+      "Send Assessment",
+      "Assessment"
+    ]
+  ],
+  "flow": [
+    [
+      "Approve Job Requisition",
+      "JobRequisition"
+    ],
+    [
+      "Attend Orientation Training",
+      "Candidate"
+    ],
+    [
+      "Candidate Accept Offer",
+      "Candidate"
+    ],
+    [
+      "Candidate Reject Offer",
+      "Candidate"
+    ],
+    [
+      "Complete Assessment",
+      "Candidate"
+    ],
+    [
+      "Complete Background Check",
+      "Candidate"
+    ],
+    [
+      "Complete HR Paperwork",
+      "Candidate"
+    ],
+    [
+      "Complete Onboarding",
+      "Candidate"
+    ],
+    [
+      "Conduct Initial Interview",
+      "Candidate"
+    ],
+    [
+      "Conduct Panel Interview",
+      "Candidate"
+    ],
+    [
+      "Create Job Requisition",
+      "JobRequisition"
+    ],
+    [
+      "Evaluate Interview",
+      "Candidate"
+    ],
+    [
+      "Initiate Background Check",
+      "Candidate"
+    ],
+    [
+      "Post Job Opening",
+      "JobRequisition"
+    ],
+    [
+      "Prepare Offer Letter",
+      "Candidate"
+    ],
+    [
+      "Review Assessment",
+      "Candidate"
+    ],
+    [
+      "Schedule Initial Interview",
+      "Candidate"
+    ],
+    [
+      "Schedule Panel Interview",
+      "Candidate"
+    ],
+    [
+      "Screen Resume",
+      "Candidate"
+    ],
+    [
+      "Send Assessment",
+      "Candidate"
+    ],
+    [
+      "Send Offer Letter",
+      "Candidate"
+    ],
+    [
+      "Send Rejection Letter",
+      "Candidate"
+    ],
+    [
+      "Start Onboarding",
+      "Candidate"
+    ],
+    [
+      "Submit Application",
+      "Candidate"
+    ],
+    [
+      "Submit Application",
+      "JobRequisition"
+    ]
+  ],
+  "inv": [
+    [
+      "Conduct Panel Interview",
+      "Interviewer"
+    ],
+    [
+      "Schedule Panel Interview",
+      "Interviewer"
+    ]
+  ],
+  "measured": [
+    [
+      "Approve Job Requisition",
+      "JobRequisition"
+    ],
+    [
+      "Attend Orientation Training",
+      "Candidate"
+    ],
+    [
+      "Candidate Accept Offer",
+      "Candidate"
+    ],
+    [
+      "Candidate Reject Offer",
+      "Candidate"
+    ],
+    [
+      "Complete Assessment",
+      "Candidate"
+    ],
+    [
+      "Complete Background Check",
+      "Candidate"
+    ],
+    [
+      "Complete HR Paperwork",
+      "Candidate"
+    ],
+    [
+      "Complete Onboarding",
+      "Candidate"
+    ],
+    [
+      "Conduct Initial Interview",
+      "Candidate"
+    ],
+    [
+      "Conduct Panel Interview",
+      "Candidate"
+    ],
+    [
+      "Conduct Panel Interview",
+      "Interviewer"
+    ],
+    [
+      "Create Job Requisition",
+      "JobRequisition"
+    ],
+    [
+      "Evaluate Interview",
+      "Candidate"
+    ],
+    [
+      "Initiate Background Check",
+      "Candidate"
+    ],
+    [
+      "Post Job Opening",
+      "JobRequisition"
+    ],
+    [
+      "Prepare Offer Letter",
+      "Candidate"
+    ],
+    [
+      "Review Assessment",
+      "Candidate"
+    ],
+    [
+      "Schedule Initial Interview",
+      "Candidate"
+    ],
+    [
+      "Schedule Panel Interview",
+      "Candidate"
+    ],
+    [
+      "Schedule Panel Interview",
+      "Interviewer"
+    ],
+    [
+      "Screen Resume",
+      "Candidate"
+    ],
+    [
+      "Send Assessment",
+      "Candidate"
+    ],
+    [
+      "Send Offer Letter",
+      "Candidate"
+    ],
+    [
+      "Send Rejection Letter",
+      "Candidate"
+    ],
+    [
+      "Start Onboarding",
+      "Candidate"
+    ],
+    [
+      "Submit Application",
+      "Candidate"
+    ],
+    [
+      "Submit Application",
+      "JobRequisition"
+    ]
+  ]
+}

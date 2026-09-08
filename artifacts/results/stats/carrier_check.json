@@ -1,0 +1,93 @@
+{
+  "logs": [
+    {
+      "coincidence_only": 1,
+      "examples": [
+        "Shipment : Generate Shipping Label < Ship Order  [shown by Order]"
+      ],
+      "log": "01_o2c",
+      "map_backed": 1,
+      "own_drawn": 20,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 22
+    },
+    {
+      "coincidence_only": 0,
+      "examples": [],
+      "log": "02_p2p",
+      "map_backed": 0,
+      "own_drawn": 22,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 22
+    },
+    {
+      "coincidence_only": 0,
+      "examples": [],
+      "log": "03_hiring",
+      "map_backed": 6,
+      "own_drawn": 23,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 29
+    },
+    {
+      "coincidence_only": 0,
+      "examples": [],
+      "log": "04_hospital",
+      "map_backed": 0,
+      "own_drawn": 8,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 8
+    },
+    {
+      "coincidence_only": 2,
+      "examples": [
+        "material : Create Purchase Requisition < Delegate Purchase Requisition Approval  [shown by purchase_requisition]",
+        "material : Create Purchase Requisition < Approve Purchase Requisition  [shown by purchase_requisition]"
+      ],
+      "log": "ocel2-p2p-updated",
+      "map_backed": 3,
+      "own_drawn": 10,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 15
+    },
+    {
+      "coincidence_only": 0,
+      "examples": [],
+      "log": "ContainerLogistics",
+      "map_backed": 3,
+      "own_drawn": 15,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 18
+    },
+    {
+      "coincidence_only": 0,
+      "examples": [],
+      "log": "socel2_hinge",
+      "map_backed": 0,
+      "own_drawn": 10,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 10
+    },
+    {
+      "coincidence_only": 2,
+      "examples": [
+        "items : failed delivery < package delivered  [shown by packages]",
+        "items : send package < failed delivery  [shown by packages]"
+      ],
+      "log": "order-management",
+      "map_backed": 4,
+      "own_drawn": 11,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 17
+    },
+    {
+      "coincidence_only": 0,
+      "examples": [],
+      "log": "bpic2017-no-W",
+      "map_backed": 0,
+      "own_drawn": 20,
+      "own_readable_not_drawn": 0,
+      "per_type_ordering_facts": 20
+    }
+  ]
+}

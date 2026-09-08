@@ -1,0 +1,126 @@
+{
+  "absent": [
+    [
+      "Assign Bed",
+      "Bed"
+    ],
+    [
+      "Assign Bed",
+      "Room"
+    ],
+    [
+      "Initial Evaluation",
+      "Nurse"
+    ],
+    [
+      "Insurance Verification",
+      "InsuranceCompany"
+    ],
+    [
+      "Perform Diagnostic Test",
+      "DiagnosticEquipment"
+    ],
+    [
+      "Perform Diagnostic Test",
+      "LabTechnician"
+    ],
+    [
+      "Registration",
+      "Nurse"
+    ]
+  ],
+  "flow": [
+    [
+      "Appointment Scheduling",
+      "Patient"
+    ],
+    [
+      "Assign Bed",
+      "Patient"
+    ],
+    [
+      "Diagnostic Test Order",
+      "Patient"
+    ],
+    [
+      "Initial Evaluation",
+      "Patient"
+    ],
+    [
+      "Insurance Verification",
+      "Patient"
+    ],
+    [
+      "Patient Arrival",
+      "Patient"
+    ],
+    [
+      "Perform Diagnostic Test",
+      "Patient"
+    ],
+    [
+      "Pre-Admission Consultation",
+      "Patient"
+    ],
+    [
+      "Registration",
+      "Patient"
+    ]
+  ],
+  "inv": [
+    [
+      "Diagnostic Test Order",
+      "Physician"
+    ],
+    [
+      "Pre-Admission Consultation",
+      "Physician"
+    ]
+  ],
+  "measured": [
+    [
+      "Appointment Scheduling",
+      "Patient"
+    ],
+    [
+      "Assign Bed",
+      "Patient"
+    ],
+    [
+      "Diagnostic Test Order",
+      "Patient"
+    ],
+    [
+      "Diagnostic Test Order",
+      "Physician"
+    ],
+    [
+      "Initial Evaluation",
+      "Patient"
+    ],
+    [
+      "Insurance Verification",
+      "Patient"
+    ],
+    [
+      "Patient Arrival",
+      "Patient"
+    ],
+    [
+      "Perform Diagnostic Test",
+      "Patient"
+    ],
+    [
+      "Pre-Admission Consultation",
+      "Patient"
+    ],
+    [
+      "Pre-Admission Consultation",
+      "Physician"
+    ],
+    [
+      "Registration",
+      "Patient"
+    ]
+  ]
+}

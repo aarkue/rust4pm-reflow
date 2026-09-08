@@ -14,7 +14,7 @@ use crate::core::event_data::object_centric::ocel_struct::{OCELEvent, OCELObject
 use crate::core::io::{Exportable, Importable};
 use crate::core::{event_data::object_centric::io::OCELIOError, io::ExtensionWithMime};
 
-use super::LinkedOCELAccess;
+use super::{queryable::impl_queryable_from_linked, LinkedOCELAccess};
 
 /// An Event Index
 ///
@@ -116,6 +116,17 @@ pub struct IndexLinkedOCEL {
     o2o_rel: Vec<Vec<(String, ObjectIndex)>>,
     e2o_rel_rev: Vec<Vec<(String, EventIndex)>>,
     o2o_rel_rev: Vec<Vec<(String, ObjectIndex)>>,
+    /// Event type names, indexed by [`QueryableOCEL::EvTypeId`](super::QueryableOCEL::EvTypeId)
+    /// (a plain `usize`). Superset of `ocel.event_types`: an event whose type isn't declared
+    /// there still gets an id here (assigned on first sight), matching `get_ev_type_of`'s
+    /// tolerance of undeclared types.
+    event_type_names: Vec<String>,
+    /// See [`Self::event_type_names`].
+    object_type_names: Vec<String>,
+    /// `ocel.events[i]`'s type id into [`Self::event_type_names`].
+    event_type_idx: Vec<usize>,
+    /// `ocel.objects[i]`'s type id into [`Self::object_type_names`].
+    object_type_idx: Vec<usize>,
 }
 
 impl IndexLinkedOCEL {
@@ -213,6 +224,35 @@ impl Index<&ObjectIndex> for &IndexLinkedOCEL {
     fn index(&self, index: &ObjectIndex) -> &Self::Output {
         &self.ocel.objects[index.0]
     }
+}
+
+/// Assign each item's type name a stable `usize` id: `declared`'s order first, then any
+/// name seen in `items` but missing from `declared` gets the next free id (an event/object
+/// whose type isn't pre-declared is tolerated elsewhere in this file, e.g. `get_ev_type_of`,
+/// so this must not panic on one).
+fn build_type_index<'a>(
+    declared: &[OCELType],
+    items: impl Iterator<Item = &'a str>,
+) -> (Vec<String>, Vec<usize>) {
+    let mut names: Vec<String> = declared.iter().map(|t| t.name.clone()).collect();
+    let mut index: HashMap<String, usize> = names
+        .iter()
+        .cloned()
+        .enumerate()
+        .map(|(i, n)| (n, i))
+        .collect();
+    let idx = items
+        .map(|name| match index.get(name) {
+            Some(&i) => i,
+            None => {
+                let i = names.len();
+                names.push(name.to_string());
+                index.insert(name.to_string(), i);
+                i
+            }
+        })
+        .collect();
+    (names, idx)
 }
 
 impl From<OCEL> for IndexLinkedOCEL {
@@ -335,6 +375,15 @@ impl From<OCEL> for IndexLinkedOCEL {
             })
             .collect();
 
+        let (event_type_names, event_type_idx) = build_type_index(
+            &ocel.event_types,
+            ocel.events.iter().map(|e| e.event_type.as_str()),
+        );
+        let (object_type_names, object_type_idx) = build_type_index(
+            &ocel.object_types,
+            ocel.objects.iter().map(|o| o.object_type.as_str()),
+        );
+
         Self {
             ocel,
             event_ids_to_index,
@@ -347,7 +396,25 @@ impl From<OCEL> for IndexLinkedOCEL {
             o2o_rel,
             e2o_rel_rev,
             o2o_rel_rev,
+            event_type_names,
+            object_type_names,
+            event_type_idx,
+            object_type_idx,
         }
+    }
+}
+
+#[cfg(feature = "ocel-duckdb")]
+impl IndexLinkedOCEL {
+    /// Build an in-memory index by fully materializing a `DuckDB` connection (see
+    /// [`stream_ocel_file_to_duckdb`](crate::core::event_data::object_centric::ocel_sql::stream_ocel_file_to_duckdb)).
+    ///
+    /// Convenience eager-load for logs that fit in memory; for out-of-core access use
+    /// [`DuckDbLinkedOCEL`](crate::core::event_data::object_centric::ocel_sql::DuckDbLinkedOCEL)
+    /// instead.
+    pub fn from_duckdb(con: &duckdb::Connection) -> Result<Self, OCELIOError> {
+        let ocel = crate::core::event_data::object_centric::ocel_sql::read_ocel_from_duckdb(con)?;
+        Ok(Self::from_ocel(ocel))
     }
 }
 
@@ -524,6 +591,16 @@ impl<'a> LinkedOCELAccess<'a> for IndexLinkedOCEL {
     }
 }
 
+impl_queryable_from_linked!(
+    IndexLinkedOCEL,
+    usize,
+    usize,
+    self, ev => self.event_type_idx[ev.into_inner()],
+    self, ob => self.object_type_idx[ob.into_inner()],
+    self, id => ::std::borrow::Cow::Borrowed(self.event_type_names[id].as_str()),
+    self, id => ::std::borrow::Cow::Borrowed(self.object_type_names[id].as_str())
+);
+
 impl Importable for IndexLinkedOCEL {
     type Error = OCELIOError;
     type ImportOptions = ();
@@ -601,5 +678,23 @@ mod tests {
             assert_eq!(ev1, ev3);
             assert_eq!(ev1, ev4);
         };
+    }
+
+    #[test]
+    fn queryable_matches_linked_for_index() {
+        use crate::core::event_data::object_centric::linked_ocel::QueryableOCEL;
+        let ocel = crate::core::event_data::object_centric::ocel_json::import_ocel_json_path(
+            crate::test_utils::get_test_data_path()
+                .join("ocel")
+                .join("order-management.json"),
+        )
+        .unwrap();
+        let idx = IndexLinkedOCEL::from_ocel(ocel); // use the real constructor name
+
+        // Same first-event type via both traits.
+        let ev = QueryableOCEL::get_all_evs(&idx).next().unwrap();
+        let q_type = QueryableOCEL::get_ev_type_of(&idx, &ev).into_owned();
+        let l_type = <IndexLinkedOCEL as crate::core::event_data::object_centric::linked_ocel::LinkedOCELAccess>::get_ev_type_of(&idx, &ev).to_string();
+        assert_eq!(q_type, l_type);
     }
 }

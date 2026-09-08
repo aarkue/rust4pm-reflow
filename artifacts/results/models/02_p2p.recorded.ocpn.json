@@ -1,0 +1,911 @@
+{
+  "places": [
+    {
+      "name": "Goods Receipt p0",
+      "object_type": "Goods Receipt"
+    },
+    {
+      "name": "Goods Receipt p1",
+      "object_type": "Goods Receipt"
+    },
+    {
+      "name": "Goods Receipt p2",
+      "object_type": "Goods Receipt"
+    },
+    {
+      "name": "Goods Receipt p3",
+      "object_type": "Goods Receipt"
+    },
+    {
+      "name": "Goods Receipt p4",
+      "object_type": "Goods Receipt"
+    },
+    {
+      "name": "Goods Receipt p5",
+      "object_type": "Goods Receipt"
+    },
+    {
+      "name": "Invoice p0",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p1",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p2",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p3",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p4",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p5",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p6",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Invoice p7",
+      "object_type": "Invoice"
+    },
+    {
+      "name": "Payment p0",
+      "object_type": "Payment"
+    },
+    {
+      "name": "Payment p1",
+      "object_type": "Payment"
+    },
+    {
+      "name": "Purchase Order p0",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p1",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p2",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p3",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p4",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p5",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p6",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p7",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p8",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p9",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p10",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p11",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p12",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p13",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p14",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p15",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p16",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p17",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Order p18",
+      "object_type": "Purchase Order"
+    },
+    {
+      "name": "Purchase Requisition p0",
+      "object_type": "Purchase Requisition"
+    },
+    {
+      "name": "Purchase Requisition p1",
+      "object_type": "Purchase Requisition"
+    },
+    {
+      "name": "Purchase Requisition p2",
+      "object_type": "Purchase Requisition"
+    },
+    {
+      "name": "Purchase Requisition p3",
+      "object_type": "Purchase Requisition"
+    },
+    {
+      "name": "Purchase Requisition p4",
+      "object_type": "Purchase Requisition"
+    },
+    {
+      "name": "Purchase Requisition p5",
+      "object_type": "Purchase Requisition"
+    },
+    {
+      "name": "Supplier p0",
+      "object_type": "Supplier"
+    },
+    {
+      "name": "Supplier p1",
+      "object_type": "Supplier"
+    },
+    {
+      "name": "Supplier p2",
+      "object_type": "Supplier"
+    },
+    {
+      "name": "Supplier p3",
+      "object_type": "Supplier"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "Receive Goods",
+      "label": "Receive Goods"
+    },
+    {
+      "name": "Goods Receipt tau0",
+      "label": null
+    },
+    {
+      "name": "Three-way Match - Mismatch Found",
+      "label": "Three-way Match - Mismatch Found"
+    },
+    {
+      "name": "Three-way Match - Successful",
+      "label": "Three-way Match - Successful"
+    },
+    {
+      "name": "Invoice tau0",
+      "label": null
+    },
+    {
+      "name": "Receive Invoice",
+      "label": "Receive Invoice"
+    },
+    {
+      "name": "Invoice tau1",
+      "label": null
+    },
+    {
+      "name": "Make Payment",
+      "label": "Make Payment"
+    },
+    {
+      "name": "Purchase Order tau0",
+      "label": null
+    },
+    {
+      "name": "Create PO",
+      "label": "Create PO"
+    },
+    {
+      "name": "Purchase Order tau1",
+      "label": null
+    },
+    {
+      "name": "Purchase Order tau2",
+      "label": null
+    },
+    {
+      "name": "Purchase Order tau3",
+      "label": null
+    },
+    {
+      "name": "Create PO (Batch)",
+      "label": "Create PO (Batch)"
+    },
+    {
+      "name": "Purchase Order tau4",
+      "label": null
+    },
+    {
+      "name": "Purchase Order tau5",
+      "label": null
+    },
+    {
+      "name": "Purchase Order tau6",
+      "label": null
+    },
+    {
+      "name": "Approve PO",
+      "label": "Approve PO"
+    },
+    {
+      "name": "Send PO to Supplier",
+      "label": "Send PO to Supplier"
+    },
+    {
+      "name": "Purchase Order tau7",
+      "label": null
+    },
+    {
+      "name": "Purchase Order tau8",
+      "label": null
+    },
+    {
+      "name": "Create PR",
+      "label": "Create PR"
+    },
+    {
+      "name": "Approve PR",
+      "label": "Approve PR"
+    },
+    {
+      "name": "Purchase Requisition tau0",
+      "label": null
+    },
+    {
+      "name": "Reject PR",
+      "label": "Reject PR"
+    },
+    {
+      "name": "Supplier tau0",
+      "label": null
+    },
+    {
+      "name": "Supplier tau1",
+      "label": null
+    },
+    {
+      "name": "Supplier tau2",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "Goods Receipt p0",
+      "target": "Receive Goods",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Goods",
+      "target": "Goods Receipt p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Goods Receipt p2",
+      "target": "Goods Receipt tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Goods Receipt tau0",
+      "target": "Goods Receipt p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Goods Receipt p2",
+      "target": "Three-way Match - Mismatch Found",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Three-way Match - Mismatch Found",
+      "target": "Goods Receipt p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Goods Receipt p4",
+      "target": "Three-way Match - Successful",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Three-way Match - Successful",
+      "target": "Goods Receipt p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice tau0",
+      "target": "Invoice p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p1",
+      "target": "Receive Invoice",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Invoice",
+      "target": "Invoice p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p2",
+      "target": "Invoice tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p3",
+      "target": "Invoice tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice tau1",
+      "target": "Invoice p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p3",
+      "target": "Three-way Match - Mismatch Found",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Three-way Match - Mismatch Found",
+      "target": "Invoice p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p4",
+      "target": "Invoice tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p5",
+      "target": "Three-way Match - Successful",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Three-way Match - Successful",
+      "target": "Invoice p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p6",
+      "target": "Invoice tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Invoice p0",
+      "target": "Make Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Make Payment",
+      "target": "Invoice p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Payment p0",
+      "target": "Make Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Make Payment",
+      "target": "Payment p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau0",
+      "target": "Purchase Order p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p1",
+      "target": "Purchase Order tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p2",
+      "target": "Purchase Order tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p3",
+      "target": "Create PO",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create PO",
+      "target": "Purchase Order p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p4",
+      "target": "Purchase Order tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p4",
+      "target": "Purchase Order tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p4",
+      "target": "Purchase Order tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau1",
+      "target": "Purchase Order p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau2",
+      "target": "Purchase Order p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau3",
+      "target": "Purchase Order p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p5",
+      "target": "Purchase Order tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau1",
+      "target": "Purchase Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau2",
+      "target": "Purchase Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p1",
+      "target": "Purchase Order tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau3",
+      "target": "Purchase Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p1",
+      "target": "Purchase Order tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p6",
+      "target": "Purchase Order tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p7",
+      "target": "Create PO (Batch)",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create PO (Batch)",
+      "target": "Purchase Order p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p8",
+      "target": "Purchase Order tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p8",
+      "target": "Purchase Order tau5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p8",
+      "target": "Purchase Order tau6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau4",
+      "target": "Purchase Order p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau5",
+      "target": "Purchase Order p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau6",
+      "target": "Purchase Order p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p5",
+      "target": "Purchase Order tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau4",
+      "target": "Purchase Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau5",
+      "target": "Purchase Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p1",
+      "target": "Purchase Order tau5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau6",
+      "target": "Purchase Order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p1",
+      "target": "Purchase Order tau6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p0",
+      "target": "Approve PO",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve PO",
+      "target": "Purchase Order p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p9",
+      "target": "Send PO to Supplier",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send PO to Supplier",
+      "target": "Purchase Order p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p10",
+      "target": "Purchase Order tau7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p11",
+      "target": "Receive Goods",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Goods",
+      "target": "Purchase Order p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau7",
+      "target": "Purchase Order p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p13",
+      "target": "Receive Invoice",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Receive Invoice",
+      "target": "Purchase Order p14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau7",
+      "target": "Purchase Order p13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p15",
+      "target": "Purchase Order tau8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau8",
+      "target": "Purchase Order p16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p15",
+      "target": "Three-way Match - Mismatch Found",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Three-way Match - Mismatch Found",
+      "target": "Purchase Order p16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau7",
+      "target": "Purchase Order p15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order p17",
+      "target": "Three-way Match - Successful",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Three-way Match - Successful",
+      "target": "Purchase Order p18",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Order tau7",
+      "target": "Purchase Order p17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Requisition p0",
+      "target": "Create PR",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create PR",
+      "target": "Purchase Requisition p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Requisition p1",
+      "target": "Approve PR",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve PR",
+      "target": "Purchase Requisition p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Requisition p2",
+      "target": "Purchase Requisition tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Requisition tau0",
+      "target": "Purchase Requisition p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Requisition p2",
+      "target": "Create PO",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create PO",
+      "target": "Purchase Requisition p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Requisition p1",
+      "target": "Reject PR",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Reject PR",
+      "target": "Purchase Requisition p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Purchase Requisition p4",
+      "target": "Create PO (Batch)",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Create PO (Batch)",
+      "target": "Purchase Requisition p5",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Supplier p0",
+      "target": "Send PO to Supplier",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Send PO to Supplier",
+      "target": "Supplier p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Supplier p1",
+      "target": "Supplier tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Supplier tau0",
+      "target": "Supplier p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Supplier p1",
+      "target": "Supplier tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Supplier tau1",
+      "target": "Supplier p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Supplier p2",
+      "target": "Make Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Make Payment",
+      "target": "Supplier p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Supplier p3",
+      "target": "Supplier tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Supplier tau2",
+      "target": "Supplier p2",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "Goods Receipt p0": 1,
+    "Goods Receipt p2": 1,
+    "Goods Receipt p4": 1,
+    "Invoice p1": 1,
+    "Invoice p3": 1,
+    "Invoice p5": 1,
+    "Payment p0": 1,
+    "Purchase Order p4": 1,
+    "Purchase Order p5": 1,
+    "Purchase Order p8": 1,
+    "Purchase Requisition p0": 1,
+    "Purchase Requisition p4": 1,
+    "Supplier p0": 1
+  },
+  "final_marking": {
+    "Goods Receipt p1": 1,
+    "Goods Receipt p3": 1,
+    "Goods Receipt p5": 1,
+    "Invoice p7": 1,
+    "Payment p1": 1,
+    "Purchase Order p12": 1,
+    "Purchase Order p14": 1,
+    "Purchase Order p16": 1,
+    "Purchase Order p18": 1,
+    "Purchase Requisition p3": 1,
+    "Purchase Requisition p5": 1,
+    "Supplier p3": 1
+  }
+}

@@ -1,0 +1,1391 @@
+{
+  "complete": true,
+  "logs": [
+    {
+      "activities": 22,
+      "cells_allowed": 39,
+      "log": "01_o2c",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 22,
+          "runs": [
+            {
+              "arcs": 22,
+              "cells": 22,
+              "complete": true,
+              "covered": 84,
+              "gap": 0,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 48,
+              "participations": 26572,
+              "ran": true,
+              "seconds": 0.066586681,
+              "strategy": "greedy",
+              "target": 84
+            },
+            {
+              "arcs": 22,
+              "cells": 23,
+              "complete": true,
+              "covered": 84,
+              "gap": 0,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 50,
+              "participations": 28037,
+              "ran": true,
+              "seconds": 0.071905492,
+              "strategy": "handoff",
+              "target": 84
+            },
+            {
+              "arcs": 22,
+              "cells": 22,
+              "complete": true,
+              "covered": 84,
+              "gap": 0,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 48,
+              "participations": 26572,
+              "ran": true,
+              "seconds": 0.208626497,
+              "strategy": "exact",
+              "target": 84
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 22,
+          "runs": [
+            {
+              "arcs": 22,
+              "cells": 22,
+              "complete": true,
+              "covered": 84,
+              "gap": 0,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 48,
+              "participations": 26572,
+              "ran": true,
+              "seconds": 0.06484338,
+              "strategy": "greedy",
+              "target": 84
+            },
+            {
+              "arcs": 22,
+              "cells": 23,
+              "complete": true,
+              "covered": 84,
+              "gap": 1,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 50,
+              "participations": 28037,
+              "ran": true,
+              "seconds": 0.070035918,
+              "strategy": "handoff",
+              "target": 84
+            },
+            {
+              "arcs": 22,
+              "cells": 22,
+              "complete": true,
+              "covered": 84,
+              "gap": 0,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 48,
+              "participations": 26572,
+              "ran": true,
+              "seconds": 0.195153191,
+              "strategy": "exact",
+              "target": 84
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 26572,
+          "runs": [
+            {
+              "arcs": 22,
+              "cells": 22,
+              "complete": true,
+              "covered": 84,
+              "gap": 0,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 48,
+              "participations": 26572,
+              "ran": true,
+              "seconds": 0.06636745,
+              "strategy": "greedy",
+              "target": 84
+            },
+            {
+              "arcs": 22,
+              "cells": 23,
+              "complete": true,
+              "covered": 84,
+              "gap": 1465,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 50,
+              "participations": 28037,
+              "ran": true,
+              "seconds": 0.072321953,
+              "strategy": "handoff",
+              "target": 84
+            },
+            {
+              "arcs": 22,
+              "cells": 22,
+              "complete": true,
+              "covered": 84,
+              "gap": 0,
+              "ocdfg_arcs": 22,
+              "ocpn_arcs": 48,
+              "participations": 26572,
+              "ran": true,
+              "seconds": 0.199911318,
+              "strategy": "exact",
+              "target": 84
+            }
+          ]
+        }
+      ],
+      "path": "logs/01_o2c.xml",
+      "required": 84,
+      "types": 9
+    },
+    {
+      "activities": 12,
+      "cells_allowed": 23,
+      "log": "02_p2p",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 31,
+          "runs": [
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.008383084,
+              "strategy": "greedy",
+              "target": 23
+            },
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.008516201,
+              "strategy": "handoff",
+              "target": 23
+            },
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.02041501,
+              "strategy": "exact",
+              "target": 23
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 18,
+          "runs": [
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.009064872,
+              "strategy": "greedy",
+              "target": 23
+            },
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.009112224,
+              "strategy": "handoff",
+              "target": 23
+            },
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.020172732,
+              "strategy": "exact",
+              "target": 23
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 9720,
+          "runs": [
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.008708404,
+              "strategy": "greedy",
+              "target": 23
+            },
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.008401312,
+              "strategy": "handoff",
+              "target": 23
+            },
+            {
+              "arcs": 31,
+              "cells": 18,
+              "complete": true,
+              "covered": 23,
+              "gap": 0,
+              "ocdfg_arcs": 37,
+              "ocpn_arcs": 86,
+              "participations": 9720,
+              "ran": true,
+              "seconds": 0.020165958,
+              "strategy": "exact",
+              "target": 23
+            }
+          ]
+        }
+      ],
+      "path": "logs/02_p2p.xml",
+      "required": 23,
+      "types": 6
+    },
+    {
+      "activities": 24,
+      "cells_allowed": 38,
+      "log": "03_hiring",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 28,
+          "runs": [
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 0.079642058,
+              "strategy": "greedy",
+              "target": 263
+            },
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 0.082606948,
+              "strategy": "handoff",
+              "target": 263
+            },
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 28.631361531,
+              "strategy": "exact",
+              "target": 263
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 25,
+          "runs": [
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 0.082088167,
+              "strategy": "greedy",
+              "target": 263
+            },
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 0.085501786,
+              "strategy": "handoff",
+              "target": 263
+            },
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 28.490479544,
+              "strategy": "exact",
+              "target": 263
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 21119,
+          "runs": [
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 0.081698664,
+              "strategy": "greedy",
+              "target": 263
+            },
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 0.085950025,
+              "strategy": "handoff",
+              "target": 263
+            },
+            {
+              "arcs": 28,
+              "cells": 25,
+              "complete": true,
+              "covered": 263,
+              "gap": 0,
+              "ocdfg_arcs": 28,
+              "ocpn_arcs": 60,
+              "participations": 21119,
+              "ran": true,
+              "seconds": 28.56399684,
+              "strategy": "exact",
+              "target": 263
+            }
+          ]
+        }
+      ],
+      "path": "logs/03_hiring.xml",
+      "required": 263,
+      "types": 6
+    },
+    {
+      "activities": 9,
+      "cells_allowed": 18,
+      "log": "04_hospital",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 8,
+          "runs": [
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.024400416,
+              "strategy": "greedy",
+              "target": 36
+            },
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.026077229,
+              "strategy": "handoff",
+              "target": 36
+            },
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.055774037,
+              "strategy": "exact",
+              "target": 36
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 9,
+          "runs": [
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.025503905,
+              "strategy": "greedy",
+              "target": 36
+            },
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.028407683,
+              "strategy": "handoff",
+              "target": 36
+            },
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.05355463,
+              "strategy": "exact",
+              "target": 36
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 14642,
+          "runs": [
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.025662793,
+              "strategy": "greedy",
+              "target": 36
+            },
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.02804486,
+              "strategy": "handoff",
+              "target": 36
+            },
+            {
+              "arcs": 8,
+              "cells": 9,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 8,
+              "ocpn_arcs": 20,
+              "participations": 14642,
+              "ran": true,
+              "seconds": 0.058540578,
+              "strategy": "exact",
+              "target": 36
+            }
+          ]
+        }
+      ],
+      "path": "logs/04_hospital.xml",
+      "required": 36,
+      "types": 8
+    },
+    {
+      "activities": 10,
+      "cells_allowed": 22,
+      "log": "ocel2-p2p-updated",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 15,
+          "runs": [
+            {
+              "arcs": 15,
+              "cells": 13,
+              "complete": false,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 15,
+              "ocpn_arcs": 30,
+              "participations": 20459,
+              "ran": true,
+              "seconds": 0.00818285,
+              "strategy": "greedy",
+              "target": 19
+            },
+            {
+              "arcs": 16,
+              "cells": 14,
+              "complete": false,
+              "covered": 15,
+              "gap": 1,
+              "ocdfg_arcs": 16,
+              "ocpn_arcs": 32,
+              "participations": 21129,
+              "ran": true,
+              "seconds": 0.009516743,
+              "strategy": "handoff",
+              "target": 19
+            },
+            {
+              "arcs": 15,
+              "cells": 13,
+              "complete": false,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 15,
+              "ocpn_arcs": 30,
+              "participations": 20459,
+              "ran": true,
+              "seconds": 0.020595479,
+              "strategy": "exact",
+              "target": 19
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 13,
+          "runs": [
+            {
+              "arcs": 15,
+              "cells": 13,
+              "complete": false,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 15,
+              "ocpn_arcs": 30,
+              "participations": 20459,
+              "ran": true,
+              "seconds": 0.008256602,
+              "strategy": "greedy",
+              "target": 19
+            },
+            {
+              "arcs": 16,
+              "cells": 14,
+              "complete": false,
+              "covered": 15,
+              "gap": 1,
+              "ocdfg_arcs": 16,
+              "ocpn_arcs": 32,
+              "participations": 21129,
+              "ran": true,
+              "seconds": 0.009324681,
+              "strategy": "handoff",
+              "target": 19
+            },
+            {
+              "arcs": 15,
+              "cells": 13,
+              "complete": false,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 15,
+              "ocpn_arcs": 30,
+              "participations": 20459,
+              "ran": true,
+              "seconds": 0.020552458,
+              "strategy": "exact",
+              "target": 19
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 20459,
+          "runs": [
+            {
+              "arcs": 15,
+              "cells": 13,
+              "complete": false,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 15,
+              "ocpn_arcs": 30,
+              "participations": 20459,
+              "ran": true,
+              "seconds": 0.008225103,
+              "strategy": "greedy",
+              "target": 19
+            },
+            {
+              "arcs": 16,
+              "cells": 14,
+              "complete": false,
+              "covered": 15,
+              "gap": 670,
+              "ocdfg_arcs": 16,
+              "ocpn_arcs": 32,
+              "participations": 21129,
+              "ran": true,
+              "seconds": 0.009009557,
+              "strategy": "handoff",
+              "target": 19
+            },
+            {
+              "arcs": 15,
+              "cells": 13,
+              "complete": false,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 15,
+              "ocpn_arcs": 30,
+              "participations": 20459,
+              "ran": true,
+              "seconds": 0.019749985,
+              "strategy": "exact",
+              "target": 19
+            }
+          ]
+        }
+      ],
+      "path": "logs/ocel2-p2p-updated.xml",
+      "required": 19,
+      "types": 7
+    },
+    {
+      "activities": 14,
+      "cells_allowed": 29,
+      "log": "ContainerLogistics",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 16,
+          "runs": [
+            {
+              "arcs": 16,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 50,
+              "participations": 50347,
+              "ran": true,
+              "seconds": 0.046041555,
+              "strategy": "greedy",
+              "target": 79
+            },
+            {
+              "arcs": 17,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 1,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 53,
+              "participations": 48543,
+              "ran": true,
+              "seconds": 0.046723972,
+              "strategy": "handoff",
+              "target": 79
+            },
+            {
+              "arcs": 16,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 50,
+              "participations": 50347,
+              "ran": true,
+              "seconds": 0.101077862,
+              "strategy": "exact",
+              "target": 79
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 20,
+          "runs": [
+            {
+              "arcs": 16,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 50,
+              "participations": 50347,
+              "ran": true,
+              "seconds": 0.047043494,
+              "strategy": "greedy",
+              "target": 79
+            },
+            {
+              "arcs": 17,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 53,
+              "participations": 48543,
+              "ran": true,
+              "seconds": 0.042668096,
+              "strategy": "handoff",
+              "target": 79
+            },
+            {
+              "arcs": 16,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 50,
+              "participations": 50347,
+              "ran": true,
+              "seconds": 0.097274601,
+              "strategy": "exact",
+              "target": 79
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 48543,
+          "runs": [
+            {
+              "arcs": 16,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 1804,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 50,
+              "participations": 50347,
+              "ran": true,
+              "seconds": 0.049886092,
+              "strategy": "greedy",
+              "target": 79
+            },
+            {
+              "arcs": 17,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 53,
+              "participations": 48543,
+              "ran": true,
+              "seconds": 0.048590961,
+              "strategy": "handoff",
+              "target": 79
+            },
+            {
+              "arcs": 17,
+              "cells": 20,
+              "complete": false,
+              "covered": 74,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 53,
+              "participations": 48543,
+              "ran": true,
+              "seconds": 0.104540299,
+              "strategy": "exact",
+              "target": 79
+            }
+          ]
+        }
+      ],
+      "path": "logs/ContainerLogistics.xml",
+      "required": 79,
+      "types": 7
+    },
+    {
+      "activities": 11,
+      "cells_allowed": 40,
+      "log": "socel2_hinge",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 10,
+          "runs": [
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.021214759,
+              "strategy": "greedy",
+              "target": 15
+            },
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.024452937,
+              "strategy": "handoff",
+              "target": 15
+            },
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 18.73586674,
+              "strategy": "exact",
+              "target": 15
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 15,
+          "runs": [
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.023477817,
+              "strategy": "greedy",
+              "target": 15
+            },
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.025612088,
+              "strategy": "handoff",
+              "target": 15
+            },
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.054722651,
+              "strategy": "exact",
+              "target": 15
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 58663,
+          "runs": [
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.023362509,
+              "strategy": "greedy",
+              "target": 15
+            },
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.026012137,
+              "strategy": "handoff",
+              "target": 15
+            },
+            {
+              "arcs": 10,
+              "cells": 15,
+              "complete": true,
+              "covered": 15,
+              "gap": 0,
+              "ocdfg_arcs": 10,
+              "ocpn_arcs": 30,
+              "participations": 58663,
+              "ran": true,
+              "seconds": 0.051555222,
+              "strategy": "exact",
+              "target": 15
+            }
+          ]
+        }
+      ],
+      "path": "logs/socel2_hinge.xml",
+      "required": 15,
+      "types": 12
+    },
+    {
+      "activities": 11,
+      "cells_allowed": 40,
+      "log": "order-management",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 24,
+          "runs": [
+            {
+              "arcs": 29,
+              "cells": 13,
+              "complete": true,
+              "covered": 36,
+              "gap": 5,
+              "ocdfg_arcs": 29,
+              "ocpn_arcs": 34,
+              "participations": 52183,
+              "ran": true,
+              "seconds": 0.078683487,
+              "strategy": "greedy",
+              "target": 36
+            },
+            {
+              "arcs": 24,
+              "cells": 14,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 40,
+              "participations": 38540,
+              "ran": true,
+              "seconds": 0.045197806,
+              "strategy": "handoff",
+              "target": 36
+            },
+            {
+              "arcs": 24,
+              "cells": 14,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 40,
+              "participations": 38540,
+              "ran": true,
+              "seconds": 0.236873748,
+              "strategy": "exact",
+              "target": 36
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 11,
+          "runs": [
+            {
+              "arcs": 56,
+              "cells": 11,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 56,
+              "ocpn_arcs": 37,
+              "participations": 60935,
+              "ran": true,
+              "seconds": 0.141291185,
+              "strategy": "greedy",
+              "target": 36
+            },
+            {
+              "arcs": 24,
+              "cells": 14,
+              "complete": true,
+              "covered": 36,
+              "gap": 3,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 40,
+              "participations": 38540,
+              "ran": true,
+              "seconds": 0.046788155,
+              "strategy": "handoff",
+              "target": 36
+            },
+            {
+              "arcs": 56,
+              "cells": 11,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 56,
+              "ocpn_arcs": 37,
+              "participations": 60935,
+              "ran": true,
+              "seconds": 0.284250942,
+              "strategy": "exact",
+              "target": 36
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 38540,
+          "runs": [
+            {
+              "arcs": 29,
+              "cells": 13,
+              "complete": true,
+              "covered": 36,
+              "gap": 13643,
+              "ocdfg_arcs": 29,
+              "ocpn_arcs": 34,
+              "participations": 52183,
+              "ran": true,
+              "seconds": 0.076175009,
+              "strategy": "greedy",
+              "target": 36
+            },
+            {
+              "arcs": 24,
+              "cells": 14,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 40,
+              "participations": 38540,
+              "ran": true,
+              "seconds": 0.044887084,
+              "strategy": "handoff",
+              "target": 36
+            },
+            {
+              "arcs": 24,
+              "cells": 14,
+              "complete": true,
+              "covered": 36,
+              "gap": 0,
+              "ocdfg_arcs": 24,
+              "ocpn_arcs": 40,
+              "participations": 38540,
+              "ran": true,
+              "seconds": 0.205579468,
+              "strategy": "exact",
+              "target": 36
+            }
+          ]
+        }
+      ],
+      "path": "logs/order-management.xml",
+      "required": 36,
+      "types": 6
+    },
+    {
+      "activities": 18,
+      "cells_allowed": 36,
+      "log": "bpic2017-no-W",
+      "objectives": [
+        {
+          "objective": "arcs",
+          "optimum": 37,
+          "runs": [
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 0.780605616,
+              "strategy": "greedy",
+              "target": 122
+            },
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 0.815652662,
+              "strategy": "handoff",
+              "target": 122
+            },
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 1.664195961,
+              "strategy": "exact",
+              "target": 122
+            }
+          ]
+        },
+        {
+          "objective": "cells",
+          "optimum": 18,
+          "runs": [
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 0.758179742,
+              "strategy": "greedy",
+              "target": 122
+            },
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 0.824487825,
+              "strategy": "handoff",
+              "target": 122
+            },
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 1.6526770819999999,
+              "strategy": "exact",
+              "target": 122
+            }
+          ]
+        },
+        {
+          "objective": "participations",
+          "optimum": 433444,
+          "runs": [
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 0.765301076,
+              "strategy": "greedy",
+              "target": 122
+            },
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 0.824707472,
+              "strategy": "handoff",
+              "target": 122
+            },
+            {
+              "arcs": 37,
+              "cells": 18,
+              "complete": false,
+              "covered": 65,
+              "gap": 0,
+              "ocdfg_arcs": 35,
+              "ocpn_arcs": 50,
+              "participations": 433444,
+              "ran": true,
+              "seconds": 1.682103391,
+              "strategy": "exact",
+              "target": 122
+            }
+          ]
+        }
+      ],
+      "path": "logs/bpic2017-no-W.xml.gz",
+      "required": 122,
+      "types": 3
+    }
+  ]
+}

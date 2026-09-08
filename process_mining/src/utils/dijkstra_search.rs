@@ -65,6 +65,14 @@ pub trait SearchProblem {
     );
 }
 
+/// A [`SearchProblem`] that can also be stated backwards, from the goal towards the start.
+///
+/// The reversed instance starts at the goal and must expand the reversed edges at equal cost.
+pub trait ReversibleSearchProblem: SearchProblem {
+    /// The node of `other` holding the same state as `node` does here, if `other` reached it
+    fn find_in(&self, node: NodeID, other: &Self) -> Option<NodeID>;
+}
+
 #[derive(Debug)]
 struct Node<S, C> {
     /// Shortest known distance to this node from the start node
@@ -95,10 +103,21 @@ pub struct SearchResult<S, C = u32> {
 pub enum SearchError {
     /// The specified maximum number of states was reached
     LimitReached,
+    /// The specified maximum number of states held at once was reached
+    QueuedLimitReached,
     /// No goal state is reachable
     Unreachable,
     /// The maximum edge cost does not fit `usize`, so the bucket queue cannot be sized
     MaxEdgeCostTooLarge,
+}
+
+/// How far a search may go before it gives up (`None` means no limit)
+#[derive(Debug, Clone, Copy, Default, PartialEq)]
+pub struct SearchLimits {
+    /// Maximum number of states to visit (bounds runtime). Shared by both search directions.
+    pub max_states: Option<usize>,
+    /// Maximum number of states to hold at once (bounds memory). Shared by both directions.
+    pub max_states_queued: Option<usize>,
 }
 
 /// Reusable node store and bucket queue for [`search`], cleared initially.
@@ -112,6 +131,14 @@ pub struct SearchState<S, C = u32> {
     /// Nodes with distance `d` are scheduled in `buckets[d % len]`,
     /// where `len` is the number of buckets (max edge cost + 1)
     buckets: Vec<VecDeque<NodeID>>,
+}
+
+impl<S, C> SearchState<S, C> {
+    /// Bytes held per node, to turn a memory budget into a [`SearchLimits::max_states_queued`].
+    /// Counts the node itself plus its queue entries, of which there may be more than one.
+    pub const fn bytes_per_node() -> usize {
+        size_of::<Node<S, C>>() + 2 * size_of::<NodeID>()
+    }
 }
 
 impl<S, C> Default for SearchState<S, C> {
@@ -128,91 +155,263 @@ impl<S, C> Default for SearchState<S, C> {
 pub fn search<P: SearchProblem>(
     problem: &mut P,
     state: &mut SearchState<P::Step, P::Cost>,
-    max_states: Option<usize>,
+    limits: SearchLimits,
 ) -> Result<SearchResult<P::Step, P::Cost>, SearchError> {
-    let num_buckets_cost = problem.max_edge_cost() + P::Cost::from(1);
-    let num_buckets: usize = num_buckets_cost
-        .try_into()
-        .map_err(|_| SearchError::MaxEdgeCostTooLarge)?;
     let start = problem.initial();
+    let mut side = SearchSide::seed(state, problem.max_edge_cost(), start)?;
 
-    let nodes = &mut state.nodes;
-    let buckets = &mut state.buckets;
-    nodes.clear();
-    nodes.push(Node {
-        distance: P::Cost::from(0),
-        parent: start,
-        step: P::Step::default(),
-        finished: false,
-    });
-    buckets.resize_with(num_buckets, VecDeque::new);
-    buckets.iter_mut().for_each(VecDeque::clear);
-    buckets[0].push_back(start);
-
-    let limit = max_states.unwrap_or(usize::MAX);
-    let mut queued: usize = 1;
-    let mut bucket: usize = 0;
+    let limit = limits.max_states.unwrap_or(usize::MAX);
+    let queued_limit = limits.max_states_queued.unwrap_or(usize::MAX);
     let mut states_visited: usize = 0;
+    let mut improved = Vec::new();
 
-    while queued > 0 {
-        while buckets[bucket].is_empty() {
-            bucket = (bucket + 1) % num_buckets;
-        }
-        let node_id = buckets[bucket].pop_front().expect("Bucket not empty");
-        queued -= 1;
-
-        if nodes[node_id as usize].finished {
-            continue;
-        }
-        nodes[node_id as usize].finished = true;
+    while let Some((distance, node)) = side.peek() {
+        side.finish(node);
         states_visited += 1;
         if states_visited > limit {
             return Err(SearchError::LimitReached);
         }
-
-        if problem.is_goal(node_id) {
+        if problem.is_goal(node) {
             return Ok(SearchResult {
-                path: reconstruct(nodes, node_id),
-                cost: nodes[node_id as usize].distance,
+                path: reconstruct(&side.state.nodes, node),
+                cost: distance,
                 states_visited,
             });
         }
+        if side.state.nodes.len() > queued_limit {
+            return Err(SearchError::QueuedLimitReached);
+        }
+        side.expand(problem, node, distance, &mut improved);
+        improved.clear();
+    }
+    Err(SearchError::Unreachable)
+}
 
-        let distance = nodes[node_id as usize].distance;
-        let via = if nodes[node_id as usize].parent == node_id {
+/// Search from both ends at once, meeting in the middle.
+///
+/// `backward` must be the same problem reversed (see [`ReversibleSearchProblem`]).
+///
+/// When one side reaches a state the other already reached, their two halves form a full path.
+/// The cheapest one so far is kept, but a later meeting may still beat it. Any path left to find
+/// costs at least the two sides' next-cheapest distances combined, so the search stops once that
+/// sum reaches the kept cost.
+pub fn search_bidirectional<P: ReversibleSearchProblem>(
+    forward: &mut P,
+    backward: &mut P,
+    forward_state: &mut SearchState<P::Step, P::Cost>,
+    backward_state: &mut SearchState<P::Step, P::Cost>,
+    limits: SearchLimits,
+) -> Result<SearchResult<P::Step, P::Cost>, SearchError> {
+    let max_edge_cost = forward.max_edge_cost();
+    let start = forward.initial();
+    let goal = backward.initial();
+    let mut forward_side = SearchSide::seed(forward_state, max_edge_cost, start)?;
+    let mut backward_side = SearchSide::seed(backward_state, max_edge_cost, goal)?;
+
+    // Cheapest meeting so far, as (cost, node of `forward`, node of `backward`)
+    let mut best = forward
+        .find_in(start, backward)
+        .map(|other| (P::Cost::from(0), start, other));
+
+    let limit = limits.max_states.unwrap_or(usize::MAX);
+    let queued_limit = limits.max_states_queued.unwrap_or(usize::MAX);
+    let mut states_visited: usize = 0;
+    let mut improved = Vec::new();
+    // If either side runs dry, no meeting can be left to find
+    while let (Some((forward_top, forward_node)), Some((backward_top, backward_node))) =
+        (forward_side.peek(), backward_side.peek())
+    {
+        if best.is_some_and(|(cost, _, _)| forward_top + backward_top >= cost) {
+            break;
+        }
+        states_visited += 1;
+        if states_visited > limit {
+            return Err(SearchError::LimitReached);
+        }
+        if forward_side.state.nodes.len() + backward_side.state.nodes.len() > queued_limit {
+            return Err(SearchError::QueuedLimitReached);
+        }
+        // Advance whichever side has explored less, so both grow at a similar rate. Choosing the
+        // side with the cheaper next node instead stalls one side for as long as the other keeps
+        // finding zero-cost edges.
+        if forward_side.queued <= backward_side.queued {
+            forward_side.finish(forward_node);
+            forward_side.expand(forward, forward_node, forward_top, &mut improved);
+            meet(
+                forward,
+                backward,
+                &backward_side,
+                &mut improved,
+                &mut best,
+                false,
+            );
+        } else {
+            backward_side.finish(backward_node);
+            backward_side.expand(backward, backward_node, backward_top, &mut improved);
+            meet(
+                backward,
+                forward,
+                &forward_side,
+                &mut improved,
+                &mut best,
+                true,
+            );
+        }
+    }
+
+    let Some((cost, forward_node, backward_node)) = best else {
+        return Err(SearchError::Unreachable);
+    };
+    let mut path = reconstruct(&forward_side.state.nodes, forward_node);
+    let mut from_goal = reconstruct(&backward_side.state.nodes, backward_node);
+    // Both halves end at the meeting state, but the second was walked from the goal
+    from_goal.reverse();
+    path.extend(from_goal);
+    Ok(SearchResult {
+        path,
+        cost,
+        states_visited,
+    })
+}
+
+/// Check the nodes one side just reached against the other side, keeping the cheapest meeting
+/// in `best`. Empties `improved`.
+///
+/// `swap` tells whether `problem` is the backward one, which decides the order of the node pair.
+fn meet<P: ReversibleSearchProblem>(
+    problem: &P,
+    other_problem: &P,
+    other_side: &SearchSide<'_, P::Step, P::Cost>,
+    improved: &mut Vec<(NodeID, P::Cost)>,
+    best: &mut Option<(P::Cost, NodeID, NodeID)>,
+    swap: bool,
+) {
+    for (node, distance) in improved.drain(..) {
+        let Some(other) = problem.find_in(node, other_problem) else {
+            continue;
+        };
+        let total = distance + other_side.state.nodes[other as usize].distance;
+        if best.is_none_or(|(cost, _, _)| total < cost) {
+            *best = Some(if swap {
+                (total, other, node)
+            } else {
+                (total, node, other)
+            });
+        }
+    }
+}
+
+/// One side of a search: a bucket queue over its own [`SearchState`]
+struct SearchSide<'a, S, C> {
+    state: &'a mut SearchState<S, C>,
+    /// Bucket currently being drained
+    bucket: usize,
+    /// Entries in the buckets, some of which may be obsolete
+    queued: usize,
+    /// Number of buckets as a cost, to take the remainder in cost space
+    num_buckets_cost: C,
+}
+
+impl<'a, S, C> SearchSide<'a, S, C>
+where
+    S: Copy + Default,
+    C: Copy + Ord + Add<Output = C> + Rem<Output = C> + From<u8> + TryInto<usize>,
+{
+    /// Clear a search state and start it off at `start`
+    fn seed(
+        state: &'a mut SearchState<S, C>,
+        max_edge_cost: C,
+        start: NodeID,
+    ) -> Result<Self, SearchError> {
+        let num_buckets_cost = max_edge_cost + C::from(1);
+        let num_buckets: usize = num_buckets_cost
+            .try_into()
+            .map_err(|_| SearchError::MaxEdgeCostTooLarge)?;
+        state.nodes.clear();
+        state.nodes.push(Node {
+            distance: C::from(0),
+            parent: start,
+            step: S::default(),
+            finished: false,
+        });
+        state.buckets.resize_with(num_buckets, VecDeque::new);
+        state.buckets.iter_mut().for_each(VecDeque::clear);
+        state.buckets[0].push_back(start);
+        Ok(Self {
+            state,
+            bucket: 0,
+            queued: 1,
+            num_buckets_cost,
+        })
+    }
+
+    /// The node this side finishes next, dropping entries obsoleted by a shorter distance
+    fn peek(&mut self) -> Option<(C, NodeID)> {
+        while self.queued > 0 {
+            while self.state.buckets[self.bucket].is_empty() {
+                self.bucket = (self.bucket + 1) % self.state.buckets.len();
+            }
+            let node = self.state.buckets[self.bucket][0];
+            if self.state.nodes[node as usize].finished {
+                self.state.buckets[self.bucket].pop_front();
+                self.queued -= 1;
+                continue;
+            }
+            return Some((self.state.nodes[node as usize].distance, node));
+        }
+        None
+    }
+
+    /// Take the peeked `node` out of the queue, its distance now being final
+    fn finish(&mut self, node: NodeID) {
+        self.state.buckets[self.bucket].pop_front();
+        self.queued -= 1;
+        self.state.nodes[node as usize].finished = true;
+    }
+
+    /// Expand `node`, queueing every successor it brings closer and listing it in `improved`
+    fn expand<P: SearchProblem<Step = S, Cost = C>>(
+        &mut self,
+        problem: &mut P,
+        node: NodeID,
+        distance: C,
+        improved: &mut Vec<(NodeID, C)>,
+    ) {
+        let via = if self.state.nodes[node as usize].parent == node {
             None
         } else {
-            Some(nodes[node_id as usize].step)
+            Some(self.state.nodes[node as usize].step)
         };
-        problem.expand(node_id, via, |next_id, is_new, cost, step| {
+        let nodes = &mut self.state.nodes;
+        let buckets = &mut self.state.buckets;
+        let queued = &mut self.queued;
+        let num_buckets_cost = self.num_buckets_cost;
+        problem.expand(node, via, |next, is_new, cost, step| {
             let new_distance = distance + cost;
-            // Modulo in cost space first: the remainder is `< num_buckets` so in usize.
+            // Remainder taken in cost space, where it is `< num_buckets` and thus fits `usize`
             let idx = (new_distance % num_buckets_cost).try_into().unwrap_or(0);
             if is_new {
-                debug_assert_eq!(next_id as usize, nodes.len(), "no NodeID should be skipped");
+                debug_assert_eq!(next as usize, nodes.len(), "no NodeID should be skipped");
                 nodes.push(Node {
                     distance: new_distance,
-                    parent: node_id,
+                    parent: node,
                     step,
                     finished: false,
                 });
-                // add it to the back of corresponding bucket
-                buckets[idx].push_back(next_id);
-                queued += 1;
             } else {
-                let node = &mut nodes[next_id as usize];
-                // node already existed before, so update it if distance is smaller.
-                if !node.finished && new_distance < node.distance {
-                    node.distance = new_distance;
-                    node.parent = node_id;
-                    node.step = step;
-                    buckets[idx].push_back(next_id);
-                    queued += 1;
+                let entry = &mut nodes[next as usize];
+                if entry.finished || new_distance >= entry.distance {
+                    return;
                 }
+                entry.distance = new_distance;
+                entry.parent = node;
+                entry.step = step;
             }
+            buckets[idx].push_back(next);
+            *queued += 1;
+            improved.push((next, new_distance));
         });
     }
-    Err(SearchError::Unreachable)
 }
 
 /// Reconstruct a path using the steps taken

@@ -1,0 +1,424 @@
+{
+  "corpus_totals": {
+    "logs": 9,
+    "logs_losing_orderings": 0,
+    "logs_losing_role_facts": 0,
+    "orderings_lost": 0,
+    "role_facts_lost": 0
+  },
+  "logs": [
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 22,
+        "roles": 12
+      },
+      "log": "01_o2c",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 22,
+        "cells": 23,
+        "facts_delivered": {
+          "orderings": 22,
+          "roles": 10
+        },
+        "facts_no_map_credit": {
+          "orderings": 20,
+          "roles": 10
+        },
+        "orderings_drawn": 82,
+        "orderings_shown": 84
+      },
+      "recorded_cells": 39,
+      "role_facts_lost": 0,
+      "target_pairs": 84,
+      "type_closed": {
+        "arcs_over_max": 22,
+        "cells": 22,
+        "facts_delivered": {
+          "orderings": 22,
+          "roles": 12
+        },
+        "facts_no_map_credit": {
+          "orderings": 20,
+          "roles": 12
+        },
+        "orderings_drawn": 84,
+        "orderings_shown": 84,
+        "types_kept": [
+          "Invoice",
+          "Order",
+          "Return"
+        ]
+      },
+      "types_eligible": 5
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 22,
+        "roles": 2
+      },
+      "log": "02_p2p",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 31,
+        "cells": 15,
+        "facts_delivered": {
+          "orderings": 17,
+          "roles": 2
+        },
+        "facts_no_map_credit": {
+          "orderings": 17,
+          "roles": 2
+        },
+        "orderings_drawn": 18,
+        "orderings_shown": 23
+      },
+      "recorded_cells": 23,
+      "role_facts_lost": 0,
+      "target_pairs": 23,
+      "type_closed": {
+        "arcs_over_max": 56,
+        "cells": 20,
+        "facts_delivered": {
+          "orderings": 21,
+          "roles": 2
+        },
+        "facts_no_map_credit": {
+          "orderings": 21,
+          "roles": 2
+        },
+        "orderings_drawn": 22,
+        "orderings_shown": 23,
+        "types_kept": [
+          "Goods Receipt",
+          "Invoice",
+          "Purchase Order",
+          "Purchase Requisition"
+        ]
+      },
+      "types_eligible": 5
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 29,
+        "roles": 13
+      },
+      "log": "03_hiring",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 28,
+        "cells": 25,
+        "facts_delivered": {
+          "orderings": 23,
+          "roles": 13
+        },
+        "facts_no_map_credit": {
+          "orderings": 23,
+          "roles": 13
+        },
+        "orderings_drawn": 203,
+        "orderings_shown": 263
+      },
+      "recorded_cells": 38,
+      "role_facts_lost": 0,
+      "target_pairs": 263,
+      "type_closed": {
+        "arcs_over_max": 28,
+        "cells": 25,
+        "facts_delivered": {
+          "orderings": 23,
+          "roles": 13
+        },
+        "facts_no_map_credit": {
+          "orderings": 23,
+          "roles": 13
+        },
+        "orderings_drawn": 203,
+        "orderings_shown": 263,
+        "types_kept": [
+          "Candidate",
+          "JobRequisition"
+        ]
+      },
+      "types_eligible": 4
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 8,
+        "roles": 0
+      },
+      "log": "04_hospital",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 8,
+        "cells": 9,
+        "facts_delivered": {
+          "orderings": 8,
+          "roles": 0
+        },
+        "facts_no_map_credit": {
+          "orderings": 8,
+          "roles": 0
+        },
+        "orderings_drawn": 36,
+        "orderings_shown": 36
+      },
+      "recorded_cells": 18,
+      "role_facts_lost": 0,
+      "target_pairs": 36,
+      "type_closed": {
+        "arcs_over_max": 8,
+        "cells": 9,
+        "facts_delivered": {
+          "orderings": 8,
+          "roles": 0
+        },
+        "facts_no_map_credit": {
+          "orderings": 8,
+          "roles": 0
+        },
+        "orderings_drawn": 36,
+        "orderings_shown": 36,
+        "types_kept": [
+          "Patient"
+        ]
+      },
+      "types_eligible": 1
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 15,
+        "roles": 2
+      },
+      "log": "ocel2-p2p-updated",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 16,
+        "cells": 14,
+        "facts_delivered": {
+          "orderings": 12,
+          "roles": 2
+        },
+        "facts_no_map_credit": {
+          "orderings": 10,
+          "roles": 1
+        },
+        "orderings_drawn": 13,
+        "orderings_shown": 15
+      },
+      "recorded_cells": 22,
+      "role_facts_lost": 0,
+      "target_pairs": 19,
+      "type_closed": {
+        "arcs_over_max": 25,
+        "cells": 15,
+        "facts_delivered": {
+          "orderings": 14,
+          "roles": 2
+        },
+        "facts_no_map_credit": {
+          "orderings": 11,
+          "roles": 1
+        },
+        "orderings_drawn": 15,
+        "orderings_shown": 15,
+        "types_kept": [
+          "goods receipt",
+          "purchase_order",
+          "purchase_requisition",
+          "quotation"
+        ]
+      },
+      "types_eligible": 6
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 18,
+        "roles": 1
+      },
+      "log": "ContainerLogistics",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 17,
+        "cells": 18,
+        "facts_delivered": {
+          "orderings": 13,
+          "roles": 1
+        },
+        "facts_no_map_credit": {
+          "orderings": 13,
+          "roles": 1
+        },
+        "orderings_drawn": 35,
+        "orderings_shown": 74
+      },
+      "recorded_cells": 29,
+      "role_facts_lost": 0,
+      "target_pairs": 78,
+      "type_closed": {
+        "arcs_over_max": 22,
+        "cells": 19,
+        "facts_delivered": {
+          "orderings": 15,
+          "roles": 1
+        },
+        "facts_no_map_credit": {
+          "orderings": 15,
+          "roles": 1
+        },
+        "orderings_drawn": 53,
+        "orderings_shown": 74,
+        "types_kept": [
+          "Container",
+          "Customer Order",
+          "Handling Unit",
+          "Transport Document"
+        ]
+      },
+      "types_eligible": 5
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 10,
+        "roles": 60
+      },
+      "log": "socel2_hinge",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 10,
+        "cells": 15,
+        "facts_delivered": {
+          "orderings": 10,
+          "roles": 1
+        },
+        "facts_no_map_credit": {
+          "orderings": 10,
+          "roles": 1
+        },
+        "orderings_drawn": 15,
+        "orderings_shown": 15
+      },
+      "recorded_cells": 40,
+      "role_facts_lost": 0,
+      "target_pairs": 15,
+      "type_closed": {
+        "arcs_over_max": 10,
+        "cells": 15,
+        "facts_delivered": {
+          "orderings": 10,
+          "roles": 1
+        },
+        "facts_no_map_credit": {
+          "orderings": 10,
+          "roles": 1
+        },
+        "orderings_drawn": 15,
+        "orderings_shown": 15,
+        "types_kept": [
+          "FemalePart",
+          "FormedPart",
+          "Hinge",
+          "MalePart",
+          "SteelSheet"
+        ]
+      },
+      "types_eligible": 5
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 17,
+        "roles": 15
+      },
+      "log": "order-management",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 24,
+        "cells": 14,
+        "facts_delivered": {
+          "orderings": 17,
+          "roles": 0
+        },
+        "facts_no_map_credit": {
+          "orderings": 11,
+          "roles": 0
+        },
+        "orderings_drawn": 24,
+        "orderings_shown": 36
+      },
+      "recorded_cells": 40,
+      "role_facts_lost": 0,
+      "target_pairs": 36,
+      "type_closed": {
+        "arcs_over_max": 56,
+        "cells": 11,
+        "facts_delivered": {
+          "orderings": 17,
+          "roles": 0
+        },
+        "facts_no_map_credit": {
+          "orderings": 11,
+          "roles": 0
+        },
+        "orderings_drawn": 36,
+        "orderings_shown": 36,
+        "types_kept": [
+          "items"
+        ]
+      },
+      "types_eligible": 3
+    },
+    {
+      "enumerated_exhaustively": true,
+      "facts_total": {
+        "orderings": 20,
+        "roles": 20
+      },
+      "log": "bpic2017-no-W",
+      "orderings_lost": 0,
+      "per_cell": {
+        "arcs_over_max": 37,
+        "cells": 18,
+        "facts_delivered": {
+          "orderings": 20,
+          "roles": 7
+        },
+        "facts_no_map_credit": {
+          "orderings": 20,
+          "roles": 7
+        },
+        "orderings_drawn": 65,
+        "orderings_shown": 65
+      },
+      "recorded_cells": 36,
+      "role_facts_lost": 0,
+      "target_pairs": 122,
+      "type_closed": {
+        "arcs_over_max": 37,
+        "cells": 18,
+        "facts_delivered": {
+          "orderings": 20,
+          "roles": 7
+        },
+        "facts_no_map_credit": {
+          "orderings": 20,
+          "roles": 7
+        },
+        "orderings_drawn": 65,
+        "orderings_shown": 65,
+        "types_kept": [
+          "Application",
+          "Offer"
+        ]
+      },
+      "types_eligible": 2
+    }
+  ]
+}

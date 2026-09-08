@@ -1,0 +1,368 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.5938761588812346,
+      "recorded": 0.6018060656453927
+    },
+    "min_fitness_rebuilt": 0.9811676082862524,
+    "types_whose_fitness_falls": []
+  },
+  "assignment": {
+    "absent": [],
+    "flow": [
+      [
+        "Approve PO",
+        "Purchase Order"
+      ],
+      [
+        "Approve PR",
+        "Purchase Requisition"
+      ],
+      [
+        "Create PO",
+        "Purchase Order"
+      ],
+      [
+        "Create PO",
+        "Purchase Requisition"
+      ],
+      [
+        "Create PO (Batch)",
+        "Purchase Order"
+      ],
+      [
+        "Create PR",
+        "Purchase Requisition"
+      ],
+      [
+        "Make Payment",
+        "Invoice"
+      ],
+      [
+        "Make Payment",
+        "Supplier"
+      ],
+      [
+        "Receive Goods",
+        "Goods Receipt"
+      ],
+      [
+        "Receive Goods",
+        "Purchase Order"
+      ],
+      [
+        "Receive Invoice",
+        "Purchase Order"
+      ],
+      [
+        "Reject PR",
+        "Purchase Requisition"
+      ],
+      [
+        "Send PO to Supplier",
+        "Purchase Order"
+      ],
+      [
+        "Send PO to Supplier",
+        "Supplier"
+      ],
+      [
+        "Three-way Match - Mismatch Found",
+        "Goods Receipt"
+      ],
+      [
+        "Three-way Match - Mismatch Found",
+        "Invoice"
+      ],
+      [
+        "Three-way Match - Mismatch Found",
+        "Purchase Order"
+      ],
+      [
+        "Three-way Match - Successful",
+        "Purchase Order"
+      ]
+    ],
+    "inv": [
+      [
+        "Create PO (Batch)",
+        "Purchase Requisition"
+      ],
+      [
+        "Make Payment",
+        "Payment"
+      ],
+      [
+        "Receive Invoice",
+        "Invoice"
+      ],
+      [
+        "Three-way Match - Successful",
+        "Goods Receipt"
+      ],
+      [
+        "Three-way Match - Successful",
+        "Invoice"
+      ]
+    ],
+    "kept": [
+      [
+        "Approve PO",
+        "Purchase Order"
+      ],
+      [
+        "Approve PR",
+        "Purchase Requisition"
+      ],
+      [
+        "Create PO",
+        "Purchase Order"
+      ],
+      [
+        "Create PO",
+        "Purchase Requisition"
+      ],
+      [
+        "Create PO (Batch)",
+        "Purchase Order"
+      ],
+      [
+        "Create PO (Batch)",
+        "Purchase Requisition"
+      ],
+      [
+        "Create PR",
+        "Purchase Requisition"
+      ],
+      [
+        "Make Payment",
+        "Invoice"
+      ],
+      [
+        "Make Payment",
+        "Payment"
+      ],
+      [
+        "Make Payment",
+        "Supplier"
+      ],
+      [
+        "Receive Goods",
+        "Goods Receipt"
+      ],
+      [
+        "Receive Goods",
+        "Purchase Order"
+      ],
+      [
+        "Receive Invoice",
+        "Invoice"
+      ],
+      [
+        "Receive Invoice",
+        "Purchase Order"
+      ],
+      [
+        "Reject PR",
+        "Purchase Requisition"
+      ],
+      [
+        "Send PO to Supplier",
+        "Purchase Order"
+      ],
+      [
+        "Send PO to Supplier",
+        "Supplier"
+      ],
+      [
+        "Three-way Match - Mismatch Found",
+        "Goods Receipt"
+      ],
+      [
+        "Three-way Match - Mismatch Found",
+        "Invoice"
+      ],
+      [
+        "Three-way Match - Mismatch Found",
+        "Purchase Order"
+      ],
+      [
+        "Three-way Match - Successful",
+        "Goods Receipt"
+      ],
+      [
+        "Three-way Match - Successful",
+        "Invoice"
+      ],
+      [
+        "Three-way Match - Successful",
+        "Purchase Order"
+      ]
+    ]
+  },
+  "log": "02_p2p",
+  "types": {
+    "Goods Receipt": {
+      "adjusted_precision": {
+        "rebuilt": 0.630357990473539,
+        "recorded": 0.2651368537461984
+      },
+      "arcs": {
+        "rebuilt": 8,
+        "recorded": 8,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 2,
+        "inv": 1
+      },
+      "fitness": {
+        "rebuilt": 0.9841986455981941,
+        "recorded": 0.9564846416382252
+      },
+      "objects": 858,
+      "precision": {
+        "floor": 0.5464008026084776,
+        "rebuilt": 0.8323306811566078,
+        "recorded": 0.6666666666666666
+      }
+    },
+    "Invoice": {
+      "adjusted_precision": {
+        "rebuilt": 0.1149584448491063,
+        "recorded": 0.4972759426357058
+      },
+      "arcs": {
+        "rebuilt": 10,
+        "recorded": 14,
+        "reduced": 6
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 2,
+        "inv": 2
+      },
+      "fitness": {
+        "rebuilt": 0.9881956155143339,
+        "recorded": 0.9649222601441032
+      },
+      "objects": 858,
+      "precision": {
+        "floor": 0.4254496908375492,
+        "rebuilt": 0.4914991008664378,
+        "recorded": 0.7111597374179431
+      }
+    },
+    "Payment": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 2,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 1
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.9755264655663062
+      },
+      "objects": 857,
+      "precision": {
+        "floor": 0.9988616960728515,
+        "rebuilt": 0.9988616960728515,
+        "recorded": 1.0
+      }
+    },
+    "Purchase Order": {
+      "adjusted_precision": {
+        "rebuilt": 0.7117815689099233,
+        "recorded": 0.7117815689099233
+      },
+      "arcs": {
+        "rebuilt": 54,
+        "recorded": 54,
+        "reduced": 54
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 8,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 0.9811676082862524,
+        "recorded": 0.9811676082862524
+      },
+      "objects": 870,
+      "precision": {
+        "floor": 0.22803030303030303,
+        "rebuilt": 0.777504105090312,
+        "recorded": 0.777504105090312
+      }
+    },
+    "Purchase Requisition": {
+      "adjusted_precision": {
+        "rebuilt": 0.9774468272384681,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 12,
+        "recorded": 12,
+        "reduced": 10
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 4,
+        "inv": 1
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.8552649785526498
+      },
+      "objects": 1000,
+      "precision": {
+        "floor": 0.4052802754926344,
+        "rebuilt": 0.9865871833084948,
+        "recorded": 1.0
+      }
+    },
+    "Supplier": {
+      "adjusted_precision": {
+        "rebuilt": 0.5348359629351365,
+        "recorded": 0.5348359629351365
+      },
+      "arcs": {
+        "rebuilt": 10,
+        "recorded": 10,
+        "reduced": 10
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 2,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 50,
+      "precision": {
+        "floor": 0.6075675675675676,
+        "rebuilt": 0.8174545454545454,
+        "recorded": 0.8174545454545454
+      }
+    }
+  }
+}

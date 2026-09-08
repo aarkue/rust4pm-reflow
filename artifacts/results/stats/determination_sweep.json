@@ -1,0 +1,598 @@
+{
+  "logs": [
+    {
+      "log": "01_o2c",
+      "path": "logs/01_o2c.xml",
+      "thetas": [
+        {
+          "absent_cells": 14,
+          "covered": 84,
+          "flow_cells": 22,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 22,
+          "ocpn_arcs": 48,
+          "target": 84,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 14,
+          "covered": 84,
+          "flow_cells": 22,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 22,
+          "ocpn_arcs": 48,
+          "target": 84,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 14,
+          "covered": 84,
+          "flow_cells": 22,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 22,
+          "ocpn_arcs": 48,
+          "target": 84,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 14,
+          "covered": 84,
+          "flow_cells": 22,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 22,
+          "ocpn_arcs": 48,
+          "target": 84,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 14,
+          "covered": 84,
+          "flow_cells": 22,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 22,
+          "ocpn_arcs": 48,
+          "target": 84,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 14,
+          "covered": 84,
+          "flow_cells": 22,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 22,
+          "ocpn_arcs": 48,
+          "target": 84,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "02_p2p",
+      "path": "logs/02_p2p.xml",
+      "thetas": [
+        {
+          "absent_cells": 0,
+          "covered": 23,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 37,
+          "ocpn_arcs": 86,
+          "target": 23,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 0,
+          "covered": 23,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 37,
+          "ocpn_arcs": 86,
+          "target": 23,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 0,
+          "covered": 23,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 37,
+          "ocpn_arcs": 86,
+          "target": 23,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 7,
+          "covered": 23,
+          "flow_cells": 15,
+          "lost_tuples": 400,
+          "ocdfg_arcs": 31,
+          "ocpn_arcs": 64,
+          "target": 23,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 7,
+          "covered": 23,
+          "flow_cells": 15,
+          "lost_tuples": 400,
+          "ocdfg_arcs": 31,
+          "ocpn_arcs": 64,
+          "target": 23,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 7,
+          "covered": 23,
+          "flow_cells": 15,
+          "lost_tuples": 400,
+          "ocdfg_arcs": 31,
+          "ocpn_arcs": 64,
+          "target": 23,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "03_hiring",
+      "path": "logs/03_hiring.xml",
+      "thetas": [
+        {
+          "absent_cells": 11,
+          "covered": 263,
+          "flow_cells": 25,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 28,
+          "ocpn_arcs": 60,
+          "target": 263,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 11,
+          "covered": 263,
+          "flow_cells": 25,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 28,
+          "ocpn_arcs": 60,
+          "target": 263,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 11,
+          "covered": 263,
+          "flow_cells": 25,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 28,
+          "ocpn_arcs": 60,
+          "target": 263,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 11,
+          "covered": 263,
+          "flow_cells": 25,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 28,
+          "ocpn_arcs": 60,
+          "target": 263,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 11,
+          "covered": 263,
+          "flow_cells": 25,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 28,
+          "ocpn_arcs": 60,
+          "target": 263,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 11,
+          "covered": 263,
+          "flow_cells": 25,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 28,
+          "ocpn_arcs": 60,
+          "target": 263,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "04_hospital",
+      "path": "logs/04_hospital.xml",
+      "thetas": [
+        {
+          "absent_cells": 7,
+          "covered": 36,
+          "flow_cells": 9,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 8,
+          "ocpn_arcs": 20,
+          "target": 36,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 7,
+          "covered": 36,
+          "flow_cells": 9,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 8,
+          "ocpn_arcs": 20,
+          "target": 36,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 7,
+          "covered": 36,
+          "flow_cells": 9,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 8,
+          "ocpn_arcs": 20,
+          "target": 36,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 7,
+          "covered": 36,
+          "flow_cells": 9,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 8,
+          "ocpn_arcs": 20,
+          "target": 36,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 8,
+          "covered": 36,
+          "flow_cells": 9,
+          "lost_tuples": 321,
+          "ocdfg_arcs": 8,
+          "ocpn_arcs": 20,
+          "target": 36,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 8,
+          "covered": 36,
+          "flow_cells": 9,
+          "lost_tuples": 321,
+          "ocdfg_arcs": 8,
+          "ocpn_arcs": 20,
+          "target": 36,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "ocel2-p2p-updated",
+      "path": "logs/ocel2-p2p-updated.xml",
+      "thetas": [
+        {
+          "absent_cells": 8,
+          "covered": 15,
+          "flow_cells": 13,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 15,
+          "ocpn_arcs": 30,
+          "target": 19,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 8,
+          "covered": 15,
+          "flow_cells": 13,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 15,
+          "ocpn_arcs": 30,
+          "target": 19,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 8,
+          "covered": 15,
+          "flow_cells": 13,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 15,
+          "ocpn_arcs": 30,
+          "target": 19,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 8,
+          "covered": 15,
+          "flow_cells": 13,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 15,
+          "ocpn_arcs": 30,
+          "target": 19,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 8,
+          "covered": 15,
+          "flow_cells": 13,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 15,
+          "ocpn_arcs": 30,
+          "target": 19,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 8,
+          "covered": 15,
+          "flow_cells": 13,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 15,
+          "ocpn_arcs": 30,
+          "target": 19,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "ContainerLogistics",
+      "path": "logs/ContainerLogistics.xml",
+      "thetas": [
+        {
+          "absent_cells": 5,
+          "covered": 74,
+          "flow_cells": 20,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 24,
+          "ocpn_arcs": 50,
+          "target": 79,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 6,
+          "covered": 74,
+          "flow_cells": 19,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 20,
+          "ocpn_arcs": 46,
+          "target": 79,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 8,
+          "covered": 74,
+          "flow_cells": 17,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 16,
+          "ocpn_arcs": 38,
+          "target": 79,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 8,
+          "covered": 74,
+          "flow_cells": 17,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 16,
+          "ocpn_arcs": 38,
+          "target": 79,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 8,
+          "covered": 74,
+          "flow_cells": 17,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 16,
+          "ocpn_arcs": 38,
+          "target": 79,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 8,
+          "covered": 74,
+          "flow_cells": 17,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 16,
+          "ocpn_arcs": 38,
+          "target": 79,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "socel2_hinge",
+      "path": "logs/socel2_hinge.xml",
+      "thetas": [
+        {
+          "absent_cells": 12,
+          "covered": 15,
+          "flow_cells": 15,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 10,
+          "ocpn_arcs": 30,
+          "target": 15,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 12,
+          "covered": 15,
+          "flow_cells": 15,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 10,
+          "ocpn_arcs": 30,
+          "target": 15,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 12,
+          "covered": 15,
+          "flow_cells": 15,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 10,
+          "ocpn_arcs": 30,
+          "target": 15,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 12,
+          "covered": 15,
+          "flow_cells": 15,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 10,
+          "ocpn_arcs": 30,
+          "target": 15,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 12,
+          "covered": 15,
+          "flow_cells": 15,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 10,
+          "ocpn_arcs": 30,
+          "target": 15,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 12,
+          "covered": 15,
+          "flow_cells": 15,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 10,
+          "ocpn_arcs": 30,
+          "target": 15,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "order-management",
+      "path": "logs/order-management.xml",
+      "thetas": [
+        {
+          "absent_cells": 23,
+          "covered": 36,
+          "flow_cells": 14,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 24,
+          "ocpn_arcs": 40,
+          "target": 36,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 23,
+          "covered": 36,
+          "flow_cells": 14,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 24,
+          "ocpn_arcs": 40,
+          "target": 36,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 23,
+          "covered": 36,
+          "flow_cells": 14,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 24,
+          "ocpn_arcs": 40,
+          "target": 36,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 23,
+          "covered": 36,
+          "flow_cells": 14,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 24,
+          "ocpn_arcs": 40,
+          "target": 36,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 23,
+          "covered": 36,
+          "flow_cells": 14,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 24,
+          "ocpn_arcs": 40,
+          "target": 36,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 23,
+          "covered": 36,
+          "flow_cells": 14,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 24,
+          "ocpn_arcs": 40,
+          "target": 36,
+          "theta": 0.5
+        }
+      ]
+    },
+    {
+      "log": "bpic2017-no-W",
+      "path": "logs/bpic2017-no-W.xml.gz",
+      "thetas": [
+        {
+          "absent_cells": 0,
+          "covered": 65,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 35,
+          "ocpn_arcs": 50,
+          "target": 122,
+          "theta": 1.0
+        },
+        {
+          "absent_cells": 0,
+          "covered": 65,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 35,
+          "ocpn_arcs": 50,
+          "target": 122,
+          "theta": 0.99
+        },
+        {
+          "absent_cells": 0,
+          "covered": 65,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 35,
+          "ocpn_arcs": 50,
+          "target": 122,
+          "theta": 0.95
+        },
+        {
+          "absent_cells": 0,
+          "covered": 65,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 35,
+          "ocpn_arcs": 50,
+          "target": 122,
+          "theta": 0.9
+        },
+        {
+          "absent_cells": 0,
+          "covered": 65,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 35,
+          "ocpn_arcs": 50,
+          "target": 122,
+          "theta": 0.8
+        },
+        {
+          "absent_cells": 0,
+          "covered": 65,
+          "flow_cells": 18,
+          "lost_tuples": 0,
+          "ocdfg_arcs": 35,
+          "ocpn_arcs": 50,
+          "target": 122,
+          "theta": 0.5
+        }
+      ]
+    }
+  ]
+}

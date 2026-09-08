@@ -1,0 +1,523 @@
+{
+  "log": "order-management.xml",
+  "path": "logs/order-management.xml",
+  "events": 21008,
+  "objects": 10840,
+  "participations": 147385,
+  "activities": [
+    "confirm order",
+    "create package",
+    "failed delivery",
+    "item out of stock",
+    "package delivered",
+    "pay order",
+    "payment reminder",
+    "pick item",
+    "place order",
+    "reorder item",
+    "send package"
+  ],
+  "cells": 40,
+  "types": {
+    "customers": {
+      "objects": 15,
+      "object_share": 0.001384,
+      "participations": 4000,
+      "activities": 2,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "employees": {
+      "objects": 18,
+      "object_share": 0.001661,
+      "participations": 17492,
+      "activities": 8,
+      "df_pairs": 26,
+      "scores": null
+    },
+    "items": {
+      "objects": 7659,
+      "object_share": 0.70655,
+      "participations": 60935,
+      "activities": 11,
+      "df_pairs": 54,
+      "scores": null
+    },
+    "orders": {
+      "objects": 2000,
+      "object_share": 0.184502,
+      "participations": 6566,
+      "activities": 4,
+      "df_pairs": 4,
+      "scores": null
+    },
+    "packages": {
+      "objects": 1128,
+      "object_share": 0.104059,
+      "participations": 3695,
+      "activities": 4,
+      "df_pairs": 4,
+      "scores": null
+    },
+    "products": {
+      "objects": 20,
+      "object_share": 0.001845,
+      "participations": 54697,
+      "activities": 11,
+      "df_pairs": 110,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "confirm order\tcustomers": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "confirm order\temployees": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "confirm order\titems": {
+      "max": 16,
+      "mean": 3.8295,
+      "events": 2000
+    },
+    "confirm order\torders": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "confirm order\tproducts": {
+      "max": 11,
+      "mean": 3.49,
+      "events": 2000
+    },
+    "create package\temployees": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1128
+    },
+    "create package\titems": {
+      "max": 20,
+      "mean": 6.7899,
+      "events": 1128
+    },
+    "create package\tpackages": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1128
+    },
+    "create package\tproducts": {
+      "max": 14,
+      "mean": 5.6897,
+      "events": 1128
+    },
+    "failed delivery\temployees": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 311
+    },
+    "failed delivery\titems": {
+      "max": 20,
+      "mean": 6.4952,
+      "events": 311
+    },
+    "failed delivery\tpackages": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 311
+    },
+    "failed delivery\tproducts": {
+      "max": 14,
+      "mean": 5.537,
+      "events": 311
+    },
+    "item out of stock\temployees": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1544
+    },
+    "item out of stock\titems": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1544
+    },
+    "item out of stock\tproducts": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1544
+    },
+    "package delivered\temployees": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1128
+    },
+    "package delivered\titems": {
+      "max": 20,
+      "mean": 6.7899,
+      "events": 1128
+    },
+    "package delivered\tpackages": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1128
+    },
+    "package delivered\tproducts": {
+      "max": 14,
+      "mean": 5.6897,
+      "events": 1128
+    },
+    "pay order\titems": {
+      "max": 16,
+      "mean": 3.8295,
+      "events": 2000
+    },
+    "pay order\torders": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "pay order\tproducts": {
+      "max": 11,
+      "mean": 3.49,
+      "events": 2000
+    },
+    "payment reminder\titems": {
+      "max": 13,
+      "mean": 3.9117,
+      "events": 566
+    },
+    "payment reminder\torders": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 566
+    },
+    "payment reminder\tproducts": {
+      "max": 11,
+      "mean": 3.5936,
+      "events": 566
+    },
+    "pick item\temployees": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 7659
+    },
+    "pick item\titems": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 7659
+    },
+    "pick item\tproducts": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 7659
+    },
+    "place order\tcustomers": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "place order\titems": {
+      "max": 16,
+      "mean": 3.8295,
+      "events": 2000
+    },
+    "place order\torders": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "place order\tproducts": {
+      "max": 11,
+      "mean": 3.49,
+      "events": 2000
+    },
+    "reorder item\temployees": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1544
+    },
+    "reorder item\titems": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1544
+    },
+    "reorder item\tproducts": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1544
+    },
+    "send package\temployees": {
+      "max": 2,
+      "mean": 1.9309,
+      "events": 1128
+    },
+    "send package\titems": {
+      "max": 20,
+      "mean": 6.7899,
+      "events": 1128
+    },
+    "send package\tpackages": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1128
+    },
+    "send package\tproducts": {
+      "max": 14,
+      "mean": 5.6897,
+      "events": 1128
+    }
+  },
+  "divergence": {
+    "confirm order": [
+      "customers",
+      "employees",
+      "products"
+    ],
+    "create package": [
+      "employees",
+      "products"
+    ],
+    "failed delivery": [
+      "employees",
+      "products"
+    ],
+    "item out of stock": [
+      "employees",
+      "products"
+    ],
+    "package delivered": [
+      "employees",
+      "products"
+    ],
+    "pay order": [
+      "products"
+    ],
+    "payment reminder": [
+      "products"
+    ],
+    "pick item": [
+      "employees",
+      "products"
+    ],
+    "place order": [
+      "customers",
+      "products"
+    ],
+    "reorder item": [
+      "employees",
+      "products"
+    ],
+    "send package": [
+      "employees",
+      "products"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 110,
+    "df2": 54,
+    "df2_dropped": [
+      "confirm order -> place order",
+      "create package -> failed delivery",
+      "create package -> item out of stock",
+      "create package -> package delivered",
+      "create package -> place order",
+      "create package -> reorder item",
+      "failed delivery -> create package",
+      "failed delivery -> item out of stock",
+      "failed delivery -> payment reminder",
+      "failed delivery -> pick item",
+      "failed delivery -> place order",
+      "failed delivery -> reorder item",
+      "failed delivery -> send package",
+      "item out of stock -> create package",
+      "item out of stock -> failed delivery",
+      "item out of stock -> package delivered",
+      "item out of stock -> payment reminder",
+      "item out of stock -> pick item",
+      "item out of stock -> place order",
+      "item out of stock -> send package",
+      "package delivered -> create package",
+      "package delivered -> failed delivery",
+      "package delivered -> item out of stock",
+      "package delivered -> pick item",
+      "package delivered -> place order",
+      "package delivered -> reorder item",
+      "package delivered -> send package",
+      "pay order -> confirm order",
+      "pay order -> payment reminder",
+      "pay order -> place order",
+      "payment reminder -> confirm order",
+      "payment reminder -> failed delivery",
+      "payment reminder -> item out of stock",
+      "payment reminder -> place order",
+      "payment reminder -> reorder item",
+      "pick item -> failed delivery",
+      "pick item -> item out of stock",
+      "pick item -> package delivered",
+      "pick item -> place order",
+      "pick item -> reorder item",
+      "place order -> failed delivery",
+      "place order -> package delivered",
+      "place order -> pay order",
+      "place order -> payment reminder",
+      "place order -> reorder item",
+      "place order -> send package",
+      "reorder item -> failed delivery",
+      "reorder item -> item out of stock",
+      "reorder item -> package delivered",
+      "reorder item -> place order",
+      "reorder item -> send package",
+      "send package -> create package",
+      "send package -> item out of stock",
+      "send package -> pick item",
+      "send package -> place order",
+      "send package -> reorder item"
+    ]
+  },
+  "keepset": {
+    "name": "handoff",
+    "cells": 16,
+    "ordered_pairs": 20,
+    "lost_vs_recorded": [
+      "confirm order -> create package",
+      "confirm order -> failed delivery",
+      "confirm order -> item out of stock",
+      "confirm order -> package delivered",
+      "confirm order -> pick item",
+      "confirm order -> place order",
+      "confirm order -> reorder item",
+      "confirm order -> send package",
+      "create package -> confirm order",
+      "create package -> failed delivery",
+      "create package -> item out of stock",
+      "create package -> package delivered",
+      "create package -> pay order",
+      "create package -> payment reminder",
+      "create package -> place order",
+      "create package -> reorder item",
+      "failed delivery -> confirm order",
+      "failed delivery -> create package",
+      "failed delivery -> item out of stock",
+      "failed delivery -> pay order",
+      "failed delivery -> payment reminder",
+      "failed delivery -> pick item",
+      "failed delivery -> place order",
+      "failed delivery -> reorder item",
+      "failed delivery -> send package",
+      "item out of stock -> confirm order",
+      "item out of stock -> create package",
+      "item out of stock -> failed delivery",
+      "item out of stock -> package delivered",
+      "item out of stock -> pay order",
+      "item out of stock -> payment reminder",
+      "item out of stock -> place order",
+      "item out of stock -> send package",
+      "package delivered -> confirm order",
+      "package delivered -> create package",
+      "package delivered -> failed delivery",
+      "package delivered -> item out of stock",
+      "package delivered -> pay order",
+      "package delivered -> payment reminder",
+      "package delivered -> pick item",
+      "package delivered -> place order",
+      "package delivered -> reorder item",
+      "package delivered -> send package",
+      "pay order -> confirm order",
+      "pay order -> create package",
+      "pay order -> failed delivery",
+      "pay order -> item out of stock",
+      "pay order -> package delivered",
+      "pay order -> payment reminder",
+      "pay order -> pick item",
+      "pay order -> place order",
+      "pay order -> reorder item",
+      "pay order -> send package",
+      "payment reminder -> confirm order",
+      "payment reminder -> create package",
+      "payment reminder -> failed delivery",
+      "payment reminder -> item out of stock",
+      "payment reminder -> package delivered",
+      "payment reminder -> pick item",
+      "payment reminder -> place order",
+      "payment reminder -> reorder item",
+      "payment reminder -> send package",
+      "pick item -> confirm order",
+      "pick item -> failed delivery",
+      "pick item -> package delivered",
+      "pick item -> pay order",
+      "pick item -> payment reminder",
+      "pick item -> place order",
+      "pick item -> send package",
+      "place order -> failed delivery",
+      "place order -> package delivered",
+      "place order -> pay order",
+      "place order -> payment reminder",
+      "place order -> reorder item",
+      "place order -> send package",
+      "reorder item -> confirm order",
+      "reorder item -> failed delivery",
+      "reorder item -> package delivered",
+      "reorder item -> pay order",
+      "reorder item -> payment reminder",
+      "reorder item -> place order",
+      "reorder item -> send package",
+      "send package -> confirm order",
+      "send package -> create package",
+      "send package -> item out of stock",
+      "send package -> pay order",
+      "send package -> payment reminder",
+      "send package -> pick item",
+      "send package -> place order",
+      "send package -> reorder item"
+    ],
+    "kept_but_df2_drops": [
+      "item out of stock -> pick item",
+      "pick item -> item out of stock",
+      "pick item -> reorder item",
+      "reorder item -> item out of stock"
+    ],
+    "df2_keeps_but_lost": [
+      "confirm order -> create package",
+      "confirm order -> failed delivery",
+      "confirm order -> item out of stock",
+      "confirm order -> package delivered",
+      "confirm order -> pick item",
+      "confirm order -> reorder item",
+      "confirm order -> send package",
+      "create package -> confirm order",
+      "create package -> pay order",
+      "create package -> payment reminder",
+      "failed delivery -> confirm order",
+      "failed delivery -> pay order",
+      "item out of stock -> confirm order",
+      "item out of stock -> pay order",
+      "package delivered -> confirm order",
+      "package delivered -> pay order",
+      "package delivered -> payment reminder",
+      "pay order -> create package",
+      "pay order -> failed delivery",
+      "pay order -> item out of stock",
+      "pay order -> package delivered",
+      "pay order -> pick item",
+      "pay order -> reorder item",
+      "pay order -> send package",
+      "payment reminder -> create package",
+      "payment reminder -> package delivered",
+      "payment reminder -> pick item",
+      "payment reminder -> send package",
+      "pick item -> confirm order",
+      "pick item -> pay order",
+      "pick item -> payment reminder",
+      "pick item -> send package",
+      "reorder item -> confirm order",
+      "reorder item -> pay order",
+      "reorder item -> payment reminder",
+      "send package -> confirm order",
+      "send package -> pay order",
+      "send package -> payment reminder"
+    ]
+  }
+}

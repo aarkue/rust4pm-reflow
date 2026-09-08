@@ -1,0 +1,694 @@
+{
+  "corpus_totals": {
+    "baseline_orderings_lost": 0,
+    "baseline_shown": 536,
+    "recorded_orderings": 536,
+    "reflow_orderings_lost": 0,
+    "reflow_shown": 536
+  },
+  "criterion": {
+    "divergence_share": 1.0,
+    "min_activities": 2,
+    "note": "reproduces the filterings of Liss et al. (Container Logistics) and Christfort et al. (Order Management)"
+  },
+  "logs": [
+    {
+      "activities": 22,
+      "divergence": [
+        {
+          "activities": 8,
+          "diverges_at": 8,
+          "type": "Customer"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 1,
+          "type": "Product"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 0,
+          "type": "CreditNote"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 0,
+          "type": "Dispute"
+        },
+        {
+          "activities": 6,
+          "diverges_at": 0,
+          "type": "Invoice"
+        },
+        {
+          "activities": 13,
+          "diverges_at": 0,
+          "type": "Order"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 0,
+          "type": "Payment"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 0,
+          "type": "Return"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 0,
+          "type": "Shipment"
+        }
+      ],
+      "dropped_types": [
+        "Customer"
+      ],
+      "fact_repair_added": 0,
+      "log": "01_o2c",
+      "per_type_ordering_facts": {
+        "reflow_readable": 20,
+        "total": 22,
+        "type_deletion": 22
+      },
+      "recorded": {
+        "cells": 39,
+        "ocdfg_arcs": 42,
+        "ocpn_arcs": 90,
+        "orderings": 84
+      },
+      "reflow": {
+        "cells_flowing": 23,
+        "ocdfg_arcs": 22,
+        "ocpn_arcs": 50,
+        "orderings_shown": 84
+      },
+      "role_facts": {
+        "reflow_readable": 10,
+        "total": 12,
+        "type_deletion": 12
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 31,
+        "ocdfg_arcs": 27,
+        "ocpn_arcs": 68,
+        "orderings_shown": 84
+      }
+    },
+    {
+      "activities": 12,
+      "divergence": [
+        {
+          "activities": 1,
+          "diverges_at": 1,
+          "type": "Payment"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 2,
+          "type": "Supplier"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 3,
+          "type": "Invoice"
+        },
+        {
+          "activities": 8,
+          "diverges_at": 6,
+          "type": "Purchase Order"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 2,
+          "type": "Goods Receipt"
+        },
+        {
+          "activities": 5,
+          "diverges_at": 1,
+          "type": "Purchase Requisition"
+        }
+      ],
+      "dropped_types": [
+        "Supplier"
+      ],
+      "fact_repair_added": 3,
+      "log": "02_p2p",
+      "per_type_ordering_facts": {
+        "reflow_readable": 22,
+        "total": 22,
+        "type_deletion": 21
+      },
+      "recorded": {
+        "cells": 23,
+        "ocdfg_arcs": 60,
+        "ocpn_arcs": 100,
+        "orderings": 23
+      },
+      "reflow": {
+        "cells_flowing": 18,
+        "ocdfg_arcs": 37,
+        "ocpn_arcs": 86,
+        "orderings_shown": 23
+      },
+      "role_facts": {
+        "reflow_readable": 2,
+        "total": 2,
+        "type_deletion": 2
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 21,
+        "ocdfg_arcs": 57,
+        "ocpn_arcs": 90,
+        "orderings_shown": 23
+      }
+    },
+    {
+      "activities": 24,
+      "divergence": [
+        {
+          "activities": 3,
+          "diverges_at": 3,
+          "type": "Assessment"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 4,
+          "type": "HiringManager"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 2,
+          "type": "Interviewer"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 4,
+          "type": "Recruiter"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 1,
+          "type": "JobRequisition"
+        },
+        {
+          "activities": 21,
+          "diverges_at": 0,
+          "type": "Candidate"
+        }
+      ],
+      "dropped_types": [
+        "Assessment",
+        "HiringManager",
+        "Interviewer",
+        "Recruiter"
+      ],
+      "fact_repair_added": 0,
+      "log": "03_hiring",
+      "per_type_ordering_facts": {
+        "reflow_readable": 23,
+        "total": 29,
+        "type_deletion": 23
+      },
+      "recorded": {
+        "cells": 38,
+        "ocdfg_arcs": 46,
+        "ocpn_arcs": 108,
+        "orderings": 209
+      },
+      "reflow": {
+        "cells_flowing": 25,
+        "ocdfg_arcs": 28,
+        "ocpn_arcs": 60,
+        "orderings_shown": 209
+      },
+      "role_facts": {
+        "reflow_readable": 13,
+        "total": 13,
+        "type_deletion": 13
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 25,
+        "ocdfg_arcs": 28,
+        "ocpn_arcs": 60,
+        "orderings_shown": 209
+      }
+    },
+    {
+      "activities": 9,
+      "divergence": [
+        {
+          "activities": 1,
+          "diverges_at": 1,
+          "type": "Bed"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 1,
+          "type": "DiagnosticEquipment"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 1,
+          "type": "InsuranceCompany"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 1,
+          "type": "LabTechnician"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 2,
+          "type": "Nurse"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 2,
+          "type": "Physician"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 1,
+          "type": "Room"
+        },
+        {
+          "activities": 9,
+          "diverges_at": 0,
+          "type": "Patient"
+        }
+      ],
+      "dropped_types": [
+        "Nurse",
+        "Physician"
+      ],
+      "fact_repair_added": 0,
+      "log": "04_hospital",
+      "per_type_ordering_facts": {
+        "reflow_readable": 8,
+        "total": 8,
+        "type_deletion": 8
+      },
+      "recorded": {
+        "cells": 18,
+        "ocdfg_arcs": 19,
+        "ocpn_arcs": 54,
+        "orderings": 36
+      },
+      "reflow": {
+        "cells_flowing": 9,
+        "ocdfg_arcs": 8,
+        "ocpn_arcs": 20,
+        "orderings_shown": 36
+      },
+      "role_facts": {
+        "reflow_readable": 0,
+        "total": 0,
+        "type_deletion": 0
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 14,
+        "ocdfg_arcs": 13,
+        "ocpn_arcs": 40,
+        "orderings_shown": 36
+      }
+    },
+    {
+      "activities": 10,
+      "divergence": [
+        {
+          "activities": 3,
+          "diverges_at": 2,
+          "type": "invoice receipt"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 2,
+          "type": "quotation"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 1,
+          "type": "goods receipt"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 1,
+          "type": "purchase_order"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 0,
+          "type": "material"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 0,
+          "type": "payment"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 0,
+          "type": "purchase_requisition"
+        }
+      ],
+      "dropped_types": [],
+      "fact_repair_added": 0,
+      "log": "ocel2-p2p-updated",
+      "per_type_ordering_facts": {
+        "reflow_readable": 10,
+        "total": 15,
+        "type_deletion": 15
+      },
+      "recorded": {
+        "cells": 22,
+        "ocdfg_arcs": 34,
+        "ocpn_arcs": 54,
+        "orderings": 15
+      },
+      "reflow": {
+        "cells_flowing": 14,
+        "ocdfg_arcs": 16,
+        "ocpn_arcs": 32,
+        "orderings_shown": 15
+      },
+      "role_facts": {
+        "reflow_readable": 1,
+        "total": 2,
+        "type_deletion": 2
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 22,
+        "ocdfg_arcs": 34,
+        "ocpn_arcs": 54,
+        "orderings_shown": 15
+      }
+    },
+    {
+      "activities": 14,
+      "divergence": [
+        {
+          "activities": 4,
+          "diverges_at": 4,
+          "type": "Forklift"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 2,
+          "type": "Truck"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 3,
+          "type": "Vehicle"
+        },
+        {
+          "activities": 5,
+          "diverges_at": 2,
+          "type": "Transport Document"
+        },
+        {
+          "activities": 10,
+          "diverges_at": 1,
+          "type": "Container"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 0,
+          "type": "Customer Order"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 0,
+          "type": "Handling Unit"
+        }
+      ],
+      "dropped_types": [
+        "Forklift",
+        "Truck"
+      ],
+      "fact_repair_added": 2,
+      "log": "ContainerLogistics",
+      "per_type_ordering_facts": {
+        "reflow_readable": 15,
+        "total": 18,
+        "type_deletion": 18
+      },
+      "recorded": {
+        "cells": 29,
+        "ocdfg_arcs": 49,
+        "ocpn_arcs": 94,
+        "orderings": 53
+      },
+      "reflow": {
+        "cells_flowing": 20,
+        "ocdfg_arcs": 24,
+        "ocpn_arcs": 53,
+        "orderings_shown": 53
+      },
+      "role_facts": {
+        "reflow_readable": 1,
+        "total": 1,
+        "type_deletion": 1
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 23,
+        "ocdfg_arcs": 31,
+        "ocpn_arcs": 64,
+        "orderings_shown": 53
+      }
+    },
+    {
+      "activities": 11,
+      "divergence": [
+        {
+          "activities": 8,
+          "diverges_at": 8,
+          "type": "Machine"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 1,
+          "type": "SteelCoil"
+        },
+        {
+          "activities": 10,
+          "diverges_at": 10,
+          "type": "Workstation"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 2,
+          "type": "Worker"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 0,
+          "type": "Facility"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 0,
+          "type": "FemalePart"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 0,
+          "type": "FormedPart"
+        },
+        {
+          "activities": 2,
+          "diverges_at": 0,
+          "type": "Hinge"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 0,
+          "type": "HingePack"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 0,
+          "type": "MalePart"
+        },
+        {
+          "activities": 1,
+          "diverges_at": 0,
+          "type": "SteelPin"
+        },
+        {
+          "activities": 3,
+          "diverges_at": 0,
+          "type": "SteelSheet"
+        }
+      ],
+      "dropped_types": [
+        "Machine",
+        "Workstation"
+      ],
+      "fact_repair_added": 0,
+      "log": "socel2_hinge",
+      "per_type_ordering_facts": {
+        "reflow_readable": 10,
+        "total": 10,
+        "type_deletion": 10
+      },
+      "recorded": {
+        "cells": 40,
+        "ocdfg_arcs": 62,
+        "ocpn_arcs": 166,
+        "orderings": 15
+      },
+      "reflow": {
+        "cells_flowing": 15,
+        "ocdfg_arcs": 10,
+        "ocpn_arcs": 30,
+        "orderings_shown": 15
+      },
+      "role_facts": {
+        "reflow_readable": 10,
+        "total": 60,
+        "type_deletion": 1
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 22,
+        "ocdfg_arcs": 21,
+        "ocpn_arcs": 48,
+        "orderings_shown": 15
+      }
+    },
+    {
+      "activities": 11,
+      "divergence": [
+        {
+          "activities": 2,
+          "diverges_at": 2,
+          "type": "customers"
+        },
+        {
+          "activities": 8,
+          "diverges_at": 8,
+          "type": "employees"
+        },
+        {
+          "activities": 11,
+          "diverges_at": 11,
+          "type": "products"
+        },
+        {
+          "activities": 11,
+          "diverges_at": 0,
+          "type": "items"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 0,
+          "type": "orders"
+        },
+        {
+          "activities": 4,
+          "diverges_at": 0,
+          "type": "packages"
+        }
+      ],
+      "dropped_types": [
+        "customers",
+        "employees",
+        "products"
+      ],
+      "fact_repair_added": 0,
+      "log": "order-management",
+      "per_type_ordering_facts": {
+        "reflow_readable": 11,
+        "total": 17,
+        "type_deletion": 17
+      },
+      "recorded": {
+        "cells": 40,
+        "ocdfg_arcs": 225,
+        "ocpn_arcs": 163,
+        "orderings": 36
+      },
+      "reflow": {
+        "cells_flowing": 14,
+        "ocdfg_arcs": 24,
+        "ocpn_arcs": 40,
+        "orderings_shown": 36
+      },
+      "role_facts": {
+        "reflow_readable": 0,
+        "total": 15,
+        "type_deletion": 0
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 19,
+        "ocdfg_arcs": 66,
+        "ocpn_arcs": 57,
+        "orderings_shown": 36
+      }
+    },
+    {
+      "activities": 18,
+      "divergence": [
+        {
+          "activities": 18,
+          "diverges_at": 18,
+          "type": "Case_R"
+        },
+        {
+          "activities": 10,
+          "diverges_at": 2,
+          "type": "Application"
+        },
+        {
+          "activities": 8,
+          "diverges_at": 0,
+          "type": "Offer"
+        }
+      ],
+      "dropped_types": [
+        "Case_R"
+      ],
+      "fact_repair_added": 0,
+      "log": "bpic2017-no-W",
+      "per_type_ordering_facts": {
+        "reflow_readable": 20,
+        "total": 20,
+        "type_deletion": 20
+      },
+      "recorded": {
+        "cells": 36,
+        "ocdfg_arcs": 218,
+        "ocpn_arcs": 98,
+        "orderings": 65
+      },
+      "reflow": {
+        "cells_flowing": 18,
+        "ocdfg_arcs": 35,
+        "ocpn_arcs": 50,
+        "orderings_shown": 65
+      },
+      "role_facts": {
+        "reflow_readable": 20,
+        "total": 20,
+        "type_deletion": 7
+      },
+      "type_deletion": {
+        "activities_lost": 0,
+        "cells_kept": 18,
+        "ocdfg_arcs": 35,
+        "ocpn_arcs": 50,
+        "orderings_shown": 65
+      }
+    }
+  ],
+  "route_credit": false
+}

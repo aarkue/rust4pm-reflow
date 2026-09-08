@@ -1,0 +1,250 @@
+//! Detection of concurrent (`∧`) cuts.
+
+use crate::core::process_models::process_tree::OperatorType;
+
+use super::super::dfg::ActivityDfg;
+use super::super::log::ActivityLog;
+use super::super::structures::complement_components::complement_components;
+use super::super::structures::minimum_self_distance::MinimumSelfDistance;
+use super::cut::Cut;
+
+/// Whether a part contains a start / an end activity.
+#[derive(Clone, Copy, PartialEq, Eq)]
+struct Coverage {
+    start: bool,
+    end: bool,
+}
+
+/// Finds the maximal concurrent cut, if there is one.
+///
+/// Two requirements: every part contains a start and an end activity (∧.1), and all parts are
+/// connected to each other in both directions (∧.2). Two activities that are not connected both
+/// ways therefore have to share a part. If a minimum-self-distance relation is given, activities
+/// that loop around each other are merged as well (∧↔.1), which is what keeps a loop from being
+/// reported as concurrency.
+///
+/// Almost no pair is connected both ways on a real graph, so the parts are computed on the sparse
+/// complement of the merge relation.
+pub fn concurrent_cut(
+    dfg: &ActivityDfg,
+    minimum_self_distance: Option<&MinimumSelfDistance>,
+) -> Option<Cut> {
+    let n = dfg.len();
+    if n == 0 {
+        return None;
+    }
+
+    let may_be_separated = |a: usize, b: usize| {
+        let fully_connected = dfg.follows(a, b) && dfg.follows(b, a);
+        let loops_around = minimum_self_distance
+            .is_some_and(|msd| msd.are_related(dfg.activity(a), dfg.activity(b)));
+        fully_connected && !loops_around
+    };
+
+    let groups = complement_components(n, may_be_separated);
+    let coverage: Vec<Coverage> = groups
+        .iter()
+        .map(|group| Coverage {
+            start: group.iter().any(|&a| dfg.is_start(a)),
+            end: group.iter().any(|&a| dfg.is_end(a)),
+        })
+        .collect();
+
+    let groups = complete_parts(groups, &coverage);
+    let cut = Cut::new(
+        OperatorType::Concurrency,
+        super::to_partitions(dfg, &groups),
+    );
+    cut.is_non_trivial().then_some(cut)
+}
+
+/// Merges parts until every part has a start and an end activity (∧.1), keeping as many parts as
+/// possible.
+///
+/// Which part a deficient one joins is not determined by the requirement, and merging greedily
+/// destroys parts unnecessarily: with parts `{a}` (start only), `{b}` (start and end) and `{c}`
+/// (end only), merging `{a}` into `{b}` leaves `{c}` nowhere to go but `{a, b}`, so one part
+/// remains and there is no cut. Merging `{a}` with `{c}` keeps two. Parts that complement each
+/// other are therefore paired up first, and only the rest joins an already complete part.
+///
+/// Several partitions of that maximal size can exist; which one comes out is a choice the
+/// requirements leave open, and other implementations resolve it differently.
+fn complete_parts(groups: Vec<Vec<usize>>, coverage: &[Coverage]) -> Vec<Vec<usize>> {
+    let complete = |c: &Coverage| c.start && c.end;
+
+    let mut absorbing: Vec<usize> = (0..groups.len())
+        .filter(|&i| complete(&coverage[i]))
+        .collect();
+    let missing_end: Vec<usize> = (0..groups.len())
+        .filter(|&i| coverage[i].start && !coverage[i].end)
+        .collect();
+    let missing_start: Vec<usize> = (0..groups.len())
+        .filter(|&i| !coverage[i].start && coverage[i].end)
+        .collect();
+    let missing_both: Vec<usize> = (0..groups.len())
+        .filter(|&i| !coverage[i].start && !coverage[i].end)
+        .collect();
+
+    // `merged_into[i]` is the part that part `i` ends up in.
+    let mut merged_into: Vec<usize> = (0..groups.len()).collect();
+
+    let paired = missing_end.len().min(missing_start.len());
+    for (&with_start, &with_end) in missing_end.iter().zip(&missing_start) {
+        merged_into[with_end] = with_start;
+        absorbing.push(with_start);
+    }
+
+    let leftover: Vec<usize> = missing_end
+        .into_iter()
+        .skip(paired)
+        .chain(missing_start.into_iter().skip(paired))
+        .chain(missing_both)
+        .collect();
+    if !leftover.is_empty() {
+        match absorbing.iter().min() {
+            Some(&target) => leftover.into_iter().for_each(|i| merged_into[i] = target),
+            // Nothing can satisfy ∧.1, so everything collapses into one part and there is no cut.
+            None => merged_into.iter_mut().for_each(|target| *target = 0),
+        }
+    }
+
+    let mut merged: Vec<Option<Vec<usize>>> = vec![None; groups.len()];
+    for (index, group) in groups.into_iter().enumerate() {
+        merged[merged_into[index]]
+            .get_or_insert_with(Vec::new)
+            .extend(group);
+    }
+    merged
+        .into_iter()
+        .flatten()
+        .map(|mut group| {
+            group.sort_unstable();
+            group
+        })
+        .collect()
+}
+
+/// Reports a concurrent cut as an inclusive choice (`∨`) if the log skips parts of it.
+///
+/// A part no trace touches is handed an empty projection and its sub-tree turns optional. With
+/// every part optional the model allows nothing to happen at all, which the log cannot show, since
+/// empty traces are settled before cut detection runs. `∨` drops the empty projections instead, so
+/// `∨(a⁺, b⁺)` replaces `∧(a*, b*)` and loses exactly the empty trace.
+///
+/// *Every* part has to be skipped somewhere, since `∨` makes all of its parts optional: for
+/// `⟨c⟩, ⟨b,c⟩, ⟨c,b,b⟩` the `c` is mandatory and `∨(b⁺, c)` would permit a lone `b`. A part counts
+/// as skipped once more than a fraction `noise_threshold` of the traces leave it out.
+pub fn as_inclusive_choice(log: &ActivityLog, cut: Cut, noise_threshold: f64) -> Cut {
+    let part_of = cut.partition_lookup(log.alphabet_size());
+    let mut skipped_by = vec![0u64; cut.len()];
+    let mut runs = vec![false; cut.len()];
+
+    for variant in log.variants() {
+        runs.fill(false);
+        for &activity in &variant.activities {
+            let part = part_of[activity];
+            if part != usize::MAX {
+                runs[part] = true;
+            }
+        }
+        for (part, &ran) in runs.iter().enumerate() {
+            if !ran {
+                skipped_by[part] += variant.count;
+            }
+        }
+    }
+
+    let noise = noise_threshold * log.num_traces() as f64;
+    if skipped_by.iter().all(|&traces| traces as f64 > noise) {
+        return Cut::new(OperatorType::InclusiveChoice, cut.partitions().to_vec());
+    }
+    cut
+}
+
+#[cfg(test)]
+mod test_concurrent_cut {
+    use super::super::super::dfg::test_utils::dfg_of;
+    use super::super::super::log::test_utils::log_of;
+    use super::super::test_utils::{cut_of, parts};
+    use super::*;
+
+    fn cut(traces: &[&[&str]]) -> Option<Vec<Vec<String>>> {
+        cut_of(traces, |dfg| concurrent_cut(dfg, None))
+    }
+
+    #[test]
+    fn test_concurrent_activities() {
+        assert_eq!(cut(&[&["a", "b"], &["b", "a"]]), parts(&[&["a"], &["b"]]));
+        // c is concurrent to the sequence a, b.
+        assert_eq!(
+            cut(&[&["a", "b", "c"], &["a", "c", "b"], &["c", "a", "b"]]),
+            parts(&[&["a", "b"], &["c"]])
+        );
+        assert_eq!(
+            cut(&[
+                &["a", "b", "c"],
+                &["a", "c", "b"],
+                &["b", "a", "c"],
+                &["b", "c", "a"],
+                &["c", "a", "b"],
+                &["c", "b", "a"],
+            ]),
+            parts(&[&["a"], &["b"], &["c"]])
+        );
+    }
+
+    #[test]
+    fn test_no_cut() {
+        // A sequence, a choice with no edges between the branches, a graph missing the edges
+        // c ↦ a and b ↦ c, and a loop over b in which b neither starts nor ends a trace.
+        assert_eq!(cut(&[&["a", "b", "c"], &["a", "d", "c"]]), None);
+        assert_eq!(cut(&[&["a", "b"], &["c", "d"]]), None);
+        assert_eq!(
+            cut(&[&["b", "a", "c"], &["a", "c", "b"], &["c", "b", "a"]]),
+            None
+        );
+        assert_eq!(cut(&[&["a"], &["a", "b", "a"]]), None);
+    }
+
+    #[test]
+    fn test_minimum_self_distance_prevents_a_cut() {
+        // b sits between the two closest a's, so a loops around b rather than running next to it.
+        let (_, log) = log_of(&[&["a", "b", "a"], &["b", "a", "b"]]);
+        let dfg = ActivityDfg::discover(&log);
+
+        assert!(concurrent_cut(&dfg, None).is_some());
+        assert!(concurrent_cut(&dfg, Some(&MinimumSelfDistance::discover(&log))).is_none());
+    }
+
+    /// All three activities are connected both ways, so only the start and end activities decide.
+    fn triangle(start: &[usize], end: &[usize]) -> ActivityDfg {
+        dfg_of(
+            3,
+            &[(0, 1), (1, 0), (0, 2), (2, 0), (1, 2), (2, 1)],
+            start,
+            end,
+        )
+    }
+
+    #[test]
+    fn test_parts_are_completed_keeping_as_many_as_possible() {
+        // Every part is complete already.
+        let cut = concurrent_cut(&triangle(&[0, 1, 2], &[0, 1, 2]), None).unwrap();
+        assert_eq!(cut.partitions(), &[vec![0], vec![1], vec![2]]);
+
+        // {a} only starts, {b} starts and ends, {c} only ends: pairing a with c keeps two parts.
+        let cut = concurrent_cut(&triangle(&[0, 1], &[1, 2]), None).unwrap();
+        assert_eq!(cut.partitions(), &[vec![0, 2], vec![1]]);
+
+        // {b} neither starts nor ends and has to join a complete part.
+        let cut = concurrent_cut(&triangle(&[0, 2], &[0, 2]), None).unwrap();
+        assert_eq!(cut.len(), 2);
+    }
+
+    #[test]
+    fn test_no_cut_when_parts_cannot_be_completed() {
+        // One start and two ends: a must join one of them, leaving the other without a start.
+        assert!(concurrent_cut(&triangle(&[0], &[1, 2]), None).is_none());
+        assert!(concurrent_cut(&triangle(&[0, 1], &[2]), None).is_none());
+    }
+}

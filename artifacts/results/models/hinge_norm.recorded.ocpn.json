@@ -1,0 +1,1504 @@
+{
+  "places": [
+    {
+      "name": "Facility p0",
+      "object_type": "Facility"
+    },
+    {
+      "name": "Facility p1",
+      "object_type": "Facility"
+    },
+    {
+      "name": "FemalePart p0",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FemalePart p1",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FemalePart p2",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FemalePart p3",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FormedPart p0",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "FormedPart p1",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "FormedPart p2",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "FormedPart p3",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "Hinge p0",
+      "object_type": "Hinge"
+    },
+    {
+      "name": "Hinge p1",
+      "object_type": "Hinge"
+    },
+    {
+      "name": "Hinge p2",
+      "object_type": "Hinge"
+    },
+    {
+      "name": "HingePack p0",
+      "object_type": "HingePack"
+    },
+    {
+      "name": "HingePack p1",
+      "object_type": "HingePack"
+    },
+    {
+      "name": "Machine p0",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p1",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p2",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p3",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p4",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p5",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p6",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p7",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p8",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p9",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p10",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p11",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p12",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p13",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p14",
+      "object_type": "Machine"
+    },
+    {
+      "name": "Machine p15",
+      "object_type": "Machine"
+    },
+    {
+      "name": "MalePart p0",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "MalePart p1",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "MalePart p2",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "MalePart p3",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "SteelCoil p0",
+      "object_type": "SteelCoil"
+    },
+    {
+      "name": "SteelCoil p1",
+      "object_type": "SteelCoil"
+    },
+    {
+      "name": "SteelPin p0",
+      "object_type": "SteelPin"
+    },
+    {
+      "name": "SteelPin p1",
+      "object_type": "SteelPin"
+    },
+    {
+      "name": "SteelSheet p0",
+      "object_type": "SteelSheet"
+    },
+    {
+      "name": "SteelSheet p1",
+      "object_type": "SteelSheet"
+    },
+    {
+      "name": "SteelSheet p2",
+      "object_type": "SteelSheet"
+    },
+    {
+      "name": "SteelSheet p3",
+      "object_type": "SteelSheet"
+    },
+    {
+      "name": "Worker p0",
+      "object_type": "Worker"
+    },
+    {
+      "name": "Worker p1",
+      "object_type": "Worker"
+    },
+    {
+      "name": "Worker p2",
+      "object_type": "Worker"
+    },
+    {
+      "name": "Workstation p0",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p1",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p2",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p3",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p4",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p5",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p6",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p7",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p8",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p9",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p10",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p11",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p12",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p13",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p14",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p15",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p16",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p17",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p18",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p19",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p20",
+      "object_type": "Workstation"
+    },
+    {
+      "name": "Workstation p21",
+      "object_type": "Workstation"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "MoveParts",
+      "label": "MoveParts"
+    },
+    {
+      "name": "Facility tau0",
+      "label": null
+    },
+    {
+      "name": "CuttFemalePart",
+      "label": "CuttFemalePart"
+    },
+    {
+      "name": "CheckFemalePart",
+      "label": "CheckFemalePart"
+    },
+    {
+      "name": "AssembleHinge",
+      "label": "AssembleHinge"
+    },
+    {
+      "name": "FormSteelSheet",
+      "label": "FormSteelSheet"
+    },
+    {
+      "name": "CoatPart",
+      "label": "CoatPart"
+    },
+    {
+      "name": "CuttMalePart",
+      "label": "CuttMalePart"
+    },
+    {
+      "name": "PackHinges",
+      "label": "PackHinges"
+    },
+    {
+      "name": "Machine tau0",
+      "label": null
+    },
+    {
+      "name": "Machine tau1",
+      "label": null
+    },
+    {
+      "name": "Machine tau2",
+      "label": null
+    },
+    {
+      "name": "Machine tau3",
+      "label": null
+    },
+    {
+      "name": "Machine tau4",
+      "label": null
+    },
+    {
+      "name": "Machine tau5",
+      "label": null
+    },
+    {
+      "name": "Machine tau6",
+      "label": null
+    },
+    {
+      "name": "Machine tau7",
+      "label": null
+    },
+    {
+      "name": "Machine tau8",
+      "label": null
+    },
+    {
+      "name": "Machine tau9",
+      "label": null
+    },
+    {
+      "name": "Machine tau10",
+      "label": null
+    },
+    {
+      "name": "Machine tau11",
+      "label": null
+    },
+    {
+      "name": "Machine tau12",
+      "label": null
+    },
+    {
+      "name": "HeatSteelSheet",
+      "label": "HeatSteelSheet"
+    },
+    {
+      "name": "Machine tau13",
+      "label": null
+    },
+    {
+      "name": "Machine tau14",
+      "label": null
+    },
+    {
+      "name": "Machine tau15",
+      "label": null
+    },
+    {
+      "name": "Machine tau16",
+      "label": null
+    },
+    {
+      "name": "Machine tau17",
+      "label": null
+    },
+    {
+      "name": "Machine tau18",
+      "label": null
+    },
+    {
+      "name": "SplitSteelSheet",
+      "label": "SplitSteelSheet"
+    },
+    {
+      "name": "Machine tau19",
+      "label": null
+    },
+    {
+      "name": "CheckMalePart",
+      "label": "CheckMalePart"
+    },
+    {
+      "name": "SteelCoil tau0",
+      "label": null
+    },
+    {
+      "name": "Workstation tau0",
+      "label": null
+    },
+    {
+      "name": "Workstation tau1",
+      "label": null
+    },
+    {
+      "name": "Workstation tau2",
+      "label": null
+    },
+    {
+      "name": "Workstation tau3",
+      "label": null
+    },
+    {
+      "name": "Workstation tau4",
+      "label": null
+    },
+    {
+      "name": "Workstation tau5",
+      "label": null
+    },
+    {
+      "name": "Workstation tau6",
+      "label": null
+    },
+    {
+      "name": "Workstation tau7",
+      "label": null
+    },
+    {
+      "name": "Workstation tau8",
+      "label": null
+    },
+    {
+      "name": "Workstation tau9",
+      "label": null
+    },
+    {
+      "name": "Workstation tau10",
+      "label": null
+    },
+    {
+      "name": "Workstation tau11",
+      "label": null
+    },
+    {
+      "name": "Workstation tau12",
+      "label": null
+    },
+    {
+      "name": "Workstation tau13",
+      "label": null
+    },
+    {
+      "name": "Workstation tau14",
+      "label": null
+    },
+    {
+      "name": "Workstation tau15",
+      "label": null
+    },
+    {
+      "name": "Workstation tau16",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "Facility p0",
+      "target": "MoveParts",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "MoveParts",
+      "target": "Facility p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Facility p1",
+      "target": "Facility tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Facility tau0",
+      "target": "Facility p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FemalePart p0",
+      "target": "CuttFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttFemalePart",
+      "target": "FemalePart p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FemalePart p1",
+      "target": "CheckFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckFemalePart",
+      "target": "FemalePart p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FemalePart p2",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "FemalePart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p0",
+      "target": "FormSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormSteelSheet",
+      "target": "FormedPart p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p1",
+      "target": "CoatPart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CoatPart",
+      "target": "FormedPart p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p2",
+      "target": "CuttFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttFemalePart",
+      "target": "FormedPart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p2",
+      "target": "CuttMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttMalePart",
+      "target": "FormedPart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Hinge p0",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "Hinge p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Hinge p1",
+      "target": "PackHinges",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "PackHinges",
+      "target": "Hinge p2",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "HingePack p0",
+      "target": "PackHinges",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "PackHinges",
+      "target": "HingePack p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p0",
+      "target": "Machine tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau1",
+      "target": "Machine p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau0",
+      "target": "Machine p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p3",
+      "target": "Machine tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p2",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "Machine p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p3",
+      "target": "Machine tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau2",
+      "target": "Machine p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p0",
+      "target": "Machine tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau4",
+      "target": "Machine p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau3",
+      "target": "Machine p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p5",
+      "target": "Machine tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p4",
+      "target": "CoatPart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CoatPart",
+      "target": "Machine p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p5",
+      "target": "Machine tau5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau5",
+      "target": "Machine p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p0",
+      "target": "Machine tau6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau7",
+      "target": "Machine p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau6",
+      "target": "Machine p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p7",
+      "target": "Machine tau7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p6",
+      "target": "CuttFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttFemalePart",
+      "target": "Machine p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p7",
+      "target": "CuttMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttMalePart",
+      "target": "Machine p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p0",
+      "target": "Machine tau8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau9",
+      "target": "Machine p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau8",
+      "target": "Machine p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p9",
+      "target": "Machine tau9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p8",
+      "target": "FormSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormSteelSheet",
+      "target": "Machine p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p9",
+      "target": "Machine tau10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau10",
+      "target": "Machine p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p0",
+      "target": "Machine tau11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau12",
+      "target": "Machine p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau11",
+      "target": "Machine p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p11",
+      "target": "Machine tau12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p10",
+      "target": "HeatSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HeatSteelSheet",
+      "target": "Machine p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p11",
+      "target": "Machine tau13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau13",
+      "target": "Machine p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p0",
+      "target": "Machine tau14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau15",
+      "target": "Machine p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau14",
+      "target": "Machine p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p13",
+      "target": "Machine tau15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p12",
+      "target": "PackHinges",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "PackHinges",
+      "target": "Machine p13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p13",
+      "target": "Machine tau16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau16",
+      "target": "Machine p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p0",
+      "target": "Machine tau17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau18",
+      "target": "Machine p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau17",
+      "target": "Machine p14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p15",
+      "target": "Machine tau18",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p14",
+      "target": "SplitSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SplitSteelSheet",
+      "target": "Machine p15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine p15",
+      "target": "Machine tau19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Machine tau19",
+      "target": "Machine p14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "MalePart p0",
+      "target": "CuttMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttMalePart",
+      "target": "MalePart p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "MalePart p1",
+      "target": "CheckMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckMalePart",
+      "target": "MalePart p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "MalePart p2",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "MalePart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelCoil p0",
+      "target": "SplitSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SplitSteelSheet",
+      "target": "SteelCoil p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelCoil p1",
+      "target": "SteelCoil tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelCoil tau0",
+      "target": "SteelCoil p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelPin p0",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "SteelPin p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelSheet p0",
+      "target": "SplitSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SplitSteelSheet",
+      "target": "SteelSheet p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelSheet p1",
+      "target": "HeatSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HeatSteelSheet",
+      "target": "SteelSheet p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelSheet p2",
+      "target": "FormSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormSteelSheet",
+      "target": "SteelSheet p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Worker p0",
+      "target": "MoveParts",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "MoveParts",
+      "target": "Worker p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Worker p1",
+      "target": "CheckFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckFemalePart",
+      "target": "Worker p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Worker p2",
+      "target": "CheckMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckMalePart",
+      "target": "Worker p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p0",
+      "target": "Workstation tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau1",
+      "target": "Workstation p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau0",
+      "target": "Workstation p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p3",
+      "target": "Workstation tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p2",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "Workstation p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p3",
+      "target": "Workstation tau2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau2",
+      "target": "Workstation p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p3",
+      "target": "PackHinges",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "PackHinges",
+      "target": "Workstation p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p0",
+      "target": "Workstation tau3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau4",
+      "target": "Workstation p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau3",
+      "target": "Workstation p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p5",
+      "target": "Workstation tau4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p4",
+      "target": "CuttFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttFemalePart",
+      "target": "Workstation p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p6",
+      "target": "Workstation tau5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau6",
+      "target": "Workstation p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p7",
+      "target": "Workstation tau7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau7",
+      "target": "Workstation p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p7",
+      "target": "CheckFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckFemalePart",
+      "target": "Workstation p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau5",
+      "target": "Workstation p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p8",
+      "target": "Workstation tau6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p9",
+      "target": "Workstation tau8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau8",
+      "target": "Workstation p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p9",
+      "target": "CheckMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckMalePart",
+      "target": "Workstation p10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau5",
+      "target": "Workstation p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p10",
+      "target": "Workstation tau6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p11",
+      "target": "CuttMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttMalePart",
+      "target": "Workstation p12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau5",
+      "target": "Workstation p11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p12",
+      "target": "Workstation tau6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p5",
+      "target": "Workstation tau9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau9",
+      "target": "Workstation p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p0",
+      "target": "Workstation tau10",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau11",
+      "target": "Workstation p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau10",
+      "target": "Workstation p13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p14",
+      "target": "Workstation tau11",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p13",
+      "target": "SplitSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SplitSteelSheet",
+      "target": "Workstation p15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p15",
+      "target": "Workstation tau12",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau13",
+      "target": "Workstation p14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p16",
+      "target": "Workstation tau14",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau14",
+      "target": "Workstation p17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p16",
+      "target": "CoatPart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CoatPart",
+      "target": "Workstation p17",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau12",
+      "target": "Workstation p16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p17",
+      "target": "Workstation tau13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p18",
+      "target": "Workstation tau15",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau15",
+      "target": "Workstation p19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p18",
+      "target": "FormSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormSteelSheet",
+      "target": "Workstation p19",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau12",
+      "target": "Workstation p18",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p19",
+      "target": "Workstation tau13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p20",
+      "target": "HeatSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HeatSteelSheet",
+      "target": "Workstation p21",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau12",
+      "target": "Workstation p20",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p21",
+      "target": "Workstation tau13",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation p14",
+      "target": "Workstation tau16",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Workstation tau16",
+      "target": "Workstation p13",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "Facility p0": 1,
+    "FemalePart p0": 1,
+    "FormedPart p0": 1,
+    "Hinge p0": 1,
+    "HingePack p0": 1,
+    "Machine p0": 1,
+    "MalePart p0": 1,
+    "SteelCoil p0": 1,
+    "SteelPin p0": 1,
+    "SteelSheet p0": 1,
+    "Worker p0": 1,
+    "Workstation p0": 1
+  },
+  "final_marking": {
+    "Facility p1": 1,
+    "FemalePart p3": 1,
+    "FormedPart p3": 1,
+    "Hinge p2": 1,
+    "HingePack p1": 1,
+    "Machine p1": 1,
+    "MalePart p3": 1,
+    "SteelCoil p1": 1,
+    "SteelPin p1": 1,
+    "SteelSheet p3": 1,
+    "Worker p2": 1,
+    "Workstation p1": 1
+  }
+}

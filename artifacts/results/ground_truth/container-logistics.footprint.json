@@ -1,0 +1,54 @@
+{
+  "log": "ContainerLogistics.xml",
+  "source": "logistics.cpn (main page), derived 2026-08-27; dataset doi:10.5281/zenodo.8428084 (Knopp & Graves 2023, CC BY 4.0)",
+  "status": "author-confirmed 2026-08-27 (Place in Stock position corrected per author + log); Reschedule position still open",
+  "types": {
+    "Container": {
+      "enforced": [
+        ["Order Empty Containers", "Pick Up Empty Container"],
+        ["Pick Up Empty Container", "Load Truck"],
+        ["Load Truck", "Drive to Terminal"],
+        ["Drive to Terminal", "Weigh"],
+        ["Weigh", "Place in Stock"],
+        ["Place in Stock", "Bring to Loading Bay"],
+        ["Place in Stock", "Load to Vehicle"],
+        ["Weigh", "Bring to Loading Bay"],
+        ["Bring to Loading Bay", "Load to Vehicle"],
+        ["Load to Vehicle", "Depart"]
+      ],
+      "uncertain": [
+        ["Reschedule Container", "Load to Vehicle"]
+      ]
+    },
+    "Customer Order": {
+      "enforced": [["Register Customer Order", "Create Transport Document"]]
+    },
+    "Handling Unit": {
+      "enforced": [["Collect Goods", "Load Truck"]]
+    },
+    "Transport Document": {
+      "enforced": [
+        ["Create Transport Document", "Book Vehicles"],
+        ["Book Vehicles", "Order Empty Containers"],
+        ["Create Transport Document", "Order Empty Containers"],
+        ["Book Vehicles", "Depart"],
+        ["Order Empty Containers", "Depart"]
+      ],
+      "uncertain": [["Book Vehicles", "Reschedule Container"]]
+    },
+    "Vehicle": {
+      "enforced": [
+        ["Load to Vehicle", "Depart"],
+        ["Book Vehicles", "Depart"]
+      ],
+      "note": "no Reschedule ordering enforced: the model's Already-Departed variant lets a Reschedule event involve a vehicle after its Depart. (Book Vehicles, Load to Vehicle) is enforced per booking, not per vehicle object: a vehicle serving several transport documents interleaves later bookings with earlier loads, so Def. orders correctly reads the pair both-ways"
+    },
+    "Forklift": { "enforced": [], "note": "cyclic resource" },
+    "Truck": { "enforced": [], "note": "cyclic resource; Load Truck < Drive to Terminal holds per tour, not per truck object" }
+  },
+  "review_points": [
+    "the main page's places are unnamed in the .cpn, so the Container chain is read off colorset flows (Container -> ContainerTruck -> Container -> ContainerForklift -> ...); the Place in Stock cycle (does a stocked container re-enter via Weigh or go to Load to Vehicle directly?) and the Reschedule position could not be pinned without place names",
+    "two transition variants each for Bring to Loading Bay and Reschedule Container (regular and Already-Departed); treated as one activity each",
+    "Set Status (full), Set Status (in transit), Go for Empty Container, customer order, vehicle, TERMINATE and the initializers do not appear in the log and are treated as silent"
+  ]
+}

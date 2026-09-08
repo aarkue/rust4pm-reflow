@@ -1,0 +1,355 @@
+{
+  "aggregates": {
+    "mean_adjusted_precision_unweighted": {
+      "rebuilt": 0.3333333333333333,
+      "recorded": 0.6665151515151515
+    },
+    "min_fitness_rebuilt": 1.0,
+    "types_whose_fitness_falls": []
+  },
+  "assignment": {
+    "absent": [
+      [
+        "Assign Bed",
+        "Bed"
+      ],
+      [
+        "Assign Bed",
+        "Room"
+      ],
+      [
+        "Initial Evaluation",
+        "Nurse"
+      ],
+      [
+        "Insurance Verification",
+        "InsuranceCompany"
+      ],
+      [
+        "Perform Diagnostic Test",
+        "DiagnosticEquipment"
+      ],
+      [
+        "Perform Diagnostic Test",
+        "LabTechnician"
+      ],
+      [
+        "Registration",
+        "Nurse"
+      ]
+    ],
+    "flow": [
+      [
+        "Appointment Scheduling",
+        "Patient"
+      ],
+      [
+        "Assign Bed",
+        "Patient"
+      ],
+      [
+        "Diagnostic Test Order",
+        "Patient"
+      ],
+      [
+        "Initial Evaluation",
+        "Patient"
+      ],
+      [
+        "Insurance Verification",
+        "Patient"
+      ],
+      [
+        "Patient Arrival",
+        "Patient"
+      ],
+      [
+        "Perform Diagnostic Test",
+        "Patient"
+      ],
+      [
+        "Pre-Admission Consultation",
+        "Patient"
+      ],
+      [
+        "Registration",
+        "Patient"
+      ]
+    ],
+    "inv": [
+      [
+        "Diagnostic Test Order",
+        "Physician"
+      ],
+      [
+        "Pre-Admission Consultation",
+        "Physician"
+      ]
+    ],
+    "kept": [
+      [
+        "Appointment Scheduling",
+        "Patient"
+      ],
+      [
+        "Assign Bed",
+        "Patient"
+      ],
+      [
+        "Diagnostic Test Order",
+        "Patient"
+      ],
+      [
+        "Diagnostic Test Order",
+        "Physician"
+      ],
+      [
+        "Initial Evaluation",
+        "Patient"
+      ],
+      [
+        "Insurance Verification",
+        "Patient"
+      ],
+      [
+        "Patient Arrival",
+        "Patient"
+      ],
+      [
+        "Perform Diagnostic Test",
+        "Patient"
+      ],
+      [
+        "Pre-Admission Consultation",
+        "Patient"
+      ],
+      [
+        "Pre-Admission Consultation",
+        "Physician"
+      ],
+      [
+        "Registration",
+        "Patient"
+      ]
+    ]
+  },
+  "log": "04_hospital",
+  "types": {
+    "Bed": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 587,
+      "precision": {
+        "floor": 0.9992269037495168,
+        "rebuilt": 0.9992269037495168,
+        "recorded": 0.9992269037495168
+      }
+    },
+    "DiagnosticEquipment": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 96,
+      "precision": {
+        "floor": 0.9976019184652278,
+        "rebuilt": 0.9976019184652278,
+        "recorded": 0.9976019184652278
+      }
+    },
+    "InsuranceCompany": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 10,
+      "precision": {
+        "floor": 0.9990049751243781,
+        "rebuilt": 0.9990049751243781,
+        "recorded": 0.9990049751243781
+      }
+    },
+    "LabTechnician": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 97,
+      "precision": {
+        "floor": 0.9952153110047847,
+        "rebuilt": 0.9952153110047847,
+        "recorded": 0.9952153110047847
+      }
+    },
+    "Nurse": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.9995454545454545
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 6,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 2,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 399,
+      "precision": {
+        "floor": 0.4998863378040464,
+        "rebuilt": 0.4998863378040464,
+        "recorded": 0.9997726756080928
+      }
+    },
+    "Patient": {
+      "adjusted_precision": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "arcs": {
+        "rebuilt": 20,
+        "recorded": 20,
+        "reduced": 20
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 9,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 2000,
+      "precision": {
+        "floor": 0.10896793921670739,
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      }
+    },
+    "Physician": {
+      "adjusted_precision": {
+        "rebuilt": 0.0,
+        "recorded": 0.0
+      },
+      "arcs": {
+        "rebuilt": 4,
+        "recorded": 8,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 0,
+        "carried": 0,
+        "flow": 0,
+        "inv": 2
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 0.9980166600555335
+      },
+      "objects": 100,
+      "precision": {
+        "floor": 0.6972325485336638,
+        "rebuilt": 0.6972325485336638,
+        "recorded": 0.6972325485336638
+      }
+    },
+    "Room": {
+      "adjusted_precision": {
+        "rebuilt": null,
+        "recorded": null
+      },
+      "arcs": {
+        "rebuilt": 2,
+        "recorded": 4,
+        "reduced": 0
+      },
+      "cells": {
+        "absent": 1,
+        "carried": 0,
+        "flow": 0,
+        "inv": 0
+      },
+      "fitness": {
+        "rebuilt": 1.0,
+        "recorded": 1.0
+      },
+      "objects": 399,
+      "precision": {
+        "floor": 0.9995831596498541,
+        "rebuilt": 0.9995831596498541,
+        "recorded": 0.9995831596498541
+      }
+    }
+  }
+}

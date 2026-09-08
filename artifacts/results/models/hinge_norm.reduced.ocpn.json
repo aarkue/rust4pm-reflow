@@ -1,0 +1,318 @@
+{
+  "places": [
+    {
+      "name": "FemalePart p0",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FemalePart p1",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FemalePart p2",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FemalePart p3",
+      "object_type": "FemalePart"
+    },
+    {
+      "name": "FormedPart p0",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "FormedPart p1",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "FormedPart p2",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "FormedPart p3",
+      "object_type": "FormedPart"
+    },
+    {
+      "name": "Hinge p0",
+      "object_type": "Hinge"
+    },
+    {
+      "name": "Hinge p1",
+      "object_type": "Hinge"
+    },
+    {
+      "name": "Hinge p2",
+      "object_type": "Hinge"
+    },
+    {
+      "name": "MalePart p0",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "MalePart p1",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "MalePart p2",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "MalePart p3",
+      "object_type": "MalePart"
+    },
+    {
+      "name": "SteelSheet p0",
+      "object_type": "SteelSheet"
+    },
+    {
+      "name": "SteelSheet p1",
+      "object_type": "SteelSheet"
+    },
+    {
+      "name": "SteelSheet p2",
+      "object_type": "SteelSheet"
+    },
+    {
+      "name": "SteelSheet p3",
+      "object_type": "SteelSheet"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "CuttFemalePart",
+      "label": "CuttFemalePart"
+    },
+    {
+      "name": "CheckFemalePart",
+      "label": "CheckFemalePart"
+    },
+    {
+      "name": "AssembleHinge",
+      "label": "AssembleHinge"
+    },
+    {
+      "name": "FormSteelSheet",
+      "label": "FormSteelSheet"
+    },
+    {
+      "name": "CoatPart",
+      "label": "CoatPart"
+    },
+    {
+      "name": "CuttMalePart",
+      "label": "CuttMalePart"
+    },
+    {
+      "name": "PackHinges",
+      "label": "PackHinges"
+    },
+    {
+      "name": "CheckMalePart",
+      "label": "CheckMalePart"
+    },
+    {
+      "name": "SplitSteelSheet",
+      "label": "SplitSteelSheet"
+    },
+    {
+      "name": "HeatSteelSheet",
+      "label": "HeatSteelSheet"
+    }
+  ],
+  "arcs": [
+    {
+      "source": "FemalePart p0",
+      "target": "CuttFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttFemalePart",
+      "target": "FemalePart p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FemalePart p1",
+      "target": "CheckFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckFemalePart",
+      "target": "FemalePart p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FemalePart p2",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "FemalePart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p0",
+      "target": "FormSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormSteelSheet",
+      "target": "FormedPart p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p1",
+      "target": "CoatPart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CoatPart",
+      "target": "FormedPart p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p2",
+      "target": "CuttFemalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttFemalePart",
+      "target": "FormedPart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormedPart p2",
+      "target": "CuttMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttMalePart",
+      "target": "FormedPart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Hinge p0",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "Hinge p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Hinge p1",
+      "target": "PackHinges",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "PackHinges",
+      "target": "Hinge p2",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "MalePart p0",
+      "target": "CuttMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CuttMalePart",
+      "target": "MalePart p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "MalePart p1",
+      "target": "CheckMalePart",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "CheckMalePart",
+      "target": "MalePart p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "MalePart p2",
+      "target": "AssembleHinge",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "AssembleHinge",
+      "target": "MalePart p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelSheet p0",
+      "target": "SplitSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SplitSteelSheet",
+      "target": "SteelSheet p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelSheet p1",
+      "target": "HeatSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "HeatSteelSheet",
+      "target": "SteelSheet p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "SteelSheet p2",
+      "target": "FormSteelSheet",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "FormSteelSheet",
+      "target": "SteelSheet p3",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "FemalePart p0": 1,
+    "FormedPart p0": 1,
+    "Hinge p0": 1,
+    "MalePart p0": 1,
+    "SteelSheet p0": 1
+  },
+  "final_marking": {
+    "FemalePart p3": 1,
+    "FormedPart p3": 1,
+    "Hinge p2": 1,
+    "MalePart p3": 1,
+    "SteelSheet p3": 1
+  }
+}

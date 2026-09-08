@@ -1,0 +1,43 @@
+{
+  "log": "order-management.xml",
+  "source": "order-management.cpn (main page), derived 2026-08-27; dataset doi:10.5281/zenodo.8428112 (Knopp & van der Aalst 2023, CC BY 4.0)",
+  "status": "author-confirmed 2026-08-27",
+  "types": {
+    "orders": {
+      "enforced": [
+        ["place order", "confirm order"],
+        ["confirm order", "pay order"],
+        ["confirm order", "payment reminder"],
+        ["payment reminder", "pay order"]
+      ],
+      "repeatable": ["payment reminder"]
+    },
+    "items": {
+      "enforced": [
+        ["place order", "pick item"],
+        ["item out of stock", "reorder item"],
+        ["reorder item", "pick item"],
+        ["item out of stock", "pick item"],
+        ["pick item", "create package"]
+      ],
+      "optional": ["item out of stock", "reorder item"],
+      "repeatable": []
+    },
+    "packages": {
+      "enforced": [
+        ["create package", "send package"],
+        ["send package", "package delivered"],
+        ["send package", "failed delivery"],
+        ["failed delivery", "package delivered"]
+      ],
+      "repeatable": ["failed delivery"]
+    },
+    "employees": { "enforced": [], "note": "resource pool self-loops only" },
+    "customers": { "enforced": [] },
+    "products": { "enforced": [] }
+  },
+  "review_points": [
+    "reminder and failed delivery use consume-o4/emit-o3+o4 loops whose termination lives in guards or SML; written here as repeatable and bounded before pay order / package delivered",
+    "CPN forces pick item < create package per item; the 66 backward votes are all equal-timestamp ties (checked 2026-08-27: zero strictly-earlier cases), and the export preserves no within-tie firing order (document order is activity-grouped, numeric id suffixes are per-activity counters). Def. orders discards ties, so the log lens orders the pair and agrees with the CPN; only the index-voting Python oracle misreads it"
+  ]
+}

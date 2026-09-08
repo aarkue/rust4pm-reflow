@@ -9,6 +9,11 @@ use chrono::DateTime;
 pub(crate) const OCEL_ID_COLUMN: &str = "ocel_id";
 pub(crate) const OCEL_TIME_COLUMN: &str = "ocel_time";
 pub(crate) const OCEL_CHANGED_FIELD: &str = "ocel_changed_field";
+/// A misspelling of [`OCEL_CHANGED_FIELD`] (missing the `d`) seen in the wild.
+///
+/// Never treated as the real column -- it exists only so importers can name the
+/// misspelling in the diagnostic they report.
+pub(crate) const OCEL_CHANGE_FIELD_MISSPELLED: &str = "ocel_change_field";
 pub(crate) const IGNORED_PRAGMA_COLUMNS: [&str; 3] =
     [OCEL_ID_COLUMN, OCEL_TIME_COLUMN, OCEL_CHANGED_FIELD];
 pub(crate) const OCEL_TYPE_MAP_COLUMN: &str = "ocel_type_map";
@@ -30,7 +35,16 @@ pub use duckdb::duckdb_ocel_export::export_ocel_duckdb_to_path;
 #[cfg(feature = "ocel-duckdb")]
 pub use duckdb::duckdb_ocel_import::import_ocel_duckdb_from_con;
 #[cfg(feature = "ocel-duckdb")]
+pub use duckdb::duckdb_ocel_import::import_ocel_duckdb_from_con_with_options;
+#[cfg(feature = "ocel-duckdb")]
 pub use duckdb::duckdb_ocel_import::import_ocel_duckdb_from_path;
+#[cfg(feature = "ocel-duckdb")]
+pub use duckdb::{
+    generate_type_views, read_consolidated_ocel_from_duckdb_path,
+    read_consolidated_slim_ocel_from_duckdb_path, read_ocel_from_duckdb,
+    stream_ocel_file_to_duckdb, stream_ocel_file_to_duckdb_with, write_ocel_to_duckdb,
+    write_ocel_to_duckdb_with, DuckDbImportOptions, DuckDbLinkedOCEL,
+};
 
 #[cfg(feature = "ocel-sqlite")]
 pub use sqlite::sqlite_ocel_export::export_ocel_sqlite_to_path;
@@ -40,12 +54,131 @@ pub use sqlite::sqlite_ocel_export::export_ocel_sqlite_to_vec;
 #[cfg(feature = "ocel-sqlite")]
 pub use sqlite::sqlite_ocel_import::import_ocel_sqlite_from_con;
 #[cfg(feature = "ocel-sqlite")]
+pub use sqlite::sqlite_ocel_import::import_ocel_sqlite_from_con_with_options;
+#[cfg(feature = "ocel-sqlite")]
 pub use sqlite::sqlite_ocel_import::import_ocel_sqlite_from_path;
 #[cfg(feature = "ocel-sqlite")]
 pub use sqlite::sqlite_ocel_import::import_ocel_sqlite_from_slice;
 
 use crate::core::event_data::object_centric::ocel_struct::OCELAttributeType;
 use crate::core::event_data::object_centric::ocel_struct::OCELType;
+use crate::core::event_data::object_centric::ocel_struct::OCELTypeAttribute;
+
+/// Options controlling how strictly a `SQLite`/`DuckDB` OCEL 2.0 file is read.
+///
+/// The OCEL 2.0 specification requires an [`OCEL_CHANGED_FIELD`] column on every
+/// object-type table, so by default a file without it is rejected.
+#[derive(Debug, Clone, Copy, Default)]
+pub struct SqlOcelImportOptions {
+    /// When `true`, an object-type table missing its `ocel_changed_field` column is
+    /// tolerated: every row is read as that object's initial state, as if the column
+    /// existed and were `NULL` everywhere. Default: `false`.
+    pub allow_missing_changed_field: bool,
+}
+
+/// Build the diagnostic for an object-type table missing its required
+/// `ocel_changed_field` column, pointing out a same-shaped misspelling if one is present.
+pub(crate) fn missing_changed_field_message(
+    db_path: Option<&str>,
+    ob_type: &str,
+    table_name: &str,
+    raw_column_names: &[String],
+) -> String {
+    let where_ = db_path.map(|p| format!(" in '{p}'")).unwrap_or_default();
+    let mut msg = format!(
+        "object type '{ob_type}' (table '{table_name}'{where_}) has no '{OCEL_CHANGED_FIELD}' \
+         column. This file does not conform to the OCEL 2.0 SQLite/DuckDB specification, which \
+         requires that column on every object-type table."
+    );
+    if raw_column_names
+        .iter()
+        .any(|n| n == OCEL_CHANGE_FIELD_MISSPELLED)
+    {
+        msg.push_str(&format!(
+            " Note: a column named '{OCEL_CHANGE_FIELD_MISSPELLED}' (missing the 'd') is \
+             present. This looks like a misspelling of '{OCEL_CHANGED_FIELD}', but rust4pm \
+             does not guess at that -- fix the source file to use the standard column name."
+        ));
+    }
+    msg
+}
+
+/// What the columns of one object-type table mean for the import.
+pub(crate) struct ObjectTablePlan {
+    /// The attribute columns, i.e. every column that is not OCEL-reserved.
+    pub attributes: Vec<OCELTypeAttribute>,
+    /// Query for the rows carrying an object's initial state.
+    pub initial_query: String,
+    /// Query for the rows carrying an attribute change, `None` when the table has no
+    /// `ocel_changed_field` column.
+    pub changed_query: Option<String>,
+}
+
+/// Interpret the `PRAGMA table_info` columns of one object-type table.
+///
+/// Both SQL importers read this the same way, so a rejection comes back as a message for the
+/// caller to wrap in its own error type.
+///
+/// # Errors
+/// The table has no `ocel_changed_field` column and `options` does not tolerate that.
+pub(crate) fn plan_object_table(
+    db_path: Option<&str>,
+    ob_type: &str,
+    table_name: &str,
+    raw_ob_columns: Vec<(String, String)>,
+    options: SqlOcelImportOptions,
+) -> Result<ObjectTablePlan, String> {
+    let has_column = |wanted: &str| raw_ob_columns.iter().any(|(name, _)| name == wanted);
+    let has_changed_field = has_column(OCEL_CHANGED_FIELD);
+    if !has_changed_field {
+        if !options.allow_missing_changed_field {
+            let raw_ob_column_names: Vec<String> = raw_ob_columns
+                .iter()
+                .map(|(name, _)| name.clone())
+                .collect();
+            return Err(missing_changed_field_message(
+                db_path,
+                ob_type,
+                table_name,
+                &raw_ob_column_names,
+            ));
+        }
+        if has_column(OCEL_CHANGE_FIELD_MISSPELLED) {
+            eprintln!(
+                "Warning: object type '{ob_type}' (table '{table_name}') has no \
+                 '{OCEL_CHANGED_FIELD}' column but does have a column named \
+                 '{OCEL_CHANGE_FIELD_MISSPELLED}'. This looks like a misspelling, but it is \
+                 imported as a regular attribute, not as change tracking. Fix the source \
+                 file to use '{OCEL_CHANGED_FIELD}'."
+            );
+        }
+    }
+    let attributes: Vec<OCELTypeAttribute> = raw_ob_columns
+        .into_iter()
+        .filter(|(name, _)| !IGNORED_PRAGMA_COLUMNS.contains(&name.as_str()))
+        .map(|(name, atype)| OCELTypeAttribute {
+            name,
+            value_type: sql_type_to_ocel(&atype).to_type_string(),
+        })
+        .collect();
+    // Without `ocel_changed_field` there is nothing to exclude: every row is an object's
+    // initial (and only) state.
+    let (initial_query, changed_query) = if has_changed_field {
+        (
+            format!("SELECT * FROM '{table_name}' WHERE {OCEL_CHANGED_FIELD} IS NULL"),
+            Some(format!(
+                "SELECT * FROM '{table_name}' WHERE {OCEL_CHANGED_FIELD} IS NOT NULL"
+            )),
+        )
+    } else {
+        (format!("SELECT * FROM '{table_name}'"), None)
+    };
+    Ok(ObjectTablePlan {
+        attributes,
+        initial_query,
+        changed_query,
+    })
+}
 
 pub(crate) fn sql_type_to_ocel(s: &str) -> OCELAttributeType {
     match s {

@@ -1,0 +1,193 @@
+{
+  "absent": [],
+  "flow": [
+    [
+      "Approve PO",
+      "Purchase Order"
+    ],
+    [
+      "Approve PR",
+      "Purchase Requisition"
+    ],
+    [
+      "Create PO",
+      "Purchase Order"
+    ],
+    [
+      "Create PO",
+      "Purchase Requisition"
+    ],
+    [
+      "Create PO (Batch)",
+      "Purchase Order"
+    ],
+    [
+      "Create PR",
+      "Purchase Requisition"
+    ],
+    [
+      "Make Payment",
+      "Invoice"
+    ],
+    [
+      "Make Payment",
+      "Supplier"
+    ],
+    [
+      "Receive Goods",
+      "Goods Receipt"
+    ],
+    [
+      "Receive Goods",
+      "Purchase Order"
+    ],
+    [
+      "Receive Invoice",
+      "Purchase Order"
+    ],
+    [
+      "Reject PR",
+      "Purchase Requisition"
+    ],
+    [
+      "Send PO to Supplier",
+      "Purchase Order"
+    ],
+    [
+      "Send PO to Supplier",
+      "Supplier"
+    ],
+    [
+      "Three-way Match - Mismatch Found",
+      "Goods Receipt"
+    ],
+    [
+      "Three-way Match - Mismatch Found",
+      "Invoice"
+    ],
+    [
+      "Three-way Match - Mismatch Found",
+      "Purchase Order"
+    ],
+    [
+      "Three-way Match - Successful",
+      "Purchase Order"
+    ]
+  ],
+  "inv": [
+    [
+      "Create PO (Batch)",
+      "Purchase Requisition"
+    ],
+    [
+      "Make Payment",
+      "Payment"
+    ],
+    [
+      "Receive Invoice",
+      "Invoice"
+    ],
+    [
+      "Three-way Match - Successful",
+      "Goods Receipt"
+    ],
+    [
+      "Three-way Match - Successful",
+      "Invoice"
+    ]
+  ],
+  "measured": [
+    [
+      "Approve PO",
+      "Purchase Order"
+    ],
+    [
+      "Approve PR",
+      "Purchase Requisition"
+    ],
+    [
+      "Create PO",
+      "Purchase Order"
+    ],
+    [
+      "Create PO",
+      "Purchase Requisition"
+    ],
+    [
+      "Create PO (Batch)",
+      "Purchase Order"
+    ],
+    [
+      "Create PO (Batch)",
+      "Purchase Requisition"
+    ],
+    [
+      "Create PR",
+      "Purchase Requisition"
+    ],
+    [
+      "Make Payment",
+      "Invoice"
+    ],
+    [
+      "Make Payment",
+      "Payment"
+    ],
+    [
+      "Make Payment",
+      "Supplier"
+    ],
+    [
+      "Receive Goods",
+      "Goods Receipt"
+    ],
+    [
+      "Receive Goods",
+      "Purchase Order"
+    ],
+    [
+      "Receive Invoice",
+      "Invoice"
+    ],
+    [
+      "Receive Invoice",
+      "Purchase Order"
+    ],
+    [
+      "Reject PR",
+      "Purchase Requisition"
+    ],
+    [
+      "Send PO to Supplier",
+      "Purchase Order"
+    ],
+    [
+      "Send PO to Supplier",
+      "Supplier"
+    ],
+    [
+      "Three-way Match - Mismatch Found",
+      "Goods Receipt"
+    ],
+    [
+      "Three-way Match - Mismatch Found",
+      "Invoice"
+    ],
+    [
+      "Three-way Match - Mismatch Found",
+      "Purchase Order"
+    ],
+    [
+      "Three-way Match - Successful",
+      "Goods Receipt"
+    ],
+    [
+      "Three-way Match - Successful",
+      "Invoice"
+    ],
+    [
+      "Three-way Match - Successful",
+      "Purchase Order"
+    ]
+  ]
+}

@@ -16,11 +16,15 @@ use chrono::{DateTime, FixedOffset};
 pub use index_linked_ocel::IndexLinkedOCEL;
 /// An [`OCEL`] linked through object/event identifiers (i.e., [`String`]s)
 pub mod id_linked_ocel;
+pub mod queryable;
 pub mod slim_linked_ocel;
 
 /// Reverse-E2O lookups grouped by event type
 pub(crate) mod e2o_rev_type_index;
+/// Slim-native fast paths for [`QueryableOCEL::run_query`]/`run_query_fold`; see module docs.
+mod slim_query_exec;
 pub use id_linked_ocel::IDLinkedOCEL;
+pub use queryable::QueryableOCEL;
 pub use slim_linked_ocel::SlimLinkedOCEL;
 
 /// Linked access to an [`OCEL`], making it easy to follow event-to-object and object-to-object relationships, as well as their reverse

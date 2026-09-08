@@ -1,0 +1,550 @@
+{
+  "places": [
+    {
+      "name": "goods receipt p0",
+      "object_type": "goods receipt"
+    },
+    {
+      "name": "goods receipt p1",
+      "object_type": "goods receipt"
+    },
+    {
+      "name": "goods receipt p2",
+      "object_type": "goods receipt"
+    },
+    {
+      "name": "goods receipt p3",
+      "object_type": "goods receipt"
+    },
+    {
+      "name": "goods receipt p4",
+      "object_type": "goods receipt"
+    },
+    {
+      "name": "goods receipt p5",
+      "object_type": "goods receipt"
+    },
+    {
+      "name": "invoice receipt p0",
+      "object_type": "invoice receipt"
+    },
+    {
+      "name": "invoice receipt p1",
+      "object_type": "invoice receipt"
+    },
+    {
+      "name": "invoice receipt p2",
+      "object_type": "invoice receipt"
+    },
+    {
+      "name": "invoice receipt p3",
+      "object_type": "invoice receipt"
+    },
+    {
+      "name": "invoice receipt p4",
+      "object_type": "invoice receipt"
+    },
+    {
+      "name": "material p0",
+      "object_type": "material"
+    },
+    {
+      "name": "material p1",
+      "object_type": "material"
+    },
+    {
+      "name": "material p2",
+      "object_type": "material"
+    },
+    {
+      "name": "payment p0",
+      "object_type": "payment"
+    },
+    {
+      "name": "purchase_order p0",
+      "object_type": "purchase_order"
+    },
+    {
+      "name": "purchase_order p1",
+      "object_type": "purchase_order"
+    },
+    {
+      "name": "purchase_order p2",
+      "object_type": "purchase_order"
+    },
+    {
+      "name": "purchase_order p3",
+      "object_type": "purchase_order"
+    },
+    {
+      "name": "purchase_order p4",
+      "object_type": "purchase_order"
+    },
+    {
+      "name": "purchase_requisition p0",
+      "object_type": "purchase_requisition"
+    },
+    {
+      "name": "purchase_requisition p1",
+      "object_type": "purchase_requisition"
+    },
+    {
+      "name": "purchase_requisition p2",
+      "object_type": "purchase_requisition"
+    },
+    {
+      "name": "purchase_requisition p3",
+      "object_type": "purchase_requisition"
+    },
+    {
+      "name": "quotation p0",
+      "object_type": "quotation"
+    },
+    {
+      "name": "quotation p1",
+      "object_type": "quotation"
+    },
+    {
+      "name": "quotation p2",
+      "object_type": "quotation"
+    },
+    {
+      "name": "quotation p3",
+      "object_type": "quotation"
+    },
+    {
+      "name": "quotation p4",
+      "object_type": "quotation"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "Create Invoice Receipt",
+      "label": "Create Invoice Receipt"
+    },
+    {
+      "name": "Perform Two-Way Match",
+      "label": "Perform Two-Way Match"
+    },
+    {
+      "name": "Execute Payment",
+      "label": "Execute Payment"
+    },
+    {
+      "name": "goods receipt tau0",
+      "label": null
+    },
+    {
+      "name": "Create Goods Receipt",
+      "label": "Create Goods Receipt"
+    },
+    {
+      "name": "invoice receipt tau0",
+      "label": null
+    },
+    {
+      "name": "material tau0",
+      "label": null
+    },
+    {
+      "name": "Create Purchase Requisition",
+      "label": "Create Purchase Requisition"
+    },
+    {
+      "name": "Approve Purchase Requisition",
+      "label": "Approve Purchase Requisition"
+    },
+    {
+      "name": "Delegate Purchase Requisition Approval",
+      "label": "Delegate Purchase Requisition Approval"
+    },
+    {
+      "name": "Create Purchase Order",
+      "label": "Create Purchase Order"
+    },
+    {
+      "name": "Approve Purchase Order",
+      "label": "Approve Purchase Order"
+    },
+    {
+      "name": "purchase_order tau0",
+      "label": null
+    },
+    {
+      "name": "purchase_requisition tau0",
+      "label": null
+    },
+    {
+      "name": "Create Request for Quotation",
+      "label": "Create Request for Quotation"
+    },
+    {
+      "name": "quotation tau0",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "goods receipt p0",
+      "target": "Create Invoice Receipt",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Invoice Receipt",
+      "target": "goods receipt p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "goods receipt p1",
+      "target": "Perform Two-Way Match",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Perform Two-Way Match",
+      "target": "goods receipt p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "goods receipt p3",
+      "target": "Execute Payment",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Execute Payment",
+      "target": "goods receipt p4",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "goods receipt p4",
+      "target": "goods receipt tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "goods receipt tau0",
+      "target": "goods receipt p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "goods receipt p5",
+      "target": "Create Goods Receipt",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Goods Receipt",
+      "target": "goods receipt p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "invoice receipt p0",
+      "target": "Perform Two-Way Match",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Perform Two-Way Match",
+      "target": "invoice receipt p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "invoice receipt p1",
+      "target": "Execute Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Execute Payment",
+      "target": "invoice receipt p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "invoice receipt p3",
+      "target": "Create Invoice Receipt",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Create Invoice Receipt",
+      "target": "invoice receipt p4",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "invoice receipt p4",
+      "target": "invoice receipt tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "invoice receipt tau0",
+      "target": "invoice receipt p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "material p0",
+      "target": "material tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "material tau0",
+      "target": "material p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "material p0",
+      "target": "Create Purchase Requisition",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Create Purchase Requisition",
+      "target": "material p2",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "material p2",
+      "target": "Approve Purchase Requisition",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Approve Purchase Requisition",
+      "target": "material p1",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "material p2",
+      "target": "Delegate Purchase Requisition Approval",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Delegate Purchase Requisition Approval",
+      "target": "material p1",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "payment p0",
+      "target": "Execute Payment",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Execute Payment",
+      "target": "payment p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_order p0",
+      "target": "Create Purchase Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Purchase Order",
+      "target": "purchase_order p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_order p1",
+      "target": "Approve Purchase Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve Purchase Order",
+      "target": "purchase_order p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_order p2",
+      "target": "Create Goods Receipt",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Goods Receipt",
+      "target": "purchase_order p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_order p3",
+      "target": "purchase_order tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_order tau0",
+      "target": "purchase_order p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_order p3",
+      "target": "Execute Payment",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Execute Payment",
+      "target": "purchase_order p4",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "purchase_requisition p0",
+      "target": "purchase_requisition tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_requisition tau0",
+      "target": "purchase_requisition p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_requisition p0",
+      "target": "Create Purchase Requisition",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Purchase Requisition",
+      "target": "purchase_requisition p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_requisition p2",
+      "target": "Approve Purchase Requisition",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Approve Purchase Requisition",
+      "target": "purchase_requisition p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_requisition p2",
+      "target": "Delegate Purchase Requisition Approval",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Delegate Purchase Requisition Approval",
+      "target": "purchase_requisition p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "purchase_requisition p1",
+      "target": "Create Request for Quotation",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Request for Quotation",
+      "target": "purchase_requisition p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "quotation p0",
+      "target": "Create Request for Quotation",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Request for Quotation",
+      "target": "quotation p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "quotation p1",
+      "target": "Create Purchase Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Create Purchase Order",
+      "target": "quotation p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "quotation p3",
+      "target": "Approve Purchase Order",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "Approve Purchase Order",
+      "target": "quotation p4",
+      "type": "variable",
+      "weight": 1
+    },
+    {
+      "source": "quotation p4",
+      "target": "quotation tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "quotation tau0",
+      "target": "quotation p3",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "goods receipt p0": 1,
+    "goods receipt p3": 1,
+    "goods receipt p5": 1,
+    "invoice receipt p0": 1,
+    "invoice receipt p3": 1,
+    "material p0": 1,
+    "payment p0": 1,
+    "purchase_order p0": 1,
+    "purchase_requisition p0": 1,
+    "quotation p0": 1,
+    "quotation p3": 1
+  },
+  "final_marking": {
+    "goods receipt p2": 1,
+    "goods receipt p4": 1,
+    "goods receipt p5": 1,
+    "invoice receipt p2": 1,
+    "invoice receipt p4": 1,
+    "material p1": 1,
+    "payment p0": 1,
+    "purchase_order p4": 1,
+    "purchase_requisition p3": 1,
+    "quotation p2": 1,
+    "quotation p4": 1
+  }
+}

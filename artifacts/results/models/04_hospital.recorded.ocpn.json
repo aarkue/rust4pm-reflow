@@ -1,0 +1,534 @@
+{
+  "places": [
+    {
+      "name": "Bed p0",
+      "object_type": "Bed"
+    },
+    {
+      "name": "Bed p1",
+      "object_type": "Bed"
+    },
+    {
+      "name": "DiagnosticEquipment p0",
+      "object_type": "DiagnosticEquipment"
+    },
+    {
+      "name": "DiagnosticEquipment p1",
+      "object_type": "DiagnosticEquipment"
+    },
+    {
+      "name": "InsuranceCompany p0",
+      "object_type": "InsuranceCompany"
+    },
+    {
+      "name": "InsuranceCompany p1",
+      "object_type": "InsuranceCompany"
+    },
+    {
+      "name": "LabTechnician p0",
+      "object_type": "LabTechnician"
+    },
+    {
+      "name": "LabTechnician p1",
+      "object_type": "LabTechnician"
+    },
+    {
+      "name": "Nurse p0",
+      "object_type": "Nurse"
+    },
+    {
+      "name": "Nurse p1",
+      "object_type": "Nurse"
+    },
+    {
+      "name": "Nurse p2",
+      "object_type": "Nurse"
+    },
+    {
+      "name": "Patient p0",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p1",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p2",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p3",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p4",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p5",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p6",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p7",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p8",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Patient p9",
+      "object_type": "Patient"
+    },
+    {
+      "name": "Physician p0",
+      "object_type": "Physician"
+    },
+    {
+      "name": "Physician p1",
+      "object_type": "Physician"
+    },
+    {
+      "name": "Physician p2",
+      "object_type": "Physician"
+    },
+    {
+      "name": "Physician p3",
+      "object_type": "Physician"
+    },
+    {
+      "name": "Room p0",
+      "object_type": "Room"
+    },
+    {
+      "name": "Room p1",
+      "object_type": "Room"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "Assign Bed",
+      "label": "Assign Bed"
+    },
+    {
+      "name": "Bed tau0",
+      "label": null
+    },
+    {
+      "name": "Perform Diagnostic Test",
+      "label": "Perform Diagnostic Test"
+    },
+    {
+      "name": "DiagnosticEquipment tau0",
+      "label": null
+    },
+    {
+      "name": "Insurance Verification",
+      "label": "Insurance Verification"
+    },
+    {
+      "name": "InsuranceCompany tau0",
+      "label": null
+    },
+    {
+      "name": "LabTechnician tau0",
+      "label": null
+    },
+    {
+      "name": "Registration",
+      "label": "Registration"
+    },
+    {
+      "name": "Initial Evaluation",
+      "label": "Initial Evaluation"
+    },
+    {
+      "name": "Nurse tau0",
+      "label": null
+    },
+    {
+      "name": "Pre-Admission Consultation",
+      "label": "Pre-Admission Consultation"
+    },
+    {
+      "name": "Appointment Scheduling",
+      "label": "Appointment Scheduling"
+    },
+    {
+      "name": "Patient Arrival",
+      "label": "Patient Arrival"
+    },
+    {
+      "name": "Patient tau0",
+      "label": null
+    },
+    {
+      "name": "Diagnostic Test Order",
+      "label": "Diagnostic Test Order"
+    },
+    {
+      "name": "Physician tau0",
+      "label": null
+    },
+    {
+      "name": "Physician tau1",
+      "label": null
+    },
+    {
+      "name": "Room tau0",
+      "label": null
+    }
+  ],
+  "arcs": [
+    {
+      "source": "Bed p0",
+      "target": "Assign Bed",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Assign Bed",
+      "target": "Bed p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Bed p1",
+      "target": "Bed tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Bed tau0",
+      "target": "Bed p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "DiagnosticEquipment p0",
+      "target": "Perform Diagnostic Test",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Perform Diagnostic Test",
+      "target": "DiagnosticEquipment p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "DiagnosticEquipment p1",
+      "target": "DiagnosticEquipment tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "DiagnosticEquipment tau0",
+      "target": "DiagnosticEquipment p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "InsuranceCompany p0",
+      "target": "Insurance Verification",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Insurance Verification",
+      "target": "InsuranceCompany p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "InsuranceCompany p1",
+      "target": "InsuranceCompany tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "InsuranceCompany tau0",
+      "target": "InsuranceCompany p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "LabTechnician p0",
+      "target": "Perform Diagnostic Test",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Perform Diagnostic Test",
+      "target": "LabTechnician p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "LabTechnician p1",
+      "target": "LabTechnician tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "LabTechnician tau0",
+      "target": "LabTechnician p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Nurse p0",
+      "target": "Registration",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Registration",
+      "target": "Nurse p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Nurse p1",
+      "target": "Initial Evaluation",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Initial Evaluation",
+      "target": "Nurse p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Nurse p2",
+      "target": "Nurse tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Nurse tau0",
+      "target": "Nurse p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p0",
+      "target": "Pre-Admission Consultation",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Pre-Admission Consultation",
+      "target": "Patient p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p1",
+      "target": "Insurance Verification",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Insurance Verification",
+      "target": "Patient p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p2",
+      "target": "Appointment Scheduling",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Appointment Scheduling",
+      "target": "Patient p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p3",
+      "target": "Patient Arrival",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient Arrival",
+      "target": "Patient p4",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p4",
+      "target": "Registration",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Registration",
+      "target": "Patient p5",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p5",
+      "target": "Initial Evaluation",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Initial Evaluation",
+      "target": "Patient p6",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p6",
+      "target": "Assign Bed",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Assign Bed",
+      "target": "Patient p7",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p7",
+      "target": "Patient tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient tau0",
+      "target": "Patient p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p7",
+      "target": "Diagnostic Test Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Diagnostic Test Order",
+      "target": "Patient p9",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Patient p9",
+      "target": "Perform Diagnostic Test",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Perform Diagnostic Test",
+      "target": "Patient p8",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Physician p0",
+      "target": "Diagnostic Test Order",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Diagnostic Test Order",
+      "target": "Physician p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Physician p1",
+      "target": "Physician tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Physician tau0",
+      "target": "Physician p0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Physician p2",
+      "target": "Pre-Admission Consultation",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Pre-Admission Consultation",
+      "target": "Physician p3",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Physician p3",
+      "target": "Physician tau1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Physician tau1",
+      "target": "Physician p2",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Room p0",
+      "target": "Assign Bed",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Assign Bed",
+      "target": "Room p1",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Room p1",
+      "target": "Room tau0",
+      "type": "normal",
+      "weight": 1
+    },
+    {
+      "source": "Room tau0",
+      "target": "Room p0",
+      "type": "normal",
+      "weight": 1
+    }
+  ],
+  "initial_marking": {
+    "Bed p0": 1,
+    "DiagnosticEquipment p0": 1,
+    "InsuranceCompany p0": 1,
+    "LabTechnician p0": 1,
+    "Nurse p0": 1,
+    "Patient p0": 1,
+    "Physician p0": 1,
+    "Physician p2": 1,
+    "Room p0": 1
+  },
+  "final_marking": {
+    "Bed p1": 1,
+    "DiagnosticEquipment p1": 1,
+    "InsuranceCompany p1": 1,
+    "LabTechnician p1": 1,
+    "Nurse p2": 1,
+    "Patient p8": 1,
+    "Physician p1": 1,
+    "Physician p3": 1,
+    "Room p1": 1
+  }
+}

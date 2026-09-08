@@ -82,8 +82,15 @@ impl<'a> From<&mut XESParsingTraceStream<'a>> for EventLogActivityProjection {
             *traces.entry(trace_acts).or_insert(0) += 1;
         }
         let mut traces: Vec<_> = traces.into_iter().collect();
-        // Sort by frequency (descending) once
-        traces.sort_by_key(|(_, freq)| std::cmp::Reverse(*freq));
+        // Sort by frequency (descending), breaking ties on the trace itself.
+        //
+        // The variants come out of a `HashMap`, whose iteration order is reseeded per
+        // process, and sorting on frequency alone is stable -- so equal-frequency variants
+        // kept a random relative order and the log was aligned in a different order each
+        // run. Alignment cost is unaffected, but which of several equally optimal alignments
+        // is returned is not, and escaping-edges precision reads exactly that: one Container
+        // Logistics type moved by .25 between runs of identical input.
+        traces.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0)));
         Self {
             activities,
             act_to_index,
@@ -130,7 +137,14 @@ impl From<&EventLog> for EventLogActivityProjection {
             })
             .collect();
         let activity_set: HashSet<&String> = acts_per_trace.iter().flatten().collect();
-        let activities: Vec<String> = activity_set.into_iter().cloned().collect();
+        // Sorted, so the activity indices are the same on every run.
+        //
+        // Draining the set directly took its order from a per-process hash seed, which made
+        // the whole index assignment random. Everything downstream keyed on those indices --
+        // variant identity, the order variants are aligned in, and hence which of several
+        // equally optimal alignments the search returns.
+        let mut activities: Vec<String> = activity_set.into_iter().cloned().collect();
+        activities.sort_unstable();
         let act_to_index: HashMap<String, usize> = activities
             .clone()
             .into_iter()
@@ -147,7 +161,8 @@ impl From<&EventLog> for EventLogActivityProjection {
         });
 
         let mut traces: Vec<_> = traces_set.into_iter().collect();
-        traces.sort_by_key(|(_, freq)| std::cmp::Reverse(*freq));
+        // Deterministic for the same reason as above.
+        traces.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0)));
         EventLogActivityProjection {
             activities,
             act_to_index,

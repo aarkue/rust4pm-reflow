@@ -1,0 +1,238 @@
+{
+  "absent": [
+    [
+      "confirm order",
+      "customers"
+    ],
+    [
+      "confirm order",
+      "employees"
+    ],
+    [
+      "confirm order",
+      "items"
+    ],
+    [
+      "confirm order",
+      "products"
+    ],
+    [
+      "create package",
+      "employees"
+    ],
+    [
+      "create package",
+      "products"
+    ],
+    [
+      "failed delivery",
+      "employees"
+    ],
+    [
+      "failed delivery",
+      "items"
+    ],
+    [
+      "failed delivery",
+      "products"
+    ],
+    [
+      "item out of stock",
+      "products"
+    ],
+    [
+      "package delivered",
+      "employees"
+    ],
+    [
+      "package delivered",
+      "items"
+    ],
+    [
+      "package delivered",
+      "products"
+    ],
+    [
+      "pay order",
+      "items"
+    ],
+    [
+      "pay order",
+      "products"
+    ],
+    [
+      "payment reminder",
+      "products"
+    ],
+    [
+      "pick item",
+      "products"
+    ],
+    [
+      "place order",
+      "customers"
+    ],
+    [
+      "place order",
+      "products"
+    ],
+    [
+      "reorder item",
+      "products"
+    ],
+    [
+      "send package",
+      "employees"
+    ],
+    [
+      "send package",
+      "items"
+    ],
+    [
+      "send package",
+      "products"
+    ]
+  ],
+  "flow": [
+    [
+      "confirm order",
+      "orders"
+    ],
+    [
+      "create package",
+      "items"
+    ],
+    [
+      "create package",
+      "packages"
+    ],
+    [
+      "failed delivery",
+      "packages"
+    ],
+    [
+      "item out of stock",
+      "items"
+    ],
+    [
+      "package delivered",
+      "packages"
+    ],
+    [
+      "pay order",
+      "orders"
+    ],
+    [
+      "payment reminder",
+      "items"
+    ],
+    [
+      "payment reminder",
+      "orders"
+    ],
+    [
+      "pick item",
+      "items"
+    ],
+    [
+      "place order",
+      "items"
+    ],
+    [
+      "place order",
+      "orders"
+    ],
+    [
+      "reorder item",
+      "items"
+    ],
+    [
+      "send package",
+      "packages"
+    ]
+  ],
+  "inv": [
+    [
+      "item out of stock",
+      "employees"
+    ],
+    [
+      "pick item",
+      "employees"
+    ],
+    [
+      "reorder item",
+      "employees"
+    ]
+  ],
+  "measured": [
+    [
+      "confirm order",
+      "orders"
+    ],
+    [
+      "create package",
+      "items"
+    ],
+    [
+      "create package",
+      "packages"
+    ],
+    [
+      "failed delivery",
+      "packages"
+    ],
+    [
+      "item out of stock",
+      "employees"
+    ],
+    [
+      "item out of stock",
+      "items"
+    ],
+    [
+      "package delivered",
+      "packages"
+    ],
+    [
+      "pay order",
+      "orders"
+    ],
+    [
+      "payment reminder",
+      "items"
+    ],
+    [
+      "payment reminder",
+      "orders"
+    ],
+    [
+      "pick item",
+      "employees"
+    ],
+    [
+      "pick item",
+      "items"
+    ],
+    [
+      "place order",
+      "items"
+    ],
+    [
+      "place order",
+      "orders"
+    ],
+    [
+      "reorder item",
+      "employees"
+    ],
+    [
+      "reorder item",
+      "items"
+    ],
+    [
+      "send package",
+      "packages"
+    ]
+  ]
+}

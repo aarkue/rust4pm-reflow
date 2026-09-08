@@ -1,0 +1,238 @@
+{
+  "log": "02_p2p.xml",
+  "path": "logs/02_p2p.xml",
+  "events": 8300,
+  "objects": 4493,
+  "participations": 16827,
+  "activities": [
+    "Approve PO",
+    "Approve PR",
+    "Create PO",
+    "Create PO (Batch)",
+    "Create PR",
+    "Make Payment",
+    "Receive Goods",
+    "Receive Invoice",
+    "Reject PR",
+    "Send PO to Supplier",
+    "Three-way Match - Mismatch Found",
+    "Three-way Match - Successful"
+  ],
+  "cells": 23,
+  "types": {
+    "Goods Receipt": {
+      "objects": 858,
+      "object_share": 0.190964,
+      "participations": 1800,
+      "activities": 3,
+      "df_pairs": 4,
+      "scores": null
+    },
+    "Invoice": {
+      "objects": 858,
+      "object_share": 0.190964,
+      "participations": 2700,
+      "activities": 4,
+      "df_pairs": 8,
+      "scores": null
+    },
+    "Payment": {
+      "objects": 857,
+      "object_share": 0.190741,
+      "participations": 900,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "Purchase Order": {
+      "objects": 870,
+      "object_share": 0.193635,
+      "participations": 5400,
+      "activities": 8,
+      "df_pairs": 20,
+      "scores": null
+    },
+    "Purchase Requisition": {
+      "objects": 1000,
+      "object_share": 0.222568,
+      "participations": 4227,
+      "activities": 5,
+      "df_pairs": 11,
+      "scores": null
+    },
+    "Supplier": {
+      "objects": 50,
+      "object_share": 0.011128,
+      "participations": 1800,
+      "activities": 2,
+      "df_pairs": 1,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "Approve PO\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Approve PR\tPurchase Requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Create PO\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 443
+    },
+    "Create PO\tPurchase Requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 443
+    },
+    "Create PO (Batch)\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 457
+    },
+    "Create PO (Batch)\tPurchase Requisition": {
+      "max": 6,
+      "mean": 3.9037,
+      "events": 457
+    },
+    "Create PR\tPurchase Requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 1000
+    },
+    "Make Payment\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Make Payment\tPayment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Make Payment\tSupplier": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Receive Goods\tGoods Receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Receive Goods\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Receive Invoice\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Receive Invoice\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Reject PR\tPurchase Requisition": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 100
+    },
+    "Send PO to Supplier\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Send PO to Supplier\tSupplier": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 900
+    },
+    "Three-way Match - Mismatch Found\tGoods Receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 77
+    },
+    "Three-way Match - Mismatch Found\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 77
+    },
+    "Three-way Match - Mismatch Found\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 77
+    },
+    "Three-way Match - Successful\tGoods Receipt": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 823
+    },
+    "Three-way Match - Successful\tInvoice": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 823
+    },
+    "Three-way Match - Successful\tPurchase Order": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 823
+    }
+  },
+  "divergence": {
+    "Create PO": [
+      "Purchase Order"
+    ],
+    "Create PO (Batch)": [
+      "Purchase Order"
+    ],
+    "Make Payment": [
+      "Invoice",
+      "Payment",
+      "Supplier"
+    ],
+    "Receive Goods": [
+      "Goods Receipt",
+      "Purchase Order"
+    ],
+    "Receive Invoice": [
+      "Invoice",
+      "Purchase Order"
+    ],
+    "Send PO to Supplier": [
+      "Purchase Order",
+      "Supplier"
+    ],
+    "Three-way Match - Successful": [
+      "Goods Receipt",
+      "Invoice",
+      "Purchase Order"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 35,
+    "df2": 22,
+    "df2_dropped": [
+      "Create PO (Batch) -> Send PO to Supplier",
+      "Make Payment -> Receive Invoice",
+      "Receive Goods -> Receive Invoice",
+      "Receive Goods -> Three-way Match - Successful",
+      "Receive Invoice -> Receive Goods",
+      "Receive Invoice -> Three-way Match - Successful",
+      "Send PO to Supplier -> Create PO",
+      "Send PO to Supplier -> Create PO (Batch)",
+      "Send PO to Supplier -> Make Payment",
+      "Send PO to Supplier -> Receive Goods",
+      "Three-way Match - Successful -> Make Payment",
+      "Three-way Match - Successful -> Receive Goods",
+      "Three-way Match - Successful -> Receive Invoice"
+    ]
+  }
+}

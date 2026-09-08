@@ -1,0 +1,17 @@
+[package]
+name = "ocpn-quality"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Fitness and precision of models discovered before and after ReFlow (Sect. 5 of the paper)"
+
+[dependencies]
+process_mining = { path = "../../", default-features = false, features = ["ocel-sqlite", "token-based-replay"] }
+# Sibling checkout of https://github.com/cpitsch/ee-precision (align-ETC precision), see README.
+ee-precision = { path = "../../../../ee-precision" }
+serde_json = "1"
+
+[patch.crates-io]
+process_mining = { path = "../../" }
+
+[workspace]

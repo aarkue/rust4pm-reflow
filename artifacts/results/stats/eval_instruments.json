@@ -1,0 +1,859 @@
+{
+  "logs": [
+    {
+      "log": "01_o2c",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 0,
+          "only_in_expansion": [],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 0,
+        "drawn": 84,
+        "routed": 0,
+        "routed_multi_hop": 0,
+        "target_pairs": 84,
+        "uncovered": 0,
+        "uncovered_pairs": []
+      },
+      "path": "logs/01_o2c.xml",
+      "performance_seconds_median3": {
+        "import": 0.064023301,
+        "ocdfg_discovery_recorded": 0.046633664,
+        "ocdfg_discovery_reduced": 0.021175787,
+        "ocpn_discovery_recorded": 0.025440766,
+        "ocpn_discovery_reduced": 0.014676455,
+        "reduction": 0.434979789
+      },
+      "size": {
+        "e2o_participations_recorded": 55360,
+        "e2o_participations_reduced": 26572,
+        "file_bytes_recorded": 10493135,
+        "file_bytes_reduced": 7791434
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 5,
+            "spurious": 0,
+            "type": "Invoice"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 15,
+            "spurious": 0,
+            "type": "Order"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "Return"
+          }
+        ],
+        "reduced_arcs": 22,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "02_p2p",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 0,
+          "only_in_expansion": [],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 0,
+        "drawn": 23,
+        "routed": 0,
+        "routed_multi_hop": 0,
+        "target_pairs": 23,
+        "uncovered": 0,
+        "uncovered_pairs": []
+      },
+      "path": "logs/02_p2p.xml",
+      "performance_seconds_median3": {
+        "import": 0.025352558,
+        "ocdfg_discovery_recorded": 0.019447852,
+        "ocdfg_discovery_reduced": 0.012230274,
+        "ocpn_discovery_recorded": 0.008460957,
+        "ocpn_discovery_reduced": 0.007202491,
+        "reduction": 0.191621876
+      },
+      "size": {
+        "e2o_participations_recorded": 16827,
+        "e2o_participations_reduced": 11597,
+        "file_bytes_recorded": 4714045,
+        "file_bytes_reduced": 3730258
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "Goods Receipt"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "Invoice"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 27,
+            "spurious": 0,
+            "type": "Purchase Order"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 3,
+            "spurious": 0,
+            "type": "Purchase Requisition"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 3,
+            "spurious": 0,
+            "type": "Supplier"
+          }
+        ],
+        "reduced_arcs": 37,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "03_hiring",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 60,
+          "only_in_expansion": [
+            [
+              "Approve Job Requisition",
+              "Attend Orientation Training"
+            ],
+            [
+              "Approve Job Requisition",
+              "Candidate Accept Offer"
+            ],
+            [
+              "Approve Job Requisition",
+              "Candidate Reject Offer"
+            ],
+            [
+              "Approve Job Requisition",
+              "Complete Assessment"
+            ],
+            [
+              "Approve Job Requisition",
+              "Complete Background Check"
+            ],
+            [
+              "Approve Job Requisition",
+              "Complete HR Paperwork"
+            ],
+            [
+              "Approve Job Requisition",
+              "Complete Onboarding"
+            ],
+            [
+              "Approve Job Requisition",
+              "Conduct Initial Interview"
+            ],
+            [
+              "Approve Job Requisition",
+              "Conduct Panel Interview"
+            ],
+            [
+              "Approve Job Requisition",
+              "Evaluate Interview"
+            ],
+            [
+              "Approve Job Requisition",
+              "Initiate Background Check"
+            ],
+            [
+              "Approve Job Requisition",
+              "Prepare Offer Letter"
+            ],
+            [
+              "Approve Job Requisition",
+              "Review Assessment"
+            ],
+            [
+              "Approve Job Requisition",
+              "Schedule Initial Interview"
+            ],
+            [
+              "Approve Job Requisition",
+              "Schedule Panel Interview"
+            ],
+            [
+              "Approve Job Requisition",
+              "Screen Resume"
+            ],
+            [
+              "Approve Job Requisition",
+              "Send Assessment"
+            ],
+            [
+              "Approve Job Requisition",
+              "Send Offer Letter"
+            ],
+            [
+              "Approve Job Requisition",
+              "Send Rejection Letter"
+            ],
+            [
+              "Approve Job Requisition",
+              "Start Onboarding"
+            ],
+            [
+              "Create Job Requisition",
+              "Attend Orientation Training"
+            ],
+            [
+              "Create Job Requisition",
+              "Candidate Accept Offer"
+            ],
+            [
+              "Create Job Requisition",
+              "Candidate Reject Offer"
+            ],
+            [
+              "Create Job Requisition",
+              "Complete Assessment"
+            ],
+            [
+              "Create Job Requisition",
+              "Complete Background Check"
+            ],
+            [
+              "Create Job Requisition",
+              "Complete HR Paperwork"
+            ],
+            [
+              "Create Job Requisition",
+              "Complete Onboarding"
+            ],
+            [
+              "Create Job Requisition",
+              "Conduct Initial Interview"
+            ],
+            [
+              "Create Job Requisition",
+              "Conduct Panel Interview"
+            ],
+            [
+              "Create Job Requisition",
+              "Initiate Background Check"
+            ],
+            [
+              "Create Job Requisition",
+              "Schedule Initial Interview"
+            ],
+            [
+              "Create Job Requisition",
+              "Schedule Panel Interview"
+            ],
+            [
+              "Create Job Requisition",
+              "Screen Resume"
+            ],
+            [
+              "Create Job Requisition",
+              "Send Assessment"
+            ],
+            [
+              "Create Job Requisition",
+              "Send Offer Letter"
+            ],
+            [
+              "Create Job Requisition",
+              "Send Rejection Letter"
+            ],
+            [
+              "Create Job Requisition",
+              "Start Onboarding"
+            ],
+            [
+              "Post Job Opening",
+              "Attend Orientation Training"
+            ],
+            [
+              "Post Job Opening",
+              "Candidate Accept Offer"
+            ],
+            [
+              "Post Job Opening",
+              "Candidate Reject Offer"
+            ],
+            [
+              "Post Job Opening",
+              "Complete Assessment"
+            ],
+            [
+              "Post Job Opening",
+              "Complete Background Check"
+            ],
+            [
+              "Post Job Opening",
+              "Complete HR Paperwork"
+            ],
+            [
+              "Post Job Opening",
+              "Complete Onboarding"
+            ],
+            [
+              "Post Job Opening",
+              "Conduct Panel Interview"
+            ],
+            [
+              "Post Job Opening",
+              "Evaluate Interview"
+            ],
+            [
+              "Post Job Opening",
+              "Initiate Background Check"
+            ],
+            [
+              "Post Job Opening",
+              "Prepare Offer Letter"
+            ],
+            [
+              "Post Job Opening",
+              "Review Assessment"
+            ],
+            [
+              "Post Job Opening",
+              "Schedule Panel Interview"
+            ],
+            [
+              "Post Job Opening",
+              "Send Assessment"
+            ],
+            [
+              "Post Job Opening",
+              "Send Offer Letter"
+            ],
+            [
+              "Post Job Opening",
+              "Send Rejection Letter"
+            ],
+            [
+              "Post Job Opening",
+              "Start Onboarding"
+            ]
+          ],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 60,
+        "drawn": 203,
+        "routed": 0,
+        "routed_multi_hop": 0,
+        "target_pairs": 263,
+        "uncovered": 0,
+        "uncovered_pairs": []
+      },
+      "path": "logs/03_hiring.xml",
+      "performance_seconds_median3": {
+        "import": 0.034832353,
+        "ocdfg_discovery_recorded": 0.027262429,
+        "ocdfg_discovery_reduced": 0.016837195,
+        "ocpn_discovery_recorded": 0.018474687,
+        "ocpn_discovery_reduced": 0.014130996,
+        "reduction": 0.333812467
+      },
+      "size": {
+        "e2o_participations_recorded": 34908,
+        "e2o_participations_reduced": 21119,
+        "file_bytes_recorded": 6042246,
+        "file_bytes_reduced": 4587219
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 24,
+            "spurious": 0,
+            "type": "Candidate"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 4,
+            "spurious": 0,
+            "type": "JobRequisition"
+          }
+        ],
+        "reduced_arcs": 28,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "04_hospital",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 0,
+          "only_in_expansion": [],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 0,
+        "drawn": 36,
+        "routed": 0,
+        "routed_multi_hop": 0,
+        "target_pairs": 36,
+        "uncovered": 0,
+        "uncovered_pairs": []
+      },
+      "path": "logs/04_hospital.xml",
+      "performance_seconds_median3": {
+        "import": 0.024764985,
+        "ocdfg_discovery_recorded": 0.020524171,
+        "ocdfg_discovery_reduced": 0.00880625,
+        "ocpn_discovery_recorded": 0.012248712,
+        "ocpn_discovery_reduced": 0.009917211,
+        "reduction": 0.137748145
+      },
+      "size": {
+        "e2o_participations_recorded": 27605,
+        "e2o_participations_reduced": 14642,
+        "file_bytes_recorded": 4369703,
+        "file_bytes_reduced": 3243107
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 8,
+            "spurious": 0,
+            "type": "Patient"
+          }
+        ],
+        "reduced_arcs": 8,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "ContainerLogistics",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 25,
+          "only_in_expansion": [
+            [
+              "Book Vehicles",
+              "Bring to Loading Bay"
+            ],
+            [
+              "Book Vehicles",
+              "Drive to Terminal"
+            ],
+            [
+              "Book Vehicles",
+              "Load Truck"
+            ],
+            [
+              "Book Vehicles",
+              "Load to Vehicle"
+            ],
+            [
+              "Book Vehicles",
+              "Pick Up Empty Container"
+            ],
+            [
+              "Book Vehicles",
+              "Place in Stock"
+            ],
+            [
+              "Book Vehicles",
+              "Weigh"
+            ],
+            [
+              "Collect Goods",
+              "Bring to Loading Bay"
+            ],
+            [
+              "Collect Goods",
+              "Depart"
+            ],
+            [
+              "Collect Goods",
+              "Drive to Terminal"
+            ],
+            [
+              "Collect Goods",
+              "Load to Vehicle"
+            ],
+            [
+              "Collect Goods",
+              "Place in Stock"
+            ],
+            [
+              "Collect Goods",
+              "Reschedule Container"
+            ],
+            [
+              "Collect Goods",
+              "Weigh"
+            ],
+            [
+              "Create Transport Document",
+              "Bring to Loading Bay"
+            ],
+            [
+              "Create Transport Document",
+              "Drive to Terminal"
+            ],
+            [
+              "Create Transport Document",
+              "Load Truck"
+            ],
+            [
+              "Create Transport Document",
+              "Load to Vehicle"
+            ],
+            [
+              "Create Transport Document",
+              "Pick Up Empty Container"
+            ],
+            [
+              "Create Transport Document",
+              "Place in Stock"
+            ],
+            [
+              "Create Transport Document",
+              "Weigh"
+            ]
+          ],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 25,
+        "drawn": 49,
+        "routed": 4,
+        "routed_multi_hop": 0,
+        "target_pairs": 79,
+        "uncovered": 1,
+        "uncovered_pairs": [
+          [
+            "Reschedule Container",
+            "Bring to Loading Bay"
+          ]
+        ]
+      },
+      "path": "logs/ContainerLogistics.xml",
+      "performance_seconds_median3": {
+        "import": 0.05601729,
+        "ocdfg_discovery_recorded": 0.07436319,
+        "ocdfg_discovery_reduced": 0.049806959,
+        "ocpn_discovery_recorded": 0.036853692,
+        "ocpn_discovery_reduced": 0.028998885,
+        "reduction": 2.323838059
+      },
+      "size": {
+        "e2o_participations_recorded": 74272,
+        "e2o_participations_reduced": 50347,
+        "file_bytes_recorded": 11979057,
+        "file_bytes_reduced": 10867952
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 12,
+            "spurious": 0,
+            "type": "Container"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 1,
+            "spurious": 0,
+            "type": "Customer Order"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 1,
+            "spurious": 0,
+            "type": "Handling Unit"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "Transport Document"
+          }
+        ],
+        "reduced_arcs": 16,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "bpic2017-no-W",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 0,
+          "only_in_expansion": [],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 0,
+        "drawn": 65,
+        "routed": 56,
+        "routed_multi_hop": 0,
+        "target_pairs": 122,
+        "uncovered": 1,
+        "uncovered_pairs": [
+          [
+            "O_Cancelled",
+            "O_Refused"
+          ]
+        ]
+      },
+      "path": "logs/bpic2017-no-W.xml.gz",
+      "performance_seconds_median3": {
+        "import": 3.844908083,
+        "ocdfg_discovery_recorded": 4.394769077,
+        "ocdfg_discovery_reduced": 2.311654062,
+        "ocpn_discovery_recorded": 2.39907787,
+        "ocpn_discovery_reduced": 0.993205511,
+        "reduction": 5.173930841
+      },
+      "size": {
+        "e2o_participations_recorded": 866888,
+        "e2o_participations_reduced": 433444,
+        "file_bytes_recorded": 23054357,
+        "file_bytes_reduced": 506400530
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 23,
+            "spurious": 0,
+            "type": "Application"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 14,
+            "spurious": 0,
+            "type": "Offer"
+          }
+        ],
+        "reduced_arcs": 37,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "ocel2-p2p-updated",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 1,
+          "only_in_expansion": [],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 1,
+        "drawn": 14,
+        "routed": 4,
+        "routed_multi_hop": 0,
+        "target_pairs": 19,
+        "uncovered": 0,
+        "uncovered_pairs": []
+      },
+      "path": "logs/ocel2-p2p-updated.xml",
+      "performance_seconds_median3": {
+        "import": 0.070418292,
+        "ocdfg_discovery_recorded": 0.083437419,
+        "ocdfg_discovery_reduced": 0.056271092,
+        "ocpn_discovery_recorded": 0.026672901,
+        "ocpn_discovery_reduced": 0.018479995,
+        "reduction": 0.40282905
+      },
+      "size": {
+        "e2o_participations_recorded": 35927,
+        "e2o_participations_reduced": 20459,
+        "file_bytes_recorded": 17870930,
+        "file_bytes_reduced": 14572128
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 3,
+            "spurious": 0,
+            "type": "goods receipt"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 6,
+            "spurious": 0,
+            "type": "purchase_order"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 4,
+            "spurious": 0,
+            "type": "purchase_requisition"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "quotation"
+          }
+        ],
+        "reduced_arcs": 15,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "order-management",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 12,
+          "only_in_expansion": [],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 12,
+        "drawn": 24,
+        "routed": 0,
+        "routed_multi_hop": 0,
+        "target_pairs": 36,
+        "uncovered": 0,
+        "uncovered_pairs": []
+      },
+      "path": "logs/order-management.xml",
+      "performance_seconds_median3": {
+        "import": 0.075791997,
+        "ocdfg_discovery_recorded": 0.209930619,
+        "ocdfg_discovery_reduced": 0.044639286,
+        "ocpn_discovery_recorded": 0.096299195,
+        "ocpn_discovery_reduced": 0.028529763,
+        "reduction": 3.301069949
+      },
+      "size": {
+        "e2o_participations_recorded": 147385,
+        "e2o_participations_reduced": 38540,
+        "file_bytes_recorded": 15630314,
+        "file_bytes_reduced": 8841824
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 14,
+            "spurious": 0,
+            "type": "items"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 5,
+            "spurious": 0,
+            "type": "orders"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 5,
+            "spurious": 0,
+            "type": "packages"
+          }
+        ],
+        "reduced_arcs": 24,
+        "spurious": 0,
+        "worst_type": null
+      }
+    },
+    {
+      "log": "socel2_hinge",
+      "ordering_preservation": {
+        "chain_check": {
+          "carried": 0,
+          "only_in_expansion": [],
+          "reversed": [],
+          "untimed": []
+        },
+        "chained": 0,
+        "drawn": 15,
+        "routed": 0,
+        "routed_multi_hop": 0,
+        "target_pairs": 15,
+        "uncovered": 0,
+        "uncovered_pairs": []
+      },
+      "path": "logs/socel2_hinge.xml",
+      "performance_seconds_median3": {
+        "import": 0.16508258,
+        "ocdfg_discovery_recorded": 0.278842929,
+        "ocdfg_discovery_reduced": 0.116275952,
+        "ocpn_discovery_recorded": 0.106356507,
+        "ocpn_discovery_reduced": 0.039762079,
+        "reduction": 13.772318483
+      },
+      "size": {
+        "e2o_participations_recorded": 144827,
+        "e2o_participations_reduced": 58663,
+        "file_bytes_recorded": 40176010,
+        "file_bytes_reduced": 29164593
+      },
+      "spliced_directly_follows": {
+        "missing": 0,
+        "per_type": [
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "FemalePart"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 3,
+            "spurious": 0,
+            "type": "FormedPart"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 1,
+            "spurious": 0,
+            "type": "Hinge"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "MalePart"
+          },
+          {
+            "missing": 0,
+            "reduced_arcs": 2,
+            "spurious": 0,
+            "type": "SteelSheet"
+          }
+        ],
+        "reduced_arcs": 10,
+        "spurious": 0,
+        "worst_type": null
+      }
+    }
+  ]
+}

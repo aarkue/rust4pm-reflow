@@ -1,0 +1,211 @@
+{
+  "log": "04_hospital.xml",
+  "path": "logs/04_hospital.xml",
+  "events": 14642,
+  "objects": 3688,
+  "participations": 27605,
+  "activities": [
+    "Appointment Scheduling",
+    "Assign Bed",
+    "Diagnostic Test Order",
+    "Initial Evaluation",
+    "Insurance Verification",
+    "Patient Arrival",
+    "Perform Diagnostic Test",
+    "Pre-Admission Consultation",
+    "Registration"
+  ],
+  "cells": 18,
+  "types": {
+    "Bed": {
+      "objects": 587,
+      "object_share": 0.159165,
+      "participations": 2000,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "DiagnosticEquipment": {
+      "objects": 96,
+      "object_share": 0.02603,
+      "participations": 321,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "InsuranceCompany": {
+      "objects": 10,
+      "object_share": 0.002711,
+      "participations": 2000,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "LabTechnician": {
+      "objects": 97,
+      "object_share": 0.026302,
+      "participations": 321,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    },
+    "Nurse": {
+      "objects": 399,
+      "object_share": 0.108189,
+      "participations": 4000,
+      "activities": 2,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "Patient": {
+      "objects": 2000,
+      "object_share": 0.542299,
+      "participations": 14642,
+      "activities": 9,
+      "df_pairs": 8,
+      "scores": null
+    },
+    "Physician": {
+      "objects": 100,
+      "object_share": 0.027115,
+      "participations": 2321,
+      "activities": 2,
+      "df_pairs": 2,
+      "scores": null
+    },
+    "Room": {
+      "objects": 399,
+      "object_share": 0.108189,
+      "participations": 2000,
+      "activities": 1,
+      "df_pairs": 0,
+      "scores": null
+    }
+  },
+  "multiplicity": {
+    "Appointment Scheduling\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Assign Bed\tBed": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Assign Bed\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Assign Bed\tRoom": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Diagnostic Test Order\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 321
+    },
+    "Diagnostic Test Order\tPhysician": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 321
+    },
+    "Initial Evaluation\tNurse": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Initial Evaluation\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Insurance Verification\tInsuranceCompany": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Insurance Verification\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Patient Arrival\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Perform Diagnostic Test\tDiagnosticEquipment": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 321
+    },
+    "Perform Diagnostic Test\tLabTechnician": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 321
+    },
+    "Perform Diagnostic Test\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 321
+    },
+    "Pre-Admission Consultation\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Pre-Admission Consultation\tPhysician": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Registration\tNurse": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    },
+    "Registration\tPatient": {
+      "max": 1,
+      "mean": 1.0,
+      "events": 2000
+    }
+  },
+  "divergence": {
+    "Assign Bed": [
+      "Bed",
+      "Room"
+    ],
+    "Diagnostic Test Order": [
+      "Physician"
+    ],
+    "Initial Evaluation": [
+      "Nurse"
+    ],
+    "Insurance Verification": [
+      "InsuranceCompany"
+    ],
+    "Perform Diagnostic Test": [
+      "DiagnosticEquipment",
+      "LabTechnician"
+    ],
+    "Pre-Admission Consultation": [
+      "Physician"
+    ],
+    "Registration": [
+      "Nurse"
+    ]
+  },
+  "ordered_pairs": {
+    "recorded": 11,
+    "df2": 8,
+    "df2_dropped": [
+      "Diagnostic Test Order -> Pre-Admission Consultation",
+      "Initial Evaluation -> Registration",
+      "Pre-Admission Consultation -> Diagnostic Test Order"
+    ]
+  }
+}

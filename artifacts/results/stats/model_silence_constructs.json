@@ -1,0 +1,2617 @@
+[
+ {
+  "log": "01_o2c.xml",
+  "cells": [
+   {
+    "type": "CreditNote",
+    "activity": "Issue Credit Note",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Approve Order",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter",
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Handle Payment Discrepancy",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter",
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Issue Payment Reminder",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter",
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Perform Credit Check",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter",
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Process Return Request",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Receive Customer Order",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter",
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Reject Order",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter"
+    ]
+   },
+   {
+    "type": "Customer",
+    "activity": "Send Invoice to Customer",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter",
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Dispute",
+    "activity": "Handle Payment Discrepancy",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Apply Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Generate Invoice",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Handle Payment Discrepancy",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Issue Payment Reminder",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Receive Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Send Invoice to Customer",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Apply Discount",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Approve Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Generate Invoice",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Generate Pick List",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Generate Shipping Label",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Pack Items",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Perform Credit Check",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Process Return Request",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Receive Customer Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Reject Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Schedule Order Fulfillment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Ship Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Order",
+    "activity": "Validate Customer Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Payment",
+    "activity": "Apply Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Payment",
+    "activity": "Receive Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Product",
+    "activity": "Generate Pick List",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Product",
+    "activity": "Pick Items",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Product",
+    "activity": "Update Inventory",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Return",
+    "activity": "Approve Return",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Return",
+    "activity": "Issue Credit Note",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Return",
+    "activity": "Process Return Request",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Shipment",
+    "activity": "Generate Shipping Label",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Shipment",
+    "activity": "Ship Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   }
+  ],
+  "disagreements": []
+ },
+ {
+  "log": "02_p2p.xml",
+  "cells": [
+   {
+    "type": "Goods Receipt",
+    "activity": "Receive Goods",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Goods Receipt",
+    "activity": "Three-way Match - Mismatch Found",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter"
+    ]
+   },
+   {
+    "type": "Goods Receipt",
+    "activity": "Three-way Match - Successful",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Make Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Receive Invoice",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Three-way Match - Mismatch Found",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter"
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Three-way Match - Successful",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Payment",
+    "activity": "Make Payment",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Approve PO",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Create PO",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Create PO (Batch)",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Receive Goods",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Receive Invoice",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Send PO to Supplier",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Three-way Match - Mismatch Found",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter"
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Three-way Match - Successful",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Requisition",
+    "activity": "Approve PR",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Requisition",
+    "activity": "Create PO",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Requisition",
+    "activity": "Create PO (Batch)",
+    "verdict": "silent",
+    "constructs": [
+     "concurrent_cut"
+    ]
+   },
+   {
+    "type": "Purchase Requisition",
+    "activity": "Create PR",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Purchase Requisition",
+    "activity": "Reject PR",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Supplier",
+    "activity": "Make Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Supplier",
+    "activity": "Send PO to Supplier",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   }
+  ],
+  "disagreements": [
+   {
+    "type": "Goods Receipt",
+    "activity": "Three-way Match - Mismatch Found",
+    "direction": "log orders, tree does not",
+    "pairs": [
+     {
+      "pair": [
+       "Receive Goods",
+       "Three-way Match - Mismatch Found"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Goods Receipt",
+    "activity": "Three-way Match - Successful",
+    "direction": "tree orders, log does not",
+    "pairs": [
+     {
+      "pair": [
+       "Receive Goods",
+       "Three-way Match - Successful"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Receive Invoice",
+    "direction": "tree orders, log does not",
+    "pairs": [
+     {
+      "pair": [
+       "Receive Invoice",
+       "Make Payment"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     },
+     {
+      "pair": [
+       "Receive Invoice",
+       "Three-way Match - Successful"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Three-way Match - Mismatch Found",
+    "direction": "log orders, tree does not",
+    "pairs": [
+     {
+      "pair": [
+       "Three-way Match - Mismatch Found",
+       "Make Payment"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Invoice",
+    "activity": "Three-way Match - Successful",
+    "direction": "tree orders, log does not",
+    "pairs": [
+     {
+      "pair": [
+       "Receive Invoice",
+       "Three-way Match - Successful"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     },
+     {
+      "pair": [
+       "Three-way Match - Successful",
+       "Make Payment"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Purchase Order",
+    "activity": "Three-way Match - Mismatch Found",
+    "direction": "log orders, tree does not",
+    "pairs": [
+     {
+      "pair": [
+       "Approve PO",
+       "Three-way Match - Mismatch Found"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     },
+     {
+      "pair": [
+       "Create PO",
+       "Three-way Match - Mismatch Found"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     },
+     {
+      "pair": [
+       "Create PO (Batch)",
+       "Three-way Match - Mismatch Found"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     },
+     {
+      "pair": [
+       "Send PO to Supplier",
+       "Three-way Match - Mismatch Found"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "log": "03_hiring.xml",
+  "cells": [
+   {
+    "type": "Assessment",
+    "activity": "Complete Assessment",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Assessment",
+    "activity": "Review Assessment",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Assessment",
+    "activity": "Send Assessment",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Attend Orientation Training",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Candidate Accept Offer",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Candidate Reject Offer",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Complete Assessment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Complete Background Check",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Complete HR Paperwork",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Complete Onboarding",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Conduct Initial Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Conduct Panel Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Evaluate Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Initiate Background Check",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Prepare Offer Letter",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Review Assessment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Schedule Initial Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Schedule Panel Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Screen Resume",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Send Assessment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Send Offer Letter",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Send Rejection Letter",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Start Onboarding",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Candidate",
+    "activity": "Submit Application",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "HiringManager",
+    "activity": "Create Job Requisition",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "HiringManager",
+    "activity": "Evaluate Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "HiringManager",
+    "activity": "Prepare Offer Letter",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "HiringManager",
+    "activity": "Review Assessment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Interviewer",
+    "activity": "Conduct Panel Interview",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Interviewer",
+    "activity": "Schedule Panel Interview",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "JobRequisition",
+    "activity": "Approve Job Requisition",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "JobRequisition",
+    "activity": "Create Job Requisition",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "JobRequisition",
+    "activity": "Post Job Opening",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "JobRequisition",
+    "activity": "Submit Application",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Recruiter",
+    "activity": "Conduct Initial Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Recruiter",
+    "activity": "Post Job Opening",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Recruiter",
+    "activity": "Schedule Initial Interview",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Recruiter",
+    "activity": "Screen Resume",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   }
+  ],
+  "disagreements": []
+ },
+ {
+  "log": "04_hospital.xml",
+  "cells": [
+   {
+    "type": "Bed",
+    "activity": "Assign Bed",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "DiagnosticEquipment",
+    "activity": "Perform Diagnostic Test",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "InsuranceCompany",
+    "activity": "Insurance Verification",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "LabTechnician",
+    "activity": "Perform Diagnostic Test",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "Nurse",
+    "activity": "Initial Evaluation",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Nurse",
+    "activity": "Registration",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Appointment Scheduling",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Assign Bed",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Diagnostic Test Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Initial Evaluation",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Insurance Verification",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Patient Arrival",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Perform Diagnostic Test",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Pre-Admission Consultation",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Patient",
+    "activity": "Registration",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Physician",
+    "activity": "Diagnostic Test Order",
+    "verdict": "silent",
+    "constructs": [
+     "concurrent_cut"
+    ]
+   },
+   {
+    "type": "Physician",
+    "activity": "Pre-Admission Consultation",
+    "verdict": "silent",
+    "constructs": [
+     "concurrent_cut"
+    ]
+   },
+   {
+    "type": "Room",
+    "activity": "Assign Bed",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   }
+  ],
+  "disagreements": []
+ },
+ {
+  "log": "ocel2-p2p-updated.xml",
+  "cells": [
+   {
+    "type": "goods receipt",
+    "activity": "Create Goods Receipt",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "goods receipt",
+    "activity": "Create Invoice Receipt",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "goods receipt",
+    "activity": "Execute Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "goods receipt",
+    "activity": "Perform Two-Way Match",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "invoice receipt",
+    "activity": "Create Invoice Receipt",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "invoice receipt",
+    "activity": "Execute Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "invoice receipt",
+    "activity": "Perform Two-Way Match",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "material",
+    "activity": "Approve Purchase Requisition",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "material",
+    "activity": "Create Purchase Requisition",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "material",
+    "activity": "Delegate Purchase Requisition Approval",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "payment",
+    "activity": "Execute Payment",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "purchase_order",
+    "activity": "Approve Purchase Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "purchase_order",
+    "activity": "Create Goods Receipt",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "purchase_order",
+    "activity": "Create Purchase Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "purchase_order",
+    "activity": "Execute Payment",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "purchase_requisition",
+    "activity": "Approve Purchase Requisition",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "purchase_requisition",
+    "activity": "Create Purchase Requisition",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "purchase_requisition",
+    "activity": "Create Request for Quotation",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "purchase_requisition",
+    "activity": "Delegate Purchase Requisition Approval",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "quotation",
+    "activity": "Approve Purchase Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "quotation",
+    "activity": "Create Purchase Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "quotation",
+    "activity": "Create Request for Quotation",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   }
+  ],
+  "disagreements": [
+   {
+    "type": "goods receipt",
+    "activity": "Create Goods Receipt",
+    "direction": "tree orders, log does not",
+    "pairs": [
+     {
+      "pair": [
+       "Create Goods Receipt",
+       "Execute Payment"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "log": "ContainerLogistics.xml",
+  "cells": [
+   {
+    "type": "Container",
+    "activity": "Bring to Loading Bay",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Depart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Drive to Terminal",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Load Truck",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Load to Vehicle",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Order Empty Containers",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Pick Up Empty Container",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Place in Stock",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Reschedule Container",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Container",
+    "activity": "Weigh",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Customer Order",
+    "activity": "Create Transport Document",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Customer Order",
+    "activity": "Register Customer Order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Forklift",
+    "activity": "Bring to Loading Bay",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Forklift",
+    "activity": "Load to Vehicle",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Forklift",
+    "activity": "Place in Stock",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Forklift",
+    "activity": "Weigh",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Handling Unit",
+    "activity": "Collect Goods",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Handling Unit",
+    "activity": "Load Truck",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Transport Document",
+    "activity": "Book Vehicles",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Transport Document",
+    "activity": "Create Transport Document",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Transport Document",
+    "activity": "Depart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Transport Document",
+    "activity": "Order Empty Containers",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Transport Document",
+    "activity": "Reschedule Container",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Truck",
+    "activity": "Drive to Terminal",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Truck",
+    "activity": "Load Truck",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Vehicle",
+    "activity": "Book Vehicles",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Vehicle",
+    "activity": "Depart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Vehicle",
+    "activity": "Load to Vehicle",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Vehicle",
+    "activity": "Reschedule Container",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter"
+    ]
+   }
+  ],
+  "disagreements": [
+   {
+    "type": "Vehicle",
+    "activity": "Reschedule Container",
+    "direction": "log orders, tree does not",
+    "pairs": [
+     {
+      "pair": [
+       "Reschedule Container",
+       "Depart"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     },
+     {
+      "pair": [
+       "Reschedule Container",
+       "Load to Vehicle"
+      ],
+      "constructs": [
+       "dropped_by_noise_filter"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "log": "socel2_hinge.xml",
+  "cells": [
+   {
+    "type": "Facility",
+    "activity": "MoveParts",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "FemalePart",
+    "activity": "AssembleHinge",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "FemalePart",
+    "activity": "CheckFemalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "FemalePart",
+    "activity": "CuttFemalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "FormedPart",
+    "activity": "CoatPart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "FormedPart",
+    "activity": "CuttFemalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "FormedPart",
+    "activity": "CuttMalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "FormedPart",
+    "activity": "FormSteelSheet",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Hinge",
+    "activity": "AssembleHinge",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Hinge",
+    "activity": "PackHinges",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "HingePack",
+    "activity": "PackHinges",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "AssembleHinge",
+    "verdict": "silent",
+    "constructs": [
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "CoatPart",
+    "verdict": "silent",
+    "constructs": [
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "CuttFemalePart",
+    "verdict": "silent",
+    "constructs": [
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "CuttMalePart",
+    "verdict": "silent",
+    "constructs": [
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "FormSteelSheet",
+    "verdict": "silent",
+    "constructs": [
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "HeatSteelSheet",
+    "verdict": "silent",
+    "constructs": [
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "PackHinges",
+    "verdict": "silent",
+    "constructs": [
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Machine",
+    "activity": "SplitSteelSheet",
+    "verdict": "silent",
+    "constructs": [
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "MalePart",
+    "activity": "AssembleHinge",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "MalePart",
+    "activity": "CheckMalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "MalePart",
+    "activity": "CuttMalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "SteelCoil",
+    "activity": "SplitSteelSheet",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "SteelPin",
+    "activity": "AssembleHinge",
+    "verdict": "silent",
+    "constructs": [
+     "single_activity"
+    ]
+   },
+   {
+    "type": "SteelSheet",
+    "activity": "FormSteelSheet",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "SteelSheet",
+    "activity": "HeatSteelSheet",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "SteelSheet",
+    "activity": "SplitSteelSheet",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Worker",
+    "activity": "CheckFemalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Worker",
+    "activity": "CheckMalePart",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Worker",
+    "activity": "MoveParts",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "AssembleHinge",
+    "verdict": "silent",
+    "constructs": [
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "CheckFemalePart",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "CheckMalePart",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "CoatPart",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "CuttFemalePart",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "CuttMalePart",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "FormSteelSheet",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "HeatSteelSheet",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "PackHinges",
+    "verdict": "silent",
+    "constructs": [
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "Workstation",
+    "activity": "SplitSteelSheet",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop",
+     "xor_cut"
+    ]
+   }
+  ],
+  "disagreements": [
+   {
+    "type": "Worker",
+    "activity": "CheckFemalePart",
+    "direction": "tree orders, log does not",
+    "pairs": [
+     {
+      "pair": [
+       "MoveParts",
+       "CheckFemalePart"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Worker",
+    "activity": "CheckMalePart",
+    "direction": "tree orders, log does not",
+    "pairs": [
+     {
+      "pair": [
+       "MoveParts",
+       "CheckMalePart"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Worker",
+    "activity": "MoveParts",
+    "direction": "tree orders, log does not",
+    "pairs": [
+     {
+      "pair": [
+       "MoveParts",
+       "CheckFemalePart"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     },
+     {
+      "pair": [
+       "MoveParts",
+       "CheckMalePart"
+      ],
+      "constructs": [
+       "sequence_cut"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "log": "order-management.xml",
+  "cells": [
+   {
+    "type": "customers",
+    "activity": "confirm order",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "customers",
+    "activity": "place order",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "confirm order",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "create package",
+    "verdict": "silent",
+    "constructs": [
+     "dropped_by_noise_filter"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "failed delivery",
+    "verdict": "silent",
+    "constructs": [
+     "concurrent_cut",
+     "dropped_by_noise_filter",
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "item out of stock",
+    "verdict": "silent",
+    "constructs": [
+     "activity_concurrent",
+     "concurrent_cut",
+     "dropped_by_noise_filter",
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "package delivered",
+    "verdict": "silent",
+    "constructs": [
+     "concurrent_cut",
+     "dropped_by_noise_filter",
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "pick item",
+    "verdict": "silent",
+    "constructs": [
+     "activity_concurrent",
+     "concurrent_cut",
+     "dropped_by_noise_filter",
+     "loop_cut",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "reorder item",
+    "verdict": "silent",
+    "constructs": [
+     "activity_concurrent",
+     "concurrent_cut",
+     "dropped_by_noise_filter",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "employees",
+    "activity": "send package",
+    "verdict": "silent",
+    "constructs": [
+     "concurrent_cut",
+     "dropped_by_noise_filter",
+     "xor_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "confirm order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "create package",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "failed delivery",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "item out of stock",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "package delivered",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "pay order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "payment reminder",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "pick item",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "place order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "reorder item",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "items",
+    "activity": "send package",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "orders",
+    "activity": "confirm order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "orders",
+    "activity": "pay order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "orders",
+    "activity": "payment reminder",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "orders",
+    "activity": "place order",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "packages",
+    "activity": "create package",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "packages",
+    "activity": "failed delivery",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "packages",
+    "activity": "package delivered",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "packages",
+    "activity": "send package",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "confirm order",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "create package",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "failed delivery",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "item out of stock",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "package delivered",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "pay order",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "payment reminder",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "pick item",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "place order",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "reorder item",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "products",
+    "activity": "send package",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   }
+  ],
+  "disagreements": []
+ },
+ {
+  "log": "bpic2017-no-W.xml",
+  "cells": [
+   {
+    "type": "Application",
+    "activity": "A_Accepted",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Cancelled",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Complete",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Concept",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Create Application",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Denied",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Incomplete",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Pending",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Submitted",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Application",
+    "activity": "A_Validating",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Accepted",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Cancelled",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Complete",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Concept",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Create Application",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Denied",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Incomplete",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Pending",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Submitted",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "A_Validating",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Accepted",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Cancelled",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Create Offer",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Created",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Refused",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Returned",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Sent (mail and online)",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Case_R",
+    "activity": "O_Sent (online only)",
+    "verdict": "silent",
+    "constructs": [
+     "strict_tau_loop"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Accepted",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Cancelled",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Create Offer",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Created",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Refused",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Returned",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Sent (mail and online)",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   },
+   {
+    "type": "Offer",
+    "activity": "O_Sent (online only)",
+    "verdict": "asserting",
+    "constructs": [
+     "sequence_cut"
+    ]
+   }
+  ],
+  "disagreements": []
+ }
+]

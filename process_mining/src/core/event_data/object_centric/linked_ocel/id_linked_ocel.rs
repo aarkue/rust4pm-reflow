@@ -3,8 +3,11 @@ use std::{
     collections::HashMap,
 };
 
+use chrono::{DateTime, FixedOffset};
+
 use super::LinkedOCELAccess;
 use crate::core::event_data::object_centric::ocel_struct::{OCELEvent, OCELObject, OCELType, OCEL};
+use crate::core::event_data::object_centric::OCELAttributeValue;
 
 impl<'a> LinkedOCELAccess<'a> for IDLinkedOCEL<'a> {
     // Represent objects and events by (String) ID
@@ -190,6 +193,161 @@ impl<'a> LinkedOCELAccess<'a> for IDLinkedOCEL<'a> {
     }
 }
 
+// `LinkedOCELAccess<'a>` here is tied to `IDLinkedOCEL<'a>`'s own `'a` (unlike the
+// Index/Slim backends, which implement it for every lifetime), so `QueryableOCEL`'s
+// fresh-borrow `&'s self` can't be delegated to `LinkedOCELAccess` as `'s` and `'a`
+// don't generally match. Access the fields directly instead of using
+// `impl_queryable_from_linked!`.
+impl<'a> super::QueryableOCEL for IDLinkedOCEL<'a> {
+    type EventRepr = EventID<'a>;
+    type ObjectRepr = ObjectID<'a>;
+    // `&'a str` reprs are already zero-copy borrows out of `self.ocel` (unlike e.g. `String`),
+    // so there's no native int index to reuse here the way `SlimLinkedOCEL`/`IndexLinkedOCEL`
+    // do -- but this handle is exactly as cheap as the `Cow<str>` it replaces (same borrow, no
+    // extra hashing cost either way), so there's no regression from using it as a group key.
+    type EvTypeId = &'a str;
+    type ObTypeId = &'a str;
+
+    fn get_ev_type_id(&self, ev: &Self::EventRepr) -> Self::EvTypeId {
+        self.events.get(ev).unwrap().event_type.as_str()
+    }
+
+    fn get_ob_type_id(&self, ob: &Self::ObjectRepr) -> Self::ObTypeId {
+        self.objects.get(ob).unwrap().object_type.as_str()
+    }
+
+    fn resolve_ev_type(&self, id: Self::EvTypeId) -> Cow<'_, str> {
+        Cow::Borrowed(id)
+    }
+
+    fn resolve_ob_type(&self, id: Self::ObTypeId) -> Cow<'_, str> {
+        Cow::Borrowed(id)
+    }
+
+    fn get_all_evs(&self) -> impl Iterator<Item = Self::EventRepr> + '_ {
+        self.events.keys().copied()
+    }
+
+    fn get_all_obs(&self) -> impl Iterator<Item = Self::ObjectRepr> + '_ {
+        self.objects.keys().copied()
+    }
+
+    fn get_ev_id(&self, ev: &Self::EventRepr) -> Cow<'_, str> {
+        Cow::Borrowed(self.events.get(ev).unwrap().id.as_str())
+    }
+
+    fn get_ob_id(&self, ob: &Self::ObjectRepr) -> Cow<'_, str> {
+        Cow::Borrowed(self.objects.get(ob).unwrap().id.as_str())
+    }
+
+    fn get_ev_type_of(&self, ev: &Self::EventRepr) -> Cow<'_, str> {
+        Cow::Borrowed(self.events.get(ev).unwrap().event_type.as_str())
+    }
+
+    fn get_ob_type_of(&self, ob: &Self::ObjectRepr) -> Cow<'_, str> {
+        Cow::Borrowed(self.objects.get(ob).unwrap().object_type.as_str())
+    }
+
+    fn get_ev_time(&self, ev: &Self::EventRepr) -> DateTime<FixedOffset> {
+        self.events.get(ev).unwrap().time
+    }
+
+    #[inline]
+    fn get_e2o(
+        &self,
+        ev: &Self::EventRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::ObjectRepr)> + '_ {
+        self.e2o_rel
+            .get(ev)
+            .into_iter()
+            .flatten()
+            .map(|(q, o)| (Cow::Borrowed(*q), *o))
+    }
+
+    fn get_ob_attr_vals(
+        &self,
+        ob: &Self::ObjectRepr,
+        name: &str,
+    ) -> impl Iterator<Item = (DateTime<FixedOffset>, OCELAttributeValue)> + '_ {
+        self.objects
+            .get(ob)
+            .into_iter()
+            .flat_map(|o| o.attributes.iter())
+            .filter(|a| a.name == name)
+            .map(|a| (a.time, a.value.clone()))
+            .collect::<Vec<_>>()
+            .into_iter()
+    }
+
+    fn get_e2o_rev(
+        &self,
+        ob: &Self::ObjectRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::EventRepr)> + '_ {
+        self.e2o_rel_rev
+            .get(ob)
+            .into_iter()
+            .flatten()
+            .map(|(q, e)| (Cow::Borrowed(*q), *e))
+    }
+
+    fn get_o2o(
+        &self,
+        ob: &Self::ObjectRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::ObjectRepr)> + '_ {
+        self.o2o_rel
+            .get(ob)
+            .into_iter()
+            .flatten()
+            .map(|(q, o)| (Cow::Borrowed(*q), *o))
+    }
+
+    fn get_o2o_rev(
+        &self,
+        ob: &Self::ObjectRepr,
+    ) -> impl Iterator<Item = (Cow<'_, str>, Self::ObjectRepr)> + '_ {
+        self.o2o_rel_rev
+            .get(ob)
+            .into_iter()
+            .flatten()
+            .map(|(q, o)| (Cow::Borrowed(*q), *o))
+    }
+
+    fn get_obs_of_type(&self, ty: &str) -> impl Iterator<Item = Self::ObjectRepr> + '_ {
+        self.objects_per_type.get(ty).into_iter().flatten().copied()
+    }
+
+    fn get_evs_of_type(&self, ty: &str) -> impl Iterator<Item = Self::EventRepr> + '_ {
+        self.events_per_type.get(ty).into_iter().flatten().copied()
+    }
+
+    fn get_ev_types(&self) -> impl Iterator<Item = Cow<'_, str>> + '_ {
+        self.events_per_type.keys().copied().map(Cow::Borrowed)
+    }
+
+    fn get_ob_types(&self) -> impl Iterator<Item = Cow<'_, str>> + '_ {
+        self.objects_per_type.keys().copied().map(Cow::Borrowed)
+    }
+
+    fn get_ev_attr_val(&self, ev: &Self::EventRepr, name: &str) -> Option<OCELAttributeValue> {
+        self.events
+            .get(ev)
+            .into_iter()
+            .flat_map(|e| e.attributes.iter())
+            .filter(|a| a.name == name)
+            .map(|a| a.value.clone())
+            .next()
+    }
+
+    // In-memory, owned-ref backend (`EventID`/`ObjectID` are `Send + Sync` `&'a str` newtypes)
+    // -> use the rayon-parallel evaluator instead of the trait's sequential default.
+    fn run_query(
+        &self,
+        query: &crate::core::event_data::object_centric::query::Query,
+    ) -> Result<crate::core::event_data::object_centric::query::eval::QueryResult, String> {
+        crate::core::event_data::object_centric::query::eval::evaluate_par(query, self)
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Copy)]
 /// Object identifier in an [`OCEL`]
 pub struct ObjectID<'a>(&'a str);
@@ -322,5 +480,28 @@ impl<'a> From<&'a OCEL> for IDLinkedOCEL<'a> {
             e2o_rel_rev,
             o2o_rel_rev,
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn queryable_matches_linked_for_id() {
+        use crate::core::event_data::object_centric::linked_ocel::QueryableOCEL;
+        let ocel = crate::core::event_data::object_centric::ocel_json::import_ocel_json_path(
+            crate::test_utils::get_test_data_path()
+                .join("ocel")
+                .join("order-management.json"),
+        )
+        .unwrap();
+        let id = IDLinkedOCEL::from_ocel(&ocel);
+
+        // Same first-event type via both traits.
+        let ev = QueryableOCEL::get_all_evs(&id).next().unwrap();
+        let q_type = QueryableOCEL::get_ev_type_of(&id, &ev).into_owned();
+        let l_type = LinkedOCELAccess::get_ev_type_of(&id, &ev).to_string();
+        assert_eq!(q_type, l_type);
     }
 }

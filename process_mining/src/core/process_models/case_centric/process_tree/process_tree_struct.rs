@@ -18,7 +18,10 @@ pub enum LeafLabel {
 ///
 /// Node in a process tree
 ///
-#[derive(Debug, Serialize, Deserialize, JsonSchema)]
+// Renamed for the JSON Schema/binding registry only (leaves the Rust name and wire format
+// untouched): `Node` collides there with the extraction blueprint's unrelated `Node` type.
+#[derive(Debug, Serialize, Deserialize, JsonSchema, PartialEq)]
+#[schemars(rename = "ProcessTreeNode")]
 pub enum Node {
     /// Operator node of a process tree
     Operator(Operator),
@@ -88,12 +91,122 @@ impl Node {
             Node::Leaf(leaf) => leaf.add_to_petri_net(net, in_place, out_place),
         }
     }
+
+    /// Recursively folds this node by merging children that share the same
+    /// associative operator into the current node.
+    ///
+    /// The fold is applied **bottom-up**: children are folded first, and only
+    /// then the current node checks whether any of its (now-folded) children
+    /// can be inlined.
+    ///
+    /// **Example** – `SEQ(SEQ(a, b), c)` becomes `SEQ(a, b, c)`.
+    ///
+    /// Leaf nodes are returned unchanged.
+    pub fn fold(self) -> Self {
+        match self {
+            Node::Leaf(_) => self,
+            Node::Operator(op) => {
+                // Recursively fold all children first (bottom-up).
+                let folded_children: Vec<Node> =
+                    op.children.into_iter().map(|child| child.fold()).collect();
+
+                // If the current operator is associative, inline any child
+                // that carries the same operator type.
+                let mut children = if op.operator_type.is_associative() {
+                    let mut flattened = Vec::with_capacity(folded_children.len());
+                    for child in folded_children {
+                        match child {
+                            Node::Operator(ref inner)
+                                if inner.operator_type == op.operator_type =>
+                            {
+                                // Consume the child and move its children up.
+                                if let Node::Operator(inner) = child {
+                                    flattened.extend(inner.children);
+                                }
+                            }
+                            other => flattened.push(other),
+                        }
+                    }
+                    flattened
+                } else {
+                    folded_children
+                };
+
+                // XOR-specific: at most one tau (silent leaf) is semantically
+                // meaningful as a direct child. Remove duplicates introduced
+                // when EmptyTraces fallthrough shells are folded upward.
+                if op.operator_type == OperatorType::ExclusiveChoice {
+                    let tau = Node::Leaf(Leaf {
+                        activity_label: LeafLabel::Tau,
+                    });
+                    let mut tau_seen = false;
+                    children.retain(|c| {
+                        if *c == tau {
+                            if tau_seen {
+                                return false;
+                            }
+                            tau_seen = true;
+                        }
+                        true
+                    });
+                }
+
+                Node::Operator(Operator {
+                    operator_type: op.operator_type,
+                    children,
+                })
+            }
+        }
+    }
+}
+
+impl std::fmt::Display for LeafLabel {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            LeafLabel::Activity(s) => write!(f, "{s}"),
+            LeafLabel::Tau => write!(f, "tau"),
+        }
+    }
+}
+
+impl std::fmt::Display for Leaf {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.activity_label)
+    }
+}
+
+impl std::fmt::Display for Node {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Node::Leaf(leaf) => write!(f, "{leaf}"),
+            Node::Operator(op) => write!(f, "{op}"),
+        }
+    }
+}
+
+impl std::fmt::Display for Operator {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}(", self.operator_type)?;
+        for (i, child) in self.children.iter().enumerate() {
+            if i > 0 {
+                write!(f, ", ")?;
+            }
+            write!(f, "{child}")?;
+        }
+        write!(f, ")")
+    }
+}
+
+impl std::fmt::Display for ProcessTree {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.root)
+    }
 }
 
 ///
 /// Operator type enum for [`Operator`]
 ///
-#[derive(Debug, Serialize, Deserialize, JsonSchema)]
+#[derive(Debug, Serialize, Deserialize, JsonSchema, PartialEq, Clone, Copy)]
 pub enum OperatorType {
     /// Sequence operator
     Sequence,
@@ -103,10 +216,35 @@ pub enum OperatorType {
     Concurrency,
     /// Loop operator that, if given, restricts a given number of repetitions
     Loop,
+    /// Interleaving operator that all children's behavior needs to be replayed but strictly after
+    /// one another
+    Interleaving,
+    /// Inclusive choice operator
+    InclusiveChoice,
+}
+
+impl OperatorType {
+    /// Returns `true` if this operator is associative.
+    ///
+    /// The associative operators are [`Sequence`](OperatorType::Sequence),
+    /// [`ExclusiveChoice`](OperatorType::ExclusiveChoice), and
+    /// [`Concurrency`](OperatorType::Concurrency).  The [`Loop`](OperatorType::Loop)
+    /// operator is **not** associative because its first child (the body) and
+    /// subsequent children (the redo / exit branches) carry different semantic
+    /// roles, so merging nested loops would change the language.
+    pub fn is_associative(self) -> bool {
+        matches!(
+            self,
+            OperatorType::Sequence
+                | OperatorType::ExclusiveChoice
+                | OperatorType::Concurrency
+                | OperatorType::InclusiveChoice
+        )
+    }
 }
 
 ///
-/// Functionality to translate the operators into ASCII: →, X, ∧, and ↻
+/// Functionality to translate the operators into ASCII: →, X, ∧, ↻, ↔, and ∨
 ///
 impl fmt::Display for OperatorType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -122,6 +260,12 @@ impl fmt::Display for OperatorType {
             }
             OperatorType::Loop => {
                 write!(f, "↻")
+            }
+            OperatorType::Interleaving => {
+                write!(f, "↔")
+            }
+            OperatorType::InclusiveChoice => {
+                write!(f, "∨")
             }
         }
     }
@@ -141,6 +285,15 @@ impl ProcessTree {
     ///
     pub fn new(root: Node) -> Self {
         Self { root }
+    }
+
+    /// Folds the process tree by merging nodes whose operator is associative.
+    ///
+    /// The fold is applied recursively bottom-up across the entire tree, so
+    /// arbitrarily deep chains of the same associative operator are fully
+    /// collapsed into a single flat node.
+    pub fn fold(self) -> Self {
+        ProcessTree::new(self.root.fold())
     }
 
     ///
@@ -264,7 +417,7 @@ impl ProcessTree {
 ///
 /// An operator node in a process tree
 ///
-#[derive(Debug, Serialize, Deserialize, JsonSchema)]
+#[derive(Debug, Serialize, Deserialize, JsonSchema, PartialEq)]
 pub struct Operator {
     /// The [`OperatorType`] of the tree itself
     pub operator_type: OperatorType,
@@ -416,6 +569,188 @@ impl Operator {
                     child.add_to_petri_net(net, Some(child_start), Some(child_end));
                 })
             }
+            OperatorType::Interleaving => {
+                let tau_start_transition = net.add_transition(None, None);
+                let tau_end_transition = net.add_transition(None, None);
+
+                net.add_arc(
+                    ArcType::place_to_transition(in_place, tau_start_transition),
+                    None,
+                );
+                net.add_arc(
+                    ArcType::transition_to_place(tau_end_transition, out_place),
+                    None,
+                );
+
+                let critical_section_place = net.add_place(None);
+
+                net.add_arc(
+                    ArcType::transition_to_place(tau_start_transition, critical_section_place),
+                    None,
+                );
+                net.add_arc(
+                    ArcType::place_to_transition(critical_section_place, tau_end_transition),
+                    None,
+                );
+
+                self.children.iter().for_each(|child| {
+                    let start_place = net.add_place(None);
+                    let critical_start_transition = net.add_transition(None, None);
+                    let critical_start_place = net.add_place(None);
+                    let critical_end_place = net.add_place(None);
+                    let critical_end_transition = net.add_transition(None, None);
+                    let end_place = net.add_place(None);
+
+                    net.add_arc(
+                        ArcType::transition_to_place(tau_start_transition, start_place),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(
+                            critical_section_place,
+                            critical_start_transition,
+                        ),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(start_place, critical_start_transition),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::transition_to_place(
+                            critical_start_transition,
+                            critical_start_place,
+                        ),
+                        None,
+                    );
+
+                    child.add_to_petri_net(
+                        net,
+                        Some(critical_start_place),
+                        Some(critical_end_place),
+                    );
+
+                    net.add_arc(
+                        ArcType::place_to_transition(critical_end_place, critical_end_transition),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::transition_to_place(
+                            critical_end_transition,
+                            critical_section_place,
+                        ),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::transition_to_place(critical_end_transition, end_place),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(end_place, tau_end_transition),
+                        None,
+                    );
+                })
+            }
+            OperatorType::InclusiveChoice => {
+                let tau_start_transition = net.add_transition(None, None);
+                let tau_end_transition = net.add_transition(None, None);
+                let inclusivity_place = net.add_place(None);
+                let inclusivity_fulfilled_place = net.add_place(None);
+
+                net.add_arc(
+                    ArcType::place_to_transition(in_place, tau_start_transition),
+                    None,
+                );
+                net.add_arc(
+                    ArcType::transition_to_place(tau_end_transition, out_place),
+                    None,
+                );
+                net.add_arc(
+                    ArcType::transition_to_place(tau_start_transition, inclusivity_place),
+                    None,
+                );
+                net.add_arc(
+                    ArcType::place_to_transition(inclusivity_fulfilled_place, tau_end_transition),
+                    None,
+                );
+
+                self.children.iter().for_each(|child| {
+                    let start_child_place = net.add_place(None);
+                    let intermediate_child_place = net.add_place(None);
+                    let end_child_place = net.add_place(None);
+
+                    net.add_arc(
+                        ArcType::transition_to_place(tau_start_transition, start_child_place),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(end_child_place, tau_end_transition),
+                        None,
+                    );
+
+                    child.add_to_petri_net(
+                        net,
+                        Some(intermediate_child_place),
+                        Some(end_child_place),
+                    );
+
+                    let first_transition = net.add_transition(None, None);
+                    let later_transition = net.add_transition(None, None);
+                    let skip_transition = net.add_transition(None, None);
+
+                    net.add_arc(
+                        ArcType::place_to_transition(start_child_place, first_transition),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(start_child_place, later_transition),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(start_child_place, skip_transition),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::transition_to_place(first_transition, intermediate_child_place),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::transition_to_place(later_transition, intermediate_child_place),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::transition_to_place(skip_transition, end_child_place),
+                        None,
+                    );
+
+                    net.add_arc(
+                        ArcType::place_to_transition(inclusivity_place, first_transition),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::transition_to_place(first_transition, inclusivity_fulfilled_place),
+                        None,
+                    );
+
+                    net.add_arc(
+                        ArcType::transition_to_place(later_transition, inclusivity_fulfilled_place),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(inclusivity_fulfilled_place, later_transition),
+                        None,
+                    );
+
+                    net.add_arc(
+                        ArcType::transition_to_place(skip_transition, inclusivity_fulfilled_place),
+                        None,
+                    );
+                    net.add_arc(
+                        ArcType::place_to_transition(inclusivity_fulfilled_place, skip_transition),
+                        None,
+                    );
+                })
+            }
         }
 
         (in_place, out_place)
@@ -426,6 +761,7 @@ impl Operator {
 ///
 /// A leaf in a process tree
 ///
+#[derive(PartialEq)]
 pub struct Leaf {
     /// The silent or non-silent activity label [`LeafLabel`]
     pub activity_label: LeafLabel,
@@ -487,6 +823,192 @@ mod tests {
     use crate::core::process_models::case_centric::process_tree::process_tree_struct::{
         Leaf, Node, Operator, OperatorType, ProcessTree,
     };
+
+    // ── folding tests ────────────────────────────────────────────────────────
+
+    #[test]
+    fn fold_flat_sequence_unchanged() {
+        // SEQ(a, b, c) has no nested SEQ, so the tree must be returned as-is.
+        let mut seq = Operator::new(OperatorType::Sequence);
+        seq.children.push(Node::new_leaf(Some("a".into())));
+        seq.children.push(Node::new_leaf(Some("b".into())));
+        seq.children.push(Node::new_leaf(Some("c".into())));
+        let pt = ProcessTree::new(Node::Operator(seq)).fold();
+
+        let mut expected = Operator::new(OperatorType::Sequence);
+        expected.children.push(Node::new_leaf(Some("a".into())));
+        expected.children.push(Node::new_leaf(Some("b".into())));
+        expected.children.push(Node::new_leaf(Some("c".into())));
+        assert_eq!(pt.root, Node::Operator(expected));
+    }
+
+    #[test]
+    fn fold_nested_sequence() {
+        // SEQ(SEQ(a, b), c)  →  SEQ(a, b, c)
+        let mut inner = Operator::new(OperatorType::Sequence);
+        inner.children.push(Node::new_leaf(Some("a".into())));
+        inner.children.push(Node::new_leaf(Some("b".into())));
+
+        let mut outer = Operator::new(OperatorType::Sequence);
+        outer.children.push(Node::Operator(inner));
+        outer.children.push(Node::new_leaf(Some("c".into())));
+
+        let pt = ProcessTree::new(Node::Operator(outer)).fold();
+
+        let mut expected = Operator::new(OperatorType::Sequence);
+        expected.children.push(Node::new_leaf(Some("a".into())));
+        expected.children.push(Node::new_leaf(Some("b".into())));
+        expected.children.push(Node::new_leaf(Some("c".into())));
+        assert_eq!(pt.root, Node::Operator(expected));
+    }
+
+    #[test]
+    fn fold_deeply_nested_sequence() {
+        // SEQ(SEQ(SEQ(a, b), c), d)  →  SEQ(a, b, c, d)
+        let mut innermost = Operator::new(OperatorType::Sequence);
+        innermost.children.push(Node::new_leaf(Some("a".into())));
+        innermost.children.push(Node::new_leaf(Some("b".into())));
+
+        let mut middle = Operator::new(OperatorType::Sequence);
+        middle.children.push(Node::Operator(innermost));
+        middle.children.push(Node::new_leaf(Some("c".into())));
+
+        let mut outer = Operator::new(OperatorType::Sequence);
+        outer.children.push(Node::Operator(middle));
+        outer.children.push(Node::new_leaf(Some("d".into())));
+
+        let pt = ProcessTree::new(Node::Operator(outer)).fold();
+
+        let mut expected = Operator::new(OperatorType::Sequence);
+        expected.children.push(Node::new_leaf(Some("a".into())));
+        expected.children.push(Node::new_leaf(Some("b".into())));
+        expected.children.push(Node::new_leaf(Some("c".into())));
+        expected.children.push(Node::new_leaf(Some("d".into())));
+        assert_eq!(pt.root, Node::Operator(expected));
+    }
+
+    #[test]
+    fn fold_xor_nested() {
+        // XOR(XOR(a, b), c)  →  XOR(a, b, c)
+        let mut inner = Operator::new(OperatorType::ExclusiveChoice);
+        inner.children.push(Node::new_leaf(Some("a".into())));
+        inner.children.push(Node::new_leaf(Some("b".into())));
+
+        let mut outer = Operator::new(OperatorType::ExclusiveChoice);
+        outer.children.push(Node::Operator(inner));
+        outer.children.push(Node::new_leaf(Some("c".into())));
+
+        let pt = ProcessTree::new(Node::Operator(outer)).fold();
+
+        let mut expected = Operator::new(OperatorType::ExclusiveChoice);
+        expected.children.push(Node::new_leaf(Some("a".into())));
+        expected.children.push(Node::new_leaf(Some("b".into())));
+        expected.children.push(Node::new_leaf(Some("c".into())));
+        assert_eq!(pt.root, Node::Operator(expected));
+    }
+
+    #[test]
+    fn fold_concurrency_nested() {
+        // AND(AND(a, b), c)  →  AND(a, b, c)
+        let mut inner = Operator::new(OperatorType::Concurrency);
+        inner.children.push(Node::new_leaf(Some("a".into())));
+        inner.children.push(Node::new_leaf(Some("b".into())));
+
+        let mut outer = Operator::new(OperatorType::Concurrency);
+        outer.children.push(Node::Operator(inner));
+        outer.children.push(Node::new_leaf(Some("c".into())));
+
+        let pt = ProcessTree::new(Node::Operator(outer)).fold();
+
+        let mut expected = Operator::new(OperatorType::Concurrency);
+        expected.children.push(Node::new_leaf(Some("a".into())));
+        expected.children.push(Node::new_leaf(Some("b".into())));
+        expected.children.push(Node::new_leaf(Some("c".into())));
+        assert_eq!(pt.root, Node::Operator(expected));
+    }
+
+    #[test]
+    fn fold_does_not_merge_different_operators() {
+        // SEQ(XOR(a, b), c): a different operator, so it stays unchanged.
+        // Build two identical XOR nodes: one for the input, one for expected.
+        let make_inner = || {
+            let mut xor = Operator::new(OperatorType::ExclusiveChoice);
+            xor.children.push(Node::new_leaf(Some("a".into())));
+            xor.children.push(Node::new_leaf(Some("b".into())));
+            xor
+        };
+
+        let mut outer = Operator::new(OperatorType::Sequence);
+        outer.children.push(Node::Operator(make_inner()));
+        outer.children.push(Node::new_leaf(Some("c".into())));
+
+        let pt = ProcessTree::new(Node::Operator(outer)).fold();
+
+        let mut expected_outer = Operator::new(OperatorType::Sequence);
+        expected_outer.children.push(Node::Operator(make_inner()));
+        expected_outer
+            .children
+            .push(Node::new_leaf(Some("c".into())));
+        assert_eq!(pt.root, Node::Operator(expected_outer));
+    }
+
+    #[test]
+    fn fold_does_not_merge_loop() {
+        // LOOP(LOOP(a, tau), tau): Loop is not associative, so it stays unchanged.
+        let make_inner = || {
+            let mut lp = Operator::new(OperatorType::Loop);
+            lp.children.push(Node::new_leaf(Some("a".into())));
+            lp.children.push(Node::new_leaf(None));
+            lp
+        };
+
+        let mut outer = Operator::new(OperatorType::Loop);
+        outer.children.push(Node::Operator(make_inner()));
+        outer.children.push(Node::new_leaf(None));
+
+        let pt = ProcessTree::new(Node::Operator(outer)).fold();
+
+        let mut expected = Operator::new(OperatorType::Loop);
+        expected.children.push(Node::Operator(make_inner()));
+        expected.children.push(Node::new_leaf(None));
+        assert_eq!(pt.root, Node::Operator(expected));
+    }
+
+    #[test]
+    fn fold_mixed_tree() {
+        // SEQ( SEQ(a, b), LOOP(c, tau), SEQ(d, e) )
+        // The two SEQ children get merged; the LOOP stays in place.
+        // Result: SEQ(a, b, LOOP(c, tau), d, e)
+        let make_loop = || {
+            let mut lp = Operator::new(OperatorType::Loop);
+            lp.children.push(Node::new_leaf(Some("c".into())));
+            lp.children.push(Node::new_leaf(None));
+            lp
+        };
+
+        let mut seq1 = Operator::new(OperatorType::Sequence);
+        seq1.children.push(Node::new_leaf(Some("a".into())));
+        seq1.children.push(Node::new_leaf(Some("b".into())));
+
+        let mut seq2 = Operator::new(OperatorType::Sequence);
+        seq2.children.push(Node::new_leaf(Some("d".into())));
+        seq2.children.push(Node::new_leaf(Some("e".into())));
+
+        let mut root = Operator::new(OperatorType::Sequence);
+        root.children.push(Node::Operator(seq1));
+        root.children.push(Node::Operator(make_loop()));
+        root.children.push(Node::Operator(seq2));
+
+        let pt = ProcessTree::new(Node::Operator(root)).fold();
+
+        let mut expected = Operator::new(OperatorType::Sequence);
+        expected.children.push(Node::new_leaf(Some("a".into())));
+        expected.children.push(Node::new_leaf(Some("b".into())));
+        expected.children.push(Node::Operator(make_loop()));
+        expected.children.push(Node::new_leaf(Some("d".into())));
+        expected.children.push(Node::new_leaf(Some("e".into())));
+        assert_eq!(pt.root, Node::Operator(expected));
+    }
 
     #[test]
     fn is_valid_test() {
@@ -653,6 +1175,44 @@ mod tests {
         assert_eq!(2, net.places.len());
         assert_eq!(3, net.transitions.len());
         assert_eq!(6, net.arcs.len());
+    }
+
+    // Checking Inter(a,b,c)
+    #[test]
+    fn interleaving_test() {
+        let mut inter = Operator::new(OperatorType::Interleaving);
+        let leaf_a = Leaf::new(Some("a".to_string()));
+        let leaf_b = Leaf::new(Some("b".to_string()));
+        let leaf_c = Leaf::new(Some("c".to_string()));
+        inter.children.push(Node::Leaf(leaf_a));
+        inter.children.push(Node::Leaf(leaf_b));
+        inter.children.push(Node::Leaf(leaf_c));
+
+        let tree = ProcessTree::new(Node::Operator(inter));
+        let net = tree.to_petri_net();
+
+        assert_eq!(15, net.places.len());
+        assert_eq!(11, net.transitions.len());
+        assert_eq!(34, net.arcs.len());
+    }
+
+    // Checking Or(a,b,c)
+    #[test]
+    fn inclusive_choice_test() {
+        let mut or = Operator::new(OperatorType::InclusiveChoice);
+        let leaf_a = Leaf::new(Some("a".to_string()));
+        let leaf_b = Leaf::new(Some("b".to_string()));
+        let leaf_c = Leaf::new(Some("c".to_string()));
+        or.children.push(Node::Leaf(leaf_a));
+        or.children.push(Node::Leaf(leaf_b));
+        or.children.push(Node::Leaf(leaf_c));
+
+        let tree = ProcessTree::new(Node::Operator(or));
+        let net = tree.to_petri_net();
+
+        assert_eq!(13, net.places.len());
+        assert_eq!(14, net.transitions.len());
+        assert_eq!(52, net.arcs.len());
     }
 
     // Checking tau

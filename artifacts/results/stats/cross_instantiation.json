@@ -1,0 +1,2415 @@
+{
+  "corpus": [
+    "logs/01_o2c.xml",
+    "logs/02_p2p.xml",
+    "logs/03_hiring.xml",
+    "logs/04_hospital.xml",
+    "logs/ocel2-p2p-updated.xml",
+    "logs/ContainerLogistics.xml",
+    "logs/socel2_hinge.xml",
+    "logs/order-management.xml",
+    "logs/bpic2017-no-W.xml.gz"
+  ],
+  "corpus_totals": {
+    "cell_verdict_disagreements": 166,
+    "survive_into_different_final_state": 141
+  },
+  "imf_threshold_for_ocpn_discovery": 0.2,
+  "logs": [
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "against_saturated_target": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "asserting_cells": 26,
+          "coverage": {
+            "chained": 84,
+            "drawn": 84,
+            "target": 84
+          },
+          "demotions_permitted": 17,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 14,
+            "flow": 22,
+            "involvement": 3
+          },
+          "lens": "log",
+          "neutral_cells": 13,
+          "ocdfg_arcs": {
+            "reduced": 22,
+            "removed": 20
+          },
+          "ocpn_arcs": {
+            "reduced": 48,
+            "removed": 42
+          },
+          "raw_flow_cells": 22,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 84,
+            "together": 0,
+            "total": 84
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 22,
+          "under_expansion": {
+            "final_state": {
+              "absent": 14,
+              "expanded": 0,
+              "flow": 22,
+              "involvement": 3
+            },
+            "ocdfg_arcs": 22,
+            "ocpn_arcs": 48,
+            "orderings_shown": 84
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "against_saturated_target": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "asserting_cells": 37,
+          "coverage": {
+            "chained": 122,
+            "drawn": 122,
+            "target": 122
+          },
+          "demotions_permitted": 6,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 6,
+            "flow": 33,
+            "involvement": 0
+          },
+          "lens": "model",
+          "neutral_cells": 2,
+          "ocdfg_arcs": {
+            "reduced": 40,
+            "removed": 2
+          },
+          "ocpn_arcs": {
+            "reduced": 78,
+            "removed": 12
+          },
+          "raw_flow_cells": 33,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 26,
+            "never": 12,
+            "orders": 84,
+            "together": 0,
+            "total": 122
+          },
+          "runtime_seconds": 0.004294459,
+          "search_arcs_objective": 40,
+          "under_expansion": {
+            "final_state": {
+              "absent": 6,
+              "expanded": 0,
+              "flow": 33,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 40,
+            "ocpn_arcs": 78,
+            "orderings_shown": 84
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "against_saturated_target": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "asserting_cells": 37,
+          "coverage": {
+            "chained": 96,
+            "drawn": 77,
+            "target": 96
+          },
+          "demotions_permitted": 10,
+          "fact_repair_added": 1,
+          "final_state": {
+            "absent": 9,
+            "flow": 30,
+            "involvement": 0
+          },
+          "lens": "declare",
+          "neutral_cells": 2,
+          "ocdfg_arcs": {
+            "reduced": 30,
+            "removed": 12
+          },
+          "ocpn_arcs": {
+            "reduced": 68,
+            "removed": 22
+          },
+          "raw_flow_cells": 29,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 94,
+            "together": 2,
+            "total": 96
+          },
+          "runtime_seconds": 0.075709007,
+          "search_arcs_objective": 29,
+          "under_expansion": {
+            "final_state": {
+              "absent": 9,
+              "expanded": 0,
+              "flow": 30,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 30,
+            "ocpn_arcs": 68,
+            "orderings_shown": 84
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "against_saturated_target": {
+            "orderings_shown": 84,
+            "orderings_total": 84
+          },
+          "asserting_cells": 37,
+          "coverage": {
+            "chained": 94,
+            "drawn": 75,
+            "target": 94
+          },
+          "demotions_permitted": 13,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 13,
+            "flow": 26,
+            "involvement": 0
+          },
+          "lens": "declare~",
+          "neutral_cells": 2,
+          "ocdfg_arcs": {
+            "reduced": 26,
+            "removed": 16
+          },
+          "ocpn_arcs": {
+            "reduced": 58,
+            "removed": 32
+          },
+          "raw_flow_cells": 26,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 2
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 94,
+            "together": 0,
+            "total": 94
+          },
+          "runtime_seconds": 0.075709007,
+          "search_arcs_objective": 26,
+          "under_expansion": {
+            "final_state": {
+              "absent": 13,
+              "expanded": 0,
+              "flow": 26,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 26,
+            "ocpn_arcs": 58,
+            "orderings_shown": 84
+          }
+        }
+      ],
+      "log": "01_o2c",
+      "ocdfg_arcs_recorded": 42,
+      "ocpn_arcs_recorded": 90,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 11,
+          "survive_into_different_final_state": 11
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 11,
+          "survive_into_different_final_state": 8
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 0,
+          "survive_into_different_final_state": 0
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 22,
+        "survive_into_different_final_state": 19
+      },
+      "recorded_cells": 39,
+      "target_pairs": 84
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "against_saturated_target": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "asserting_cells": 18,
+          "coverage": {
+            "chained": 23,
+            "drawn": 18,
+            "target": 23
+          },
+          "demotions_permitted": 8,
+          "fact_repair_added": 3,
+          "final_state": {
+            "absent": 0,
+            "flow": 18,
+            "involvement": 5
+          },
+          "lens": "log",
+          "neutral_cells": 5,
+          "ocdfg_arcs": {
+            "reduced": 37,
+            "removed": 23
+          },
+          "ocpn_arcs": {
+            "reduced": 86,
+            "removed": 14
+          },
+          "raw_flow_cells": 15,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 23,
+            "together": 0,
+            "total": 23
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 31,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 0,
+              "flow": 18,
+              "involvement": 5
+            },
+            "ocdfg_arcs": 37,
+            "ocpn_arcs": 86,
+            "orderings_shown": 23
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "against_saturated_target": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "asserting_cells": 18,
+          "coverage": {
+            "chained": 29,
+            "drawn": 28,
+            "target": 29
+          },
+          "demotions_permitted": 7,
+          "fact_repair_added": 4,
+          "final_state": {
+            "absent": 0,
+            "flow": 20,
+            "involvement": 3
+          },
+          "lens": "model",
+          "neutral_cells": 5,
+          "ocdfg_arcs": {
+            "reduced": 46,
+            "removed": 14
+          },
+          "ocpn_arcs": {
+            "reduced": 94,
+            "removed": 6
+          },
+          "raw_flow_cells": 16,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 29,
+            "together": 0,
+            "total": 29
+          },
+          "runtime_seconds": 0.002121633,
+          "search_arcs_objective": 41,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 0,
+              "flow": 20,
+              "involvement": 3
+            },
+            "ocdfg_arcs": 46,
+            "ocpn_arcs": 94,
+            "orderings_shown": 23
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "against_saturated_target": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "asserting_cells": 20,
+          "coverage": {
+            "chained": 33,
+            "drawn": 25,
+            "target": 33
+          },
+          "demotions_permitted": 8,
+          "fact_repair_added": 6,
+          "final_state": {
+            "absent": 0,
+            "flow": 21,
+            "involvement": 2
+          },
+          "lens": "declare",
+          "neutral_cells": 3,
+          "ocdfg_arcs": {
+            "reduced": 55,
+            "removed": 5
+          },
+          "ocpn_arcs": {
+            "reduced": 96,
+            "removed": 4
+          },
+          "raw_flow_cells": 15,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 33,
+            "together": 0,
+            "total": 33
+          },
+          "runtime_seconds": 0.015902888,
+          "search_arcs_objective": 42,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 0,
+              "flow": 21,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 55,
+            "ocpn_arcs": 96,
+            "orderings_shown": 23
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "against_saturated_target": {
+            "orderings_shown": 23,
+            "orderings_total": 23
+          },
+          "asserting_cells": 20,
+          "coverage": {
+            "chained": 33,
+            "drawn": 25,
+            "target": 33
+          },
+          "demotions_permitted": 8,
+          "fact_repair_added": 6,
+          "final_state": {
+            "absent": 0,
+            "flow": 21,
+            "involvement": 2
+          },
+          "lens": "declare~",
+          "neutral_cells": 3,
+          "ocdfg_arcs": {
+            "reduced": 55,
+            "removed": 5
+          },
+          "ocpn_arcs": {
+            "reduced": 96,
+            "removed": 4
+          },
+          "raw_flow_cells": 15,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 33,
+            "together": 0,
+            "total": 33
+          },
+          "runtime_seconds": 0.015902888,
+          "search_arcs_objective": 42,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 0,
+              "flow": 21,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 55,
+            "ocpn_arcs": 96,
+            "orderings_shown": 23
+          }
+        }
+      ],
+      "log": "02_p2p",
+      "ocdfg_arcs_recorded": 60,
+      "ocpn_arcs_recorded": 100,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 4,
+          "survive_into_different_final_state": 2
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 6,
+          "survive_into_different_final_state": 3
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 6,
+          "survive_into_different_final_state": 1
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 16,
+        "survive_into_different_final_state": 6
+      },
+      "recorded_cells": 23,
+      "target_pairs": 23
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 209,
+            "orderings_total": 209
+          },
+          "against_saturated_target": {
+            "orderings_shown": 263,
+            "orderings_total": 263
+          },
+          "asserting_cells": 33,
+          "coverage": {
+            "chained": 263,
+            "drawn": 203,
+            "target": 263
+          },
+          "demotions_permitted": 13,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 11,
+            "flow": 25,
+            "involvement": 2
+          },
+          "lens": "log",
+          "neutral_cells": 5,
+          "ocdfg_arcs": {
+            "reduced": 28,
+            "removed": 18
+          },
+          "ocpn_arcs": {
+            "reduced": 60,
+            "removed": 48
+          },
+          "raw_flow_cells": 25,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 263,
+            "together": 0,
+            "total": 263
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 28,
+          "under_expansion": {
+            "final_state": {
+              "absent": 11,
+              "expanded": 0,
+              "flow": 25,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 28,
+            "ocpn_arcs": 60,
+            "orderings_shown": 263
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 209,
+            "orderings_total": 209
+          },
+          "against_saturated_target": {
+            "orderings_shown": 263,
+            "orderings_total": 263
+          },
+          "asserting_cells": 38,
+          "coverage": {
+            "chained": 232,
+            "drawn": 226,
+            "target": 232
+          },
+          "demotions_permitted": 2,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 2,
+            "flow": 36,
+            "involvement": 0
+          },
+          "lens": "model",
+          "neutral_cells": 0,
+          "ocdfg_arcs": {
+            "reduced": 42,
+            "removed": 4
+          },
+          "ocpn_arcs": {
+            "reduced": 96,
+            "removed": 12
+          },
+          "raw_flow_cells": 36,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 10,
+            "never": 13,
+            "orders": 209,
+            "together": 0,
+            "total": 232
+          },
+          "runtime_seconds": 0.002888418,
+          "search_arcs_objective": 42,
+          "under_expansion": {
+            "final_state": {
+              "absent": 2,
+              "expanded": 0,
+              "flow": 36,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 42,
+            "ocpn_arcs": 96,
+            "orderings_shown": 263
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 209,
+            "orderings_total": 209
+          },
+          "against_saturated_target": {
+            "orderings_shown": 263,
+            "orderings_total": 263
+          },
+          "asserting_cells": 38,
+          "coverage": {
+            "chained": 206,
+            "drawn": 199,
+            "target": 206
+          },
+          "demotions_permitted": 11,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 9,
+            "flow": 27,
+            "involvement": 2
+          },
+          "lens": "declare",
+          "neutral_cells": 0,
+          "ocdfg_arcs": {
+            "reduced": 31,
+            "removed": 15
+          },
+          "ocpn_arcs": {
+            "reduced": 68,
+            "removed": 40
+          },
+          "raw_flow_cells": 27,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 206,
+            "together": 0,
+            "total": 206
+          },
+          "runtime_seconds": 0.034218436,
+          "search_arcs_objective": 31,
+          "under_expansion": {
+            "final_state": {
+              "absent": 9,
+              "expanded": 0,
+              "flow": 27,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 31,
+            "ocpn_arcs": 68,
+            "orderings_shown": 263
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 209,
+            "orderings_total": 209
+          },
+          "against_saturated_target": {
+            "orderings_shown": 263,
+            "orderings_total": 263
+          },
+          "asserting_cells": 38,
+          "coverage": {
+            "chained": 206,
+            "drawn": 199,
+            "target": 206
+          },
+          "demotions_permitted": 11,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 9,
+            "flow": 27,
+            "involvement": 2
+          },
+          "lens": "declare~",
+          "neutral_cells": 0,
+          "ocdfg_arcs": {
+            "reduced": 31,
+            "removed": 15
+          },
+          "ocpn_arcs": {
+            "reduced": 68,
+            "removed": 40
+          },
+          "raw_flow_cells": 27,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 206,
+            "together": 0,
+            "total": 206
+          },
+          "runtime_seconds": 0.034218436,
+          "search_arcs_objective": 31,
+          "under_expansion": {
+            "final_state": {
+              "absent": 9,
+              "expanded": 0,
+              "flow": 27,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 31,
+            "ocpn_arcs": 68,
+            "orderings_shown": 263
+          }
+        }
+      ],
+      "log": "03_hiring",
+      "ocdfg_arcs_recorded": 46,
+      "ocpn_arcs_recorded": 108,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 5,
+          "survive_into_different_final_state": 5
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 5,
+          "survive_into_different_final_state": 0
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 0,
+          "survive_into_different_final_state": 0
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 10,
+        "survive_into_different_final_state": 5
+      },
+      "recorded_cells": 38,
+      "target_pairs": 263
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 9,
+          "coverage": {
+            "chained": 36,
+            "drawn": 36,
+            "target": 36
+          },
+          "demotions_permitted": 9,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 7,
+            "flow": 9,
+            "involvement": 2
+          },
+          "lens": "log",
+          "neutral_cells": 9,
+          "ocdfg_arcs": {
+            "reduced": 8,
+            "removed": 11
+          },
+          "ocpn_arcs": {
+            "reduced": 20,
+            "removed": 34
+          },
+          "raw_flow_cells": 9,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 36,
+            "together": 0,
+            "total": 36
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 8,
+          "under_expansion": {
+            "final_state": {
+              "absent": 7,
+              "expanded": 0,
+              "flow": 9,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 8,
+            "ocpn_arcs": 20,
+            "orderings_shown": 36
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 11,
+          "coverage": {
+            "chained": 37,
+            "drawn": 37,
+            "target": 37
+          },
+          "demotions_permitted": 7,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 5,
+            "flow": 11,
+            "involvement": 2
+          },
+          "lens": "model",
+          "neutral_cells": 7,
+          "ocdfg_arcs": {
+            "reduced": 10,
+            "removed": 9
+          },
+          "ocpn_arcs": {
+            "reduced": 26,
+            "removed": 28
+          },
+          "raw_flow_cells": 11,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 1,
+            "never": 0,
+            "orders": 36,
+            "together": 0,
+            "total": 37
+          },
+          "runtime_seconds": 0.00185016,
+          "search_arcs_objective": 10,
+          "under_expansion": {
+            "final_state": {
+              "absent": 5,
+              "expanded": 0,
+              "flow": 11,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 10,
+            "ocpn_arcs": 26,
+            "orderings_shown": 36
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 13,
+          "coverage": {
+            "chained": 38,
+            "drawn": 31,
+            "target": 38
+          },
+          "demotions_permitted": 6,
+          "fact_repair_added": 1,
+          "final_state": {
+            "absent": 5,
+            "flow": 13,
+            "involvement": 0
+          },
+          "lens": "declare",
+          "neutral_cells": 5,
+          "ocdfg_arcs": {
+            "reduced": 14,
+            "removed": 5
+          },
+          "ocpn_arcs": {
+            "reduced": 34,
+            "removed": 20
+          },
+          "raw_flow_cells": 12,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 37,
+            "together": 1,
+            "total": 38
+          },
+          "runtime_seconds": 0.033559903,
+          "search_arcs_objective": 13,
+          "under_expansion": {
+            "final_state": {
+              "absent": 5,
+              "expanded": 0,
+              "flow": 13,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 14,
+            "ocpn_arcs": 34,
+            "orderings_shown": 36
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 13,
+          "coverage": {
+            "chained": 37,
+            "drawn": 30,
+            "target": 37
+          },
+          "demotions_permitted": 8,
+          "fact_repair_added": 1,
+          "final_state": {
+            "absent": 5,
+            "flow": 11,
+            "involvement": 2
+          },
+          "lens": "declare~",
+          "neutral_cells": 5,
+          "ocdfg_arcs": {
+            "reduced": 10,
+            "removed": 9
+          },
+          "ocpn_arcs": {
+            "reduced": 26,
+            "removed": 28
+          },
+          "raw_flow_cells": 10,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 1
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 37,
+            "together": 0,
+            "total": 37
+          },
+          "runtime_seconds": 0.033559903,
+          "search_arcs_objective": 9,
+          "under_expansion": {
+            "final_state": {
+              "absent": 5,
+              "expanded": 0,
+              "flow": 11,
+              "involvement": 2
+            },
+            "ocdfg_arcs": 10,
+            "ocpn_arcs": 26,
+            "orderings_shown": 36
+          }
+        }
+      ],
+      "log": "04_hospital",
+      "ocdfg_arcs_recorded": 19,
+      "ocpn_arcs_recorded": 54,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 2,
+          "survive_into_different_final_state": 2
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 4,
+          "survive_into_different_final_state": 4
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 2,
+          "survive_into_different_final_state": 2
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 8,
+        "survive_into_different_final_state": 8
+      },
+      "recorded_cells": 18,
+      "target_pairs": 36
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 19,
+            "orderings_total": 19
+          },
+          "asserting_cells": 20,
+          "coverage": {
+            "chained": 15,
+            "drawn": 14,
+            "target": 19
+          },
+          "demotions_permitted": 9,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 8,
+            "flow": 13,
+            "involvement": 1
+          },
+          "lens": "log",
+          "neutral_cells": 2,
+          "ocdfg_arcs": {
+            "reduced": 15,
+            "removed": 19
+          },
+          "ocpn_arcs": {
+            "reduced": 30,
+            "removed": 24
+          },
+          "raw_flow_cells": 13,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 19,
+            "together": 0,
+            "total": 19
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 15,
+          "under_expansion": {
+            "final_state": {
+              "absent": 8,
+              "expanded": 1,
+              "flow": 13,
+              "involvement": 1
+            },
+            "ocdfg_arcs": 16,
+            "ocpn_arcs": 34,
+            "orderings_shown": 19
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 19,
+            "orderings_total": 19
+          },
+          "asserting_cells": 21,
+          "coverage": {
+            "chained": 17,
+            "drawn": 16,
+            "target": 17
+          },
+          "demotions_permitted": 9,
+          "fact_repair_added": 2,
+          "final_state": {
+            "absent": 6,
+            "flow": 15,
+            "involvement": 1
+          },
+          "lens": "model",
+          "neutral_cells": 1,
+          "ocdfg_arcs": {
+            "reduced": 19,
+            "removed": 15
+          },
+          "ocpn_arcs": {
+            "reduced": 36,
+            "removed": 18
+          },
+          "raw_flow_cells": 13,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 1,
+            "never": 1,
+            "orders": 15,
+            "together": 0,
+            "total": 17
+          },
+          "runtime_seconds": 0.003067212,
+          "search_arcs_objective": 18,
+          "under_expansion": {
+            "final_state": {
+              "absent": 6,
+              "expanded": 0,
+              "flow": 15,
+              "involvement": 1
+            },
+            "ocdfg_arcs": 19,
+            "ocpn_arcs": 36,
+            "orderings_shown": 19
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 19,
+            "orderings_total": 19
+          },
+          "asserting_cells": 21,
+          "coverage": {
+            "chained": 19,
+            "drawn": 16,
+            "target": 19
+          },
+          "demotions_permitted": 9,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 9,
+            "flow": 13,
+            "involvement": 0
+          },
+          "lens": "declare",
+          "neutral_cells": 1,
+          "ocdfg_arcs": {
+            "reduced": 19,
+            "removed": 15
+          },
+          "ocpn_arcs": {
+            "reduced": 34,
+            "removed": 20
+          },
+          "raw_flow_cells": 13,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 18,
+            "together": 1,
+            "total": 19
+          },
+          "runtime_seconds": 0.051459267,
+          "search_arcs_objective": 19,
+          "under_expansion": {
+            "final_state": {
+              "absent": 9,
+              "expanded": 0,
+              "flow": 13,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 19,
+            "ocpn_arcs": 34,
+            "orderings_shown": 19
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 19,
+            "orderings_total": 19
+          },
+          "asserting_cells": 21,
+          "coverage": {
+            "chained": 18,
+            "drawn": 15,
+            "target": 18
+          },
+          "demotions_permitted": 9,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 9,
+            "flow": 13,
+            "involvement": 0
+          },
+          "lens": "declare~",
+          "neutral_cells": 1,
+          "ocdfg_arcs": {
+            "reduced": 19,
+            "removed": 15
+          },
+          "ocpn_arcs": {
+            "reduced": 34,
+            "removed": 20
+          },
+          "raw_flow_cells": 13,
+          "reported_not_blocking": {
+            "shown": 1,
+            "total": 1
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 18,
+            "together": 0,
+            "total": 18
+          },
+          "runtime_seconds": 0.051459267,
+          "search_arcs_objective": 19,
+          "under_expansion": {
+            "final_state": {
+              "absent": 9,
+              "expanded": 0,
+              "flow": 13,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 19,
+            "ocpn_arcs": 34,
+            "orderings_shown": 19
+          }
+        }
+      ],
+      "log": "ocel2-p2p-updated",
+      "ocdfg_arcs_recorded": 34,
+      "ocpn_arcs_recorded": 54,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 1,
+          "survive_into_different_final_state": 0
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 1,
+          "survive_into_different_final_state": 1
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 0,
+          "survive_into_different_final_state": 0
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 2,
+        "survive_into_different_final_state": 1
+      },
+      "recorded_cells": 22,
+      "target_pairs": 19
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 53,
+            "orderings_total": 53
+          },
+          "against_saturated_target": {
+            "orderings_shown": 78,
+            "orderings_total": 79
+          },
+          "asserting_cells": 23,
+          "coverage": {
+            "chained": 74,
+            "drawn": 49,
+            "target": 79
+          },
+          "demotions_permitted": 12,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 8,
+            "flow": 17,
+            "involvement": 4
+          },
+          "lens": "log",
+          "neutral_cells": 6,
+          "ocdfg_arcs": {
+            "reduced": 16,
+            "removed": 33
+          },
+          "ocpn_arcs": {
+            "reduced": 38,
+            "removed": 56
+          },
+          "raw_flow_cells": 17,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 79,
+            "together": 0,
+            "total": 79
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 16,
+          "under_expansion": {
+            "final_state": {
+              "absent": 8,
+              "expanded": 3,
+              "flow": 17,
+              "involvement": 4
+            },
+            "ocdfg_arcs": 24,
+            "ocpn_arcs": 52,
+            "orderings_shown": 79
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 53,
+            "orderings_total": 53
+          },
+          "against_saturated_target": {
+            "orderings_shown": 78,
+            "orderings_total": 79
+          },
+          "asserting_cells": 29,
+          "coverage": {
+            "chained": 60,
+            "drawn": 56,
+            "target": 60
+          },
+          "demotions_permitted": 6,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 6,
+            "flow": 23,
+            "involvement": 0
+          },
+          "lens": "model",
+          "neutral_cells": 0,
+          "ocdfg_arcs": {
+            "reduced": 34,
+            "removed": 15
+          },
+          "ocpn_arcs": {
+            "reduced": 68,
+            "removed": 26
+          },
+          "raw_flow_cells": 23,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 6,
+            "never": 0,
+            "orders": 54,
+            "together": 0,
+            "total": 60
+          },
+          "runtime_seconds": 0.008295166,
+          "search_arcs_objective": 30,
+          "under_expansion": {
+            "final_state": {
+              "absent": 6,
+              "expanded": 0,
+              "flow": 23,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 34,
+            "ocpn_arcs": 68,
+            "orderings_shown": 78
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 53,
+            "orderings_total": 53
+          },
+          "against_saturated_target": {
+            "orderings_shown": 78,
+            "orderings_total": 79
+          },
+          "asserting_cells": 23,
+          "coverage": {
+            "chained": 55,
+            "drawn": 50,
+            "target": 55
+          },
+          "demotions_permitted": 12,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 8,
+            "flow": 17,
+            "involvement": 4
+          },
+          "lens": "declare",
+          "neutral_cells": 6,
+          "ocdfg_arcs": {
+            "reduced": 16,
+            "removed": 33
+          },
+          "ocpn_arcs": {
+            "reduced": 38,
+            "removed": 56
+          },
+          "raw_flow_cells": 17,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 54,
+            "together": 1,
+            "total": 55
+          },
+          "runtime_seconds": 0.098300776,
+          "search_arcs_objective": 16,
+          "under_expansion": {
+            "final_state": {
+              "absent": 8,
+              "expanded": 0,
+              "flow": 17,
+              "involvement": 4
+            },
+            "ocdfg_arcs": 16,
+            "ocpn_arcs": 38,
+            "orderings_shown": 78
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 53,
+            "orderings_total": 53
+          },
+          "against_saturated_target": {
+            "orderings_shown": 78,
+            "orderings_total": 79
+          },
+          "asserting_cells": 23,
+          "coverage": {
+            "chained": 54,
+            "drawn": 49,
+            "target": 54
+          },
+          "demotions_permitted": 12,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 8,
+            "flow": 17,
+            "involvement": 4
+          },
+          "lens": "declare~",
+          "neutral_cells": 6,
+          "ocdfg_arcs": {
+            "reduced": 16,
+            "removed": 33
+          },
+          "ocpn_arcs": {
+            "reduced": 38,
+            "removed": 56
+          },
+          "raw_flow_cells": 17,
+          "reported_not_blocking": {
+            "shown": 1,
+            "total": 1
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 54,
+            "together": 0,
+            "total": 54
+          },
+          "runtime_seconds": 0.098300776,
+          "search_arcs_objective": 16,
+          "under_expansion": {
+            "final_state": {
+              "absent": 8,
+              "expanded": 0,
+              "flow": 17,
+              "involvement": 4
+            },
+            "ocdfg_arcs": 16,
+            "ocpn_arcs": 38,
+            "orderings_shown": 78
+          }
+        }
+      ],
+      "log": "ContainerLogistics",
+      "ocdfg_arcs_recorded": 49,
+      "ocpn_arcs_recorded": 94,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 6,
+          "survive_into_different_final_state": 6
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 0,
+          "survive_into_different_final_state": 0
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 6,
+          "survive_into_different_final_state": 6
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 12,
+        "survive_into_different_final_state": 12
+      },
+      "recorded_cells": 29,
+      "target_pairs": 79
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "asserting_cells": 15,
+          "coverage": {
+            "chained": 15,
+            "drawn": 15,
+            "target": 15
+          },
+          "demotions_permitted": 25,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 12,
+            "flow": 15,
+            "involvement": 13
+          },
+          "lens": "log",
+          "neutral_cells": 25,
+          "ocdfg_arcs": {
+            "reduced": 10,
+            "removed": 52
+          },
+          "ocpn_arcs": {
+            "reduced": 30,
+            "removed": 136
+          },
+          "raw_flow_cells": 15,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 15,
+            "together": 0,
+            "total": 15
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 10,
+          "under_expansion": {
+            "final_state": {
+              "absent": 12,
+              "expanded": 0,
+              "flow": 15,
+              "involvement": 13
+            },
+            "ocdfg_arcs": 10,
+            "ocpn_arcs": 30,
+            "orderings_shown": 15
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "asserting_cells": 36,
+          "coverage": {
+            "chained": 65,
+            "drawn": 65,
+            "target": 65
+          },
+          "demotions_permitted": 6,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 5,
+            "flow": 34,
+            "involvement": 1
+          },
+          "lens": "model",
+          "neutral_cells": 4,
+          "ocdfg_arcs": {
+            "reduced": 58,
+            "removed": 4
+          },
+          "ocpn_arcs": {
+            "reduced": 146,
+            "removed": 20
+          },
+          "raw_flow_cells": 34,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 8,
+            "never": 40,
+            "orders": 17,
+            "together": 0,
+            "total": 65
+          },
+          "runtime_seconds": 0.024753284,
+          "search_arcs_objective": 58,
+          "under_expansion": {
+            "final_state": {
+              "absent": 5,
+              "expanded": 0,
+              "flow": 34,
+              "involvement": 1
+            },
+            "ocdfg_arcs": 58,
+            "ocpn_arcs": 146,
+            "orderings_shown": 15
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "asserting_cells": 15,
+          "coverage": {
+            "chained": 15,
+            "drawn": 15,
+            "target": 15
+          },
+          "demotions_permitted": 25,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 12,
+            "flow": 15,
+            "involvement": 13
+          },
+          "lens": "declare",
+          "neutral_cells": 25,
+          "ocdfg_arcs": {
+            "reduced": 10,
+            "removed": 52
+          },
+          "ocpn_arcs": {
+            "reduced": 30,
+            "removed": 136
+          },
+          "raw_flow_cells": 15,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 15,
+            "together": 0,
+            "total": 15
+          },
+          "runtime_seconds": 0.25827083,
+          "search_arcs_objective": 10,
+          "under_expansion": {
+            "final_state": {
+              "absent": 12,
+              "expanded": 0,
+              "flow": 15,
+              "involvement": 13
+            },
+            "ocdfg_arcs": 10,
+            "ocpn_arcs": 30,
+            "orderings_shown": 15
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "against_saturated_target": {
+            "orderings_shown": 15,
+            "orderings_total": 15
+          },
+          "asserting_cells": 15,
+          "coverage": {
+            "chained": 15,
+            "drawn": 15,
+            "target": 15
+          },
+          "demotions_permitted": 25,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 12,
+            "flow": 15,
+            "involvement": 13
+          },
+          "lens": "declare~",
+          "neutral_cells": 25,
+          "ocdfg_arcs": {
+            "reduced": 10,
+            "removed": 52
+          },
+          "ocpn_arcs": {
+            "reduced": 30,
+            "removed": 136
+          },
+          "raw_flow_cells": 15,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 15,
+            "together": 0,
+            "total": 15
+          },
+          "runtime_seconds": 0.25827083,
+          "search_arcs_objective": 10,
+          "under_expansion": {
+            "final_state": {
+              "absent": 12,
+              "expanded": 0,
+              "flow": 15,
+              "involvement": 13
+            },
+            "ocdfg_arcs": 10,
+            "ocpn_arcs": 30,
+            "orderings_shown": 15
+          }
+        }
+      ],
+      "log": "socel2_hinge",
+      "ocdfg_arcs_recorded": 62,
+      "ocpn_arcs_recorded": 166,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 21,
+          "survive_into_different_final_state": 21
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 0,
+          "survive_into_different_final_state": 0
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 21,
+          "survive_into_different_final_state": 21
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 42,
+        "survive_into_different_final_state": 42
+      },
+      "recorded_cells": 40,
+      "target_pairs": 15
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 19,
+          "coverage": {
+            "chained": 36,
+            "drawn": 24,
+            "target": 36
+          },
+          "demotions_permitted": 26,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 23,
+            "flow": 14,
+            "involvement": 3
+          },
+          "lens": "log",
+          "neutral_cells": 21,
+          "ocdfg_arcs": {
+            "reduced": 24,
+            "removed": 201
+          },
+          "ocpn_arcs": {
+            "reduced": 40,
+            "removed": 123
+          },
+          "raw_flow_cells": 14,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 36,
+            "together": 0,
+            "total": 36
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 24,
+          "under_expansion": {
+            "final_state": {
+              "absent": 23,
+              "expanded": 0,
+              "flow": 14,
+              "involvement": 3
+            },
+            "ocdfg_arcs": 24,
+            "ocpn_arcs": 40,
+            "orderings_shown": 36
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 29,
+          "coverage": {
+            "chained": 43,
+            "drawn": 35,
+            "target": 43
+          },
+          "demotions_permitted": 15,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 15,
+            "flow": 25,
+            "involvement": 0
+          },
+          "lens": "model",
+          "neutral_cells": 11,
+          "ocdfg_arcs": {
+            "reduced": 67,
+            "removed": 158
+          },
+          "ocpn_arcs": {
+            "reduced": 105,
+            "removed": 58
+          },
+          "raw_flow_cells": 25,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 1,
+            "never": 7,
+            "orders": 35,
+            "together": 0,
+            "total": 43
+          },
+          "runtime_seconds": 0.031070616,
+          "search_arcs_objective": 67,
+          "under_expansion": {
+            "final_state": {
+              "absent": 15,
+              "expanded": 0,
+              "flow": 25,
+              "involvement": 0
+            },
+            "ocdfg_arcs": 67,
+            "ocpn_arcs": 105,
+            "orderings_shown": 36
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 22,
+          "coverage": {
+            "chained": 51,
+            "drawn": 51,
+            "target": 51
+          },
+          "demotions_permitted": 29,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 26,
+            "flow": 11,
+            "involvement": 3
+          },
+          "lens": "declare",
+          "neutral_cells": 18,
+          "ocdfg_arcs": {
+            "reduced": 56,
+            "removed": 169
+          },
+          "ocpn_arcs": {
+            "reduced": 37,
+            "removed": 126
+          },
+          "raw_flow_cells": 11,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 42,
+            "together": 9,
+            "total": 51
+          },
+          "runtime_seconds": 0.253384244,
+          "search_arcs_objective": 56,
+          "under_expansion": {
+            "final_state": {
+              "absent": 26,
+              "expanded": 0,
+              "flow": 11,
+              "involvement": 3
+            },
+            "ocdfg_arcs": 56,
+            "ocpn_arcs": 37,
+            "orderings_shown": 36
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "against_saturated_target": {
+            "orderings_shown": 36,
+            "orderings_total": 36
+          },
+          "asserting_cells": 22,
+          "coverage": {
+            "chained": 42,
+            "drawn": 42,
+            "target": 42
+          },
+          "demotions_permitted": 29,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 26,
+            "flow": 11,
+            "involvement": 3
+          },
+          "lens": "declare~",
+          "neutral_cells": 18,
+          "ocdfg_arcs": {
+            "reduced": 56,
+            "removed": 169
+          },
+          "ocpn_arcs": {
+            "reduced": 37,
+            "removed": 126
+          },
+          "raw_flow_cells": 11,
+          "reported_not_blocking": {
+            "shown": 9,
+            "total": 9
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 42,
+            "together": 0,
+            "total": 42
+          },
+          "runtime_seconds": 0.253384244,
+          "search_arcs_objective": 56,
+          "under_expansion": {
+            "final_state": {
+              "absent": 26,
+              "expanded": 0,
+              "flow": 11,
+              "involvement": 3
+            },
+            "ocdfg_arcs": 56,
+            "ocpn_arcs": 37,
+            "orderings_shown": 36
+          }
+        }
+      ],
+      "log": "order-management",
+      "ocdfg_arcs_recorded": 225,
+      "ocpn_arcs_recorded": 163,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 10,
+          "survive_into_different_final_state": 10
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 3,
+          "survive_into_different_final_state": 0
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 13,
+          "survive_into_different_final_state": 10
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 26,
+        "survive_into_different_final_state": 20
+      },
+      "recorded_cells": 40,
+      "target_pairs": 36
+    },
+    {
+      "keepset_check": "ok",
+      "lenses": [
+        {
+          "against_recorded_log": {
+            "orderings_shown": 65,
+            "orderings_total": 65
+          },
+          "against_saturated_target": {
+            "orderings_shown": 121,
+            "orderings_total": 122
+          },
+          "asserting_cells": 18,
+          "coverage": {
+            "chained": 65,
+            "drawn": 65,
+            "target": 122
+          },
+          "demotions_permitted": 18,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 0,
+            "flow": 18,
+            "involvement": 18
+          },
+          "lens": "log",
+          "neutral_cells": 18,
+          "ocdfg_arcs": {
+            "reduced": 35,
+            "removed": 183
+          },
+          "ocpn_arcs": {
+            "reduced": 50,
+            "removed": 48
+          },
+          "raw_flow_cells": 18,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 122,
+            "together": 0,
+            "total": 122
+          },
+          "runtime_seconds": 0.0,
+          "search_arcs_objective": 37,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 5,
+              "flow": 18,
+              "involvement": 18
+            },
+            "ocdfg_arcs": 72,
+            "ocpn_arcs": 66,
+            "orderings_shown": 122
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 65,
+            "orderings_total": 65
+          },
+          "against_saturated_target": {
+            "orderings_shown": 121,
+            "orderings_total": 122
+          },
+          "asserting_cells": 30,
+          "coverage": {
+            "chained": 82,
+            "drawn": 82,
+            "target": 82
+          },
+          "demotions_permitted": 6,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 0,
+            "flow": 30,
+            "involvement": 6
+          },
+          "lens": "model",
+          "neutral_cells": 6,
+          "ocdfg_arcs": {
+            "reduced": 101,
+            "removed": 117
+          },
+          "ocpn_arcs": {
+            "reduced": 102,
+            "removed": 0
+          },
+          "raw_flow_cells": 30,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 10,
+            "never": 7,
+            "orders": 65,
+            "together": 0,
+            "total": 82
+          },
+          "runtime_seconds": 0.289520539,
+          "search_arcs_objective": 118,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 0,
+              "flow": 30,
+              "involvement": 6
+            },
+            "ocdfg_arcs": 101,
+            "ocpn_arcs": 102,
+            "orderings_shown": 121
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 65,
+            "orderings_total": 65
+          },
+          "against_saturated_target": {
+            "orderings_shown": 121,
+            "orderings_total": 122
+          },
+          "asserting_cells": 27,
+          "coverage": {
+            "chained": 69,
+            "drawn": 69,
+            "target": 69
+          },
+          "demotions_permitted": 9,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 0,
+            "flow": 27,
+            "involvement": 9
+          },
+          "lens": "declare",
+          "neutral_cells": 9,
+          "ocdfg_arcs": {
+            "reduced": 85,
+            "removed": 133
+          },
+          "ocpn_arcs": {
+            "reduced": 90,
+            "removed": 8
+          },
+          "raw_flow_cells": 27,
+          "reported_not_blocking": {
+            "shown": 0,
+            "total": 0
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 52,
+            "together": 17,
+            "total": 69
+          },
+          "runtime_seconds": 1.173760261,
+          "search_arcs_objective": 91,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 0,
+              "flow": 27,
+              "involvement": 9
+            },
+            "ocdfg_arcs": 85,
+            "ocpn_arcs": 90,
+            "orderings_shown": 121
+          }
+        },
+        {
+          "against_recorded_log": {
+            "orderings_shown": 65,
+            "orderings_total": 65
+          },
+          "against_saturated_target": {
+            "orderings_shown": 121,
+            "orderings_total": 122
+          },
+          "asserting_cells": 27,
+          "coverage": {
+            "chained": 52,
+            "drawn": 52,
+            "target": 52
+          },
+          "demotions_permitted": 15,
+          "fact_repair_added": 0,
+          "final_state": {
+            "absent": 0,
+            "flow": 21,
+            "involvement": 15
+          },
+          "lens": "declare~",
+          "neutral_cells": 9,
+          "ocdfg_arcs": {
+            "reduced": 43,
+            "removed": 175
+          },
+          "ocpn_arcs": {
+            "reduced": 72,
+            "removed": 26
+          },
+          "raw_flow_cells": 21,
+          "reported_not_blocking": {
+            "shown": 5,
+            "total": 17
+          },
+          "required": {
+            "looped": 0,
+            "never": 0,
+            "orders": 52,
+            "together": 0,
+            "total": 52
+          },
+          "runtime_seconds": 1.173760261,
+          "search_arcs_objective": 45,
+          "under_expansion": {
+            "final_state": {
+              "absent": 0,
+              "expanded": 0,
+              "flow": 21,
+              "involvement": 15
+            },
+            "ocdfg_arcs": 43,
+            "ocpn_arcs": 72,
+            "orderings_shown": 121
+          }
+        }
+      ],
+      "log": "bpic2017-no-W",
+      "ocdfg_arcs_recorded": 218,
+      "ocpn_arcs_recorded": 98,
+      "pairwise_disagreements": [
+        {
+          "a": "log",
+          "b": "model",
+          "cell_verdict_disagreements": 12,
+          "survive_into_different_final_state": 12
+        },
+        {
+          "a": "log",
+          "b": "declare",
+          "cell_verdict_disagreements": 9,
+          "survive_into_different_final_state": 9
+        },
+        {
+          "a": "model",
+          "b": "declare",
+          "cell_verdict_disagreements": 7,
+          "survive_into_different_final_state": 7
+        }
+      ],
+      "pairwise_disagreements_total": {
+        "cell_verdict_disagreements": 28,
+        "survive_into_different_final_state": 28
+      },
+      "recorded_cells": 36,
+      "target_pairs": 122
+    }
+  ],
+  "model_lens": "tree constructs at the discovery preset (orders, never, looped); exclusions and alternations read above concurrent cuts only"
+}
